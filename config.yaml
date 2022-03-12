@@ -1,0 +1,103 @@
+baseURL: https://example.com
+title: R + Cosas
+languageCode: es-ar
+theme: hugo-theme-hello-friend-ng
+PygmentsCodeFences: yes
+PygmentsStyle: monokailight
+#PygmentsStyle: monokai
+#PygmentsStyle: arduino
+paginate: 10
+rssLimit: 10
+# copyright: This work is licensed under a Creative Commons Attribution-NonCommercial
+#   4.0 International License.
+archetypeDir: archetypes
+contentDir: content
+dataDir: data
+layoutDir: layouts
+publishDir: public
+buildDrafts: no
+buildFuture: no
+buildExpired: no
+canonifyURLs: yes
+enableRobotsTXT: yes
+enableGitInfo: no
+enableEmoji: yes
+enableMissingTranslationPlaceholders: no
+disableRSS: no
+disableSitemap: no
+disable404: no
+disableHugoGeneratorInject: no
+permalinks:
+  posts: /posts/:year/:month/:title/
+author:
+  name: Pablo Tiscornia
+blackfriday:
+  hrefTargetBlank: yes
+taxonomies:
+  category: categories
+  series: series
+  tag: tags
+params:
+  customCSS: []
+  customJS: []
+  dateform: Jan 2, 2006
+  dateformNum: '2006-01-02'
+  dateformNumTime: 2006-01-02 15:04
+  dateformShort: Jan 2
+  description: ""
+  disableReadOtherPosts: no
+  enableGlobalLanguageMenu: yes
+  enableSharingButtons: yes
+  enableThemeToggle: no
+  favicon:
+    color:
+      mask: '#1b1c1d'
+      msapplication: '#1b1c1d'
+      theme: '#1b1c1d'
+  footer:
+    author: yes
+    bottomText:
+      - Powered by <a href="http://gohugo.io">Hugo</a>
+      - Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a>
+    copyright: yes
+    rss: yes
+    topText: []
+    trademark: yes
+  homeSubtitle: " "
+  images: ''
+  justifyContent: no
+  keywords: ''
+  logo:
+    logoHomeLink: /
+    logoMark: '>'
+    logoText: $ cd /casa/
+  social:
+    - name: twitter
+      url: https://twitter.com/
+    - name: email
+      url: mailto:nobody@example.com
+    - name: github
+      url: https://github.com/
+    - name: linkedin
+      url: https://www.linkedin.com/
+    - name: stackoverflow
+      url: https://www.stackoverflow.com/
+# languages:
+#   en:
+#     copyright: <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"
+#       rel="noopener">CC BY-NC 4.0</a>
+#     subtitle: Hello Friend NG Theme
+#     weight: 1
+#   fr:
+#     copyright: <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"
+#       rel="noopener">CC BY-NC 4.0</a>
+#     subtitle: Hello Friend NG Theme
+#     weight: 2
+menu:
+  main:
+    - identifier: about
+      name: About
+      url: about/
+    - identifier: posts
+      name: Posts
+      url: posts/

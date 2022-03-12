@@ -1,0 +1,43 @@
+---
+title: Probando
+author: ''
+date: '2022-03-12'
+slug: probando
+categories: []
+tags:
+  - untagged
+toc: no
+images: ~
+---
+
+
+```{r}
+knitr::opts_chunk$set(collapse = TRUE, message = F, warning = F)
+```
+
+```{r}
+library(tidyverse)
+
+# Esto es una prueba
+base <- eph::toybase_individual_2016_03
+```
+
+pepep
+
+pepepe
+
+```{r}
+edad <- c(1,2,3,4)
+ingreso <- c("Pepe", "Mujica", "queseio")
+
+base %>% 
+  summarise(media = mean(P21))
+```
+
+pepepe
+
+```{r}
+base %>% 
+  select(CODUSU, CH04, ESTADO) %>% 
+  head()
+```
