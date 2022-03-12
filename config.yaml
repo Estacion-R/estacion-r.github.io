@@ -1,4 +1,4 @@
-baseURL: https://example.com
+baseURL: https://r-cosas.netlify.app
 title: R + Cosas
 languageCode: es-ar
 theme: hugo-theme-hello-friend-ng
@@ -73,15 +73,13 @@ params:
     logoText: $ cd /casa/
   social:
     - name: twitter
-      url: https://twitter.com/
-    - name: email
-      url: mailto:nobody@example.com
+      url: https://twitter.com/pabblo_h
     - name: github
-      url: https://github.com/
+      url: https://github.com/pablotis
     - name: linkedin
-      url: https://www.linkedin.com/
-    - name: stackoverflow
-      url: https://www.stackoverflow.com/
+      url: "https://www.linkedin.com/in/ptiscornia/"
+    - name: email
+      url: "pablotisco@gmail.com"
 # languages:
 #   en:
 #     copyright: <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"
@@ -95,9 +93,12 @@ params:
 #     weight: 2
 menu:
   main:
-    - identifier: about
-      name: About
-      url: about/
-    - identifier: posts
-      name: Posts
+    - name: Blog
       url: posts/
+      weight: 10
+    - name: Enseñar + R
+      url: cursos_r/
+      weight: 20
+    - name: Autor
+      url: perfil/
+      weight: 30  
