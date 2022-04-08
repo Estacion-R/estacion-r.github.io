@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R &#43; Cosas</title>
+    <link>https://r-cosas.netlify.app/</link>
+    <description>Recent content on R &#43; Cosas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-AR</language>
+    <lastBuildDate>Sat, 12 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://r-cosas.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>México. ¿México?</title>
+      <link>https://r-cosas.netlify.app/posts/2022/03/m%C3%A9xico.-m%C3%A9xico/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://r-cosas.netlify.app/posts/2022/03/m%C3%A9xico.-m%C3%A9xico/</guid>
+      <description>Presentación. Mediante este posteo inauguro un espacio donde pretendo compartir reflexiones e ideas varias relacionadas al mundo de R, código abierto, procesamiento de datos, (con suerte) algo de sociología, tips y alguna que otra yerba útil.
+Como tema inaugural (y como excusa) emprendí un trabajo para intentar conocer y caracterizar lo que a partir de este año será, por un lado, mi país de residencia, y por el otro (justito), el país en el que mi querida Argentina enfrentara en la fase de grupos del mundial de fútbol masculino 2022: México.</description>
+    </item>
+    
+    <item>
+      <title>Cursos &#43; R</title>
+      <link>https://r-cosas.netlify.app/cursos_r/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://r-cosas.netlify.app/cursos_r/</guid>
+      <description>&amp;ndash;&amp;gt; Ciencias Sociales Computacionales y Humanidades Digitales (IDEAS-UNSAM) Módulo 1. Introducción a la Ciencia de Datos para Científicos Sociales
+• ¿Qué es la ciencia de datos? Relación y aplicaciones en las ciencias sociales
+• Elementos básicos de programación estadística en R. Objetos (vectores, listas, matrices, data frames, tibbles). Funciones y loops.
+• Procesamiento de datos con tidyverse. Data wrangling (limpieza de datos). Análisis estadístico descriptivo con R.
+&amp;ndash;&amp;gt; Big Data e Inteligencia Territorial (FLACSO) Módulo II.</description>
+    </item>
+    
+    <item>
+      <title>Pablo Tiscornia</title>
+      <link>https://r-cosas.netlify.app/perfil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://r-cosas.netlify.app/perfil/</guid>
+      <description>| Presentación
+Soy Sociólogo y docente, especialista en producción, análisis y difusión de datos.
+Mi área de interés es el diseño, recolección, procesamiento y análisis de información estadística, principalmente en temáticas socio-demográficas, vinculadas también a la implementación y evaluación de políticas públicas.
+| Desempeño profesional
+Hoy me encuentro coordinando el Área de Datos en la Dirección de Mercados y Estadísticas (DNMyE) del Ministerio de Turismo y Deportes de la Nación (MINTURYDEP).</description>
+    </item>
+    
+  </channel>
+</rss>

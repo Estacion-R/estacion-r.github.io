@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Series on R &#43; Cosas</title>
+    <link>https://r-cosas.netlify.app/series/</link>
+    <description>Recent content in Series on R &#43; Cosas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-AR</language><atom:link href="https://r-cosas.netlify.app/series/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

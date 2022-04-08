@@ -1,6 +1,6 @@
 baseURL: https://r-cosas.netlify.app
-title: R + Cosas
-languageCode: es-ar
+title: "R + Cosas"
+languageCode: es-AR
 theme: hugo-theme-hello-friend-ng
 PygmentsCodeFences: yes
 PygmentsStyle: monokailight
@@ -30,7 +30,7 @@ disableHugoGeneratorInject: no
 permalinks:
   posts: /posts/:year/:month/:title/
 author:
-  name: Pablo Tiscornia
+  name: "Pablo Tiscornia"
 blackfriday:
   hrefTargetBlank: yes
 taxonomies:
@@ -44,7 +44,7 @@ params:
   dateformNum: '2006-01-02'
   dateformNumTime: 2006-01-02 15:04
   dateformShort: Jan 2
-  description: ""
+  #description: Nice theme for homepages and blogs
   disableReadOtherPosts: no
   enableGlobalLanguageMenu: yes
   enableSharingButtons: yes
@@ -59,11 +59,11 @@ params:
     bottomText:
       - Powered by <a href="http://gohugo.io">Hugo</a>
       - Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a>
-    copyright: yes
+    copyright: no
     rss: yes
     topText: []
     trademark: yes
-  homeSubtitle: " "
+  homeSubtitle: ""
   images: ''
   justifyContent: no
   keywords: ''
@@ -102,3 +102,7 @@ menu:
     - name: Autor
       url: perfil/
       weight: 30  
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

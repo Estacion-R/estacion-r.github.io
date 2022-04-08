@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on R &#43; Cosas</title>
+    <link>https://r-cosas.netlify.app/tags/</link>
+    <description>Recent content in Tags on R &#43; Cosas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-AR</language>
+    <lastBuildDate>Sat, 12 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://r-cosas.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>argentina</title>
+      <link>https://r-cosas.netlify.app/tags/argentina/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://r-cosas.netlify.app/tags/argentina/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mexico</title>
+      <link>https://r-cosas.netlify.app/tags/mexico/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://r-cosas.netlify.app/tags/mexico/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rstats</title>
+      <link>https://r-cosas.netlify.app/tags/rstats/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://r-cosas.netlify.app/tags/rstats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rstatsES</title>
+      <link>https://r-cosas.netlify.app/tags/rstatses/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://r-cosas.netlify.app/tags/rstatses/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

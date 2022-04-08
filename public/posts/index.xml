@@ -1,0 +1,126 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on R &#43; Cosas</title>
+        <link>https://r-cosas.netlify.app/posts/</link>
+        <description>Recent content in Posts on R &#43; Cosas</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>es-AR</language>
+        <lastBuildDate>Sat, 12 Mar 2022 00:00:00 +0000</lastBuildDate>
+        <atom:link href="https://r-cosas.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>México. ¿México?</title>
+            <link>https://r-cosas.netlify.app/posts/2022/03/m%C3%A9xico.-m%C3%A9xico/</link>
+            <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+            
+            <guid>https://r-cosas.netlify.app/posts/2022/03/m%C3%A9xico.-m%C3%A9xico/</guid>
+            <description>Presentación. Mediante este posteo inauguro un espacio donde pretendo compartir reflexiones e ideas varias relacionadas al mundo de R, código abierto, procesamiento de datos, (con suerte) algo de sociología, tips y alguna que otra yerba útil.
+Como tema inaugural (y como excusa) emprendí un trabajo para intentar conocer y caracterizar lo que a partir de este año será, por un lado, mi país de residencia, y por el otro (justito), el país en el que mi querida Argentina enfrentara en la fase de grupos del mundial de fútbol masculino 2022: México.</description>
+            <content type="html"><![CDATA[<h2 id="presentación">Presentación.</h2>
+<p>Mediante este posteo inauguro un espacio donde pretendo compartir reflexiones e ideas varias relacionadas al mundo de R, código abierto, procesamiento de datos, (con suerte) algo de sociología, tips y alguna que otra yerba útil.</p>
+<p>Como tema inaugural (y como excusa) emprendí un trabajo para intentar conocer y caracterizar lo que a partir de este año será, por un lado, mi país de residencia, y por el otro (justito), el país en el que mi querida Argentina enfrentara en la <a href="https://www.fifa.com/es/tournaments/mens/worldcup/qatar2022/match-center/400235462">fase de grupos del mundial de fútbol masculino 2022</a>: <strong>México</strong>. 
+La idea es, entonces, conocer un poco más de este (ya) bello país, todo a través de información estadística. En este primer paso voy a indagar sobre su población, buscando qué cuentan los <strong>principales indicadores sociodemográficos</strong>.</p>
+<h2 id="fuente-de-datos">Fuente de datos.</h2>
+<p>Para poder comenzar a responder estas preguntas hice lo que toda persona que trabaja con datos (de bien) suele hacer: buscarlos. Y qué mejor forma que ir a la fuente de todas las fuentes, al centro de producción estadística que la mayoría de los países tienen para contar (al menos de forma cuantitativa) cómo es su población, su economía, etc. En México este organismo se llama <strong><a href="https://www.inegi.org.mx/">Instituto Nacional de Estadística y Geografía (de ahora en más INEGI)</a></strong></p>
+<img src="img/inegi_logo.png" width="50%" style="display: block; margin: auto;" />
+<p>El <strong>INEGI</strong> es una institución modelo en Latinoamérica en cuanto a producción de información estadística. La cantidad de datos que produce, procesa y difunde es extremadamente rica y abarca un sinfín de temáticas vinculadas a la sociología, demografía, economía, salud, educación, etc., etc., etc.</p>
+<p>Surfeando en este mar de información, me encontré con una, por momentos, inabarcable cantidad de recursos que parecen podrían ayudar a dar respuesta a las preguntas que me estaban dando vueltas. La más llamativa (¡muy gratamente!): <a href="https://www.inegi.org.mx/programas/ccpv/2020/"><strong>el Censo 2020</strong></a>. En la página podemos ver que el operativo ya se encuentra en etapa de difusión de la información a través de tabulados pre-procesados (genial), pero no se dispone de una base de microdatos para generar información <em>a medida</em> (no tan genial)<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, al menos para aquellas variables que necesito. Vale decir que esto no es algo sencillo de lograr para ninguna Oficina de Estadística en ningún lugar del planeta. Estas suelen tomarse su tiempo para disponibilizar este tipo de recursos, si es lo llegan a hacer (<a href="https://redatam.indec.gob.ar/argbin/RpWebEngine.exe/PortalAction?BASE=CPV2010B">hola REDATAM</a>👋).</p>
+<p>Esta fue la principal razón por la que empecé a buscar (también en el <strong>INEGI</strong>) alguna fuente que me permita hacer cruces más bien <em>quisquillosos</em>, digamos. ¡Y lo logré! Me encontré con la (escuchen qué bien suena) <strong>Encuesta Nacional de la Dinámica Demográfica 2018</strong> (de ahora en adelante <strong>ENADID</strong>) -<a href="https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/nueva_estruc/702825188504.pdf">chusmead aquí</a>-, cuyos principales objetivos son los de <em>proporcionar información estadística relacionada con el nivel y comportamiento de los componentes de la dinámica demográfica: fecundidad, mortalidad y migración (interna e internacional); así como otros temas referidos a la población, los hogares y las viviendas.</em></p>
+<img src="img/enadid.jpg" width="25%" style="display: block; margin: auto;" />
+<h2 id="mucho-ruido-y-pocas-nueces">Mucho ruido y pocas nueces.</h2>
+<p>Vamos al grano, no sin antes (¿y el grano?) puntear lo necesario para incursionar en los datos:</p>
+<p><strong>1. Las herramientas</strong></p>
+<ul>
+<li>El objetivo es obtener una base de datos y procesar la información con <a href="https://www.r-project.org/"><strong>R</strong></a>. Para ello vamos a cargar algunas librerías que son de mucha utilidad para esta bella tarea:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75af00">library</span><span style="color:#111">(</span><span style="color:#111">tidyverse</span><span style="color:#111">)</span>
+<span style="color:#75af00">library</span><span style="color:#111">(</span><span style="color:#111">glue</span><span style="color:#111">)</span>
+<span style="color:#75af00">library</span><span style="color:#111">(</span><span style="color:#111">gt</span><span style="color:#111">)</span>
+<span style="color:#75af00">library</span><span style="color:#111">(</span><span style="color:#111">shades</span><span style="color:#111">)</span>
+<span style="color:#75af00">source</span><span style="color:#111">(</span><span style="color:#d88200">&#34;scripts/aux_funciones.R&#34;</span><span style="color:#111">)</span>
+</code></pre></div><p><strong>2. La fuente de información</strong></p>
+<ul>
+<li>Descarguemos la base de datos directo de la página del <a href="https://www.inegi.org.mx/programas/enadid/2018/#Microdatos"><strong>INEGI</strong></a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">temp</span> <span style="color:#f92672">&lt;-</span> <span style="color:#75af00">tempfile</span><span style="color:#111">()</span>
+<span style="color:#75af00">download.file</span><span style="color:#111">(</span>
+  <span style="color:#111">url</span> <span style="color:#f92672">=</span> <span style="color:#75af00">glue</span><span style="color:#111">(</span><span style="color:#d88200">&#34;https://www.inegi.org.mx/contenidos/programas/enadid/2018/microdatos/base_datos_enadid18_csv.zip&#34;</span><span style="color:#111">),</span> 
+  <span style="color:#111">destfile</span> <span style="color:#f92672">=</span> <span style="color:#111">temp</span><span style="color:#111">)</span>
+
+<span style="color:#75715e">### Me quedo Base total con indicadores sociodemográficos:</span>
+<span style="color:#111">b_total</span> <span style="color:#f92672">&lt;-</span> <span style="color:#75af00">read.csv</span><span style="color:#111">(</span><span style="color:#75af00">unz</span><span style="color:#111">(</span><span style="color:#111">temp</span><span style="color:#111">,</span> <span style="color:#75af00">glue</span><span style="color:#111">(</span><span style="color:#d88200">&#34;TSdem.csv&#34;</span><span style="color:#111">)),</span> <span style="color:#111">header</span> <span style="color:#f92672">=</span> <span style="color:#111">T</span><span style="color:#111">)</span>
+</code></pre></div><p><strong>3. La metadata (la información de la información):</strong></p>
+<ul>
+<li>Tengamos a mano, siempre, <a href="https://www.inegi.org.mx/rnm/index.php/catalog/554/data-dictionary/F6?file_name=TSDem">el diccionario de registro</a> para así saber bien a qué variables refieren las columnas y sus valores.</li>
+</ul>
+<img src="img/enadid.jpg" width="25%" style="display: block; margin: auto;" />
+<h2 id="primeros-resultados2-3">Primeros resultados<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>:</h2>
+<h3 id="vamos-por-la-primera-gran-pregunta-cuántos-habitantes-hay-en-méxico">Vamos por la primera gran pregunta: ¿Cuántos habitantes hay en México?</h3>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">t_pob_total</span> <span style="color:#f92672">&lt;-</span> <span style="color:#111">b_total</span> <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#75af00">summarise</span><span style="color:#111">(</span><span style="color:#111">total_hab</span> <span style="color:#f92672">=</span> <span style="color:#75af00">sum</span><span style="color:#111">(</span><span style="color:#111">fac_viv</span><span style="color:#111">))</span> <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#75af00">ggplot</span><span style="color:#111">(</span><span style="color:#75af00">aes</span><span style="color:#111">(</span><span style="color:#111">y</span> <span style="color:#f92672">=</span> <span style="color:#111">total_hab</span><span style="color:#111">,</span> <span style="color:#111">x</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;x&#34;</span><span style="color:#111">))</span> <span style="color:#f92672">+</span>
+  <span style="color:#75af00">geom_col</span><span style="color:#111">(</span><span style="color:#111">width</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.8</span><span style="color:#111">,</span> <span style="color:#111">fill</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;white&#34;</span><span style="color:#111">)</span> <span style="color:#f92672">+</span>
+  <span style="color:#75af00">geom_text</span><span style="color:#111">(</span><span style="color:#75af00">aes</span><span style="color:#111">(</span><span style="color:#111">label</span> <span style="color:#f92672">=</span> <span style="color:#75af00">paste0</span><span style="color:#111">(</span><span style="color:#75af00">format</span><span style="color:#111">(</span><span style="color:#111">total_hab</span><span style="color:#111">,</span> <span style="color:#111">big.mark</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;.&#34;</span><span style="color:#111">),</span> <span style="color:#d88200">&#34; habitantes&#34;</span><span style="color:#111">)),</span>
+            <span style="color:#111">vjust</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">-0.5</span><span style="color:#111">,</span> <span style="color:#111">size</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span><span style="color:#111">)</span> <span style="color:#f92672">+</span>
+  <span style="color:#75af00">scale_y_continuous</span><span style="color:#111">(</span><span style="color:#111">breaks</span> <span style="color:#f92672">=</span> <span style="color:#75af00">c</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">))</span> <span style="color:#f92672">+</span>
+  <span style="color:#75af00">geom_hline</span><span style="color:#111">(</span><span style="color:#111">yintercept</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#f92672">+</span>
+  <span style="color:#75af00">theme_mex</span><span style="color:#111">()</span> <span style="color:#f92672">+</span>
+  <span style="color:#75715e"># theme(</span>
+  <span style="color:#75715e">#   plot.background = element_rect(fill = mex_colores(&#34;marron&#34;), colour = &#39;gray&#39;)) +</span>
+  <span style="color:#75af00">coord_cartesian</span><span style="color:#111">(</span><span style="color:#111">expand</span> <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">,</span> <span style="color:#111">clip</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;off&#39;</span><span style="color:#111">)</span> <span style="color:#f92672">+</span>
+  <span style="color:#75af00">labs</span><span style="color:#111">(</span><span style="color:#111">title</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">,</span> <span style="color:#111">caption</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">,</span> <span style="color:#111">x</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">,</span> <span style="color:#111">y</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">)</span> <span style="color:#f92672">+</span>
+  <span style="color:#75af00">annotation_custom</span><span style="color:#111">(</span><span style="color:#111">img</span><span style="color:#111">,</span> <span style="color:#111">xmin</span><span style="color:#f92672">=-</span><span style="color:#00a8c8">Inf</span><span style="color:#111">,</span> <span style="color:#111">xmax</span><span style="color:#f92672">=</span><span style="color:#00a8c8">Inf</span><span style="color:#111">,</span> <span style="color:#111">ymin</span><span style="color:#f92672">=-</span><span style="color:#00a8c8">Inf</span><span style="color:#111">,</span> <span style="color:#111">ymax</span><span style="color:#f92672">=</span><span style="color:#00a8c8">Inf</span><span style="color:#111">)</span>
+
+<span style="color:#75715e">#pob_total</span>
+
+
+<span style="color:#75715e"># Por sexo</span>
+<span style="color:#75715e"># colores_mex &lt;- c(mex_colores(&#34;rojo&#34;), mex_colores(&#34;verde&#34;))</span>
+<span style="color:#75715e"># </span>
+<span style="color:#75715e"># t_sexo &lt;- tabulado_x1(b_total, &#34;sexo&#34;) %&gt;% </span>
+<span style="color:#75715e">#   arrange(desc(Porcentaje)) %&gt;%</span>
+<span style="color:#75715e">#   mutate(etiqueta_pos = cumsum(Porcentaje)-.5*Porcentaje)</span>
+<span style="color:#75715e"># </span>
+<span style="color:#75715e"># ggplot(data = t_sexo, </span>
+<span style="color:#75715e">#        aes(x = 2, y = Porcentaje, fill = sexo))+</span>
+<span style="color:#75715e">#   geom_bar(stat = &#34;identity&#34;)+</span>
+<span style="color:#75715e">#   coord_polar(&#34;y&#34;, start = 0) +</span>
+<span style="color:#75715e">#   geom_text(aes(y = etiqueta_pos, label = paste(Porcentaje,&#34;%&#34;, sep = &#34;&#34;)), col = &#34;white&#34;) +</span>
+<span style="color:#75715e">#   lightness(scale_fill_manual(values = colores_mex), scalefac(1.4)) +</span>
+<span style="color:#75715e">#   theme_void() +</span>
+<span style="color:#75715e">#   theme_mex() +</span>
+<span style="color:#75715e">#   theme(legend.position = &#34;top&#34;) +</span>
+<span style="color:#75715e">#   labs(title = &#34;&#34;, x = &#34;&#34;, y = &#34;&#34;, fill = &#34;Sexo&#34;)</span>
+  
+</code></pre></div><h3 id="características-de-los-habitantes">Características de los habitantes</h3>
+<p>¿Cuántos de estos son extranjeros?</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># tabulado_x1(b_total, &#34;lugar_nac&#34;)</span>
+</code></pre></div><h3 id="cuántos-argentinos-y-argentinas-hay-en-méxico">¿Cuántos argentinos y argentinas hay en México?</h3>
+<h3 id="cantidad-de-argentinos-en-méxico">Cantidad de Argentinos en México</h3>
+<h2 id="anexo-metodológico">ANEXO METODOLÓGICO</h2>
+<pre tabindex="0"><code>b_total &lt;- b_total %&gt;% 
+  rename(lugar_nac = p3_7) %&gt;% 
+  mutate(lugar_nac = case_when(lugar_nac == 1 ~ &quot;Aquí, en este estado&quot;,
+                               lugar_nac == 2 ~ &quot;En otro estado&quot;,
+                               lugar_nac == 3 ~ &quot;En Estados Unidos de América&quot;,
+                               lugar_nac == 4 ~ &quot;En otro país&quot;,
+                               lugar_nac == 5 ~ &quot;No especificado&quot;))
+</code></pre><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Vale mencionar que el organismo ofrece una muestra para probar procesamientos (cuyas estimaciones no son válidas) y luego hacer una solicitud para obtener los resultados reales.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Recordemos que la información publicada refiere al año 2018&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Al final del posteo, en la sección <strong>ANEXO</strong> dejaré un bloque de código con todo el proceso de limpieza y asignación de etiquetas que será necesario para tener una salida inteligible de los datos procesados&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>
