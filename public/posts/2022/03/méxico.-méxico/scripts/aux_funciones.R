@@ -77,16 +77,20 @@ png <- magick::image_read(here::here("content", "posts", "2022-03-12-un-arg-en-m
 img <- grid::rasterGrob(png, interpolate = TRUE)
 # annotation_custom(img, ymin = 22, ymax = 31, xmin = 55, xmax = 65.5)
 
+
+
+
 #                        Colores México                       ~~~ ----
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 mex_colores <- function(...) {
   
+  # Fuente - Manual estético del gobierno mexicano: file:///C:/Users/pablo/Downloads/MANUAL_DE_IDENTIDAD_GRAFICA_2018-2024.pdf
   ### Lista de colores de la dnmye
   colores <- c(
-    `verde`  = "#006341",
-    `blacno` = "#FFFFFF",
-    `rojo`   = "#C8102E",
-    `marron` = "#B9975B")
+    `verde`  = "#235B4E",
+    `rojo`   = "#9F2241",
+    `marron` = "#BC955C",
+    `gris`   = "#98989A")
   
   cols <- c(...)
   
@@ -103,8 +107,8 @@ mex_paletas <- function(palette = "tricolor", reverse = FALSE, ...) {
   ### Paleta de colores
   paletas <- list(
     
-    `tricolor`  = c(mex_colores("verde"), mex_colores("blanco"), mex_colores("rojo")),
-    `cuatricolor` = c(mex_colores("verde"), mex_colores("blanco"), mex_colores("rojo"), mex_colores("marron")))
+    `tricolor`  = c(mex_colores("verde"), mex_colores("marron"), mex_colores("rojo")),
+    `cuatricolor` = c(mex_colores("verde"), mex_colores("marron"), mex_colores("rojo"), mex_colores("gris")))
   
   pal <- paletas[[palette]]
   
@@ -114,7 +118,15 @@ mex_paletas <- function(palette = "tricolor", reverse = FALSE, ...) {
 }
 
 
-
+scale_fill_mex <- function(palette = "cuatricolor", discrete = TRUE, reverse = FALSE, ...) {
+  pal <- mex_paletas(palette = palette, reverse = reverse)
+  
+  if (discrete) {
+    discrete_scale("fill", paste0("mex_paletas_", palette), palette = pal, ...)
+  } else {
+    scale_fill_gradientn(colours = pal(256), ...)
+  }
+}
 
 
 #                    Tabulados univariados                    ~~~ ----

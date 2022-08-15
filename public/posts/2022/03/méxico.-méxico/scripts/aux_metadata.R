@@ -43,4 +43,12 @@ b_total <- b_total %>%
                                 edad %in% c(91:100) ~ "91 a 100",
                                 edad > 100          ~ "Más de 100",
                                 edad == 999         ~ "Edad no especificada"),
-         edad_agrup = factor(edad_agrup))
+         edad_agrup = factor(edad_agrup),
+         edad_agrup2 = case_when(edad_2ag == 1 ~ "Menor de 15 años",
+                                 edad_2ag == 2 ~ "De 15 a 29 años",
+                                 edad_2ag == 3 ~ "De 30 a 59 años",
+                                 edad_2ag == 4 ~ "De 60 y más años",
+                                 edad_2ag == 9 ~ "No especificado"),
+         edad_agrup2 = factor(edad_agrup2, levels = c("Menor de 15 años", "De 15 a 29 años",
+                                                      "De 30 a 59 años", "De 60 y más años",
+                                                      "No especificado")))

@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Pablo Tiscornia">
+<meta name="description" content="IdeaAnalizar la concentración de la infraestructura de la administración pública. La hipótesis por detrás de este informe exploratorio asume la presencia de una alta concentración de innmuebles en ciertas zonas, principalmente en aquella denominada “Microcentro”, hecho que genera una gran movilización de personas hacia mismos lugares con una consecuente saturación del sistema de transporte, por un lado y de servicios, por otro.
+Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de personas no es aconsejable a la hora de combatir enfermedades producidas por virus como el COVID, potencia las consecuencias negativas de dicha distribución geográfica de los inmuebles estatales y refuerza la necesidad de impulsar una política pública que apunte a la desconcentración." />
+<meta name="keywords" content=", rstatES" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://r-cosas.netlify.app/posts/2022/08/todos-los-caminos-conducen-a-microcentro/" />
+
+
+    <title>
+        
+            Todos los caminos conducen a Microcentro :: R &#43; Cosas 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://r-cosas.netlify.app/main.2cc54c1a87069bcda84e7bdf658d056b7708bd2ddf759b2fdb13e693d5366808.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://r-cosas.netlify.app/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://r-cosas.netlify.app/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://r-cosas.netlify.app/favicon-16x16.png">
+    <link rel="manifest" href="https://r-cosas.netlify.app/site.webmanifest">
+    <link rel="mask-icon" href="https://r-cosas.netlify.app/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://r-cosas.netlify.app/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Todos los caminos conducen a Microcentro">
+<meta itemprop="description" content="IdeaAnalizar la concentración de la infraestructura de la administración pública. La hipótesis por detrás de este informe exploratorio asume la presencia de una alta concentración de innmuebles en ciertas zonas, principalmente en aquella denominada “Microcentro”, hecho que genera una gran movilización de personas hacia mismos lugares con una consecuente saturación del sistema de transporte, por un lado y de servicios, por otro.
+Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de personas no es aconsejable a la hora de combatir enfermedades producidas por virus como el COVID, potencia las consecuencias negativas de dicha distribución geográfica de los inmuebles estatales y refuerza la necesidad de impulsar una política pública que apunte a la desconcentración."><meta itemprop="datePublished" content="2022-08-14T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-08-14T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2807">
+<meta itemprop="keywords" content="rstatES," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Todos los caminos conducen a Microcentro"/>
+<meta name="twitter:description" content="IdeaAnalizar la concentración de la infraestructura de la administración pública. La hipótesis por detrás de este informe exploratorio asume la presencia de una alta concentración de innmuebles en ciertas zonas, principalmente en aquella denominada “Microcentro”, hecho que genera una gran movilización de personas hacia mismos lugares con una consecuente saturación del sistema de transporte, por un lado y de servicios, por otro.
+Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de personas no es aconsejable a la hora de combatir enfermedades producidas por virus como el COVID, potencia las consecuencias negativas de dicha distribución geográfica de los inmuebles estatales y refuerza la necesidad de impulsar una política pública que apunte a la desconcentración."/>
+
+
+
+
+    <meta property="og:title" content="Todos los caminos conducen a Microcentro" />
+<meta property="og:description" content="IdeaAnalizar la concentración de la infraestructura de la administración pública. La hipótesis por detrás de este informe exploratorio asume la presencia de una alta concentración de innmuebles en ciertas zonas, principalmente en aquella denominada “Microcentro”, hecho que genera una gran movilización de personas hacia mismos lugares con una consecuente saturación del sistema de transporte, por un lado y de servicios, por otro.
+Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de personas no es aconsejable a la hora de combatir enfermedades producidas por virus como el COVID, potencia las consecuencias negativas de dicha distribución geográfica de los inmuebles estatales y refuerza la necesidad de impulsar una política pública que apunte a la desconcentración." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://r-cosas.netlify.app/posts/2022/08/todos-los-caminos-conducen-a-microcentro/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-08-14T00:00:00+00:00" />
+
+
+
+
+
+    <meta property="article:section" content="rstatES" />
+
+
+
+    <meta property="article:published_time" content="2022-08-14 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://r-cosas.netlify.app/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text">$ cd /casa/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://r-cosas.netlify.app/posts/">Blog</a></li><li><a href="https://r-cosas.netlify.app/cursos_r/">Enseñar &#43; R</a></li><li><a href="https://r-cosas.netlify.app/perfil/">Autor</a></li>
+        <div class="submenu">
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">en</a>
+                <div class="dropdown-content">
+                    
+                </div>
+            </li>
+        </div>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        14 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://r-cosas.netlify.app/posts/2022/08/todos-los-caminos-conducen-a-microcentro/">Todos los caminos conducen a Microcentro</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        
+
+
+<div id="idea" class="section level2">
+<h2>Idea</h2>
+<p>Analizar la concentración de la infraestructura de la administración pública. La hipótesis por detrás de este informe exploratorio asume la presencia de una alta concentración de innmuebles en ciertas zonas, principalmente en aquella denominada “Microcentro”, hecho que genera una gran movilización de personas hacia mismos lugares con una consecuente saturación del sistema de transporte, por un lado y de servicios, por otro.</p>
+<p>Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de personas no es aconsejable a la hora de combatir enfermedades producidas por virus como el COVID, potencia las consecuencias negativas de dicha distribución geográfica de los inmuebles estatales y refuerza la necesidad de impulsar una política pública que apunte a la desconcentración.</p>
+<p>Finalmente, se deja como posibilidad el avanzar en una estimación sobre la cantidad de personas que se movilizan hacia esos edificios, posiblemente, en función de la superficie de los inmuebles.</p>
+<p><br></p>
+</div>
+<div id="ubicación." class="section level2">
+<h2>Ubicación.</h2>
+<p>El análisis se centra en la ubicación de los inmuebles del Estado Nacional en la Ciudad de Autónoma de Buenos Aires, dada la relevancia administrativa que presenta la jurisdicción para el país. Esto no impide que el análisis se pueda extender a otras localidades, siempre que la información lo permita.</p>
+<p><br></p>
+</div>
+<div id="fuentes-de-datos." class="section level2">
+<h2>Fuentes de datos.</h2>
+<ul>
+<li><p><a href="https://datos.gob.ar/dataset/otros-inmuebles-propios-estado-nacional-alquilados">Inmuebles Propios del Estado Nacional y Alquilados.</a></p></li>
+<li><p><a href="https://data.buenosaires.gob.ar/dataset/edificios-publicos">Edificios Públicos del Gobierno de la Ciudad de Buenos Aires</a></p>
+<ul>
+<li><p>A Futuro:</p>
+<ul>
+<li><p><a href="https://datos.gob.ar/dataset/jgm-nomina-personal-civil-administracion-publica-nacional-apn">Nómina del personal civil de la Administración Pública Nacional (APN)</a></p></li>
+<li><p>Buscar: Nómina de la administración Pública del Gobierno de la Ciudad de Buenos Aires</p></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br></p>
+</div>
+<div id="urgando-en-la-información-disponible" class="section level2">
+<h2>Urgando en la información disponible</h2>
+<p>La informaciuón con la que se cuenta es aquella referida a los Inmuebles Propios del Estado Nacional y Alquilados, provista por la Dirección Nacional del Registro de Bienes Inmuebles - Agencia de Administración de Bienes del Estado - Jefatura de Gabinete de Ministros.</p>
+<pre class="r"><code># Librerías
+library(tidyverse)
+#devtools::install_github(&quot;holatam/eph&quot;)
+library(eph)
+library(sf)
+library(ggmap)
+library(hrbrthemes)
+#remotes::install_github(&quot;ewenme/ghibli&quot;)
+library(ghibli)
+library(kableExtra)
+library(DataExplorer)
+library(skimr)</code></pre>
+<pre class="r"><code>ARTofR::xxx_title2(&quot;Carga de datos&quot;)
+## 
+## ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+## ##                               Carga de datos                             ----
+## ##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                               Carga de datos                             ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+b_inmuebles_apn &lt;- read_csv(&quot;https://infra.datos.gob.ar/catalog/otros/dataset/6/distribution/6.1/download/inmuebles-estado-nacional.csv&quot;)
+
+
+skim(b_inmuebles_apn)</code></pre>
+<table style="width: auto;" class="table table-condensed">
+<caption>
+<span id="tab:unnamed-chunk-2">Table 1: </span>Data summary
+</caption>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Name
+</td>
+<td style="text-align:left;">
+b_inmuebles_apn
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of rows
+</td>
+<td style="text-align:left;">
+677
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of columns
+</td>
+<td style="text-align:left;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+_______________________
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Column type frequency:
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+________________________
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Group variables
+</td>
+<td style="text-align:left;">
+None
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: character</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+skim_variable
+</th>
+<th style="text-align:right;">
+n_missing
+</th>
+<th style="text-align:right;">
+complete_rate
+</th>
+<th style="text-align:right;">
+min
+</th>
+<th style="text-align:right;">
+max
+</th>
+<th style="text-align:right;">
+empty
+</th>
+<th style="text-align:right;">
+n_unique
+</th>
+<th style="text-align:right;">
+whitespace
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+organizacion
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+19
+</td>
+<td style="text-align:right;">
+57
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+pais
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+26
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+provincia
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+51
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+departamento
+</td>
+<td style="text-align:right;">
+68
+</td>
+<td style="text-align:right;">
+0.90
+</td>
+<td style="text-align:right;">
+7
+</td>
+<td style="text-align:right;">
+18
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+24
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+localidad
+</td>
+<td style="text-align:right;">
+597
+</td>
+<td style="text-align:right;">
+0.12
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+51
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+calle
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:right;">
+51
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+286
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+numero
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+40
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+493
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+situacion_inmueble
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+<td style="text-align:right;">
+9
+</td>
+<td style="text-align:right;">
+17
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+skim_variable
+</th>
+<th style="text-align:right;">
+n_missing
+</th>
+<th style="text-align:right;">
+complete_rate
+</th>
+<th style="text-align:right;">
+mean
+</th>
+<th style="text-align:right;">
+sd
+</th>
+<th style="text-align:right;">
+p0
+</th>
+<th style="text-align:right;">
+p25
+</th>
+<th style="text-align:right;">
+p50
+</th>
+<th style="text-align:right;">
+p75
+</th>
+<th style="text-align:right;">
+p100
+</th>
+<th style="text-align:left;">
+hist
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+codigo_del_inmueble
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+836351179.35
+</td>
+<td style="text-align:right;">
+2367580114.95
+</td>
+<td style="text-align:right;">
+604.00
+</td>
+<td style="text-align:right;">
+200002466.00
+</td>
+<td style="text-align:right;">
+200009029.00
+</td>
+<td style="text-align:right;">
+200028511.00
+</td>
+<td style="text-align:right;">
+9900000577.00
+</td>
+<td style="text-align:left;">
+&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+superficie_aproximada_m2
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+15628.43
+</td>
+<td style="text-align:right;">
+172603.84
+</td>
+<td style="text-align:right;">
+29.76
+</td>
+<td style="text-align:right;">
+427.82
+</td>
+<td style="text-align:right;">
+702.22
+</td>
+<td style="text-align:right;">
+1329.37
+</td>
+<td style="text-align:right;">
+4189755.58
+</td>
+<td style="text-align:left;">
+&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+longitud
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+-56.83
+</td>
+<td style="text-align:right;">
+16.35
+</td>
+<td style="text-align:right;">
+-118.32
+</td>
+<td style="text-align:right;">
+-58.44
+</td>
+<td style="text-align:right;">
+-58.39
+</td>
+<td style="text-align:right;">
+-58.38
+</td>
+<td style="text-align:right;">
+149.12
+</td>
+<td style="text-align:left;">
+&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+latitud
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+-30.34
+</td>
+<td style="text-align:right;">
+16.79
+</td>
+<td style="text-align:right;">
+-41.13
+</td>
+<td style="text-align:right;">
+-34.61
+</td>
+<td style="text-align:right;">
+-34.61
+</td>
+<td style="text-align:right;">
+-34.58
+</td>
+<td style="text-align:right;">
+59.92
+</td>
+<td style="text-align:left;">
+&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;
+</td>
+</tr>
+</tbody>
+</table>
+<p>Una de las primeras observaciones alude a la presencia de varios campos que indican que la información que contiene la base es para absolutamente todos los edificios en manos del Estado Nacional Argentino (propios o en alquiler), sea que estén ubicados dentro o fuera del país y, en el primer caso, en qué jurisdicción.</p>
+<pre class="r"><code>calculate_tabulates(b_inmuebles_apn, &quot;pais&quot;) %&gt;% 
+  arrange(-Freq) %&gt;% 
+  ggplot(aes(x = reorder(pais, Freq), y = Freq)) +
+  geom_col(fill = &quot;forestgreen&quot;, alpha = 0.5, colour = &quot;black&quot;) +
+  geom_hline(yintercept = 0) + 
+  geom_text(aes(label = Freq), hjust = -0.2, size = 3) +
+  labs(title = &quot;Cantidad de inmuebles del Estado Nacional Argentino por país&quot;,
+       caption= &quot;Fuente: https://datos.gob.ar/&quot;,
+       fill = &quot;&quot;, x = &quot;País&quot;, y = &quot;Cantidad&quot;) +
+  coord_flip() +
+  theme_minimal() +
+  theme(plot.margin = margin(0.25, 1, 0.25, 0.1, &quot;cm&quot;),
+                     plot.caption=element_text(face = &quot;italic&quot;, colour = &quot;gray35&quot;,size=6),
+                     title=element_text(size=10, face = &quot;bold&quot;))</code></pre>
+<p><img src="https://r-cosas.netlify.app/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Para este análisis, vamos a quedarnos unicamente con aquellos localizados en Argentina y, a su vez, en la Ciudad Autónoma de Buenos Aires (CABA). Notamos cómo en la Ciudad Autónoma de Buenos Aires, centro adminitrativo del país, se concetra practicamente la totalidad de los inmuebles <strong>(97,5%)</strong></p>
+<pre class="r"><code>b_inmuebles_apn %&gt;% 
+  filter(pais == &quot;Argentina&quot;) %&gt;% 
+  calculate_tabulates( &quot;provincia&quot;, add.percentage = &quot;col&quot;) %&gt;% 
+  mutate(Freq = as.numeric(Freq)) %&gt;% 
+  arrange(-Freq) %&gt;% 
+  ggplot(aes(x = reorder(provincia, Freq), y = Freq)) +
+  geom_col(fill = &quot;forestgreen&quot;, alpha = 0.5, colour = &quot;black&quot;) +
+  geom_hline(yintercept = 0) + 
+  geom_text(aes(label = paste0(Freq, &quot;%&quot;), y = Freq + 0.5), hjust = -0.1, size = 3) +
+  labs(title = &quot;Distribución porcentual de los inmuebles del Estado \n Nacional Argentino por provincia&quot;,
+       caption= &quot;Fuente: https://datos.gob.ar/&quot;,
+       fill = &quot;&quot;, x = &quot;Provincia&quot;, y = &quot;Porcentaje&quot;) +
+  coord_flip() +
+  theme_minimal() +
+  theme(plot.margin = margin(0.25, 1, 0.25, 0.1, &quot;cm&quot;),
+        plot.caption=element_text(face = &quot;italic&quot;, colour = &quot;gray35&quot;,size=6),
+        title=element_text(size=10, face = &quot;bold&quot;)) +
+  #scale_y_continuous(limits = c(0, 110), breaks = c(0, 20, 40, 60, 80 ,100))
+  scale_y_continuous(limits = c(0, 105), breaks = c(0, 20, 40, 60, 80, 100))</code></pre>
+<p><img src="https://r-cosas.netlify.app/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Tal como se mencionó anteriormente, el análisis se centra en la distribución de inmuebles ubicados en la CABA. Una vez seleccionado nuestro universo de análisis, se procede a localizar geográficamente sobre un mapa la ubicación de cada uno de los edificios:</p>
+<pre class="r"><code>b_inmuebles_apn_caba &lt;- b_inmuebles_apn %&gt;% 
+  filter(provincia == &quot;Ciudad Autonoma de Buenos Aires&quot;)
+
+capa_comunas &lt;- st_read(&#39;https://bitsandbricks.github.io/data/CABA_comunas.geojson&#39;)
+## Reading layer `CABA_comunas&#39; from data source 
+##   `https://bitsandbricks.github.io/data/CABA_comunas.geojson&#39; 
+##   using driver `GeoJSON&#39;
+## Simple feature collection with 15 features and 4 fields
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: -58.53152 ymin: -34.70529 xmax: -58.33514 ymax: -34.52754
+## Geodetic CRS:  WGS 84
+
+# Hacemos al objeto uno de tipo espacial
+capa_inmuebles_caba &lt;- b_inmuebles_apn_caba %&gt;% 
+  filter(!is.na(longitud), !is.na(latitud), !is.na(departamento)) %&gt;% 
+  st_as_sf(coords = c(&quot;longitud&quot;, &quot;latitud&quot;), crs = 4326) %&gt;% 
+  mutate(lat = st_coordinates(.)[,1],
+         lon = st_coordinates(.)[,2])
+
+ggplot() +
+  geom_sf(data = capa_comunas) +
+  geom_sf(data = capa_inmuebles_caba, color = &quot;forestgreen&quot;, alpha = 0.4) +
+  labs(title = &quot;Distribución geográfica de los inmuebles del Estado \n Nacional Argentino.&quot;,
+       subtitle = &quot;Ciudad Autónoma de Buenos Aires&quot;,
+       caption= &quot;Fuente: https://datos.gob.ar/&quot;,
+       fill = &quot;&quot;, x = &quot;Provincia&quot;, y = &quot;Cantidad&quot;) +
+  theme_void() +
+  theme(plot.margin = margin(0.25, 1, 0.25, 0.1, &quot;cm&quot;),
+                     plot.caption=element_text(face = &quot;italic&quot;, colour = &quot;gray35&quot;,size=6),
+                     title=element_text(size=10, face = &quot;bold&quot;))</code></pre>
+<p><img src="https://r-cosas.netlify.app/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Podemos notar que ciertos puntos presentan un color intenso. Esto nos permite sospechar que una misma dirección aparece varias veces en la base de datos. Tratemos de quedarnos con una sóla fila por dirección, intentando no perder información en el camino, como la superficie en mts2 del edificio (posible estimador de cantidad de personas por edificio a utilizar en un futuro):</p>
+<p>Para ello, se crea una variable que contenga la información de la calle y el número en un mismo campo, y así poder identificar si se encuentra duplicada la fila.</p>
+<p>Encontramos, efectivamente, que hay 247 direcciones duplicadas y 207 coordenadas duplicadas. Esto se debe, principalmente, a que en aquellos edificios donde el Estado dispone de más de un piso, se registra cada uno como un caso diferente.</p>
+<p>Al mismo tiempo, evidenciamos que el campo de superficie se encuentra de forma agregada por edificio y no por piso:</p>
+<pre class="r"><code>b_inmuebles_apn_caba &lt;- b_inmuebles_apn_caba %&gt;% 
+  mutate(calle_numero = paste0(calle, &quot;_&quot;, numero)) %&gt;% 
+  mutate(duplicados_dir   = ifelse(duplicated(calle_numero) == TRUE, 1, 2),
+         duplicados_coord = ifelse(duplicated(longitud, latitud) == TRUE, 1 ,2))
+
+b_inmuebles_apn_caba %&gt;% 
+  filter(duplicados_dir == 1 | duplicados_coord == 1) %&gt;%  
+  select(codigo_del_inmueble, calle_numero,  departamento, 
+         superficie_aproximada_m2, longitud, latitud, duplicados_dir, duplicados_coord) %&gt;% 
+  arrange(codigo_del_inmueble)
+## # A tibble: 259 x 8
+##    codigo_del_inmueble calle_n~1 depar~2 super~3 longi~4 latitud dupli~5 dupli~6
+##                  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1           200000196 Esmerald~ Comuna~   1082.   -58.4   -34.6       2       1
+##  2           200000390 Avenida ~ Comuna~   1092.   -58.4   -34.6       2       1
+##  3           200000463 25 de Ma~ Comuna~    382.   -58.4   -34.6       1       1
+##  4           200000471 25 de Ma~ Comuna~    382.   -58.4   -34.6       1       1
+##  5           200000481 25 de Ma~ Comuna~    382.   -58.4   -34.6       1       1
+##  6           200000498 25 de Ma~ Comuna~    382.   -58.4   -34.6       1       1
+##  7           200000617 25 de Ma~ Comuna~    299.   -58.4   -34.6       1       1
+##  8           200000625 25 de Ma~ Comuna~    299.   -58.4   -34.6       1       1
+##  9           200000749 Av. 9 de~ Comuna~   1750.   -58.4   -34.6       2       1
+## 10           200001192 Av. Corr~ Comuna~    337.   -58.4   -34.6       1       1
+## # ... with 249 more rows, and abbreviated variable names 1: calle_numero,
+## #   2: departamento, 3: superficie_aproximada_m2, 4: longitud,
+## #   5: duplicados_dir, 6: duplicados_coord
+## # i Use `print(n = ...)` to see more rows</code></pre>
+<p>Procedemos entonces a eliminar los edificios duplicados para evitar el doble conteo. Su peso por superficie, en caso de considerarlo, seguirá siendo posible de analizar.</p>
+<pre class="r"><code># Remuevo casos duplicados, quedandome con los unicos
+b_inmuebles_apn_caba &lt;- b_inmuebles_apn_caba %&gt;% 
+  distinct(calle_numero,  .keep_all = TRUE)
+
+# Hacemos al objeto uno de tipo espacial y remuevo los duplicados por coordenadas
+capa_inmuebles_caba &lt;- b_inmuebles_apn_caba %&gt;% 
+  filter(!is.na(longitud), !is.na(latitud), !is.na(departamento)) %&gt;% 
+  st_as_sf(coords = c(&quot;longitud&quot;, &quot;latitud&quot;), crs = 4326) %&gt;% 
+  mutate(lat = st_coordinates(.)[,1],
+         lon = st_coordinates(.)[,2]) %&gt;% 
+  rename(superficie = superficie_aproximada_m2) %&gt;% 
+  distinct(geometry,  .keep_all = TRUE)
+
+ggplot() +
+  geom_sf(data = capa_comunas) +
+  geom_sf(data = capa_inmuebles_caba, color = &quot;forestgreen&quot;, alpha = 0.4, 
+          aes(size = as.numeric(superficie))) +
+  labs(title = &quot;Distribución geográfica de los inmuebles del Estado \n Nacional Argentino por superficie del inmueble.&quot;,
+       subtitle = &quot;Ciudad Autónoma de Buenos Aires&quot;,
+       caption= &quot;Fuente: https://datos.gob.ar/&quot;,
+       fill = &quot;&quot;, x = &quot;Provincia&quot;, y = &quot;Cantidad&quot;) +
+  theme_void() +
+  theme(plot.margin = margin(0.25, 1, 0.25, 0.1, &quot;cm&quot;),
+                     plot.caption=element_text(face = &quot;italic&quot;, colour = &quot;gray35&quot;,size=6),
+                     title=element_text(size=10, face = &quot;bold&quot;), 
+        legend.position = &quot;none&quot;)</code></pre>
+<p><img src="https://r-cosas.netlify.app/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code># Chequeo duplicados por coordenada
+# capa_inmuebles_caba$duplicado &lt;- ifelse(duplicated(capa_inmuebles_caba$geometry) == TRUE, 1,2)
+# 
+# table(capa_inmuebles_caba$duplicado)</code></pre>
+<p>A continuación se puede ver cómo se distribuyen los edificios según la comuna en donde estén ubicados y notar que tenemos casos donde no se dispone de información sobre a cuál de ellas pertenecen:</p>
+<pre class="r"><code># Frecuencia
+calculate_tabulates(capa_inmuebles_caba, &quot;departamento&quot;) %&gt;% 
+  arrange(-as.numeric(Freq)) %&gt;% 
+  rename(Cantidad = Freq, Comuna = departamento)
+##       Comuna Cantidad
+## 1   Comuna 1      178
+## 2  Comuna 14       32
+## 3   Comuna 2       29
+## 4   Comuna 3       17
+## 5   Comuna 4       15
+## 6  Comuna 13       12
+## 7   Comuna 7        9
+## 8  Comuna 15        8
+## 9   Comuna 6        8
+## 10  Comuna 5        7
+## 11 Comuna 12        6
+## 12  Comuna 9        5
+## 13 Comuna 11        4
+## 14 Comuna 10        3
+## 15  Comuna 8        2</code></pre>
+<pre class="r"><code>#Vemos que hay edificios sin dato en departamento
+#unique(capa_inmuebles_caba$departamento)
+
+# Los quitamos de la base
+capa_inmuebles_caba &lt;- capa_inmuebles_caba %&gt;% 
+  filter(departamento != &quot;&quot;)</code></pre>
+<p>Una vez descartados los casos sin información, se nota claramente la concentración de inmuebles del Estado Nacional en la <strong>Comuna 1</strong>, con más de la mitad de los inmuebles <strong>(52.7)</strong> y muy lejos de la <strong>Comuna 14</strong>, en segundo lugar, quien concentra un <strong>9.6</strong> de los mismos.</p>
+<pre class="r"><code># Tabla
+porc_comuna &lt;- capa_inmuebles_caba %&gt;% 
+  calculate_tabulates(x = &quot;departamento&quot;, add.percentage = &quot;col&quot;)
+
+
+
+# Gráfico
+  ggplot(data = porc_comuna) + 
+  geom_col(aes(x = reorder(departamento, as.numeric(Freq)), y = as.numeric(Freq),
+               fill = ifelse(departamento == &quot;Comuna 1&quot;, &quot;A&quot;,&quot;B&quot;))) +
+  geom_hline(yintercept = 0) +
+  scale_fill_manual(values=c(A=&quot;#AF9699FF&quot;, B=&quot;#F3E8CCFF&quot;)) +
+  geom_text(aes(x = reorder(departamento, as.numeric(Freq)), y = as.numeric(Freq), 
+                label = paste0(Freq, &quot;%&quot;)),
+            hjust = &quot;inward&quot;) +
+  labs(title = &quot;Distribución porcentual de los inmuebles del Estado Nacional \n por Comuna&quot;,
+       x = &quot;Comuna&quot;, y = &quot;Porcentaje&quot;,
+       caption = &quot;Fuente: Jefatura de Gabinete de Ministros. Agencia de Administración de Bienes del Estado. Dirección Nacional del Registro de Bienes Inmuebles.&quot;,
+       fill = &quot;&quot;) +
+  coord_flip() +
+  theme_minimal()+
+  theme(plot.margin = margin(0.25, 1, 0.25, 0.1, &quot;cm&quot;),
+        plot.caption=element_text(face = &quot;italic&quot;, colour = &quot;gray35&quot;,size=6),
+        title=element_text(size=10, face = &quot;bold&quot;), 
+        legend.position = &quot;none&quot;)</code></pre>
+<p><img src="https://r-cosas.netlify.app/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Intenemos armar un mapa de coropletas:</p>
+<pre class="r"><code>inmuebles_x_comuna &lt;- capa_inmuebles_caba %&gt;%
+  mutate(comunas = case_when(departamento == &quot;Comuna 1&quot; ~ 1, departamento == &quot;Comuna 2&quot; ~ 2, 
+                             departamento == &quot;Comuna 3&quot; ~ 3, departamento == &quot;Comuna 4&quot; ~ 4, 
+                             departamento == &quot;Comuna 5&quot; ~ 5, departamento == &quot;Comuna 6&quot; ~ 6,
+                             departamento == &quot;Comuna 7&quot; ~ 7, departamento == &quot;Comuna 8&quot; ~ 8, 
+                             departamento == &quot;Comuna 9&quot; ~ 9, departamento == &quot;Comuna 10&quot; ~ 10,
+                             departamento == &quot;Comuna 11&quot; ~ 11, departamento == &quot;Comuna 12&quot; ~ 12,
+                             departamento == &quot;Comuna 13&quot; ~ 13, departamento == &quot;Comuna 14&quot; ~ 14,
+                             departamento == &quot;Comuna 15&quot; ~ 15)) %&gt;% 
+  filter(!is.na(comunas)) %&gt;%
+  group_by(comunas) %&gt;%
+  summarise(cantidad=n()) %&gt;% 
+  st_set_geometry(NULL)
+
+capa_comunas &lt;- capa_comunas %&gt;%
+  #mutate(comunas = as.numeric(levels(comunas))[comunas]) %&gt;%
+  mutate(comunas = as.numeric(comunas)) %&gt;% 
+  left_join(inmuebles_x_comuna, by = &quot;comunas&quot;)
+
+ggplot() +
+  geom_sf(data = capa_comunas, aes(fill=cantidad), color = NA) +
+  geom_sf_text(data = capa_comunas, aes(label = comunas), size=2.5, colour = &quot;black&quot;) +
+    labs(title = &quot;Inmuebles Propios del Estado Nacional y Alquilados&quot;,
+         subtitle = &quot;Densidad de propiedades&quot;,
+         fill = &quot;Cantidad&quot;,
+         caption= &quot;Fuente: https://datos.gob.ar/&quot;) +
+  theme_void() +
+  scale_fill_distiller(palette = &quot;Spectral&quot;)</code></pre>
+<p><img src="https://r-cosas.netlify.app/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>En el mapa se puede identificar claramente la concentración extrema de oficinas del Estado Nacional en la comuna 1.</p>
+<p>Podríamos precisar en una escala menor esta distribución, por ejemplo, por radios censales:</p>
+<pre class="r"><code>capa_radios &lt;- st_read(&quot;https://bitsandbricks.github.io/data/CABA_rc.geojson&quot;)
+## Reading layer `CABA_rc&#39; from data source 
+##   `https://bitsandbricks.github.io/data/CABA_rc.geojson&#39; using driver `GeoJSON&#39;
+## Simple feature collection with 3554 features and 8 fields
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: -58.53092 ymin: -34.70574 xmax: -58.33455 ymax: -34.528
+## Geodetic CRS:  WGS 84
+
+# Join de capa inmuebles y capa de radios + creo variable de cantidad
+inmuebles_x_radio &lt;- st_join(capa_inmuebles_caba, capa_radios) %&gt;% 
+  group_by(RADIO_ID) %&gt;%
+  summarise(cantidad=n()) %&gt;% 
+  st_set_geometry(NULL)
+
+# Llevo variable de cantidad a la capa de radios
+capa_radios &lt;- capa_radios %&gt;%
+  left_join(inmuebles_x_radio, by = &quot;RADIO_ID&quot;)
+
+# Visualizo distribución de inmuebles por radio censal
+ggplot() +
+  geom_sf(data = capa_radios, aes(fill=cantidad), color = NA) +
+  labs(title = &quot;Inmuebles Propios del Estado Nacional y Alquilados&quot;,
+       subtitle = &quot;Propiedades publicadas&quot;,
+       fill = &quot;Cantidad&quot;,
+       caption= &quot;Fuente: xxx&quot;) +
+  theme_void() +
+  scale_fill_distiller(palette = &quot;Spectral&quot;)</code></pre>
+<p><img src="https://r-cosas.netlify.app/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<pre class="r"><code>ggplot() +
+  geom_sf(data = capa_radios, aes(fill=cantidad)) +
+  labs(title = &quot;Inmuebles Propios del Estado Nacional y Alquilados&quot;,
+       subtitle = &quot;Propiedades publicadas&quot;,
+       fill = &quot;Cantidad&quot;,
+       caption= &quot;Fuente: xxx&quot;) +
+  theme_void() +
+  coord_sf(xlim = c(-58.39, -58.35), ylim = c(-34.63, -34.56), expand = FALSE)+
+  scale_fill_distiller(palette = &quot;Spectral&quot;)</code></pre>
+<p><img src="https://r-cosas.netlify.app/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Otra forma de visualizar la información es a través de los gráficos de densidad. En este caso, se puede identificar una clara zona predominante (como vimos, principalmente en la Comuna 1) y pequeñas zonas poco densas en cuanto a la cantidad de edificios del Estado.</p>
+<pre class="r"><code>bbox &lt;- make_bbox(lon = b_inmuebles_apn_caba$longitud, lat = b_inmuebles_apn_caba$latitud)
+
+bbox
+##      left    bottom     right       top 
+## -58.53800 -34.68466 -58.33475 -34.52943
+
+CABA &lt;- get_stamenmap(bbox, zoom = 11, maptype = &quot;terrain&quot;)
+
+# ggmap(CABA)
+
+### Para replicar
+theme_caba_map &lt;- theme (plot.margin = margin(0.25, 1, 0.25, 0.1, &quot;cm&quot;), #ajustar los margenes del gráfico
+                       title=element_text(size=10, face = &quot;bold&quot;), #tamaño de titulo del mapa
+                       legend.key.size = unit(0.3, &quot;cm&quot;), #alto de cuadrados de referencia
+                       legend.key.width = unit(0.4,&quot;cm&quot;), #ancho de cuadrados de referencia 
+                       legend.position=&quot;right&quot;, #ubicacion de leyenda
+                       legend.direction = &quot;vertical&quot;, #dirección de la leyenda
+                       legend.title=element_text(size=8, face = &quot;bold&quot;), #tamaño de titulo de leyenda
+                       legend.text=element_text(size=7), #tamaño de texto de leyenda
+                       plot.caption=element_text(face = &quot;italic&quot;, colour = &quot;gray35&quot;,size=6), #tamaño de nota al pie
+                       axis.text = element_blank(), #texto eje X e Y
+                       axis.ticks = element_blank())
+
+ggmap(CABA) +
+  geom_point(data = b_inmuebles_apn_caba, aes(x = longitud, y = latitud),
+  color = &quot;forestgreen&quot;, alpha = .5) +
+  stat_density_2d(data = b_inmuebles_apn_caba, aes(x = longitud, y = latitud, 
+                      fill = stat(level)),alpha = .4,
+              bins = 25,
+              geom = &quot;polygon&quot;) +
+  labs(title=&quot;Distribución de los inmuebles del Estado Nacional&quot;,
+       subtitle=&quot;Ciudad Autónoma de Buenos Aires&quot;,
+       x=&quot;&quot;,
+       y=&quot;&quot;,
+       caption= &quot;Fuente: https://datos.gob.ar/&quot;,
+       fill=&quot;Nivel&quot;)+
+  scale_fill_distiller(palette = &quot;Spectral&quot;) +
+  #scale_fill_gradientn(colors = RColorBrewer::brewer.pal(7, &quot;YlOrRd&quot;))
+  #theme_caba_c
+  theme_minimal() +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x.bottom = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y.left = element_blank(),
+        plot.margin = margin(0.25, 1, 0.25, 0.1, &quot;cm&quot;),
+        plot.caption=element_text(face = &quot;italic&quot;, colour = &quot;gray35&quot;,size=6),
+        legend.position = &quot;none&quot;,
+        title=element_text(size=10, face = &quot;bold&quot;))</code></pre>
+<p><img src="https://r-cosas.netlify.app/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>(Breve) Conclusión.</p>
+<p>Desde el punto de vista de la movilidad de personas al trabajo, comprobamos que (casi) todes vamos para el mismo lado, o dicho de otra forma, que más de la mitad de los inmuebles del Estado se ubican en una sóla Comuna lo que, inevitablemente, genera un flujo de personas hacia la misma dirección. Esto, por un lado, conlleva consecuencias negativas importantes tanto para la calidad como para la capacidad de servicio del transporte público (y que, a su vez, afecta a la calidad de vida de las personas).</p>
+<p>Por otro lado, una mejor redistribución de los inmuebles podría generar una mejor distribución de los recursos económicos que se movilizan para ofrecer servicios a las personas que deben movilizarse hacia esos destinos para trabajar. Y no sólo nos referimos a servicios desde una perspectiva comercial. La redistribución podría facilitar el acceso a la seguridad y a la salud de la población del resto de las comunas, por ejemplo.</p>
+<p>Se podría decir, en su momento, que una distribución espacial como la actual estaba fundamentada en la ventaja que proporcionaba el hecho de estar cerca, fisicamente, del centro administrativo del país. Hoy ese motivo puede ser relativizado, cuando muchas de las razones para acercarse ya no siguen vigente (tramites online, operatorias administrativas, bancarias, entre otras, en su gran proporción hoy digitales).
+¿Cómo sigue?</p>
+<p>Queda a futuro poder avanzar sobre una estimación de la cantidad de personas que se movilizan hacia estos inmuebles concentrados geograficamente que posee el Estado Nacional, sumando información sobre la pertinencia de permanecer en dicha zona y la posibilidad de implementar una política pública de relocalización.</p>
+<p>También queda para seguir sumando la distribución de los inmuebles propios o alguilados que le corresponden a la Ciudad Autónoma de Buenos Aires.</p>
+</div>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://r-cosas.netlify.app/tags/rstates/">rstatES</a></span>
+        
+    </p>
+
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://r-cosas.netlify.app/categories/rstates/">rstatES</a></span>
+        
+    </p>
+
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        2807 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2022-08-13 19:00
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fr-cosas.netlify.app%2fposts%2f2022%2f08%2ftodos-los-caminos-conducen-a-microcentro%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fr-cosas.netlify.app%2fposts%2f2022%2f08%2ftodos-los-caminos-conducen-a-microcentro%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Todos%20los%20caminos%20conducen%20a%20Microcentro&amp;caption=Todos%20los%20caminos%20conducen%20a%20Microcentro&amp;canonicalUrl=https%3a%2f%2fr-cosas.netlify.app%2fposts%2f2022%2f08%2ftodos-los-caminos-conducen-a-microcentro%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Todos%20los%20caminos%20conducen%20a%20Microcentro&amp;body=https%3a%2f%2fr-cosas.netlify.app%2fposts%2f2022%2f08%2ftodos-los-caminos-conducen-a-microcentro%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2fr-cosas.netlify.app%2fposts%2f2022%2f08%2ftodos-los-caminos-conducen-a-microcentro%2f&amp;media=https%3a%2f%2fr-cosas.netlify.app%2fposts%2f2022%2f08%2ftodos-los-caminos-conducen-a-microcentro%2f;description=Todos%20los%20caminos%20conducen%20a%20Microcentro" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fr-cosas.netlify.app%2fposts%2f2022%2f08%2ftodos-los-caminos-conducen-a-microcentro%2f&amp;title=Todos%20los%20caminos%20conducen%20a%20Microcentro&amp;summary=Todos%20los%20caminos%20conducen%20a%20Microcentro&amp;source=https%3a%2f%2fr-cosas.netlify.app%2fposts%2f2022%2f08%2ftodos-los-caminos-conducen-a-microcentro%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2fr-cosas.netlify.app%2fposts%2f2022%2f08%2ftodos-los-caminos-conducen-a-microcentro%2f&amp;resubmit=true&amp;title=Todos%20los%20caminos%20conducen%20a%20Microcentro" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2fr-cosas.netlify.app%2fposts%2f2022%2f08%2ftodos-los-caminos-conducen-a-microcentro%2f;title=Todos%20los%20caminos%20conducen%20a%20Microcentro" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Todos%20los%20caminos%20conducen%20a%20Microcentro%20https%3a%2f%2fr-cosas.netlify.app%2fposts%2f2022%2f08%2ftodos-los-caminos-conducen-a-microcentro%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fr-cosas.netlify.app%2fposts%2f2022%2f08%2ftodos-los-caminos-conducen-a-microcentro%2f&amp;t=Todos%20los%20caminos%20conducen%20a%20Microcentro" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Todos%20los%20caminos%20conducen%20a%20Microcentro&amp;url=https%3a%2f%2fr-cosas.netlify.app%2fposts%2f2022%2f08%2ftodos-los-caminos-conducen-a-microcentro%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+      </div>
+
+    
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            <span><a href="https://r-cosas.netlify.app">Pablo Tiscornia</a></span>
+            
+            <span><a href="https://r-cosas.netlify.app/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://r-cosas.netlify.app/bundle.min.1242af27a8d6b4a45f5cea5a09e7d754c7dbaa6966edc40bf1f2d0ee9ed15bdb744dec541eae4fd65b521841a2a2e2bb4b4f61c8f385258d4bd063c3ffd58ffd.js" integrity="sha512-EkKvJ6jWtKRfXOpaCefXVMfbqmlm7cQL8fLQ7p7RW9t0TexUHq5P1ltSGEGiouK7S09hyPOFJY1L0GPD/9WP/Q=="></script>
+
+
+
+    </body>
+</html>
