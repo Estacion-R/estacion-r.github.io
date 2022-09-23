@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>eph on R &#43; Cosas</title>
+    <link>https://r-cosas.netlify.app/tags/eph/</link>
+    <description>Recent content in eph on R &#43; Cosas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-AR</language>
+    <lastBuildDate>Wed, 09 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://r-cosas.netlify.app/tags/eph/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ranking-solterxs</title>
+      <link>https://r-cosas.netlify.app/draft/ranking-solterxs/</link>
+      <pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://r-cosas.netlify.app/draft/ranking-solterxs/</guid>
+      <description>#.......................Configuración .Rmd.......................knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = TRUE)IntroducciónEste post nace como ejercicio para probar los mapas de XXX del autor XXX. El “caso de uso” será conocer la participación de personas solteras sobre el conjunto de la población mayor de 18 años en los 31 principales aglomerados relevados por la Encuesta Permanente de Hogares (EPH-INDEC)1
+Una de las razones para elegir este caso de uso, además de la curiosidad, es el “match” que hay entre el tipo de visualización y el dato disponible.</description>
+    </item>
+    
+  </channel>
+</rss>

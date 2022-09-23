@@ -70,7 +70,7 @@ params:
   logo:
     logoHomeLink: /
     logoMark: '>'
-    logoText: $ cd /casa/
+    logoText: $ cd /R/casa/
   social:
     - name: twitter
       url: https://twitter.com/pabblo_h
@@ -101,6 +101,9 @@ menu:
       weight: 20
     - name: Autor
       url: perfil/
+      weight: 30  
+    - name: cafecito
+      url: cafecito/
       weight: 30  
 markup:
   goldmark:

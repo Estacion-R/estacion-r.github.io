@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tendencias on R &#43; Cosas</title>
+    <link>https://r-cosas.netlify.app/tags/tendencias/</link>
+    <description>Recent content in tendencias on R &#43; Cosas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-AR</language>
+    <lastBuildDate>Wed, 01 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://r-cosas.netlify.app/tags/tendencias/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>R &#43; Tendencias de Google</title>
+      <link>https://r-cosas.netlify.app/draft/r-tendencias-de-google/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://r-cosas.netlify.app/draft/r-tendencias-de-google/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Pablo Tiscornia">
+<meta name="description" content="#.......................Configuración .Rmd.......................knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = TRUE)IntroducciónEste post nace como ejercicio para probar los mapas de XXX del autor XXX. El “caso de uso” será conocer la participación de personas solteras sobre el conjunto de la población mayor de 18 años en los 31 principales aglomerados relevados por la Encuesta Permanente de Hogares (EPH-INDEC)1
+Una de las razones para elegir este caso de uso, además de la curiosidad, es el “match” que hay entre el tipo de visualización y el dato disponible." />
+<meta name="keywords" content=", rstatES, mapas, eph" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://r-cosas.netlify.app/draft/ranking-solterxs/" />
+
+
+    <title>
+        
+            ranking-solterxs :: R &#43; Cosas 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://r-cosas.netlify.app/main.2cc54c1a87069bcda84e7bdf658d056b7708bd2ddf759b2fdb13e693d5366808.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://r-cosas.netlify.app/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://r-cosas.netlify.app/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://r-cosas.netlify.app/favicon-16x16.png">
+    <link rel="manifest" href="https://r-cosas.netlify.app/site.webmanifest">
+    <link rel="mask-icon" href="https://r-cosas.netlify.app/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://r-cosas.netlify.app/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="ranking-solterxs">
+<meta itemprop="description" content="#.......................Configuración .Rmd.......................knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = TRUE)IntroducciónEste post nace como ejercicio para probar los mapas de XXX del autor XXX. El “caso de uso” será conocer la participación de personas solteras sobre el conjunto de la población mayor de 18 años en los 31 principales aglomerados relevados por la Encuesta Permanente de Hogares (EPH-INDEC)1
+Una de las razones para elegir este caso de uso, además de la curiosidad, es el “match” que hay entre el tipo de visualización y el dato disponible."><meta itemprop="datePublished" content="2022-02-09T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-02-09T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1051">
+<meta itemprop="keywords" content="rstatES,mapas,eph," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ranking-solterxs"/>
+<meta name="twitter:description" content="#.......................Configuración .Rmd.......................knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = TRUE)IntroducciónEste post nace como ejercicio para probar los mapas de XXX del autor XXX. El “caso de uso” será conocer la participación de personas solteras sobre el conjunto de la población mayor de 18 años en los 31 principales aglomerados relevados por la Encuesta Permanente de Hogares (EPH-INDEC)1
+Una de las razones para elegir este caso de uso, además de la curiosidad, es el “match” que hay entre el tipo de visualización y el dato disponible."/>
+
+
+
+
+    <meta property="og:title" content="ranking-solterxs" />
+<meta property="og:description" content="#.......................Configuración .Rmd.......................knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = TRUE)IntroducciónEste post nace como ejercicio para probar los mapas de XXX del autor XXX. El “caso de uso” será conocer la participación de personas solteras sobre el conjunto de la población mayor de 18 años en los 31 principales aglomerados relevados por la Encuesta Permanente de Hogares (EPH-INDEC)1
+Una de las razones para elegir este caso de uso, además de la curiosidad, es el “match” que hay entre el tipo de visualización y el dato disponible." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://r-cosas.netlify.app/draft/ranking-solterxs/" /><meta property="article:section" content="draft" />
+<meta property="article:published_time" content="2022-02-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-02-09T00:00:00+00:00" />
+
+
+
+
+
+    <meta property="article:section" content="rstatES" />
+
+    <meta property="article:section" content="mapas" />
+
+
+
+    <meta property="article:published_time" content="2022-02-09 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://r-cosas.netlify.app/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text">$ cd /casa/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://r-cosas.netlify.app/posts/">Blog</a></li><li><a href="https://r-cosas.netlify.app/cursos_r/">Enseñar &#43; R</a></li><li><a href="https://r-cosas.netlify.app/perfil/">Autor</a></li>
+        <div class="submenu">
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">en</a>
+                <div class="dropdown-content">
+                    
+                </div>
+            </li>
+        </div>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://r-cosas.netlify.app/draft/ranking-solterxs/">ranking-solterxs</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                
+
+
+<pre class="r"><code>     #.......................Configuración .Rmd.......................
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = TRUE)</code></pre>
+<div id="introducción" class="section level2">
+<h2>Introducción</h2>
+<p>Este post nace como ejercicio para probar los mapas de XXX del autor XXX. El “caso de uso” será conocer la participación de personas solteras sobre el conjunto de la población mayor de 18 años en los 31 principales aglomerados relevados por la Encuesta Permanente de Hogares (EPH-INDEC)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Una de las razones para elegir este caso de uso, además de la curiosidad, es el “match” que hay entre el tipo de visualización y el dato disponible. La fuente de datos (EPH) es una encuesta a hogares, de medición continua y tiene entre sus principales objetivos relevar información sobre el mercado de trabajo argentino y, al mismo tiempo, brindar datos sobre las principales características socio demográficas de la población entre censo y censo<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<p>A pesar de esta enorme potencialidad, lo que la convierte entre los operativos más importantes realizados por el Sistema Estadístico Nacional Argentino, la encuesta presenta una limitación a considerar, que es la extensión, la representatividad de sus datos con alcance limitado a los 31 principales aglomerados urbanos[^3], y no sobre el total de la población. Esto hace que a la hora de querer analizar y detectar patrones espaciales, el dar información por aglomerado impide “pintar” regiones mayores al centroide específico de la mancha urbana en cuestión.</p>
+<p>[^3] Todas las capitales de las provincias y aquellos aglomerados de 100.000 o más habitantes.</p>
+<p>Dicho esto… luz, cámara y ¡acción!</p>
+<pre class="r"><code>##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+##                              Cargo librerías                             ----
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+library(ARTofR)
+library(eph)
+library(tidyverse)
+library(sf)
+library(geoAr)
+library(datawizard)
+library(ggbump)
+library(herramientas)</code></pre>
+<div id="datos" class="section level3">
+<h3>Datos</h3>
+<p>Comencemos por descargar los datos que nos permitan desarrollar los indicadores en cuestión. Para obtener los de la Encuesta Permanente de Hogares podemos disfrutar de las bondades del paquete <code>{eph}</code><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> y su función <code>get_microdata()</code>:</p>
+<pre class="r"><code>eph_ind &lt;- get_microdata(year = 2021, trimester = 2, type = &quot;individual&quot;)
+
+head(eph_ind, 5)</code></pre>
+<pre><code>## # A tibble: 5 x 177
+##   CODUSU       ANO4 TRIME~1 NRO_H~2 COMPO~3   H15 REGION MAS_500 AGLOM~4 PONDERA
+##   &lt;chr&gt;       &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;int&gt; &lt;int&gt;  &lt;int&gt; &lt;chr&gt;     &lt;int&gt;   &lt;int&gt;
+## 1 TQRMNOPYQH~  2021       2       1       1     1     40 S            23     214
+## 2 TQRMNOPYQH~  2021       2       1       2     1     40 S            23     214
+## 3 TQRMNOPYSH~  2021       2       1       1     1     40 S            23     192
+## 4 TQRMNOPYSH~  2021       2       1       2     1     40 S            23     192
+## 5 TQRMNOPYSH~  2021       2       1       3     1     40 S            23     192
+## # ... with 167 more variables: CH03 &lt;int&gt;, CH04 &lt;int&gt;, CH05 &lt;chr&gt;, CH06 &lt;int&gt;,
+## #   CH07 &lt;int&gt;, CH08 &lt;int&gt;, CH09 &lt;int&gt;, CH10 &lt;int&gt;, CH11 &lt;int&gt;, CH12 &lt;int&gt;,
+## #   CH13 &lt;int&gt;, CH14 &lt;chr&gt;, CH15 &lt;int&gt;, CH15_COD &lt;int&gt;, CH16 &lt;int&gt;,
+## #   CH16_COD &lt;int&gt;, NIVEL_ED &lt;int&gt;, ESTADO &lt;int&gt;, CAT_OCUP &lt;int&gt;,
+## #   CAT_INAC &lt;int&gt;, IMPUTA &lt;int&gt;, PP02C1 &lt;int&gt;, PP02C2 &lt;int&gt;, PP02C3 &lt;int&gt;,
+## #   PP02C4 &lt;int&gt;, PP02C5 &lt;int&gt;, PP02C6 &lt;int&gt;, PP02C7 &lt;int&gt;, PP02C8 &lt;int&gt;,
+## #   PP02E &lt;int&gt;, PP02H &lt;int&gt;, PP02I &lt;int&gt;, PP03C &lt;int&gt;, PP03D &lt;int&gt;, ...
+## # i Use `colnames()` to see all variable names</code></pre>
+<p>Con la base podemos pensar la tabla con el indicador que nos muestre el porcentaje de personas solteras:</p>
+<pre class="r"><code>### 
+tabulado &lt;- eph_ind %&gt;%
+  filter(CH06 &gt;= 18) %&gt;% 
+  count(AGLOMERADO, CH07, wt = PONDERA) %&gt;% 
+  group_by(AGLOMERADO) %&gt;% 
+  mutate(porc = round(n / sum(n) * 100,2),
+         AGLOMERADO = as.factor(AGLOMERADO)) %&gt;% ungroup() %&gt;% 
+  filter(CH07 == 5) %&gt;% 
+  select(AGLOMERADO, porc)</code></pre>
+</div>
+</div>
+<div id="el-mapa." class="section level2">
+<h2>El mapa.</h2>
+<p>Para poder referenciar el indicador al punto geográfico donde se ubica el aglomerado a quien corresponde vamos a necesitar dos cosas:</p>
+<ul>
+<li>Una capa de puntos con la ubicación (latitud y longitud) los aglomerados. Para esto nos hacemos uso de la cartografía que pone a disposición el INDEC<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></li>
+</ul>
+<pre class="r"><code>### Capa de aglomerados
+aglos &lt;- sf::st_read(&#39;capas/aglomerados_eph.json&#39;)</code></pre>
+<pre><code>## Reading layer `aglomerados_eph&#39; from data source 
+##   `C:\Users\pablo\Documents\Pablo\Proyectos\Blogs\r-cosas.github.io\content\posts\2022-08-17-ranking-solterxs\capas\aglomerados_eph.json&#39; 
+##   using driver `GeoJSON&#39;
+## replacing null geometries with empty geometries
+## Simple feature collection with 81 features and 11 fields (with 2 geometries empty)
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: 3219646 ymin: 3918704 xmax: 4511982 ymax: 7342026
+## Projected CRS: POSGAR 94 / Argentina 3</code></pre>
+<pre class="r"><code>centroides_aglomerados &lt;-  aglos %&gt;%
+  filter(!st_is_empty(geometry)) %&gt;%
+  group_by(eph_codagl) %&gt;%
+  summarise(AGLOMERADO = as.integer(paste(unique(eph_codagl))),
+            nombre_aglomerado = unique(eph_aglome)[1]) %&gt;%
+  st_centroid() %&gt;% 
+  st_transform(&#39;+proj=longlat +datum=WGS84&#39;)
+
+centroides_aglomerados &lt;- centroides_aglomerados %&gt;% 
+  bind_cols(
+    sf::st_coordinates(centroides_aglomerados) %&gt;%
+      as_tibble() %&gt;%
+      rename(lon=X, lat=Y)) %&gt;%
+  as_tibble()</code></pre>
+<ul>
+<li>Una capa de polígonos, con la delimitación administrativa de las provincias, para darle un marco espacial a los puntos (pensemos que los aglomerados no son el punto medio de cada provincia pero sí dicen mucho de ella). Para esto vamos a usar el paquete <code>{geoAr}</code>[^6] con su función <code>get_geo()</code> que permite disponver de mapas de Argentina de forma muy sencilla con diferentes tipos de subdivisión.</li>
+</ul>
+<p>[^6] AGREGAR cita al paquete</p>
+<pre class="r"><code>### Capa de provincias argentinas.
+mapa_arg &lt;- get_geo(&quot;ARGENTINA&quot;, level = &quot;provincia&quot;)</code></pre>
+</div>
+<div id="dayos-y-mapas" class="section level2">
+<h2>Dayos y mapas</h2>
+<p>Una vez que tenemos el dato y, a su vez, preparado el escenario donde montarlos, vamos por la síntesis de ambos:</p>
+<pre class="r"><code>tabla_graf &lt;- centroides_aglomerados %&gt;% 
+  mutate(AGLOMERADO = as.factor(AGLOMERADO)) %&gt;%
+  left_join(tabulado) %&gt;% 
+  mutate(
+    col_y = rank(-porc) %&gt;% 
+      data_rescale(to=c(-15, -65)),
+    sigmoid_end = 22,
+    col_x_start = 25,
+    col_x_end = porc %&gt;%  
+      data_rescale(to=c(25, 110), range = c(0, max(porc))),
+    area_label = paste0(round(porc, 1), &quot;%&quot;)
+  )</code></pre>
+</div>
+<div id="la-visualización" class="section level2">
+<h2>La visualización</h2>
+<pre class="r"><code>grafico &lt;- ggplot(tabla_graf) +
+  geom_sf(data=mapa_arg, size = .3, fill = &quot;transparent&quot;, color = &quot;gray40&quot;) +
+  geom_point(aes(x=lon, y=lat, color=porc)) +
+  geom_sigmoid(
+    aes(x=lon, y=lat, xend=sigmoid_end, yend=col_y, group=nombre_aglomerado, color=porc)
+  ) +
+  geom_text(
+    aes(label=nombre_aglomerado, x=sigmoid_end, y=col_y, color=porc), 
+    hjust=1, size=4, vjust=0, nudge_y = 0.5, alpha=0.8,
+  ) +
+  geom_segment(
+    aes(x=col_x_start, xend=col_x_end, y=col_y, yend=col_y, color=porc), 
+    size = 4.2, alpha = .9, size = 1, 
+    lineend = &quot;round&quot;
+  ) +
+  geom_text(
+    aes(label=area_label, x=col_x_end, y=col_y, color=porc), 
+    hjust=-0.1, size=4, nudge_x = .3
+  ) +
+  labs(
+    title=&quot;Porcentaje de personas (+18) solteras por aglomerado&quot;,
+    subtitle = &quot;31 principales aglomerados. 2do rimestre de 2021&quot;,
+    caption = &quot;Elaboración propia en base a la EPH-INDEC&quot;
+  ) +
+  coord_sf(clip = &quot;off&quot;) +
+  comunicacion::scale_fill_dnmye(discrete = F) +
+  comunicacion::scale_color_dnmye(discrete = F) +
+  theme_void() +
+  theme(plot.margin = margin(.5, 1, .5, .5, &quot;cm&quot;),
+        legend.position = &quot;none&quot;,
+        plot.background = element_rect(fill = &quot;black&quot;),
+        plot.caption = element_text(color = &quot;gray40&quot;, size = 15),
+        plot.title = element_text(color = &quot;gray40&quot;, size = 30, family = &quot;Helvetica&quot;, face = &quot;bold&quot;),
+        plot.subtitle = element_text(color = &quot;gray40&quot;, size = 25))
+
+print(grafico)</code></pre>
+<p><img src="https://r-cosas.netlify.app/draft/ranking-solterxs/index_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>ggsave(&quot;ranking_porcs.png&quot;,width = 25, height = 10, dpi = 300)</code></pre>
+<pre class="r"><code>knitr::include_graphics(&quot;ranking_porcs.png&quot;)</code></pre>
+<p><img src="ranking_porcs.png" width="3750" height="120%" /></p>
+<p><img src="https://r-cosas.netlify.app/draft/ranking-solterxs/index_files/figure-html/unnamed-chunk-10-1.png" width="2400" /></p>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="fn1"><p>AGREGAR link a la encuesta<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Recordar que los censos se realizan en Argentina y en la mayoría de los países, cada 10 años.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>AGREGAR cita al paquete y link<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>AGREGAR link a página del INDEC con la cartografía para la EPH.<a href="#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://r-cosas.netlify.app/tags/rstates/">rstatES</a></span>
+        <span class="tag"><a href="https://r-cosas.netlify.app/tags/mapas/">mapas</a></span>
+        <span class="tag"><a href="https://r-cosas.netlify.app/tags/eph/">eph</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://r-cosas.netlify.app/categories/rstates/">rstatES</a></span>
+        <span class="tag"><a href="https://r-cosas.netlify.app/categories/mapas/">mapas</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            <span><a href="https://r-cosas.netlify.app">Pablo Tiscornia</a></span>
+            
+            <span><a href="https://r-cosas.netlify.app/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://r-cosas.netlify.app/bundle.min.1242af27a8d6b4a45f5cea5a09e7d754c7dbaa6966edc40bf1f2d0ee9ed15bdb744dec541eae4fd65b521841a2a2e2bb4b4f61c8f385258d4bd063c3ffd58ffd.js" integrity="sha512-EkKvJ6jWtKRfXOpaCefXVMfbqmlm7cQL8fLQ7p7RW9t0TexUHq5P1ltSGEGiouK7S09hyPOFJY1L0GPD/9WP/Q=="></script>
+
+
+
+    </body>
+</html>

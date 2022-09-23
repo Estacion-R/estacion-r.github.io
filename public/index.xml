@@ -18,6 +18,25 @@ Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de 
     </item>
     
     <item>
+      <title>ranking-solterxs</title>
+      <link>https://r-cosas.netlify.app/draft/ranking-solterxs/</link>
+      <pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://r-cosas.netlify.app/draft/ranking-solterxs/</guid>
+      <description>#.......................Configuración .Rmd.......................knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = TRUE)IntroducciónEste post nace como ejercicio para probar los mapas de XXX del autor XXX. El “caso de uso” será conocer la participación de personas solteras sobre el conjunto de la población mayor de 18 años en los 31 principales aglomerados relevados por la Encuesta Permanente de Hogares (EPH-INDEC)1
+Una de las razones para elegir este caso de uso, además de la curiosidad, es el “match” que hay entre el tipo de visualización y el dato disponible.</description>
+    </item>
+    
+    <item>
+      <title>R &#43; Tendencias de Google</title>
+      <link>https://r-cosas.netlify.app/draft/r-tendencias-de-google/</link>
+      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://r-cosas.netlify.app/draft/r-tendencias-de-google/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Cursos &#43; R</title>
       <link>https://r-cosas.netlify.app/cursos_r/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
