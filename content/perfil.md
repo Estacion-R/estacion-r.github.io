@@ -6,7 +6,7 @@ title:
 
 ### Hola! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">, soy Pablo Tiscornia
 
-Licenciado en Sociología (Universidad de Buenos Aires - UBA), especializado en metodología, recolección, procesamiento y análisis de información estadística. Últimamente me encuentro enfocado en la mejora de procesos de trabajo vinculados al tratamiento de datos y en el desarrollo de estrategias para la apertura de datos. Todo con R bajo el braso.
+Licenciado en Sociología (Universidad de Buenos Aires - UBA), especializado en metodología, recolección, procesamiento y análisis de información estadística. Últimamente me encuentro enfocado en la mejora de procesos de trabajo vinculados al tratamiento de datos y en el desarrollo de estrategias para la apertura de datos. Todo con R bajo el brazo.
 
 He participado en la organización y difusión de la comunidad [R en Buenos Aires](https://renbaires.github.io/) y como coautor en el desarrollo del paquete [{eph}](https://holatam.github.io/eph/), cuyo principal objetivo es facilitar herramientas y el acceso a datos de la Encuesta Permanente de Hogares - INDEC, mediante el lenguaje de programación R.
 

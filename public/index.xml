@@ -37,29 +37,37 @@ Una de las razones para elegir este caso de uso, además de la curiosidad, es el
     </item>
     
     <item>
-      <title>Cursos &#43; R</title>
-      <link>https://r-cosas.netlify.app/cursos_r/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://r-cosas.netlify.app/cursos_r/</guid>
-      <description>&amp;ndash;&amp;gt; Ciencias Sociales Computacionales y Humanidades Digitales (IDEAS-UNSAM) Módulo 1. Introducción a la Ciencia de Datos para Científicos Sociales
-• ¿Qué es la ciencia de datos? Relación y aplicaciones en las ciencias sociales
-• Elementos básicos de programación estadística en R. Objetos (vectores, listas, matrices, data frames, tibbles). Funciones y loops.
-• Procesamiento de datos con tidyverse. Data wrangling (limpieza de datos). Análisis estadístico descriptivo con R.
-&amp;ndash;&amp;gt; Big Data e Inteligencia Territorial (FLACSO) Módulo II.</description>
-    </item>
-    
-    <item>
-      <title>Pablo Tiscornia</title>
+      <title></title>
       <link>https://r-cosas.netlify.app/perfil/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://r-cosas.netlify.app/perfil/</guid>
       <description>| Presentación
-Soy Sociólogo y docente, especialista en producción, análisis y difusión de datos.
-Mi área de interés es el diseño, recolección, procesamiento y análisis de información estadística, principalmente en temáticas socio-demográficas, vinculadas también a la implementación y evaluación de políticas públicas.
-| Desempeño profesional
-Hoy me encuentro coordinando el Área de Datos en la Dirección de Mercados y Estadísticas (DNMyE) del Ministerio de Turismo y Deportes de la Nación (MINTURYDEP).</description>
+Hola! , soy Pablo Tiscornia Licenciado en Sociología (Universidad de Buenos Aires - UBA), especializado en metodología, recolección, procesamiento y análisis de información estadística. Últimamente me encuentro enfocado en la mejora de procesos de trabajo vinculados al tratamiento de datos y en el desarrollo de estrategias para la apertura de datos. Todo con R bajo el brazo.
+He participado en la organización y difusión de la comunidad R en Buenos Aires y como coautor en el desarrollo del paquete {eph}, cuyo principal objetivo es facilitar herramientas y el acceso a datos de la Encuesta Permanente de Hogares - INDEC, mediante el lenguaje de programación R.</description>
+    </item>
+    
+    <item>
+      <title>Aportes</title>
+      <link>https://r-cosas.netlify.app/aportes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://r-cosas.netlify.app/aportes/</guid>
+      <description>Todo el material de este espacio es de acceso libre y gratuito, basados en la filosofía de apertura que nutrió mucho del contenido que encontrarás aquí.
+Diseñar y armar este proyecto fue (y es) un trabajo arduo, basado en el compromiso de brindar más y mejor conocimiento sobre el lenguaje de programación R para el análisis de información estadística. La propuesta es fomentar el uso de este software de programación para todas aquellas personas que no provinen del campo de la programación, de sistemas o con un background fuerte en estos mundos.</description>
+    </item>
+    
+    <item>
+      <title>Cursos &#43; R</title>
+      <link>https://r-cosas.netlify.app/cursos_r/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://r-cosas.netlify.app/cursos_r/</guid>
+      <description>Ciencias Sociales Computacionales y Humanidades Digitales (IDEAS-UNSAM) Módulo 1. Introducción a la Ciencia de Datos para Científicos Sociales
+• ¿Qué es la ciencia de datos? Relación y aplicaciones en las ciencias sociales
+• Elementos básicos de programación estadística en R. Objetos (vectores, listas, matrices, data frames, tibbles). Funciones y loops.
+• Procesamiento de datos con tidyverse. Data wrangling (limpieza de datos). Análisis estadístico descriptivo con R.
+Big Data e Inteligencia Territorial (FLACSO) Módulo II.</description>
     </item>
     
   </channel>

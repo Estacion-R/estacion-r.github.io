@@ -53,9 +53,11 @@
     <loc>https://r-cosas.netlify.app/tags/trends/</loc>
     <lastmod>2021-12-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://r-cosas.netlify.app/cursos_r/</loc>
-  </url><url>
     <loc>https://r-cosas.netlify.app/perfil/</loc>
+  </url><url>
+    <loc>https://r-cosas.netlify.app/aportes/</loc>
+  </url><url>
+    <loc>https://r-cosas.netlify.app/cursos_r/</loc>
   </url><url>
     <loc>https://r-cosas.netlify.app/series/</loc>
   </url>

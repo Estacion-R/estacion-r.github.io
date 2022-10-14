@@ -24,13 +24,13 @@ Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de 
 
 Finalmente, se deja como posibilidad el avanzar en una estimación sobre la cantidad de personas que se movilizan hacia esos edificios, posiblemente, en función de la superficie de los inmuebles.
 
-<br>
+
 
 ## Ubicación.
 
 El análisis se centra en la ubicación de los inmuebles del Estado Nacional en la Ciudad de Autónoma de Buenos Aires, dada la relevancia administrativa que presenta la jurisdicción para el país. Esto no impide que el análisis se pueda extender a otras localidades, siempre que la información lo permita.
 
-<br>
+
 
 ## Fuentes de datos.
 
@@ -45,7 +45,7 @@ El análisis se centra en la ubicación de los inmuebles del Estado Nacional en 
      - Buscar: Nómina de la administración Pública del Gobierno de la Ciudad de Buenos Aires
 
 
-<br>
+
 
 ## Urgando en la información disponible
 
@@ -73,7 +73,7 @@ library(skimr)
 b_inmuebles_apn <- read_csv("https://infra.datos.gob.ar/catalog/otros/dataset/6/distribution/6.1/download/inmuebles-estado-nacional.csv")
 
 
-skim(b_inmuebles_apn)
+str(b_inmuebles_apn)
 ```
 
 Una de las primeras observaciones alude a la presencia de varios campos que indican que la información que contiene la base es para absolutamente todos los edificios en manos del Estado Nacional Argentino (propios o en alquiler), sea que estén ubicados dentro o fuera del país y, en el primer caso, en qué jurisdicción.

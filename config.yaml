@@ -58,7 +58,7 @@ params:
     author: yes
     bottomText:
       - Powered by <a href="http://gohugo.io">Hugo</a>
-      - Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a>
+      - Made by <a href="https://github.com/rhazdon">Djordje Atlialp</a>
     copyright: no
     rss: yes
     topText: []
@@ -102,9 +102,9 @@ menu:
     - name: Autor
       url: perfil/
       weight: 30  
-    - name: cafecito
-      url: cafecito/
-      weight: 30  
+    - name: Aportes
+      url: aportes/
+      weight: 40  
 markup:
   goldmark:
     renderer:

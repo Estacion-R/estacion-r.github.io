@@ -1,41 +1,36 @@
 ---
-title: "Cursos + R"
+title: "Cursos"
 ---
 
+#### Lista de cursos y recursos que dicto o he diseñado y cuyo material se encuentra disponible.
 
-### [Ciencias Sociales Computacionales y Humanidades Digitales](https://noticias.unsam.edu.ar/wp-content/uploads/2022/02/Cs-Computacionales-dga2022.pdf) (IDEAS-UNSAM)
 
-**Módulo 1. Introducción a la Ciencia de Datos para Científicos Sociales**
+### [Ciencias Sociales Computacionales y Humanidades Digitales](https://noticias.unsam.edu.ar/wp-content/uploads/2022/02/Cs-Computacionales-dga2022.pdf) (IDAES-UNSAM)
 
-• ¿Qué es la ciencia de datos? Relación y aplicaciones en las ciencias sociales
+Módulo 1. Introducción a la Ciencia de Datos para Científicos Sociales
 
-• Elementos básicos de programación estadística en R. Objetos (vectores, listas,
-matrices, data frames, tibbles). Funciones y loops.
 
-• Procesamiento de datos con tidyverse. Data wrangling (limpieza de datos). Análisis
-estadístico descriptivo con R.
-
+<img src="https://pbs.twimg.com/media/FL6J5E4XsAYMK4o?format=jpg&name=900x900" alt="alt text" width="250"/>
 
 
 ### [Big Data e Inteligencia Territorial (FLACSO)](https://www.flacso.org.ar/formacion-academica/big-data-e-inteligencia-territorial/)
 
-**Módulo II. Introducción a la Ciencia de Datos**
+Módulo II. Introducción a la Ciencia de Datos
 
-- Conociendo R, el lenguaje de programación para análisis y visualización de datos.
-
-- Análisis exploratorio: cómo abordar el análisis inicial de datos
-
-- Visualización de la información: aprendiendo una gramática gráfica para representar en forma visual información compleja.
-
-- Predicción basada en datos: generación, evaluación y comparación de modelos estadísticos.
+<img src="https://www.flacso.org.ar/wp-content/uploads/2019/02/Big-Data-e-inteligencia-territorial.jpg" alt="alt text" width="250"/>
 
 
 
 ### [Instrumentos de Análisis Urbanos II (UTDT)](https://tuqmano.github.io/geo_utdt/index.html)
 
-_Instrumentos de Análisis Urbano II_ está pensado como un curso aplicado de Ciencia de Datos para ciudades. Para ello nos valdremos de herramientas computacionales que, en conjunto, tienen como objetivo la elaboración de un proyecto de análisis urbano desde la obtención de los datos (de diversas fuentes y formatos); su curaduría, limpieza, procesamiento, análisis, hasta la comunicación de los mismos.
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.explicit.bing.net%2Fth%3Fid%3DOIP.WLI8yRvXeCIxCuEtK058iQEsBL%26pid%3DApi&f=1&ipt=6f47be1d7f0b426cd234031556866553ca46d0969fc60cb2e9b67205c846721f&ipo=images" alt="alt text" width="250"/>
 
 
+
+### [Introducción al procesamiento de datos con R para Ciencias Sociales](https://intro-r-eph.netlify.app/). 
+##### Aplicación práctica en la Encuesta Permanente de Hogares
+
+El presente taller tiene como objetivo principal introducir a los y las participantes en el aprendizaje del lenguaje de programación R, centrandose en los aspectos de importación de datos, limpieza, tratamiento, visualización y análisis.
 
 ### [Introducción a R para Ciencias Sociales. Aplicación Práctica en la Encuesta Permanente de Hogares](https://pablotis.github.io/intro_r/)
 
