@@ -34,6 +34,7 @@ title: Proyectos
 
 <br>
 
+
 <div style="text-align: left; display: grid; grid-template-columns: 2fr 1fr;">
   <div>
 
@@ -42,6 +43,21 @@ title: Proyectos
   <div>
 
 <img src="https://d4t4tur.github.io/presentaciones/imgs/exagonos.png" alt="alt text" width="400"/>
+
+  </div>
+</div>
+
+
+<br>
+
+<div style="text-align: left; display: grid; grid-template-columns: 2fr 1fr;">
+  <div>
+
+- [**{r_tips}**](https://twitter.com/r_tipss/) Un bot colaborativo que tira #rtips para trabajar con R
+  </div>
+  <div>
+
+<img src="/img/hex-r_tips2.png" alt="alt text" width="400"/>" alt="alt text" width="200"/>
 
   </div>
 </div>
