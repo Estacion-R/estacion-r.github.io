@@ -1,5 +1,5 @@
 baseURL: https://estacion-r.netlify.app
-title: "Estación R"
+title: "Estación 🇷"
 languageCode: es-AR
 theme: hugo-theme-hello-friend-ng
 PygmentsCodeFences: yes
@@ -46,7 +46,7 @@ params:
   dateformShort: Jan 2
   #description: Nice theme for homepages and blogs
   disableReadOtherPosts: no
-  enableGlobalLanguageMenu: yes
+  enableGlobalLanguageMenu: no
   enableSharingButtons: yes
   enableThemeToggle: no
   favicon:
@@ -70,7 +70,7 @@ params:
   logo:
     logoHomeLink: /
     logoMark: '>'
-    logoText: $ cd /R/casa/
+    logoText: $ cd/estacion-r
   social:
     - name: twitter
       url: https://twitter.com/pabblo_h
@@ -93,18 +93,21 @@ params:
 #     weight: 2
 menu:
   main:
-    - name: Blog
-      url: posts/
-      weight: 10
-    - name: Enseñar + R
-      url: cursos_r/
-      weight: 20
     - name: Autor
       url: perfil/
-      weight: 30  
+      weight: 10
+    - name: Blog
+      url: posts/
+      weight: 20
+    - name: Proyectos
+      url: proyectos/
+      weight: 30
+    - name: Enseñar + R
+      url: cursos_r/
+      weight: 40
     - name: Aportes
       url: aportes/
-      weight: 40  
+      weight: 50  
 markup:
   goldmark:
     renderer:

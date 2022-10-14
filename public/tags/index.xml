@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on R &#43; Cosas</title>
-    <link>https://r-cosas.netlify.app/tags/</link>
-    <description>Recent content in Tags on R &#43; Cosas</description>
+    <title>Tags on Estación 🇷</title>
+    <link>https://estacion-r.netlify.app/tags/</link>
+    <description>Recent content in Tags on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Sun, 14 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://r-cosas.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>rstatES</title>
-      <link>https://r-cosas.netlify.app/tags/rstates/</link>
+      <link>https://estacion-r.netlify.app/tags/rstates/</link>
       <pubDate>Sun, 14 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://r-cosas.netlify.app/tags/rstates/</guid>
+      <guid>https://estacion-r.netlify.app/tags/rstates/</guid>
       <description></description>
     </item>
     
     <item>
       <title>eph</title>
-      <link>https://r-cosas.netlify.app/tags/eph/</link>
+      <link>https://estacion-r.netlify.app/tags/eph/</link>
       <pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://r-cosas.netlify.app/tags/eph/</guid>
+      <guid>https://estacion-r.netlify.app/tags/eph/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mapas</title>
-      <link>https://r-cosas.netlify.app/tags/mapas/</link>
+      <link>https://estacion-r.netlify.app/tags/mapas/</link>
       <pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://r-cosas.netlify.app/tags/mapas/</guid>
+      <guid>https://estacion-r.netlify.app/tags/mapas/</guid>
       <description></description>
     </item>
     
     <item>
       <title>google</title>
-      <link>https://r-cosas.netlify.app/tags/google/</link>
+      <link>https://estacion-r.netlify.app/tags/google/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://r-cosas.netlify.app/tags/google/</guid>
+      <guid>https://estacion-r.netlify.app/tags/google/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rstats</title>
-      <link>https://r-cosas.netlify.app/tags/rstats/</link>
+      <link>https://estacion-r.netlify.app/tags/rstats/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://r-cosas.netlify.app/tags/rstats/</guid>
+      <guid>https://estacion-r.netlify.app/tags/rstats/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tendencias</title>
-      <link>https://r-cosas.netlify.app/tags/tendencias/</link>
+      <link>https://estacion-r.netlify.app/tags/tendencias/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://r-cosas.netlify.app/tags/tendencias/</guid>
+      <guid>https://estacion-r.netlify.app/tags/tendencias/</guid>
       <description></description>
     </item>
     
     <item>
       <title>trends</title>
-      <link>https://r-cosas.netlify.app/tags/trends/</link>
+      <link>https://estacion-r.netlify.app/tags/trends/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://r-cosas.netlify.app/tags/trends/</guid>
+      <guid>https://estacion-r.netlify.app/tags/trends/</guid>
       <description></description>
     </item>
     

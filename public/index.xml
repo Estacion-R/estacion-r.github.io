@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>R &#43; Cosas</title>
-    <link>https://r-cosas.netlify.app/</link>
-    <description>Recent content on R &#43; Cosas</description>
+    <title>Estación 🇷</title>
+    <link>https://estacion-r.netlify.app/</link>
+    <description>Recent content on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Sun, 14 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://r-cosas.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Todos los caminos conducen a Microcentro</title>
-      <link>https://r-cosas.netlify.app/posts/2022/08/todos-los-caminos-conducen-a-microcentro/</link>
+      <link>https://estacion-r.netlify.app/posts/2022/08/todos-los-caminos-conducen-a-microcentro/</link>
       <pubDate>Sun, 14 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://r-cosas.netlify.app/posts/2022/08/todos-los-caminos-conducen-a-microcentro/</guid>
+      <guid>https://estacion-r.netlify.app/posts/2022/08/todos-los-caminos-conducen-a-microcentro/</guid>
       <description>IdeaAnalizar la concentración de la infraestructura de la administración pública. La hipótesis por detrás de este informe exploratorio asume la presencia de una alta concentración de innmuebles en ciertas zonas, principalmente en aquella denominada “Microcentro”, hecho que genera una gran movilización de personas hacia mismos lugares con una consecuente saturación del sistema de transporte, por un lado y de servicios, por otro.
 Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de personas no es aconsejable a la hora de combatir enfermedades producidas por virus como el COVID, potencia las consecuencias negativas de dicha distribución geográfica de los inmuebles estatales y refuerza la necesidad de impulsar una política pública que apunte a la desconcentración.</description>
     </item>
     
     <item>
       <title>ranking-solterxs</title>
-      <link>https://r-cosas.netlify.app/draft/ranking-solterxs/</link>
+      <link>https://estacion-r.netlify.app/draft/ranking-solterxs/</link>
       <pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://r-cosas.netlify.app/draft/ranking-solterxs/</guid>
+      <guid>https://estacion-r.netlify.app/draft/ranking-solterxs/</guid>
       <description>#.......................Configuración .Rmd.......................knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = TRUE)IntroducciónEste post nace como ejercicio para probar los mapas de XXX del autor XXX. El “caso de uso” será conocer la participación de personas solteras sobre el conjunto de la población mayor de 18 años en los 31 principales aglomerados relevados por la Encuesta Permanente de Hogares (EPH-INDEC)1
 Una de las razones para elegir este caso de uso, además de la curiosidad, es el “match” que hay entre el tipo de visualización y el dato disponible.</description>
     </item>
     
     <item>
       <title>R &#43; Tendencias de Google</title>
-      <link>https://r-cosas.netlify.app/draft/r-tendencias-de-google/</link>
+      <link>https://estacion-r.netlify.app/draft/r-tendencias-de-google/</link>
       <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://r-cosas.netlify.app/draft/r-tendencias-de-google/</guid>
+      <guid>https://estacion-r.netlify.app/draft/r-tendencias-de-google/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://r-cosas.netlify.app/perfil/</link>
+      <link>https://estacion-r.netlify.app/perfil/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://r-cosas.netlify.app/perfil/</guid>
+      <guid>https://estacion-r.netlify.app/perfil/</guid>
       <description>| Presentación
 Hola! , soy Pablo Tiscornia Licenciado en Sociología (Universidad de Buenos Aires - UBA), especializado en metodología, recolección, procesamiento y análisis de información estadística. Últimamente me encuentro enfocado en la mejora de procesos de trabajo vinculados al tratamiento de datos y en el desarrollo de estrategias para la apertura de datos. Todo con R bajo el brazo.
 He participado en la organización y difusión de la comunidad R en Buenos Aires y como coautor en el desarrollo del paquete {eph}, cuyo principal objetivo es facilitar herramientas y el acceso a datos de la Encuesta Permanente de Hogares - INDEC, mediante el lenguaje de programación R.</description>
@@ -49,25 +49,23 @@ He participado en la organización y difusión de la comunidad R en Buenos Aires
     
     <item>
       <title>Aportes</title>
-      <link>https://r-cosas.netlify.app/aportes/</link>
+      <link>https://estacion-r.netlify.app/aportes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://r-cosas.netlify.app/aportes/</guid>
+      <guid>https://estacion-r.netlify.app/aportes/</guid>
       <description>Todo el material de este espacio es de acceso libre y gratuito, basados en la filosofía de apertura que nutrió mucho del contenido que encontrarás aquí.
 Diseñar y armar este proyecto fue (y es) un trabajo arduo, basado en el compromiso de brindar más y mejor conocimiento sobre el lenguaje de programación R para el análisis de información estadística. La propuesta es fomentar el uso de este software de programación para todas aquellas personas que no provinen del campo de la programación, de sistemas o con un background fuerte en estos mundos.</description>
     </item>
     
     <item>
-      <title>Cursos &#43; R</title>
-      <link>https://r-cosas.netlify.app/cursos_r/</link>
+      <title>Cursos</title>
+      <link>https://estacion-r.netlify.app/cursos_r/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://r-cosas.netlify.app/cursos_r/</guid>
-      <description>Ciencias Sociales Computacionales y Humanidades Digitales (IDEAS-UNSAM) Módulo 1. Introducción a la Ciencia de Datos para Científicos Sociales
-• ¿Qué es la ciencia de datos? Relación y aplicaciones en las ciencias sociales
-• Elementos básicos de programación estadística en R. Objetos (vectores, listas, matrices, data frames, tibbles). Funciones y loops.
-• Procesamiento de datos con tidyverse. Data wrangling (limpieza de datos). Análisis estadístico descriptivo con R.
-Big Data e Inteligencia Territorial (FLACSO) Módulo II.</description>
+      <guid>https://estacion-r.netlify.app/cursos_r/</guid>
+      <description>Lista de cursos y recursos que dicto o he diseñado y cuyo material se encuentra disponible. Ciencias Sociales Computacionales y Humanidades Digitales (IDAES-UNSAM) Módulo 1. Introducción a la Ciencia de Datos para Científicos Sociales
+Big Data e Inteligencia Territorial (FLACSO) Módulo II. Introducción a la Ciencia de Datos
+Instrumentos de Análisis Urbanos II (UTDT) Introducción al procesamiento de datos con R para Ciencias Sociales. Aplicación práctica en la Encuesta Permanente de Hogares El presente taller tiene como objetivo principal introducir a los y las participantes en el aprendizaje del lenguaje de programación R, centrandose en los aspectos de importación de datos, limpieza, tratamiento, visualización y análisis.</description>
     </item>
     
   </channel>

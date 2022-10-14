@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on R &#43; Cosas</title>
-    <link>https://r-cosas.netlify.app/categories/</link>
-    <description>Recent content in Categories on R &#43; Cosas</description>
+    <title>Categories on Estación 🇷</title>
+    <link>https://estacion-r.netlify.app/categories/</link>
+    <description>Recent content in Categories on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Sun, 14 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://r-cosas.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>rstatES</title>
-      <link>https://r-cosas.netlify.app/categories/rstates/</link>
+      <link>https://estacion-r.netlify.app/categories/rstates/</link>
       <pubDate>Sun, 14 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://r-cosas.netlify.app/categories/rstates/</guid>
+      <guid>https://estacion-r.netlify.app/categories/rstates/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mapas</title>
-      <link>https://r-cosas.netlify.app/categories/mapas/</link>
+      <link>https://estacion-r.netlify.app/categories/mapas/</link>
       <pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://r-cosas.netlify.app/categories/mapas/</guid>
+      <guid>https://estacion-r.netlify.app/categories/mapas/</guid>
       <description></description>
     </item>
     

@@ -1,19 +1,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on R &#43; Cosas</title>
-        <link>https://r-cosas.netlify.app/posts/</link>
-        <description>Recent content in Posts on R &#43; Cosas</description>
+        <title>Posts on Estación 🇷</title>
+        <link>https://estacion-r.netlify.app/posts/</link>
+        <description>Recent content in Posts on Estación 🇷</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>es-AR</language>
         <lastBuildDate>Sun, 14 Aug 2022 00:00:00 +0000</lastBuildDate>
-        <atom:link href="https://r-cosas.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://estacion-r.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
             <title>Todos los caminos conducen a Microcentro</title>
-            <link>https://r-cosas.netlify.app/posts/2022/08/todos-los-caminos-conducen-a-microcentro/</link>
+            <link>https://estacion-r.netlify.app/posts/2022/08/todos-los-caminos-conducen-a-microcentro/</link>
             <pubDate>Sun, 14 Aug 2022 00:00:00 +0000</pubDate>
             
-            <guid>https://r-cosas.netlify.app/posts/2022/08/todos-los-caminos-conducen-a-microcentro/</guid>
+            <guid>https://estacion-r.netlify.app/posts/2022/08/todos-los-caminos-conducen-a-microcentro/</guid>
             <description>IdeaAnalizar la concentración de la infraestructura de la administración pública. La hipótesis por detrás de este informe exploratorio asume la presencia de una alta concentración de innmuebles en ciertas zonas, principalmente en aquella denominada “Microcentro”, hecho que genera una gran movilización de personas hacia mismos lugares con una consecuente saturación del sistema de transporte, por un lado y de servicios, por otro.
 Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de personas no es aconsejable a la hora de combatir enfermedades producidas por virus como el COVID, potencia las consecuencias negativas de dicha distribución geográfica de los inmuebles estatales y refuerza la necesidad de impulsar una política pública que apunte a la desconcentración.</description>
             <content type="html"><![CDATA[
@@ -24,12 +24,10 @@ Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de 
 <p>Analizar la concentración de la infraestructura de la administración pública. La hipótesis por detrás de este informe exploratorio asume la presencia de una alta concentración de innmuebles en ciertas zonas, principalmente en aquella denominada “Microcentro”, hecho que genera una gran movilización de personas hacia mismos lugares con una consecuente saturación del sistema de transporte, por un lado y de servicios, por otro.</p>
 <p>Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de personas no es aconsejable a la hora de combatir enfermedades producidas por virus como el COVID, potencia las consecuencias negativas de dicha distribución geográfica de los inmuebles estatales y refuerza la necesidad de impulsar una política pública que apunte a la desconcentración.</p>
 <p>Finalmente, se deja como posibilidad el avanzar en una estimación sobre la cantidad de personas que se movilizan hacia esos edificios, posiblemente, en función de la superficie de los inmuebles.</p>
-<p><br></p>
 </div>
 <div id="ubicación." class="section level2">
 <h2>Ubicación.</h2>
 <p>El análisis se centra en la ubicación de los inmuebles del Estado Nacional en la Ciudad de Autónoma de Buenos Aires, dada la relevancia administrativa que presenta la jurisdicción para el país. Esto no impide que el análisis se pueda extender a otras localidades, siempre que la información lo permita.</p>
-<p><br></p>
 </div>
 <div id="fuentes-de-datos." class="section level2">
 <h2>Fuentes de datos.</h2>
@@ -44,514 +42,43 @@ Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de 
 </ul></li>
 </ul></li>
 </ul>
-<p><br></p>
 </div>
 <div id="urgando-en-la-información-disponible" class="section level2">
 <h2>Urgando en la información disponible</h2>
 <p>La informaciuón con la que se cuenta es aquella referida a los Inmuebles Propios del Estado Nacional y Alquilados, provista por la Dirección Nacional del Registro de Bienes Inmuebles - Agencia de Administración de Bienes del Estado - Jefatura de Gabinete de Ministros.</p>
-<table style="width: auto;" class="table table-condensed">
-<caption>
-<span id="tab:unnamed-chunk-2">Table 1: </span>Data summary
-</caption>
-<tbody>
-<tr>
-<td style="text-align:left;">
-Name
-</td>
-<td style="text-align:left;">
-b_inmuebles_apn
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Number of rows
-</td>
-<td style="text-align:left;">
-677
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Number of columns
-</td>
-<td style="text-align:left;">
-12
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-_______________________
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Column type frequency:
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-character
-</td>
-<td style="text-align:left;">
-8
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-numeric
-</td>
-<td style="text-align:left;">
-4
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-________________________
-</td>
-<td style="text-align:left;">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Group variables
-</td>
-<td style="text-align:left;">
-None
-</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variable type: character</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-skim_variable
-</th>
-<th style="text-align:right;">
-n_missing
-</th>
-<th style="text-align:right;">
-complete_rate
-</th>
-<th style="text-align:right;">
-min
-</th>
-<th style="text-align:right;">
-max
-</th>
-<th style="text-align:right;">
-empty
-</th>
-<th style="text-align:right;">
-n_unique
-</th>
-<th style="text-align:right;">
-whitespace
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-organizacion
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1.00
-</td>
-<td style="text-align:right;">
-19
-</td>
-<td style="text-align:right;">
-57
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-40
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-pais
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1.00
-</td>
-<td style="text-align:right;">
-4
-</td>
-<td style="text-align:right;">
-14
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-26
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-provincia
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1.00
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-31
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-51
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-departamento
-</td>
-<td style="text-align:right;">
-68
-</td>
-<td style="text-align:right;">
-0.90
-</td>
-<td style="text-align:right;">
-7
-</td>
-<td style="text-align:right;">
-18
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-24
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-localidad
-</td>
-<td style="text-align:right;">
-597
-</td>
-<td style="text-align:right;">
-0.12
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-40
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-51
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-calle
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1.00
-</td>
-<td style="text-align:right;">
-4
-</td>
-<td style="text-align:right;">
-51
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-286
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-numero
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-1.00
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-40
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-493
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-situacion_inmueble
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1.00
-</td>
-<td style="text-align:right;">
-9
-</td>
-<td style="text-align:right;">
-17
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-0
-</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Variable type: numeric</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-skim_variable
-</th>
-<th style="text-align:right;">
-n_missing
-</th>
-<th style="text-align:right;">
-complete_rate
-</th>
-<th style="text-align:right;">
-mean
-</th>
-<th style="text-align:right;">
-sd
-</th>
-<th style="text-align:right;">
-p0
-</th>
-<th style="text-align:right;">
-p25
-</th>
-<th style="text-align:right;">
-p50
-</th>
-<th style="text-align:right;">
-p75
-</th>
-<th style="text-align:right;">
-p100
-</th>
-<th style="text-align:left;">
-hist
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-codigo_del_inmueble
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-836351179.35
-</td>
-<td style="text-align:right;">
-2367580114.95
-</td>
-<td style="text-align:right;">
-604.00
-</td>
-<td style="text-align:right;">
-200002466.00
-</td>
-<td style="text-align:right;">
-200009029.00
-</td>
-<td style="text-align:right;">
-200028511.00
-</td>
-<td style="text-align:right;">
-9900000577.00
-</td>
-<td style="text-align:left;">
-&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-superficie_aproximada_m2
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-15628.43
-</td>
-<td style="text-align:right;">
-172603.84
-</td>
-<td style="text-align:right;">
-29.76
-</td>
-<td style="text-align:right;">
-427.82
-</td>
-<td style="text-align:right;">
-702.22
-</td>
-<td style="text-align:right;">
-1329.37
-</td>
-<td style="text-align:right;">
-4189755.58
-</td>
-<td style="text-align:left;">
-&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-longitud
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
--56.83
-</td>
-<td style="text-align:right;">
-16.35
-</td>
-<td style="text-align:right;">
--118.32
-</td>
-<td style="text-align:right;">
--58.44
-</td>
-<td style="text-align:right;">
--58.39
-</td>
-<td style="text-align:right;">
--58.38
-</td>
-<td style="text-align:right;">
-149.12
-</td>
-<td style="text-align:left;">
-&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-latitud
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
--30.34
-</td>
-<td style="text-align:right;">
-16.79
-</td>
-<td style="text-align:right;">
--41.13
-</td>
-<td style="text-align:right;">
--34.61
-</td>
-<td style="text-align:right;">
--34.61
-</td>
-<td style="text-align:right;">
--34.58
-</td>
-<td style="text-align:right;">
-59.92
-</td>
-<td style="text-align:left;">
-&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;
-</td>
-</tr>
-</tbody>
-</table>
+<pre><code>## spec_tbl_df [677 × 12] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+##  $ codigo_del_inmueble     : num [1:677] 200002040 200002059 200002067 200002075 200002083 ...
+##  $ organizacion            : chr [1:677] &quot;AFIP ADMINISTRACIÓN FEDERAL DE INGRESOS PÚBLICOS&quot; &quot;AFIP ADMINISTRACIÓN FEDERAL DE INGRESOS PÚBLICOS&quot; &quot;AFIP ADMINISTRACIÓN FEDERAL DE INGRESOS PÚBLICOS&quot; &quot;AFIP ADMINISTRACIÓN FEDERAL DE INGRESOS PÚBLICOS&quot; ...
+##  $ pais                    : chr [1:677] &quot;Argentina&quot; &quot;Argentina&quot; &quot;Argentina&quot; &quot;Argentina&quot; ...
+##  $ provincia               : chr [1:677] &quot;Ciudad Autonoma de Buenos Aires&quot; &quot;Ciudad Autonoma de Buenos Aires&quot; &quot;Ciudad Autonoma de Buenos Aires&quot; &quot;Ciudad Autonoma de Buenos Aires&quot; ...
+##  $ departamento            : chr [1:677] &quot;Comuna 1&quot; &quot;Comuna 1&quot; &quot;Comuna 1&quot; &quot;Comuna 3&quot; ...
+##  $ localidad               : chr [1:677] NA NA NA NA ...
+##  $ calle                   : chr [1:677] &quot;Avenida Rivadavia&quot; &quot;Avenida de Mayo&quot; &quot;Avenida Paseo Colon&quot; &quot;Hipolito Yrigoyen&quot; ...
+##  $ numero                  : chr [1:677] &quot;1355&quot; &quot;1317&quot; &quot;635&quot; &quot;2221/51&quot; ...
+##  $ situacion_inmueble      : chr [1:677] &quot;Propiedad del ENA&quot; &quot;Propiedad del ENA&quot; &quot;Propiedad del ENA&quot; &quot;Propiedad del ENA&quot; ...
+##  $ superficie_aproximada_m2: num [1:677] 946 1361 2740 1461 1138 ...
+##  $ longitud                : num [1:677] -58.4 -58.4 -58.4 -58.4 -58.4 ...
+##  $ latitud                 : num [1:677] -34.6 -34.6 -34.6 -34.6 -34.6 ...
+##  - attr(*, &quot;spec&quot;)=
+##   .. cols(
+##   ..   codigo_del_inmueble = col_double(),
+##   ..   organizacion = col_character(),
+##   ..   pais = col_character(),
+##   ..   provincia = col_character(),
+##   ..   departamento = col_character(),
+##   ..   localidad = col_character(),
+##   ..   calle = col_character(),
+##   ..   numero = col_character(),
+##   ..   situacion_inmueble = col_character(),
+##   ..   superficie_aproximada_m2 = col_double(),
+##   ..   longitud = col_double(),
+##   ..   latitud = col_double()
+##   .. )
+##  - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;</code></pre>
 <p>Una de las primeras observaciones alude a la presencia de varios campos que indican que la información que contiene la base es para absolutamente todos los edificios en manos del Estado Nacional Argentino (propios o en alquiler), sea que estén ubicados dentro o fuera del país y, en el primer caso, en qué jurisdicción.</p>
-<p><img src="/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/posts/2022-08-14-caminos-microcentro/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>Para este análisis, vamos a quedarnos unicamente con aquellos localizados en Argentina y, a su vez, en la Ciudad Autónoma de Buenos Aires (CABA). Notamos cómo en la Ciudad Autónoma de Buenos Aires, centro adminitrativo del país, se concetra practicamente la totalidad de los inmuebles <strong>(97,5%)</strong></p>
-<p><img src="/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/posts/2022-08-14-caminos-microcentro/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Tal como se mencionó anteriormente, el análisis se centra en la distribución de inmuebles ubicados en la CABA. Una vez seleccionado nuestro universo de análisis, se procede a localizar geográficamente sobre un mapa la ubicación de cada uno de los edificios:</p>
 <pre><code>## Reading layer `CABA_comunas&#39; from data source 
 ##   `https://bitsandbricks.github.io/data/CABA_comunas.geojson&#39; 
@@ -561,30 +88,29 @@ latitud
 ## Dimension:     XY
 ## Bounding box:  xmin: -58.53152 ymin: -34.70529 xmax: -58.33514 ymax: -34.52754
 ## Geodetic CRS:  WGS 84</code></pre>
-<p><img src="/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/posts/2022-08-14-caminos-microcentro/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Podemos notar que ciertos puntos presentan un color intenso. Esto nos permite sospechar que una misma dirección aparece varias veces en la base de datos. Tratemos de quedarnos con una sóla fila por dirección, intentando no perder información en el camino, como la superficie en mts2 del edificio (posible estimador de cantidad de personas por edificio a utilizar en un futuro):</p>
 <p>Para ello, se crea una variable que contenga la información de la calle y el número en un mismo campo, y así poder identificar si se encuentra duplicada la fila.</p>
 <p>Encontramos, efectivamente, que hay 247 direcciones duplicadas y 207 coordenadas duplicadas. Esto se debe, principalmente, a que en aquellos edificios donde el Estado dispone de más de un piso, se registra cada uno como un caso diferente.</p>
 <p>Al mismo tiempo, evidenciamos que el campo de superficie se encuentra de forma agregada por edificio y no por piso:</p>
-<pre><code>## # A tibble: 259 x 8
-##    codigo_del_inmueble calle_n~1 depar~2 super~3 longi~4 latitud dupli~5 dupli~6
+<pre><code>## # A tibble: 259 × 8
+##    codigo_del_inmueble calle_n…¹ depar…² super…³ longi…⁴ latitud dupli…⁵ dupli…⁶
 ##                  &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-##  1           200000196 Esmerald~ Comuna~   1082.   -58.4   -34.6       2       1
-##  2           200000390 Avenida ~ Comuna~   1092.   -58.4   -34.6       2       1
-##  3           200000463 25 de Ma~ Comuna~    382.   -58.4   -34.6       1       1
-##  4           200000471 25 de Ma~ Comuna~    382.   -58.4   -34.6       1       1
-##  5           200000481 25 de Ma~ Comuna~    382.   -58.4   -34.6       1       1
-##  6           200000498 25 de Ma~ Comuna~    382.   -58.4   -34.6       1       1
-##  7           200000617 25 de Ma~ Comuna~    299.   -58.4   -34.6       1       1
-##  8           200000625 25 de Ma~ Comuna~    299.   -58.4   -34.6       1       1
-##  9           200000749 Av. 9 de~ Comuna~   1750.   -58.4   -34.6       2       1
-## 10           200001192 Av. Corr~ Comuna~    337.   -58.4   -34.6       1       1
-## # ... with 249 more rows, and abbreviated variable names 1: calle_numero,
-## #   2: departamento, 3: superficie_aproximada_m2, 4: longitud,
-## #   5: duplicados_dir, 6: duplicados_coord
-## # i Use `print(n = ...)` to see more rows</code></pre>
+##  1           200000196 Esmerald… Comuna…   1082.   -58.4   -34.6       2       1
+##  2           200000390 Avenida … Comuna…   1092.   -58.4   -34.6       2       1
+##  3           200000463 25 de Ma… Comuna…    382.   -58.4   -34.6       1       1
+##  4           200000471 25 de Ma… Comuna…    382.   -58.4   -34.6       1       1
+##  5           200000481 25 de Ma… Comuna…    382.   -58.4   -34.6       1       1
+##  6           200000498 25 de Ma… Comuna…    382.   -58.4   -34.6       1       1
+##  7           200000617 25 de Ma… Comuna…    299.   -58.4   -34.6       1       1
+##  8           200000625 25 de Ma… Comuna…    299.   -58.4   -34.6       1       1
+##  9           200000749 Av. 9 de… Comuna…   1750.   -58.4   -34.6       2       1
+## 10           200001192 Av. Corr… Comuna…    337.   -58.4   -34.6       1       1
+## # … with 249 more rows, and abbreviated variable names ¹​calle_numero,
+## #   ²​departamento, ³​superficie_aproximada_m2, ⁴​longitud, ⁵​duplicados_dir,
+## #   ⁶​duplicados_coord</code></pre>
 <p>Procedemos entonces a eliminar los edificios duplicados para evitar el doble conteo. Su peso por superficie, en caso de considerarlo, seguirá siendo posible de analizar.</p>
-<p><img src="/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/posts/2022-08-14-caminos-microcentro/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>A continuación se puede ver cómo se distribuyen los edificios según la comuna en donde estén ubicados y notar que tenemos casos donde no se dispone de información sobre a cuál de ellas pertenecen:</p>
 <pre><code>##       Comuna Cantidad
 ## 1   Comuna 1      178
@@ -603,9 +129,9 @@ latitud
 ## 14 Comuna 10        3
 ## 15  Comuna 8        2</code></pre>
 <p>Una vez descartados los casos sin información, se nota claramente la concentración de inmuebles del Estado Nacional en la <strong>Comuna 1</strong>, con más de la mitad de los inmuebles <strong>(52.7)</strong> y muy lejos de la <strong>Comuna 14</strong>, en segundo lugar, quien concentra un <strong>9.6</strong> de los mismos.</p>
-<p><img src="/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="/posts/2022-08-14-caminos-microcentro/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <p>Intenemos armar un mapa de coropletas:</p>
-<p><img src="/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="/posts/2022-08-14-caminos-microcentro/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p>En el mapa se puede identificar claramente la concentración extrema de oficinas del Estado Nacional en la comuna 1.</p>
 <p>Podríamos precisar en una escala menor esta distribución, por ejemplo, por radios censales:</p>
 <pre><code>## Reading layer `CABA_rc&#39; from data source 
@@ -615,12 +141,12 @@ latitud
 ## Dimension:     XY
 ## Bounding box:  xmin: -58.53092 ymin: -34.70574 xmax: -58.33455 ymax: -34.528
 ## Geodetic CRS:  WGS 84</code></pre>
-<p><img src="/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<p><img src="/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="/posts/2022-08-14-caminos-microcentro/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="/posts/2022-08-14-caminos-microcentro/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <p>Otra forma de visualizar la información es a través de los gráficos de densidad. En este caso, se puede identificar una clara zona predominante (como vimos, principalmente en la Comuna 1) y pequeñas zonas poco densas en cuanto a la cantidad de edificios del Estado.</p>
 <pre><code>##      left    bottom     right       top 
 ## -58.53800 -34.68466 -58.33475 -34.52943</code></pre>
-<p><img src="/posts/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="/posts/2022-08-14-caminos-microcentro/2022-08-14-caminos-microcentro_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 <p>(Breve) Conclusión.</p>
 <p>Desde el punto de vista de la movilidad de personas al trabajo, comprobamos que (casi) todes vamos para el mismo lado, o dicho de otra forma, que más de la mitad de los inmuebles del Estado se ubican en una sóla Comuna lo que, inevitablemente, genera un flujo de personas hacia la misma dirección. Esto, por un lado, conlleva consecuencias negativas importantes tanto para la calidad como para la capacidad de servicio del transporte público (y que, a su vez, afecta a la calidad de vida de las personas).</p>
 <p>Por otro lado, una mejor redistribución de los inmuebles podría generar una mejor distribución de los recursos económicos que se movilizan para ofrecer servicios a las personas que deben movilizarse hacia esos destinos para trabajar. Y no sólo nos referimos a servicios desde una perspectiva comercial. La redistribución podría facilitar el acceso a la seguridad y a la salud de la población del resto de las comunas, por ejemplo.</p>
