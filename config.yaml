@@ -1,5 +1,5 @@
-baseURL: https://r-cosas.netlify.app
-title: "R + Cosas"
+baseURL: https://estacion-r.netlify.app
+title: "Estación R"
 languageCode: es-AR
 theme: hugo-theme-hello-friend-ng
 PygmentsCodeFences: yes
