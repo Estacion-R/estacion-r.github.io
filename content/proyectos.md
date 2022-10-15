@@ -57,7 +57,7 @@ title: Proyectos
   </div>
   <div>
 
-<img src="/img/hex-r_tips2.png" alt="alt text" width="400"/>" alt="alt text" width="200"/>
+<img src="/img/hex-r_tips2.png" alt="alt text" width="80"/>
 
   </div>
 </div>
