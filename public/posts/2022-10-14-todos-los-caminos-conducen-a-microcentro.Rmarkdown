@@ -14,7 +14,7 @@ tags:
   - maps
   - datascience
   - estacionr
-draft: yes
+draft: no
 toc: no
 images: ~
 ---
@@ -218,12 +218,13 @@ ggplot() +
 ```
 
 A continuación se puede ver cómo se distribuyen los edificios según la comuna en donde estén ubicados y notar que tenemos casos donde no se dispone de información sobre a cuál de ellas pertenecen:
+
 ```{r echo = FALSE}
 # Frecuencia
 calculate_tabulates(capa_inmuebles_caba, "departamento") %>% 
   arrange(-as.numeric(Freq)) %>% 
   rename(Cantidad = Freq, Comuna = departamento) |> 
-  gt::gt(.)
+  gt::gt()
 ```
 
 ```{r}

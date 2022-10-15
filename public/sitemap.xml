@@ -3,7 +3,46 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://estacion-r.netlify.app/categories/</loc>
-    <lastmod>2022-02-09T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/datascience/</loc>
+    <lastmod>2022-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/estacionr/</loc>
+    <lastmod>2022-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/</loc>
+    <lastmod>2022-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/ggplot2/</loc>
+    <lastmod>2022-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/mapas/</loc>
+    <lastmod>2022-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/categories/mapas/</loc>
+    <lastmod>2022-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/maps/</loc>
+    <lastmod>2022-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/posts/</loc>
+    <lastmod>2022-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/rstates/</loc>
+    <lastmod>2022-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/rstats/</loc>
+    <lastmod>2022-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/categories/rstatses/</loc>
+    <lastmod>2022-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/</loc>
+    <lastmod>2022-10-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/</loc>
+    <lastmod>2022-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/draft/</loc>
     <lastmod>2022-02-09T00:00:00+00:00</lastmod>
@@ -11,34 +50,16 @@
     <loc>https://estacion-r.netlify.app/tags/eph/</loc>
     <lastmod>2022-02-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://estacion-r.netlify.app/</loc>
-    <lastmod>2022-02-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/tags/mapas/</loc>
-    <lastmod>2022-02-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/categories/mapas/</loc>
-    <lastmod>2022-02-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://estacion-r.netlify.app/draft/ranking-solterxs/</loc>
     <lastmod>2022-02-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://estacion-r.netlify.app/tags/rstates/</loc>
-    <lastmod>2022-02-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://estacion-r.netlify.app/categories/rstates/</loc>
-    <lastmod>2022-02-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/tags/</loc>
     <lastmod>2022-02-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/tags/google/</loc>
     <lastmod>2021-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/draft/r-tendencias-de-google/</loc>
-    <lastmod>2021-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/tags/rstats/</loc>
     <lastmod>2021-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/tags/tendencias/</loc>
