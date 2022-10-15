@@ -96,9 +96,9 @@ menu:
     - name: Autor
       url: perfil/
       weight: 10
-    - name: Blog
+    - identifier: posts
+      name: Blog
       url: posts/
-      weight: 20
     - name: Proyectos
       url: proyectos/
       weight: 30
