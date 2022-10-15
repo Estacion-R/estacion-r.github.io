@@ -3,30 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://estacion-r.netlify.app/categories/</loc>
-    <lastmod>2022-08-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/</loc>
-    <lastmod>2022-08-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/posts/</loc>
-    <lastmod>2022-08-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/tags/rstates/</loc>
-    <lastmod>2022-08-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/categories/rstates/</loc>
-    <lastmod>2022-08-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/tags/</loc>
-    <lastmod>2022-08-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/posts/2022/08/todos-los-caminos-conducen-a-microcentro/</loc>
-    <lastmod>2022-08-14T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/draft/</loc>
     <lastmod>2022-02-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/tags/eph/</loc>
+    <lastmod>2022-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/</loc>
     <lastmod>2022-02-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/tags/mapas/</loc>
@@ -36,6 +21,15 @@
     <lastmod>2022-02-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/draft/ranking-solterxs/</loc>
+    <lastmod>2022-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/rstates/</loc>
+    <lastmod>2022-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/categories/rstates/</loc>
+    <lastmod>2022-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/</loc>
     <lastmod>2022-02-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/tags/google/</loc>
@@ -58,6 +52,8 @@
     <loc>https://estacion-r.netlify.app/aportes/</loc>
   </url><url>
     <loc>https://estacion-r.netlify.app/cursos_r/</loc>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/proyectos/</loc>
   </url><url>
     <loc>https://estacion-r.netlify.app/series/</loc>
   </url>

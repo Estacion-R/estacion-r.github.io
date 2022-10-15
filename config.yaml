@@ -44,7 +44,7 @@ params:
   dateformNum: '2006-01-02'
   dateformNumTime: 2006-01-02 15:04
   dateformShort: Jan 2
-  #description: Nice theme for homepages and blogs
+  description: Nice theme for homepages and blogs
   disableReadOtherPosts: no
   enableGlobalLanguageMenu: no
   enableSharingButtons: yes

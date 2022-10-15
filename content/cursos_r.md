@@ -67,20 +67,6 @@ title: "Cursos"
 <div style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
   <div>
 
-- [**Introducción a R para Ciencias Sociales. Aplicación Práctica en la Encuesta Permanente de Hogares**](https://pablotis.github.io/intro_r/)
-
-
-  </div>
-  <div>
-
-  </div>
-</div>
-
-
-
-<div style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
-  <div>
-
 - [**Introducción a R para Ciencias Sociales - IIGG**](https://pablotis.github.io/r_iigg/)
 
 
