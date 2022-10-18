@@ -130,7 +130,7 @@ Como resultado vas a poder ver que se te ha creado un proyecto nuevo con el nomb
 
 **Paso 2, armar las funciones (o adaptar las que ya tenemos hechas).** Aquí es donde debemos ir a buscar esas funciones que dieron la razón de ser del paquete. El destino de esas funciones es la carpeta `R` que se creo automáticamente al comienzo. En principio la idea es que tengamos un R script por cada función, luego podemos agrupar más de una por script, pero al principio es más prolijo e intuitivo arrancar por la primera versión.
 
-La función que nos va a asistir en este paso es `usethis::use_r()` (en el paréntesis indicamos el nombre de la función). Al ejecutarla pasarán dos cosas: (1) se creará automáticamente el archivo .R, directo en la carpeta R y (2) se abrirá para ya definir el contenido de la función. Por ejemplo:
+La función que nos va a asistir en este paso es `usethis::use_r("nombre_de_la_funcion")` (en el paréntesis indicamos el nombre de la función). Al ejecutarla pasarán dos cosas: (1) se creará automáticamente el archivo .R, directo en la carpeta R y (2) se abrirá el mismo para ya definir el contenido de la función. Por ejemplo:
 
 
 ```r
@@ -158,7 +158,7 @@ Lo importante de este paso es revisar el último mensaje, que de salir todo bien
 
 ![](img/paquete_check_resultado.png)
 
-Por suerte la explicación de estos tres bloques (_errors_, _warning_ y _note_) es bastante intuitiva. Lo que más nos importa es que <span style="color:green"> `errors`</span> figure en cero. De no ser así es lo primero que deberíamos revisar. Por suerte, inmediatamente arriba de este último mensaje tenemos más pistas sobre qué es lo que encontró el  `check()` como para que aparezca, por ejemplo, un <span style="color:red"> `1 warning`</span> (en este caso, falta darle una licencia al paquete, cosa que haremos en los próximos pasos).
+Por suerte la explicación de estos tres bloques (_errors_, _warning_ y _note_) es bastante intuitiva. Lo que más nos importa es que <span style="color:green"> `errors`</span> figure en cero. De no ser así es lo primero que deberíamos revisar. Por suerte, inmediatamente arriba de este último mensaje tenemos más pistas sobre qué es lo que encontró el  `check()` como para que aparezca, por ejemplo, un <span style="color:red"> `1 warning`</span> (en este caso, falta darle una licencia al paquete, cosa que haremos en los próximos pasos). Vale decir que aún con `warnings` y `notes` podemos avanzar, aunque no es lo recomendable. 
 
 **Paso 4, darle una licencia al paquete.** Aquí no profundizaremos mucho ya que el paso es bien sencillo y lo que puede tomar más tiempo es decidir por qué tipo de licencia optar. En nuestro caso vamos a ir por GPL-3[^2]
 
@@ -181,7 +181,7 @@ Pero aquí debemos separar entre documentar una función y documentar un paquete
 
 ![](img/paquete_funcion_doc.gif)
 
-Hecho esto, Rstudio automaticamente agregar al menos 6 líneas de código que servirán para documentar lo básico de nuestra función (nombre, descripción, parámetros -si los hay-, ejemplo de uso, al menos para empezar).
+Hecho esto, Rstudio automaticamente agregar al menos 6 líneas de código que servirán para documentar lo básico de nuestra función (nombre, descripción, parámetros -si los hay-, ejemplo de uso, eso al menos para empezar).
 En nuestro caso, debería quedar algo así:
 
 
@@ -200,6 +200,14 @@ risa_ja <- function(){
 }
 ```
 
+
+
+**Spoiler alert**
+
+Al final del camino, cuando consultemos por la ayuda de la función deberíamos ver algo así:
+![](img/spoiler_help.png)
+
+
 Una vez que completamos estos campos, corremos la función `devtools::document()`. Con ella se va a crear una carpeta llamada **man** en donde se irán listando archivos `.md` que contienen esta documentación que completamos, uno por cada función que tengamos en cada R.script.
 
 
@@ -207,12 +215,10 @@ Una vez que completamos estos campos, corremos la función `devtools::document()
 devtools::document()
 ```
 
-![](img/carpetas_man.png)
-
-Por otro lado se va a actualizar el archivo que ya existía llamado **NAMESPACE**, donde se irán listando las funciones que creamos. Importante, no editar este archivo a mano! esa tarea se la vamos a dejar al `document()`.
+Por otro lado se va a actualizar el archivo que ya existía llamado **NAMESPACE**, donde se irán listando las funciones que creamos. Importante, no editar estos archivos a mano! esa tarea se la vamos a dejar al `document()`.
 
 
-**Paso 6, chequear que esté todo bien e... instalar el paquete! (estamos cerca!).** Nuevamente vamos a correr el `devtools::check()` (es muy importante chequear!), y revisar que con lo nuevo que hemos corrido estemos bien encaminados/as para lo que tan ansiadamente queremos hacer: instalar el paquete en nuestras computadoras!
+**Paso 6, chequear que esté todo bien e... instalar el paquete! (estamos cerca!).** Nuevamente vamos a correr el `devtools::check()` (como habrás notado, es muy importante chequear), y revisar que con lo nuevo que hemos corrido estemos bien encaminados/as para lo que tan ansiadamente queremos hacer: instalar el paquete en nuestras computadoras!
 
 Si todo sale bien, nuestro nuevo `check()` debería verse así:
 
@@ -226,7 +232,7 @@ No demoremos más, antes de que alguien se arrepienta, instalemos nuestro paquet
 devtools::install()
 ```
 
-De ahora en más, nuestro paquete ya está instalado en la computadora y disponible para ser usado. Y la mejor manera de comprobarlo es... probándolo!
+Una vez hecho esto, nuestro paquete ya se encuentra instalado en la computadora y disponible para ser convocado vía el clásico `library()`. Y la mejor manera de comprobarlo es... probándolo!
 
 Veamos cómo al comenzar a escribirlo en un `library()` Rstudio lo sugiere como autocompletado:
 
@@ -236,9 +242,9 @@ Veamos cómo al comenzar a escribirlo en un `library()` Rstudio lo sugiere como 
 
 Hemos logrado sin grandes sobresaltos armar nuestro primer paquete. Esta es una guía mínima de cómo hacerlo, hay muuuuucho más al respecto. Si te interesa invito nuevamente a que pases por el libro [R Packages (2e)](https://r-pkgs.org/data.html). Aunque en inglés, es de la mejor documentación para el armado de paquetes.
 
-Va también, de forma resumida, cómo podrías seguir avanzando en el desarrollo de tu paquete:
+Va también, de forma resumida, cómo podrías seguir avanzando de cara a futuro:
 
-- Vincular este flujo de trabajo con GIT y Github. Esto te permitiría dejar disponible a tu nuevo paquete en un repositorio para que otras personas también puedan descargárselo. No incluí esto ya que la intención era concentrarnos en el armado del paquete, esquivando así la aventura que es adentrarse en Github (aventura más que recomendada por cierto!)
+- Vincular este flujo de trabajo con GIT y Github. Esto te permitiría dejar disponible a tu nuevo paquete en un repositorio para que otras personas también puedan descargárselo. No incluí esto ya que la intención era concentrarnos en el armado de una versión mínima, esquivando la aventura que es adentrarse en Github (aventura más que recomendada por cierto!).
 
 - Armar _tests_ de tus funciones. Esto ayuda a la robustez de tu desarrollo, comprobando de diferentes formas que tu función hace lo que se espera que haga (a veces las cosas funcionan pero no como uno quiere!). Probá jugar con `usethis::use_testthat()`, luego `usethis::use_test()` para finalizar con `devtools::test()`, a ver qué pasa!. [Acá te dejo la referencia en el libro que trata este tema](https://r-pkgs.org/testing-basics.html)
 
@@ -254,7 +260,7 @@ Va también, de forma resumida, cómo podrías seguir avanzando en el desarrollo
 1. Instalá la nueva versión de tu paquete con la nueva función! --> `devtools::install()`
 
 
-Eso es todo, espero que haya sido ameno y, sobre todo, ¡útil! Cualquier comentario o duda podés dejar un comentario o escribirme por alguna de las redes.
+Eso es todo, espero que haya sido ameno y, sobre todo, ¡útil! Cualquier comentario o duda podés dejarlo por acá o escribirme por alguna de las redes sociales sin problema.
 
 
 <script defer src="https://cdn.commento.io/js/commento.js"></script>
