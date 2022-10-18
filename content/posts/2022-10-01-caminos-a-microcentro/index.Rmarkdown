@@ -1,20 +1,18 @@
 ---
 title: Todos los caminos conducen a Microcentro
-author: Pablo Tiscornia
-date: '2022-10-14'
-slug: todos-los-caminos-conducen-a-microcentro
+author: ''
+date: '2022-10-01'
+slug: caminos-a-microcentro
 categories:
   - rstatsES
-  - mapas
+  - analisis
 tags:
   - rstats
-  - rstatES
+  - rstatsES
+  - datascience
   - ggplot2
   - mapas
   - maps
-  - datascience
-  - estacionr
-draft: no
 toc: no
 images: ~
 ---

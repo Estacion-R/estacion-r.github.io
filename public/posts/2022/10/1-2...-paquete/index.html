@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Pablo Tiscornia ">
+<meta name="description" content="@import url(https://fonts.googleapis.com/css?family=Glegoo);.showMore{font-size: 14px;display:block;cursor: pointer;}.showMore &#43; input{display:none;}.showMore &#43; input &#43; *{display:none;}.showMore &#43; input:checked &#43; *{display:block;}blockquote {margin-left: 0;font-size: 12px;background: #e5f5f9;}Si tenés más de 30 años probablemente hayas conocido los postres 1,2, LISTO! Y si no, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!" />
+<meta name="keywords" content=", rstats, rstatES, paquetes, packages, development, desarrollo" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/" />
+
+
+    <title>
+        
+            ¡1, 2... paquete! :: Estación 🇷 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://estacion-r.netlify.app/main.2b2aff83103a75e8bb97afd71207f490b64858992128ccdc0d7a08690fa018ba.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://estacion-r.netlify.app/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://estacion-r.netlify.app/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://estacion-r.netlify.app/favicon-16x16.png">
+    <link rel="manifest" href="https://estacion-r.netlify.app/site.webmanifest">
+    <link rel="mask-icon" href="https://estacion-r.netlify.app/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://estacion-r.netlify.app/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="¡1, 2... paquete!">
+<meta itemprop="description" content="@import url(https://fonts.googleapis.com/css?family=Glegoo);.showMore{font-size: 14px;display:block;cursor: pointer;}.showMore &#43; input{display:none;}.showMore &#43; input &#43; *{display:none;}.showMore &#43; input:checked &#43; *{display:block;}blockquote {margin-left: 0;font-size: 12px;background: #e5f5f9;}Si tenés más de 30 años probablemente hayas conocido los postres 1,2, LISTO! Y si no, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!"><meta itemprop="datePublished" content="2022-10-17T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-10-17T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1909">
+<meta itemprop="keywords" content="rstats,rstatES,paquetes,packages,development,desarrollo," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="¡1, 2... paquete!"/>
+<meta name="twitter:description" content="@import url(https://fonts.googleapis.com/css?family=Glegoo);.showMore{font-size: 14px;display:block;cursor: pointer;}.showMore &#43; input{display:none;}.showMore &#43; input &#43; *{display:none;}.showMore &#43; input:checked &#43; *{display:block;}blockquote {margin-left: 0;font-size: 12px;background: #e5f5f9;}Si tenés más de 30 años probablemente hayas conocido los postres 1,2, LISTO! Y si no, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!"/>
+
+
+
+
+    <meta property="og:title" content="¡1, 2... paquete!" />
+<meta property="og:description" content="@import url(https://fonts.googleapis.com/css?family=Glegoo);.showMore{font-size: 14px;display:block;cursor: pointer;}.showMore &#43; input{display:none;}.showMore &#43; input &#43; *{display:none;}.showMore &#43; input:checked &#43; *{display:block;}blockquote {margin-left: 0;font-size: 12px;background: #e5f5f9;}Si tenés más de 30 años probablemente hayas conocido los postres 1,2, LISTO! Y si no, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-10-17T00:00:00+00:00" />
+
+
+
+
+
+    <meta property="article:section" content="rstatsES" />
+
+    <meta property="article:section" content="documentacion" />
+
+    <meta property="article:section" content="desarrollo de paquetes" />
+
+
+
+    <meta property="article:published_time" content="2022-10-17 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://estacion-r.netlify.app/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text">$ cd/estacion-r</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://estacion-r.netlify.app/perfil/">Autor</a></li><li><a href="https://estacion-r.netlify.app/posts/">Blog</a></li><li><a href="https://estacion-r.netlify.app/proyectos/">Proyectos</a></li><li><a href="https://estacion-r.netlify.app/cursos_r/">Enseñar &#43; R</a></li><li><a href="https://estacion-r.netlify.app/aportes/">Aportes</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        9 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/">¡1, 2&hellip; paquete!</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Glegoo);
+
+.showMore{
+  font-size: 14px;
+  display:block;
+  cursor: pointer;
+  
+}
+.showMore + input{
+  display:none;
+}
+.showMore + input + *{
+  display:none;
+}
+.showMore + input:checked + *{
+  display:block;
+    
+}
+
+blockquote {
+  margin-left: 0;
+  font-size: 12px;
+  background: #e5f5f9;
+}
+</style>
+<p>Si tenés más de 30 años probablemente hayas conocido los postres 1,2, LISTO! Y si no, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!). Los pasos, además, eran muy sencillos: Abrir el sobre, volcar el contenido del sobre en una taza, mezclar con leche y&hellip; ¡listo! a disfrutar.</p>
+<img src="http://k30.kn3.net/taringa/A/6/0/A/7/1/LeandroD17/C3C.jpg" style="display: block; margin: auto;" />
+<p>Como en el postre, en este post voy a tratar de mostrar cómo en pocos pasos podemos pasar de tener un montón de funciones desperdigadas por despelotados scripts a un paquete de R que las contenga. Como se imaginarán, no serán dos (o tres), pero sí mostraré cómo se puede hacer de forma sencilla y efectiva, sin necesidad de entender todo lo que está pasando por detrás.</p>
+<h2 id="por-qué-un-paquete">¿Por qué un paquete?</h2>
+<p>Podemos pensar al camino del o la programadora en R como aquel que (puede) transita(r) por las siguientes etapas, no necesariamente de forma ordenada ni sin caos, ansiedad, frustración pero también con aciertos y, cada tanto, algunas victorias:</p>
+<ol>
+<li>
+<p><strong>La Era del script.</strong> Podemos considerarla como la instancia con la que nos incorporamos al lenguaje. Puede ser un R script o un Rmarkdown, el punto es que escribimos un sinfin de secuencias de código con mucha repetición, probablemente poca automatización, o con alguna más bien rústica y no sistemática.</p>
+</li>
+<li>
+<p><strong>La Era de la función.</strong> En nuestros scripts empezamos a necesitar no repetir tanto (porque lo hacemos mucho). Nos cuentan que existen las funciones, las vemos como algo maravilloso y al mismo tiempo doloroso de construir. Pero cuando le agarramos la mano no podemos parar.</p>
+</li>
+<li>
+<p><strong>La era del paquete.</strong> Nos empezamos a cansar de ir a buscar funciones por proyectos mal organizados, hechos ad hoc para algo en particular y que ya no recordamos bien en qué carpeta lo dejamos, o siquiera si era ese el proyecto en el que habíamos escrito la función. Los paquetes ya eran algo que escuchábamos hablar, pero eso es para gente que trabaja en la NASA, no estamos a la altura.</p>
+</li>
+</ol>
+<p>Este post tiene como objetivo aquellas personas que están transitando la tercera etapa, por dos razones más que nada:</p>
+<p>a. saben escribir funciones (rústicas, no sofisticadas, pero funciones al fin), y</p>
+<p>b. necesitan armar un paquete</p>
+<h2 id="bibliografía-de-referencia">Bibliografía de referencia</h2>
+<p>Me voy a basar en la documentación <a href="https://r-pkgs.org/data.html">R Packages (2e)</a> cuyos autores son <a href="https://jennybryan.org/">Jennifer Bryan</a> y <a href="https://hadley.nz/">Hadley Wickham</a>. Este libro está disponible y accesible de forma gratuita en internet. Está escrito sólo en inglés, pero en uno muy sencillo y ameno, fácil de digerir. Ambos autores tienen una inclinación por poner el foco en la accesibilidad a la hora de transmitir conocimiento, cosa para nada despreciable en el mundo de la programación.</p>
+<h2 id="manos-a-la-obra">Manos a la obra</h2>
+<p>Voy a mostrar los mínimos pasos necesarios para armar un paquete y para ello voy a&hellip; ¡armar un paquete! La idea es no quedarnos en lo expositivo, sino que se pueda replicar (y adaptar) el ejemplo.</p>
+<h3 id="librerías-de-trabajo">Librerías de trabajo</h3>
+<p>Para armar nuestro paquete necesitaremos de las siguientes librerías, las cuales nos van a proveer de funciones para facilitar el desarrollo del paquete.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75af00">library</span><span style="color:#111">(</span><span style="color:#111">devtools</span><span style="color:#111">)</span>
+<span style="color:#75af00">library</span><span style="color:#111">(</span><span style="color:#111">usethis</span><span style="color:#111">)</span>
+</code></pre></div><p><strong>Paso 1, crear el paquete</strong>. Lo primero que vamos a hacer es ponerle un nombre a nuestro paquete, el cual se llamara <code>{risas}</code>.
+Luego vamos a crearlo con la siguiente función (asegúrate de poner la ruta que quieras para alojar el paquete en tu computadora):</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">usethis</span><span style="color:#f92672">::</span><span style="color:#75af00">create_package</span><span style="color:#111">(</span><span style="color:#d88200">&#34;risas&#34;</span><span style="color:#111">)</span>
+</code></pre></div><p>Como resultado vas a poder ver que se te ha creado un proyecto nuevo con el nombre del paquete y una estructura de archivos como la de esta imagen:</p>
+<p><img src="img/carpetas_paquete.png" alt=""></p>
+<blockquote>
+  <label class="showMore" for="_1"> 🚧️ En pocas palabras</label>
+  <input id="_1" type="checkbox">
+  <div>
+<ul>
+<li>
+<p>la <strong>carpeta R</strong> va a contener el conjunto de funciones creadas.</p>
+</li>
+<li>
+<p><strong>DESCRIPTION</strong> provee la metadata (data sobre la data) del paquete</p>
+</li>
+<li>
+<p><strong>.Rbuildignore</strong> lista los archivos que vamos a necesitar pero que no se incluirán cuando armemos el paquete</p>
+</li>
+<li>
+<p><strong>risas.Rproj</strong> es el archivo del proyecto creado</p>
+</li>
+<li>
+<p><strong>.gitignore</strong> contiene aquellos archivos que no queremos que interactuen con Github<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+</li>
+<li>
+<p><strong>NAMESPACE</strong> declara aquellas funciones que nuestro paquete declara para uso externo y aquellas funciones externas que nuestro paquete importa.</div></p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Paso 2, armar las funciones (o adaptar las que ya tenemos hechas).</strong> Aquí es donde debemos ir a buscar esas funciones que dieron la razón de ser del paquete. El destino de esas funciones es la carpeta <code>R</code> que se creo automáticamente al comienzo. En principio la idea es que tengamos un R script por cada función, luego podemos agrupar más de una por script, pero al principio es más prolijo e intuitivo arrancar por la primera versión.</p>
+<p>La función que nos va a asistir en este paso es <code>usethis::use_r()</code> (en el paréntesis indicamos el nombre de la función). Al ejecutarla pasarán dos cosas: (1) se creará automáticamente el archivo .R, directo en la carpeta R y (2) se abrirá para ya definir el contenido de la función. Por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">usethis</span><span style="color:#f92672">::</span><span style="color:#75af00">use_r</span><span style="color:#111">(</span><span style="color:#d88200">&#34;risa_ja&#34;</span><span style="color:#111">)</span>
+</code></pre></div><p>Una vez en el R script, defino el contenido de la función (notar que el nombre del script y el nombre de la función son iguales) y guardo el archivo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">risa_ja</span> <span style="color:#f92672">&lt;-</span> <span style="color:#75af00">function</span><span style="color:#111">(){</span>
+
+  <span style="color:#75af00">print</span><span style="color:#111">(</span><span style="color:#d88200">&#34;jajajajajaja&#34;</span><span style="color:#111">)</span>
+
+<span style="color:#111">}</span>
+</code></pre></div><p><strong>Paso 3, cargar y chequear.</strong> Una vez que definí mi función debo proceder a &ldquo;cargarla&rdquo; en el ambiente y luego correr nuestro primer <em>chequeo</em> para ver si está todo bien con lo que hicimos hasta el momento. Las funciones que nos asistirán en este paso son <code>devtools::load_all()</code> para cargar la o las funciones que creamos (es como correr un <code>library()</code> pero de un paquete que aún no esta instalado) y <code>devtools::check()</code> para el chequeo.</p>
+<p>Al correr el <code>check()</code> deberíamos ver algo así:</p>
+<p><img src="img/paquete_check.gif" alt=""></p>
+<p>Lo importante de este paso es revisar el último mensaje, que de salir todo bien debería figurar algo así:</p>
+<p><img src="img/paquete_check_resultado.png" alt=""></p>
+<p>Por suerte la explicación de estos tres bloques (<em>errors</em>, <em>warning</em> y <em>note</em>) es bastante intuitiva. Lo que más nos importa es que <span style="color:green"> <code>errors</code></span> figure en cero. De no ser así es lo primero que deberíamos revisar. Por suerte, inmediatamente arriba de este último mensaje tenemos más pistas sobre qué es lo que encontró el  <code>check()</code> como para que aparezca, por ejemplo, un <span style="color:red"> <code>1 warning</code></span> (en este caso, falta darle una licencia al paquete, cosa que haremos en los próximos pasos).</p>
+<p><strong>Paso 4, darle una licencia al paquete.</strong> Aquí no profundizaremos mucho ya que el paso es bien sencillo y lo que puede tomar más tiempo es decidir por qué tipo de licencia optar. En nuestro caso vamos a ir por GPL-3<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>La función que debemos para cumplir con este paso es:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">usethis</span><span style="color:#f92672">::</span><span style="color:#75af00">use_gpl3_license</span><span style="color:#111">()</span>
+</code></pre></div><p>Con ella se creará un nuevo archivo en la carpeta del proyecto llamado <code>LICENSE.md</code>.</p>
+<p><strong>Paso 5, documentación del paquete.</strong> Esta etapa es muy importante. Y esto es porque una de las razones por las cuales hacer un paquete es la posibilidad de documentar, actividad cuya popularidad es inversamente proporcional a la importancia que tiene. ¿Por qué documentar? Puede haber varias respuestas, pero la más palpable puede ser que la documentación nos ahorra dolores de cabeza (a nosotros/as o a otros/as). Una función puede ser intuitiva para quien la diseña (o no!), pero al retomar su uso después de un tiempo podemos no tener claro cómo es que se usaba, los parámetros que tiene y el resultado que genera. <strong>Para ello es clave la documentación</strong>, porque es justamente eso lo que resolvemos, dejar en claro lo que hace una función y la forma de utilizarla para llegar a ese resultado.</p>
+<p>Pero aquí debemos separar entre documentar una función y documentar un paquete, van a ser dos pasos diferentes. Vamos por el primero.</p>
+<p><strong>Documentar una función.</strong> Lo que vamos a hacer es lo siguiente: en el mismo R script donde definimos nuestra nueva función (<code>risa_ja()</code>) vamos a pararnos en la primera línea y dirigirnos a la ventana de Rstudio <em><strong>Code &ndash;&gt; Insert Roxygen sckeleton</strong></em>:</p>
+<p><img src="img/paquete_funcion_doc.gif" alt=""></p>
+<p>Hecho esto, Rstudio automaticamente agregar al menos 6 líneas de código que servirán para documentar lo básico de nuestra función (nombre, descripción, parámetros -si los hay-, ejemplo de uso, al menos para empezar).
+En nuestro caso, debería quedar algo así:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#&#39; risa_ja</span>
+<span style="color:#75715e">#&#39; @description Función que genera una carcajada</span>
+<span style="color:#75715e">#&#39; @return</span>
+<span style="color:#75715e">#&#39; @export</span>
+<span style="color:#75715e">#&#39;</span>
+<span style="color:#75715e">#&#39; @examples</span>
+<span style="color:#75715e">#&#39; risa_ja()</span>
+<span style="color:#111">risa_ja</span> <span style="color:#f92672">&lt;-</span> <span style="color:#75af00">function</span><span style="color:#111">(){</span>
+
+  <span style="color:#75af00">print</span><span style="color:#111">(</span><span style="color:#d88200">&#34;jajajajajaja&#34;</span><span style="color:#111">)</span>
+
+<span style="color:#111">}</span>
+</code></pre></div><p>Una vez que completamos estos campos, corremos la función <code>devtools::document()</code>. Con ella se va a crear una carpeta llamada <strong>man</strong> en donde se irán listando archivos <code>.md</code> que contienen esta documentación que completamos, uno por cada función que tengamos en cada R.script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">devtools</span><span style="color:#f92672">::</span><span style="color:#75af00">document</span><span style="color:#111">()</span>
+</code></pre></div><p><img src="img/carpetas_man.png" alt=""></p>
+<p>Por otro lado se va a actualizar el archivo que ya existía llamado <strong>NAMESPACE</strong>, donde se irán listando las funciones que creamos. Importante, no editar este archivo a mano! esa tarea se la vamos a dejar al <code>document()</code>.</p>
+<p><strong>Paso 6, chequear que esté todo bien e&hellip; instalar el paquete! (estamos cerca!).</strong> Nuevamente vamos a correr el <code>devtools::check()</code> (es muy importante chequear!), y revisar que con lo nuevo que hemos corrido estemos bien encaminados/as para lo que tan ansiadamente queremos hacer: instalar el paquete en nuestras computadoras!</p>
+<p>Si todo sale bien, nuestro nuevo <code>check()</code> debería verse así:</p>
+<p><img src="img/paquete_check_v2.png" alt="">
+<img src="https://media.tenor.com/qdg13PqYbxMAAAAM/yes-baby.gif" alt=""></p>
+<p>No demoremos más, antes de que alguien se arrepienta, instalemos nuestro paquete ejecutando la siguiente sentencia en nuestras consolas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">devtools</span><span style="color:#f92672">::</span><span style="color:#75af00">install</span><span style="color:#111">()</span>
+</code></pre></div><p>De ahora en más, nuestro paquete ya está instalado en la computadora y disponible para ser usado. Y la mejor manera de comprobarlo es&hellip; probándolo!</p>
+<p>Veamos cómo al comenzar a escribirlo en un <code>library()</code> Rstudio lo sugiere como autocompletado:</p>
+<p><img src="img/paquete_libreria.png" alt=""></p>
+<h3 id="éxito">Éxito.</h3>
+<p>Hemos logrado sin grandes sobresaltos armar nuestro primer paquete. Esta es una guía mínima de cómo hacerlo, hay muuuuucho más al respecto. Si te interesa invito nuevamente a que pases por el libro <a href="https://r-pkgs.org/data.html">R Packages (2e)</a>. Aunque en inglés, es de la mejor documentación para el armado de paquetes.</p>
+<p>Va también, de forma resumida, cómo podrías seguir avanzando en el desarrollo de tu paquete:</p>
+<ul>
+<li>
+<p>Vincular este flujo de trabajo con GIT y Github. Esto te permitiría dejar disponible a tu nuevo paquete en un repositorio para que otras personas también puedan descargárselo. No incluí esto ya que la intención era concentrarnos en el armado del paquete, esquivando así la aventura que es adentrarse en Github (aventura más que recomendada por cierto!)</p>
+</li>
+<li>
+<p>Armar <em>tests</em> de tus funciones. Esto ayuda a la robustez de tu desarrollo, comprobando de diferentes formas que tu función hace lo que se espera que haga (a veces las cosas funcionan pero no como uno quiere!). Probá jugar con <code>usethis::use_testthat()</code>, luego <code>usethis::use_test()</code> para finalizar con <code>devtools::test()</code>, a ver qué pasa!. <a href="https://r-pkgs.org/testing-basics.html">Acá te dejo la referencia en el libro que trata este tema</a></p>
+</li>
+<li>
+<p>¿Usas otros paquetes para armar tu función? Probá con <code>usethis::use_package()</code> para dejar asentado esto en la estructura de tu desarrollo. <a href="https://r-pkgs.org/dependencies.html">Acá un poco más del tema</a></p>
+</li>
+<li>
+<p>¿Vas a sumar una nueva función? Este sería el ciclo a seguir en un paquete ya creado:</p>
+</li>
+</ul>
+<ol>
+<li>Sumá la función con <code>usethis::use_r(&quot;nombre_de_la_funcion&quot;)</code></li>
+<li>Documentá la función con el esqueleto de Roxygen</li>
+<li>Cargá el nuevo estado del paquete con <code>devtools::load_all()</code></li>
+<li>Documentá en el paquete la nueva función con <code>devtools::document()</code></li>
+<li>Chequeá que esté todo bien con <code>devtools::check()</code></li>
+<li>Instalá la nueva versión de tu paquete con la nueva función! &ndash;&gt; <code>devtools::install()</code></li>
+</ol>
+<br>
+<p>Eso es todo, espero que haya sido ameno y, sobre todo, ¡útil! Cualquier comentario o duda podés dejar un comentario o escribirme por alguna de las redes.</p>
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+<div id="commento"></div>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Otro post sobre Github ya se encuentra en producción&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Más información sobre la licencia GPLv3, aquí: <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">https://www.gnu.org/licenses/gpl-3.0.en.html</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/rstats/">rstats</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/rstates/">rstatES</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/paquetes/">paquetes</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/packages/">packages</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/development/">development</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/desarrollo/">desarrollo</a></span>
+        
+    </p>
+
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://estacion-r.netlify.app/categories/rstatses/">rstatsES</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/categories/documentacion/">documentacion</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/categories/desarrollo-de-paquetes/">desarrollo de paquetes</a></span>
+        
+    </p>
+
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        1909 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2022-10-16 19:00
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2022%2f10%2f1-2...-paquete%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2022%2f10%2f1-2...-paquete%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=%c2%a11%2c%202...%20paquete%21&amp;caption=%c2%a11%2c%202...%20paquete%21&amp;canonicalUrl=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2022%2f10%2f1-2...-paquete%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=%c2%a11%2c%202...%20paquete%21&amp;body=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2022%2f10%2f1-2...-paquete%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2022%2f10%2f1-2...-paquete%2f&amp;media=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2022%2f10%2f1-2...-paquete%2f;description=%c2%a11%2c%202...%20paquete%21" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2022%2f10%2f1-2...-paquete%2f&amp;title=%c2%a11%2c%202...%20paquete%21&amp;summary=%c2%a11%2c%202...%20paquete%21&amp;source=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2022%2f10%2f1-2...-paquete%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2022%2f10%2f1-2...-paquete%2f&amp;resubmit=true&amp;title=%c2%a11%2c%202...%20paquete%21" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2022%2f10%2f1-2...-paquete%2f;title=%c2%a11%2c%202...%20paquete%21" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=%c2%a11%2c%202...%20paquete%21%20https%3a%2f%2festacion-r.netlify.app%2fposts%2f2022%2f10%2f1-2...-paquete%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2022%2f10%2f1-2...-paquete%2f&amp;t=%c2%a11%2c%202...%20paquete%21" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=%c2%a11%2c%202...%20paquete%21&amp;url=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2022%2f10%2f1-2...-paquete%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+      </div>
+
+    
+    <div class="pagination">
+        
+
+        <div class="pagination__buttons">
+            
+
+            
+            <span class="button next">
+                <a href="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/">
+                    <span class="button__text">Todos los caminos conducen a Microcentro</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            <span><a href="https://estacion-r.netlify.app">Pablo Tiscornia</a></span>
+            
+            <span><a href="https://estacion-r.netlify.app/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://estacion-r.netlify.app/bundle.min.18199b5b12b49221b3a37bd7922e5f71cc8f3601ed0f25c9eeb7d7b18f17d2398cc2db1784f2de04615069e8190e65c1edc58c73c67d4de54f355730d72d08e9.js" integrity="sha512-GBmbWxK0kiGzo3vXki5fccyPNgHtDyXJ7rfXsY8X0jmMwtsXhPLeBGFQaegZDmXB7cWMc8Z9TeVPNVcw1y0I6Q=="></script>
+
+
+
+    </body>
+</html>

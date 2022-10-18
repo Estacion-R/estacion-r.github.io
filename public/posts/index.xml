@@ -5,13 +5,196 @@
         <description>Recent content in Posts on Estación 🇷</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>es-AR</language>
-        <lastBuildDate>Fri, 14 Oct 2022 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 17 Oct 2022 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://estacion-r.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>¡1, 2... paquete!</title>
+            <link>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</link>
+            <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
+            
+            <guid>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</guid>
+            <description>@import url(https://fonts.googleapis.com/css?family=Glegoo);.showMore{font-size: 14px;display:block;cursor: pointer;}.showMore + input{display:none;}.showMore + input + *{display:none;}.showMore + input:checked + *{display:block;}blockquote {margin-left: 0;font-size: 12px;background: #e5f5f9;}Si tenés más de 30 años probablemente hayas conocido los postres 1,2, LISTO! Y si no, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!</description>
+            <content type="html"><![CDATA[<style type="text/css">
+@import url(https://fonts.googleapis.com/css?family=Glegoo);
+
+.showMore{
+  font-size: 14px;
+  display:block;
+  cursor: pointer;
+  
+}
+.showMore + input{
+  display:none;
+}
+.showMore + input + *{
+  display:none;
+}
+.showMore + input:checked + *{
+  display:block;
+    
+}
+
+blockquote {
+  margin-left: 0;
+  font-size: 12px;
+  background: #e5f5f9;
+}
+</style>
+<p>Si tenés más de 30 años probablemente hayas conocido los postres 1,2, LISTO! Y si no, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!). Los pasos, además, eran muy sencillos: Abrir el sobre, volcar el contenido del sobre en una taza, mezclar con leche y&hellip; ¡listo! a disfrutar.</p>
+<img src="http://k30.kn3.net/taringa/A/6/0/A/7/1/LeandroD17/C3C.jpg" style="display: block; margin: auto;" />
+<p>Como en el postre, en este post voy a tratar de mostrar cómo en pocos pasos podemos pasar de tener un montón de funciones desperdigadas por despelotados scripts a un paquete de R que las contenga. Como se imaginarán, no serán dos (o tres), pero sí mostraré cómo se puede hacer de forma sencilla y efectiva, sin necesidad de entender todo lo que está pasando por detrás.</p>
+<h2 id="por-qué-un-paquete">¿Por qué un paquete?</h2>
+<p>Podemos pensar al camino del o la programadora en R como aquel que (puede) transita(r) por las siguientes etapas, no necesariamente de forma ordenada ni sin caos, ansiedad, frustración pero también con aciertos y, cada tanto, algunas victorias:</p>
+<ol>
+<li>
+<p><strong>La Era del script.</strong> Podemos considerarla como la instancia con la que nos incorporamos al lenguaje. Puede ser un R script o un Rmarkdown, el punto es que escribimos un sinfin de secuencias de código con mucha repetición, probablemente poca automatización, o con alguna más bien rústica y no sistemática.</p>
+</li>
+<li>
+<p><strong>La Era de la función.</strong> En nuestros scripts empezamos a necesitar no repetir tanto (porque lo hacemos mucho). Nos cuentan que existen las funciones, las vemos como algo maravilloso y al mismo tiempo doloroso de construir. Pero cuando le agarramos la mano no podemos parar.</p>
+</li>
+<li>
+<p><strong>La era del paquete.</strong> Nos empezamos a cansar de ir a buscar funciones por proyectos mal organizados, hechos ad hoc para algo en particular y que ya no recordamos bien en qué carpeta lo dejamos, o siquiera si era ese el proyecto en el que habíamos escrito la función. Los paquetes ya eran algo que escuchábamos hablar, pero eso es para gente que trabaja en la NASA, no estamos a la altura.</p>
+</li>
+</ol>
+<p>Este post tiene como objetivo aquellas personas que están transitando la tercera etapa, por dos razones más que nada:</p>
+<p>a. saben escribir funciones (rústicas, no sofisticadas, pero funciones al fin), y</p>
+<p>b. necesitan armar un paquete</p>
+<h2 id="bibliografía-de-referencia">Bibliografía de referencia</h2>
+<p>Me voy a basar en la documentación <a href="https://r-pkgs.org/data.html">R Packages (2e)</a> cuyos autores son <a href="https://jennybryan.org/">Jennifer Bryan</a> y <a href="https://hadley.nz/">Hadley Wickham</a>. Este libro está disponible y accesible de forma gratuita en internet. Está escrito sólo en inglés, pero en uno muy sencillo y ameno, fácil de digerir. Ambos autores tienen una inclinación por poner el foco en la accesibilidad a la hora de transmitir conocimiento, cosa para nada despreciable en el mundo de la programación.</p>
+<h2 id="manos-a-la-obra">Manos a la obra</h2>
+<p>Voy a mostrar los mínimos pasos necesarios para armar un paquete y para ello voy a&hellip; ¡armar un paquete! La idea es no quedarnos en lo expositivo, sino que se pueda replicar (y adaptar) el ejemplo.</p>
+<h3 id="librerías-de-trabajo">Librerías de trabajo</h3>
+<p>Para armar nuestro paquete necesitaremos de las siguientes librerías, las cuales nos van a proveer de funciones para facilitar el desarrollo del paquete.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75af00">library</span><span style="color:#111">(</span><span style="color:#111">devtools</span><span style="color:#111">)</span>
+<span style="color:#75af00">library</span><span style="color:#111">(</span><span style="color:#111">usethis</span><span style="color:#111">)</span>
+</code></pre></div><p><strong>Paso 1, crear el paquete</strong>. Lo primero que vamos a hacer es ponerle un nombre a nuestro paquete, el cual se llamara <code>{risas}</code>.
+Luego vamos a crearlo con la siguiente función (asegúrate de poner la ruta que quieras para alojar el paquete en tu computadora):</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">usethis</span><span style="color:#f92672">::</span><span style="color:#75af00">create_package</span><span style="color:#111">(</span><span style="color:#d88200">&#34;risas&#34;</span><span style="color:#111">)</span>
+</code></pre></div><p>Como resultado vas a poder ver que se te ha creado un proyecto nuevo con el nombre del paquete y una estructura de archivos como la de esta imagen:</p>
+<p><img src="img/carpetas_paquete.png" alt=""></p>
+<blockquote>
+  <label class="showMore" for="_1"> 🚧️ En pocas palabras</label>
+  <input id="_1" type="checkbox">
+  <div>
+<ul>
+<li>
+<p>la <strong>carpeta R</strong> va a contener el conjunto de funciones creadas.</p>
+</li>
+<li>
+<p><strong>DESCRIPTION</strong> provee la metadata (data sobre la data) del paquete</p>
+</li>
+<li>
+<p><strong>.Rbuildignore</strong> lista los archivos que vamos a necesitar pero que no se incluirán cuando armemos el paquete</p>
+</li>
+<li>
+<p><strong>risas.Rproj</strong> es el archivo del proyecto creado</p>
+</li>
+<li>
+<p><strong>.gitignore</strong> contiene aquellos archivos que no queremos que interactuen con Github<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+</li>
+<li>
+<p><strong>NAMESPACE</strong> declara aquellas funciones que nuestro paquete declara para uso externo y aquellas funciones externas que nuestro paquete importa.</div></p>
+</li>
+</ul>
+</blockquote>
+<p><strong>Paso 2, armar las funciones (o adaptar las que ya tenemos hechas).</strong> Aquí es donde debemos ir a buscar esas funciones que dieron la razón de ser del paquete. El destino de esas funciones es la carpeta <code>R</code> que se creo automáticamente al comienzo. En principio la idea es que tengamos un R script por cada función, luego podemos agrupar más de una por script, pero al principio es más prolijo e intuitivo arrancar por la primera versión.</p>
+<p>La función que nos va a asistir en este paso es <code>usethis::use_r()</code> (en el paréntesis indicamos el nombre de la función). Al ejecutarla pasarán dos cosas: (1) se creará automáticamente el archivo .R, directo en la carpeta R y (2) se abrirá para ya definir el contenido de la función. Por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">usethis</span><span style="color:#f92672">::</span><span style="color:#75af00">use_r</span><span style="color:#111">(</span><span style="color:#d88200">&#34;risa_ja&#34;</span><span style="color:#111">)</span>
+</code></pre></div><p>Una vez en el R script, defino el contenido de la función (notar que el nombre del script y el nombre de la función son iguales) y guardo el archivo:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">risa_ja</span> <span style="color:#f92672">&lt;-</span> <span style="color:#75af00">function</span><span style="color:#111">(){</span>
+
+  <span style="color:#75af00">print</span><span style="color:#111">(</span><span style="color:#d88200">&#34;jajajajajaja&#34;</span><span style="color:#111">)</span>
+
+<span style="color:#111">}</span>
+</code></pre></div><p><strong>Paso 3, cargar y chequear.</strong> Una vez que definí mi función debo proceder a &ldquo;cargarla&rdquo; en el ambiente y luego correr nuestro primer <em>chequeo</em> para ver si está todo bien con lo que hicimos hasta el momento. Las funciones que nos asistirán en este paso son <code>devtools::load_all()</code> para cargar la o las funciones que creamos (es como correr un <code>library()</code> pero de un paquete que aún no esta instalado) y <code>devtools::check()</code> para el chequeo.</p>
+<p>Al correr el <code>check()</code> deberíamos ver algo así:</p>
+<p><img src="img/paquete_check.gif" alt=""></p>
+<p>Lo importante de este paso es revisar el último mensaje, que de salir todo bien debería figurar algo así:</p>
+<p><img src="img/paquete_check_resultado.png" alt=""></p>
+<p>Por suerte la explicación de estos tres bloques (<em>errors</em>, <em>warning</em> y <em>note</em>) es bastante intuitiva. Lo que más nos importa es que <span style="color:green"> <code>errors</code></span> figure en cero. De no ser así es lo primero que deberíamos revisar. Por suerte, inmediatamente arriba de este último mensaje tenemos más pistas sobre qué es lo que encontró el  <code>check()</code> como para que aparezca, por ejemplo, un <span style="color:red"> <code>1 warning</code></span> (en este caso, falta darle una licencia al paquete, cosa que haremos en los próximos pasos).</p>
+<p><strong>Paso 4, darle una licencia al paquete.</strong> Aquí no profundizaremos mucho ya que el paso es bien sencillo y lo que puede tomar más tiempo es decidir por qué tipo de licencia optar. En nuestro caso vamos a ir por GPL-3<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>La función que debemos para cumplir con este paso es:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">usethis</span><span style="color:#f92672">::</span><span style="color:#75af00">use_gpl3_license</span><span style="color:#111">()</span>
+</code></pre></div><p>Con ella se creará un nuevo archivo en la carpeta del proyecto llamado <code>LICENSE.md</code>.</p>
+<p><strong>Paso 5, documentación del paquete.</strong> Esta etapa es muy importante. Y esto es porque una de las razones por las cuales hacer un paquete es la posibilidad de documentar, actividad cuya popularidad es inversamente proporcional a la importancia que tiene. ¿Por qué documentar? Puede haber varias respuestas, pero la más palpable puede ser que la documentación nos ahorra dolores de cabeza (a nosotros/as o a otros/as). Una función puede ser intuitiva para quien la diseña (o no!), pero al retomar su uso después de un tiempo podemos no tener claro cómo es que se usaba, los parámetros que tiene y el resultado que genera. <strong>Para ello es clave la documentación</strong>, porque es justamente eso lo que resolvemos, dejar en claro lo que hace una función y la forma de utilizarla para llegar a ese resultado.</p>
+<p>Pero aquí debemos separar entre documentar una función y documentar un paquete, van a ser dos pasos diferentes. Vamos por el primero.</p>
+<p><strong>Documentar una función.</strong> Lo que vamos a hacer es lo siguiente: en el mismo R script donde definimos nuestra nueva función (<code>risa_ja()</code>) vamos a pararnos en la primera línea y dirigirnos a la ventana de Rstudio <em><strong>Code &ndash;&gt; Insert Roxygen sckeleton</strong></em>:</p>
+<p><img src="img/paquete_funcion_doc.gif" alt=""></p>
+<p>Hecho esto, Rstudio automaticamente agregar al menos 6 líneas de código que servirán para documentar lo básico de nuestra función (nombre, descripción, parámetros -si los hay-, ejemplo de uso, al menos para empezar).
+En nuestro caso, debería quedar algo así:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#&#39; risa_ja</span>
+<span style="color:#75715e">#&#39; @description Función que genera una carcajada</span>
+<span style="color:#75715e">#&#39; @return</span>
+<span style="color:#75715e">#&#39; @export</span>
+<span style="color:#75715e">#&#39;</span>
+<span style="color:#75715e">#&#39; @examples</span>
+<span style="color:#75715e">#&#39; risa_ja()</span>
+<span style="color:#111">risa_ja</span> <span style="color:#f92672">&lt;-</span> <span style="color:#75af00">function</span><span style="color:#111">(){</span>
+
+  <span style="color:#75af00">print</span><span style="color:#111">(</span><span style="color:#d88200">&#34;jajajajajaja&#34;</span><span style="color:#111">)</span>
+
+<span style="color:#111">}</span>
+</code></pre></div><p>Una vez que completamos estos campos, corremos la función <code>devtools::document()</code>. Con ella se va a crear una carpeta llamada <strong>man</strong> en donde se irán listando archivos <code>.md</code> que contienen esta documentación que completamos, uno por cada función que tengamos en cada R.script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">devtools</span><span style="color:#f92672">::</span><span style="color:#75af00">document</span><span style="color:#111">()</span>
+</code></pre></div><p><img src="img/carpetas_man.png" alt=""></p>
+<p>Por otro lado se va a actualizar el archivo que ya existía llamado <strong>NAMESPACE</strong>, donde se irán listando las funciones que creamos. Importante, no editar este archivo a mano! esa tarea se la vamos a dejar al <code>document()</code>.</p>
+<p><strong>Paso 6, chequear que esté todo bien e&hellip; instalar el paquete! (estamos cerca!).</strong> Nuevamente vamos a correr el <code>devtools::check()</code> (es muy importante chequear!), y revisar que con lo nuevo que hemos corrido estemos bien encaminados/as para lo que tan ansiadamente queremos hacer: instalar el paquete en nuestras computadoras!</p>
+<p>Si todo sale bien, nuestro nuevo <code>check()</code> debería verse así:</p>
+<p><img src="img/paquete_check_v2.png" alt="">
+<img src="https://media.tenor.com/qdg13PqYbxMAAAAM/yes-baby.gif" alt=""></p>
+<p>No demoremos más, antes de que alguien se arrepienta, instalemos nuestro paquete ejecutando la siguiente sentencia en nuestras consolas:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">devtools</span><span style="color:#f92672">::</span><span style="color:#75af00">install</span><span style="color:#111">()</span>
+</code></pre></div><p>De ahora en más, nuestro paquete ya está instalado en la computadora y disponible para ser usado. Y la mejor manera de comprobarlo es&hellip; probándolo!</p>
+<p>Veamos cómo al comenzar a escribirlo en un <code>library()</code> Rstudio lo sugiere como autocompletado:</p>
+<p><img src="img/paquete_libreria.png" alt=""></p>
+<h3 id="éxito">Éxito.</h3>
+<p>Hemos logrado sin grandes sobresaltos armar nuestro primer paquete. Esta es una guía mínima de cómo hacerlo, hay muuuuucho más al respecto. Si te interesa invito nuevamente a que pases por el libro <a href="https://r-pkgs.org/data.html">R Packages (2e)</a>. Aunque en inglés, es de la mejor documentación para el armado de paquetes.</p>
+<p>Va también, de forma resumida, cómo podrías seguir avanzando en el desarrollo de tu paquete:</p>
+<ul>
+<li>
+<p>Vincular este flujo de trabajo con GIT y Github. Esto te permitiría dejar disponible a tu nuevo paquete en un repositorio para que otras personas también puedan descargárselo. No incluí esto ya que la intención era concentrarnos en el armado del paquete, esquivando así la aventura que es adentrarse en Github (aventura más que recomendada por cierto!)</p>
+</li>
+<li>
+<p>Armar <em>tests</em> de tus funciones. Esto ayuda a la robustez de tu desarrollo, comprobando de diferentes formas que tu función hace lo que se espera que haga (a veces las cosas funcionan pero no como uno quiere!). Probá jugar con <code>usethis::use_testthat()</code>, luego <code>usethis::use_test()</code> para finalizar con <code>devtools::test()</code>, a ver qué pasa!. <a href="https://r-pkgs.org/testing-basics.html">Acá te dejo la referencia en el libro que trata este tema</a></p>
+</li>
+<li>
+<p>¿Usas otros paquetes para armar tu función? Probá con <code>usethis::use_package()</code> para dejar asentado esto en la estructura de tu desarrollo. <a href="https://r-pkgs.org/dependencies.html">Acá un poco más del tema</a></p>
+</li>
+<li>
+<p>¿Vas a sumar una nueva función? Este sería el ciclo a seguir en un paquete ya creado:</p>
+</li>
+</ul>
+<ol>
+<li>Sumá la función con <code>usethis::use_r(&quot;nombre_de_la_funcion&quot;)</code></li>
+<li>Documentá la función con el esqueleto de Roxygen</li>
+<li>Cargá el nuevo estado del paquete con <code>devtools::load_all()</code></li>
+<li>Documentá en el paquete la nueva función con <code>devtools::document()</code></li>
+<li>Chequeá que esté todo bien con <code>devtools::check()</code></li>
+<li>Instalá la nueva versión de tu paquete con la nueva función! &ndash;&gt; <code>devtools::install()</code></li>
+</ol>
+<br>
+<p>Eso es todo, espero que haya sido ameno y, sobre todo, ¡útil! Cualquier comentario o duda podés dejar un comentario o escribirme por alguna de las redes.</p>
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+<div id="commento"></div>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Otro post sobre Github ya se encuentra en producción&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Más información sobre la licencia GPLv3, aquí: <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">https://www.gnu.org/licenses/gpl-3.0.en.html</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+        </item>
         
         <item>
             <title>Todos los caminos conducen a Microcentro</title>
             <link>https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/</link>
-            <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
+            <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
             
             <guid>https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/</guid>
             <description>Idea Analizar la concentración de la infraestructura de la administración pública. La hipótesis por detrás de este informe exploratorio asume la presencia de una alta concentración de innmuebles en ciertas zonas, principalmente en aquella denominada “Microcentro”, hecho que genera una gran movilización de personas hacia mismos lugares con una consecuente saturación del sistema de transporte, por un lado y de servicios, por otro.
@@ -47,9 +230,9 @@ Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de 
 <h2 id="urgando-en-la-información-disponible">Urgando en la información disponible</h2>
 <p>La informaciuón con la que se cuenta es aquella referida a los Inmuebles Propios del Estado Nacional y Alquilados, provista por la Dirección Nacional del Registro de Bienes Inmuebles - Agencia de Administración de Bienes del Estado - Jefatura de Gabinete de Ministros.</p>
 <p>Una de las primeras observaciones alude a la presencia de varios campos que indican que la información que contiene la base es para absolutamente todos los edificios en manos del Estado Nacional Argentino (propios o en alquiler), sea que estén ubicados dentro o fuera del país y, en el primer caso, en qué jurisdicción.</p>
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 <p>Para este análisis, vamos a quedarnos unicamente con aquellos localizados en Argentina y, a su vez, en la Ciudad Autónoma de Buenos Aires (CABA). Notamos cómo en la Ciudad Autónoma de Buenos Aires, centro adminitrativo del país, se concetra practicamente la totalidad de los inmuebles <strong>(97,5%)</strong></p>
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 <p>Tal como se mencionó anteriormente, el análisis se centra en la distribución de inmuebles ubicados en la CABA. Una vez seleccionado nuestro universo de análisis, se procede a localizar geográficamente sobre un mapa la ubicación de cada uno de los edificios:</p>
 <pre><code>## Reading layer `CABA_comunas' from data source 
 ##   `https://bitsandbricks.github.io/data/CABA_comunas.geojson' 
@@ -60,7 +243,7 @@ Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de 
 ## Bounding box:  xmin: -58.53152 ymin: -34.70529 xmax: -58.33514 ymax: -34.52754
 ## Geodetic CRS:  WGS 84
 </code></pre>
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 <p>Podemos notar que ciertos puntos presentan un color intenso. Esto nos permite sospechar que una misma dirección aparece varias veces en la base de datos. Tratemos de quedarnos con una sóla fila por dirección, intentando no perder información en el camino, como la superficie en mts2 del edificio (posible estimador de cantidad de personas por edificio a utilizar en un futuro):</p>
 <p>Para ello, se crea una variable que contenga la información de la calle y el número en un mismo campo, y así poder identificar si se encuentra duplicada la fila.</p>
 <p>Encontramos, efectivamente, que hay 247 direcciones duplicadas y 207 coordenadas duplicadas. Esto se debe, principalmente, a que en aquellos edificios donde el Estado dispone de más de un piso, se registra cada uno como un caso diferente.</p>
@@ -83,13 +266,13 @@ Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de 
 ## #   ⁶​duplicados_coord
 </code></pre>
 <p>Procedemos entonces a eliminar los edificios duplicados para evitar el doble conteo. Su peso por superficie, en caso de considerarlo, seguirá siendo posible de analizar.</p>
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 <p>A continuación se puede ver cómo se distribuyen los edificios según la comuna en donde estén ubicados y notar que tenemos casos donde no se dispone de información sobre a cuál de ellas pertenecen:</p>
-<div id="kcvcjotros" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="mdishhyfav" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
-<p>#kcvcjotros .gt_table {
+<p>#mdishhyfav .gt_table {
 display: table;
 border-collapse: collapse;
 margin-left: auto;
@@ -113,7 +296,7 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_heading {
+<p>#mdishhyfav .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -124,7 +307,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_title {
+<p>#mdishhyfav .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -135,7 +318,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }</p>
-<p>#kcvcjotros .gt_subtitle {
+<p>#mdishhyfav .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
@@ -146,12 +329,12 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }</p>
-<p>#kcvcjotros .gt_bottom_border {
+<p>#mdishhyfav .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_col_headings {
+<p>#mdishhyfav .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -165,7 +348,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_col_heading {
+<p>#mdishhyfav .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -184,7 +367,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }</p>
-<p>#kcvcjotros .gt_column_spanner_outer {
+<p>#mdishhyfav .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -195,13 +378,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }</p>
-<p>#kcvcjotros .gt_column_spanner_outer:first-child {
+<p>#mdishhyfav .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }</p>
-<p>#kcvcjotros .gt_column_spanner_outer:last-child {
+<p>#mdishhyfav .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }</p>
-<p>#kcvcjotros .gt_column_spanner {
+<p>#mdishhyfav .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -212,7 +395,7 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }</p>
-<p>#kcvcjotros .gt_group_heading {
+<p>#mdishhyfav .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -236,7 +419,7 @@ border-right-width: 1px;
 border-right-color: #D3D3D3;
 vertical-align: middle;
 }</p>
-<p>#kcvcjotros .gt_empty_group_heading {
+<p>#mdishhyfav .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -250,13 +433,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }</p>
-<p>#kcvcjotros .gt_from_md &gt; :first-child {
+<p>#mdishhyfav .gt_from_md &gt; :first-child {
 margin-top: 0;
 }</p>
-<p>#kcvcjotros .gt_from_md &gt; :last-child {
+<p>#mdishhyfav .gt_from_md &gt; :last-child {
 margin-bottom: 0;
 }</p>
-<p>#kcvcjotros .gt_row {
+<p>#mdishhyfav .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -274,7 +457,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }</p>
-<p>#kcvcjotros .gt_stub {
+<p>#mdishhyfav .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -286,7 +469,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }</p>
-<p>#kcvcjotros .gt_stub_row_group {
+<p>#mdishhyfav .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -299,10 +482,10 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }</p>
-<p>#kcvcjotros .gt_row_group_first td {
+<p>#mdishhyfav .gt_row_group_first td {
 border-top-width: 2px;
 }</p>
-<p>#kcvcjotros .gt_summary_row {
+<p>#mdishhyfav .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -311,14 +494,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }</p>
-<p>#kcvcjotros .gt_first_summary_row {
+<p>#mdishhyfav .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_first_summary_row.thick {
+<p>#mdishhyfav .gt_first_summary_row.thick {
 border-top-width: 2px;
 }</p>
-<p>#kcvcjotros .gt_last_summary_row {
+<p>#mdishhyfav .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -327,7 +510,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_grand_summary_row {
+<p>#mdishhyfav .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -336,7 +519,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }</p>
-<p>#kcvcjotros .gt_first_grand_summary_row {
+<p>#mdishhyfav .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -345,10 +528,10 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_striped {
+<p>#mdishhyfav .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }</p>
-<p>#kcvcjotros .gt_table_body {
+<p>#mdishhyfav .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -356,7 +539,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_footnotes {
+<p>#mdishhyfav .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -369,7 +552,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_footnote {
+<p>#mdishhyfav .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-left: 4px;
@@ -377,7 +560,7 @@ padding-right: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }</p>
-<p>#kcvcjotros .gt_sourcenotes {
+<p>#mdishhyfav .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -390,58 +573,58 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_sourcenote {
+<p>#mdishhyfav .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }</p>
-<p>#kcvcjotros .gt_left {
+<p>#mdishhyfav .gt_left {
 text-align: left;
 }</p>
-<p>#kcvcjotros .gt_center {
+<p>#mdishhyfav .gt_center {
 text-align: center;
 }</p>
-<p>#kcvcjotros .gt_right {
+<p>#mdishhyfav .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }</p>
-<p>#kcvcjotros .gt_font_normal {
+<p>#mdishhyfav .gt_font_normal {
 font-weight: normal;
 }</p>
-<p>#kcvcjotros .gt_font_bold {
+<p>#mdishhyfav .gt_font_bold {
 font-weight: bold;
 }</p>
-<p>#kcvcjotros .gt_font_italic {
+<p>#mdishhyfav .gt_font_italic {
 font-style: italic;
 }</p>
-<p>#kcvcjotros .gt_super {
+<p>#mdishhyfav .gt_super {
 font-size: 65%;
 }</p>
-<p>#kcvcjotros .gt_footnote_marks {
+<p>#mdishhyfav .gt_footnote_marks {
 font-style: italic;
 font-weight: normal;
 font-size: 75%;
 vertical-align: 0.4em;
 }</p>
-<p>#kcvcjotros .gt_asterisk {
+<p>#mdishhyfav .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }</p>
-<p>#kcvcjotros .gt_indent_1 {
+<p>#mdishhyfav .gt_indent_1 {
 text-indent: 5px;
 }</p>
-<p>#kcvcjotros .gt_indent_2 {
+<p>#mdishhyfav .gt_indent_2 {
 text-indent: 10px;
 }</p>
-<p>#kcvcjotros .gt_indent_3 {
+<p>#mdishhyfav .gt_indent_3 {
 text-indent: 15px;
 }</p>
-<p>#kcvcjotros .gt_indent_4 {
+<p>#mdishhyfav .gt_indent_4 {
 text-indent: 20px;
 }</p>
-<p>#kcvcjotros .gt_indent_5 {
+<p>#mdishhyfav .gt_indent_5 {
 text-indent: 25px;
 }
 </style></p>
@@ -487,9 +670,9 @@ text-indent: 25px;
 </table>
 </div>
 <p>Una vez descartados los casos sin información, se nota claramente la concentración de inmuebles del Estado Nacional en la <strong>Comuna 1</strong>, con más de la mitad de los inmuebles <strong>(52.7)</strong> y muy lejos de la <strong>Comuna 14</strong>, en segundo lugar, quien concentra un <strong>9.6</strong> de los mismos.</p>
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 <p>Intenemos armar un mapa de coropletas:</p>
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 <p>En el mapa se puede identificar claramente la concentración extrema de oficinas del Estado Nacional en la comuna 1.</p>
 <p>Podríamos precisar en una escala menor esta distribución, por ejemplo, por radios censales:</p>
 <pre><code>## Reading layer `CABA_rc' from data source 
@@ -500,13 +683,13 @@ text-indent: 25px;
 ## Bounding box:  xmin: -58.53092 ymin: -34.70574 xmax: -58.33455 ymax: -34.528
 ## Geodetic CRS:  WGS 84
 </code></pre>
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-13-1.png" width="672" />
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 <p>Otra forma de visualizar la información es a través de los gráficos de densidad. En este caso, se puede identificar una clara zona predominante (como vimos, principalmente en la Comuna 1) y pequeñas zonas poco densas en cuanto a la cantidad de edificios del Estado.</p>
 <pre><code>##      left    bottom     right       top 
 ## -58.53800 -34.68466 -58.33475 -34.52943
 </code></pre>
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 <p>(Breve) Conclusión.</p>
 <p>Desde el punto de vista de la movilidad de personas al trabajo, comprobamos que (casi) todes vamos para el mismo lado, o dicho de otra forma, que más de la mitad de los inmuebles del Estado se ubican en una sóla Comuna lo que, inevitablemente, genera un flujo de personas hacia la misma dirección. Esto, por un lado, conlleva consecuencias negativas importantes tanto para la calidad como para la capacidad de servicio del transporte público (y que, a su vez, afecta a la calidad de vida de las personas).</p>
 <p>Por otro lado, una mejor redistribución de los inmuebles podría generar una mejor distribución de los recursos económicos que se movilizan para ofrecer servicios a las personas que deben movilizarse hacia esos destinos para trabajar. Y no sólo nos referimos a servicios desde una perspectiva comercial. La redistribución podría facilitar el acceso a la seguridad y a la salud de la población del resto de las comunas, por ejemplo.</p>

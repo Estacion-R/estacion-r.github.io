@@ -6,56 +6,47 @@
     <description>Recent content in Tags on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Fri, 14 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>datascience</title>
-      <link>https://estacion-r.netlify.app/tags/datascience/</link>
-      <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
+      <title>desarrollo</title>
+      <link>https://estacion-r.netlify.app/tags/desarrollo/</link>
+      <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/tags/datascience/</guid>
+      <guid>https://estacion-r.netlify.app/tags/desarrollo/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>estacionr</title>
-      <link>https://estacion-r.netlify.app/tags/estacionr/</link>
-      <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
+      <title>development</title>
+      <link>https://estacion-r.netlify.app/tags/development/</link>
+      <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/tags/estacionr/</guid>
+      <guid>https://estacion-r.netlify.app/tags/development/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>ggplot2</title>
-      <link>https://estacion-r.netlify.app/tags/ggplot2/</link>
-      <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
+      <title>packages</title>
+      <link>https://estacion-r.netlify.app/tags/packages/</link>
+      <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/tags/ggplot2/</guid>
+      <guid>https://estacion-r.netlify.app/tags/packages/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>mapas</title>
-      <link>https://estacion-r.netlify.app/tags/mapas/</link>
-      <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
+      <title>paquetes</title>
+      <link>https://estacion-r.netlify.app/tags/paquetes/</link>
+      <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/tags/mapas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>maps</title>
-      <link>https://estacion-r.netlify.app/tags/maps/</link>
-      <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/maps/</guid>
+      <guid>https://estacion-r.netlify.app/tags/paquetes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rstatES</title>
       <link>https://estacion-r.netlify.app/tags/rstates/</link>
-      <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/tags/rstates/</guid>
       <description></description>
@@ -64,36 +55,45 @@
     <item>
       <title>rstats</title>
       <link>https://estacion-r.netlify.app/tags/rstats/</link>
-      <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/tags/rstats/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>eph</title>
-      <link>https://estacion-r.netlify.app/tags/eph/</link>
-      <pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate>
+      <title>datascience</title>
+      <link>https://estacion-r.netlify.app/tags/datascience/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/tags/eph/</guid>
+      <guid>https://estacion-r.netlify.app/tags/datascience/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>google</title>
-      <link>https://estacion-r.netlify.app/tags/google/</link>
-      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      <title>ggplot2</title>
+      <link>https://estacion-r.netlify.app/tags/ggplot2/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/tags/google/</guid>
+      <guid>https://estacion-r.netlify.app/tags/ggplot2/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>tendencias</title>
-      <link>https://estacion-r.netlify.app/tags/tendencias/</link>
-      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
+      <title>mapas</title>
+      <link>https://estacion-r.netlify.app/tags/mapas/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/tags/tendencias/</guid>
+      <guid>https://estacion-r.netlify.app/tags/mapas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maps</title>
+      <link>https://estacion-r.netlify.app/tags/maps/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/tags/maps/</guid>
       <description></description>
     </item>
     

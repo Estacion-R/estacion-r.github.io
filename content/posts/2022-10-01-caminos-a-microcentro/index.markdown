@@ -1,20 +1,18 @@
 ---
 title: Todos los caminos conducen a Microcentro
-author: Pablo Tiscornia
-date: '2022-10-14'
-slug: todos-los-caminos-conducen-a-microcentro
+author: ''
+date: '2022-10-01'
+slug: caminos-a-microcentro
 categories:
   - rstatsES
-  - mapas
+  - analisis
 tags:
   - rstats
-  - rstatES
+  - rstatsES
+  - datascience
   - ggplot2
   - mapas
   - maps
-  - datascience
-  - estacionr
-draft: no
 toc: no
 images: ~
 ---
@@ -49,11 +47,11 @@ La informaciuón con la que se cuenta es aquella referida a los Inmuebles Propio
 
 Una de las primeras observaciones alude a la presencia de varios campos que indican que la información que contiene la base es para absolutamente todos los edificios en manos del Estado Nacional Argentino (propios o en alquiler), sea que estén ubicados dentro o fuera del país y, en el primer caso, en qué jurisdicción.
 
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 Para este análisis, vamos a quedarnos unicamente con aquellos localizados en Argentina y, a su vez, en la Ciudad Autónoma de Buenos Aires (CABA). Notamos cómo en la Ciudad Autónoma de Buenos Aires, centro adminitrativo del país, se concetra practicamente la totalidad de los inmuebles **(97,5%)**
 
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 Tal como se mencionó anteriormente, el análisis se centra en la distribución de inmuebles ubicados en la CABA. Una vez seleccionado nuestro universo de análisis, se procede a localizar geográficamente sobre un mapa la ubicación de cada uno de los edificios:
 
@@ -66,7 +64,7 @@ Tal como se mencionó anteriormente, el análisis se centra en la distribución 
     ## Bounding box:  xmin: -58.53152 ymin: -34.70529 xmax: -58.33514 ymax: -34.52754
     ## Geodetic CRS:  WGS 84
 
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 
 Podemos notar que ciertos puntos presentan un color intenso. Esto nos permite sospechar que una misma dirección aparece varias veces en la base de datos. Tratemos de quedarnos con una sóla fila por dirección, intentando no perder información en el camino, como la superficie en mts2 del edificio (posible estimador de cantidad de personas por edificio a utilizar en un futuro):
 
@@ -95,16 +93,16 @@ Al mismo tiempo, evidenciamos que el campo de superficie se encuentra de forma a
 
 Procedemos entonces a eliminar los edificios duplicados para evitar el doble conteo. Su peso por superficie, en caso de considerarlo, seguirá siendo posible de analizar.
 
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
 A continuación se puede ver cómo se distribuyen los edificios según la comuna en donde estén ubicados y notar que tenemos casos donde no se dispone de información sobre a cuál de ellas pertenecen:
 
-<div id="pczzimbrgt" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="mdishhyfav" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#pczzimbrgt .gt_table {
+#mdishhyfav .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -129,7 +127,7 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   border-left-color: #D3D3D3;
 }
 
-#pczzimbrgt .gt_heading {
+#mdishhyfav .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -141,7 +139,7 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   border-right-color: #D3D3D3;
 }
 
-#pczzimbrgt .gt_title {
+#mdishhyfav .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -153,7 +151,7 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   border-bottom-width: 0;
 }
 
-#pczzimbrgt .gt_subtitle {
+#mdishhyfav .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -165,13 +163,13 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   border-top-width: 0;
 }
 
-#pczzimbrgt .gt_bottom_border {
+#mdishhyfav .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pczzimbrgt .gt_col_headings {
+#mdishhyfav .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -186,7 +184,7 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   border-right-color: #D3D3D3;
 }
 
-#pczzimbrgt .gt_col_heading {
+#mdishhyfav .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -206,7 +204,7 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   overflow-x: hidden;
 }
 
-#pczzimbrgt .gt_column_spanner_outer {
+#mdishhyfav .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -218,15 +216,15 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   padding-right: 4px;
 }
 
-#pczzimbrgt .gt_column_spanner_outer:first-child {
+#mdishhyfav .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pczzimbrgt .gt_column_spanner_outer:last-child {
+#mdishhyfav .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pczzimbrgt .gt_column_spanner {
+#mdishhyfav .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -238,7 +236,7 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   width: 100%;
 }
 
-#pczzimbrgt .gt_group_heading {
+#mdishhyfav .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -263,7 +261,7 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   vertical-align: middle;
 }
 
-#pczzimbrgt .gt_empty_group_heading {
+#mdishhyfav .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -278,15 +276,15 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   vertical-align: middle;
 }
 
-#pczzimbrgt .gt_from_md > :first-child {
+#mdishhyfav .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pczzimbrgt .gt_from_md > :last-child {
+#mdishhyfav .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pczzimbrgt .gt_row {
+#mdishhyfav .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -305,7 +303,7 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   overflow-x: hidden;
 }
 
-#pczzimbrgt .gt_stub {
+#mdishhyfav .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -318,7 +316,7 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   padding-right: 5px;
 }
 
-#pczzimbrgt .gt_stub_row_group {
+#mdishhyfav .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -332,11 +330,11 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   vertical-align: top;
 }
 
-#pczzimbrgt .gt_row_group_first td {
+#mdishhyfav .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pczzimbrgt .gt_summary_row {
+#mdishhyfav .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -346,16 +344,16 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   padding-right: 5px;
 }
 
-#pczzimbrgt .gt_first_summary_row {
+#mdishhyfav .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pczzimbrgt .gt_first_summary_row.thick {
+#mdishhyfav .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pczzimbrgt .gt_last_summary_row {
+#mdishhyfav .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -365,7 +363,7 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   border-bottom-color: #D3D3D3;
 }
 
-#pczzimbrgt .gt_grand_summary_row {
+#mdishhyfav .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -375,7 +373,7 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   padding-right: 5px;
 }
 
-#pczzimbrgt .gt_first_grand_summary_row {
+#mdishhyfav .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -385,11 +383,11 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   border-top-color: #D3D3D3;
 }
 
-#pczzimbrgt .gt_striped {
+#mdishhyfav .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pczzimbrgt .gt_table_body {
+#mdishhyfav .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -398,7 +396,7 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   border-bottom-color: #D3D3D3;
 }
 
-#pczzimbrgt .gt_footnotes {
+#mdishhyfav .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -412,7 +410,7 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   border-right-color: #D3D3D3;
 }
 
-#pczzimbrgt .gt_footnote {
+#mdishhyfav .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -421,7 +419,7 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   padding-right: 5px;
 }
 
-#pczzimbrgt .gt_sourcenotes {
+#mdishhyfav .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -435,7 +433,7 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   border-right-color: #D3D3D3;
 }
 
-#pczzimbrgt .gt_sourcenote {
+#mdishhyfav .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -443,64 +441,64 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
   padding-right: 5px;
 }
 
-#pczzimbrgt .gt_left {
+#mdishhyfav .gt_left {
   text-align: left;
 }
 
-#pczzimbrgt .gt_center {
+#mdishhyfav .gt_center {
   text-align: center;
 }
 
-#pczzimbrgt .gt_right {
+#mdishhyfav .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pczzimbrgt .gt_font_normal {
+#mdishhyfav .gt_font_normal {
   font-weight: normal;
 }
 
-#pczzimbrgt .gt_font_bold {
+#mdishhyfav .gt_font_bold {
   font-weight: bold;
 }
 
-#pczzimbrgt .gt_font_italic {
+#mdishhyfav .gt_font_italic {
   font-style: italic;
 }
 
-#pczzimbrgt .gt_super {
+#mdishhyfav .gt_super {
   font-size: 65%;
 }
 
-#pczzimbrgt .gt_footnote_marks {
+#mdishhyfav .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#pczzimbrgt .gt_asterisk {
+#mdishhyfav .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pczzimbrgt .gt_indent_1 {
+#mdishhyfav .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pczzimbrgt .gt_indent_2 {
+#mdishhyfav .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pczzimbrgt .gt_indent_3 {
+#mdishhyfav .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pczzimbrgt .gt_indent_4 {
+#mdishhyfav .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pczzimbrgt .gt_indent_5 {
+#mdishhyfav .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -551,11 +549,11 @@ A continuación se puede ver cómo se distribuyen los edificios según la comuna
 
 Una vez descartados los casos sin información, se nota claramente la concentración de inmuebles del Estado Nacional en la **Comuna 1**, con más de la mitad de los inmuebles **(52.7)** y muy lejos de la **Comuna 14**, en segundo lugar, quien concentra un **9.6** de los mismos.
 
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 
 Intenemos armar un mapa de coropletas:
 
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 
 En el mapa se puede identificar claramente la concentración extrema de oficinas del Estado Nacional en la comuna 1.
 
@@ -569,16 +567,16 @@ Podríamos precisar en una escala menor esta distribución, por ejemplo, por rad
     ## Bounding box:  xmin: -58.53092 ymin: -34.70574 xmax: -58.33455 ymax: -34.528
     ## Geodetic CRS:  WGS 84
 
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-13-1.png" width="672" />
 
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 
 Otra forma de visualizar la información es a través de los gráficos de densidad. En este caso, se puede identificar una clara zona predominante (como vimos, principalmente en la Comuna 1) y pequeñas zonas poco densas en cuanto a la cantidad de edificios del Estado.
 
     ##      left    bottom     right       top 
     ## -58.53800 -34.68466 -58.33475 -34.52943
 
-<img src="/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 
 (Breve) Conclusión.
 

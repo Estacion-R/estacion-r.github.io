@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="Pablo Tiscornia">
+<meta name="author" content="Pablo Tiscornia ">
 <meta name="description" content="Idea Analizar la concentración de la infraestructura de la administración pública. La hipótesis por detrás de este informe exploratorio asume la presencia de una alta concentración de innmuebles en ciertas zonas, principalmente en aquella denominada “Microcentro”, hecho que genera una gran movilización de personas hacia mismos lugares con una consecuente saturación del sistema de transporte, por un lado y de servicios, por otro.
 Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de personas no es aconsejable a la hora de combatir enfermedades producidas por virus como el COVID, potencia las consecuencias negativas de dicha distribución geográfica de los inmuebles estatales y refuerza la necesidad de impulsar una política pública que apunte a la desconcentración." />
-<meta name="keywords" content=", rstats, rstatES, ggplot2, mapas, maps, datascience, estacionr" />
+<meta name="keywords" content=", rstats, rstatsES, datascience, ggplot2, mapas, maps" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
 <link rel="canonical" href="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/" />
@@ -41,10 +41,10 @@ Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de 
 
 <meta itemprop="name" content="Todos los caminos conducen a Microcentro">
 <meta itemprop="description" content="Idea Analizar la concentración de la infraestructura de la administración pública. La hipótesis por detrás de este informe exploratorio asume la presencia de una alta concentración de innmuebles en ciertas zonas, principalmente en aquella denominada “Microcentro”, hecho que genera una gran movilización de personas hacia mismos lugares con una consecuente saturación del sistema de transporte, por un lado y de servicios, por otro.
-Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de personas no es aconsejable a la hora de combatir enfermedades producidas por virus como el COVID, potencia las consecuencias negativas de dicha distribución geográfica de los inmuebles estatales y refuerza la necesidad de impulsar una política pública que apunte a la desconcentración."><meta itemprop="datePublished" content="2022-10-14T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-10-14T00:00:00+00:00" />
+Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de personas no es aconsejable a la hora de combatir enfermedades producidas por virus como el COVID, potencia las consecuencias negativas de dicha distribución geográfica de los inmuebles estatales y refuerza la necesidad de impulsar una política pública que apunte a la desconcentración."><meta itemprop="datePublished" content="2022-10-01T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-10-01T00:00:00+00:00" />
 <meta itemprop="wordCount" content="3311">
-<meta itemprop="keywords" content="rstats,rstatES,ggplot2,mapas,maps,datascience,estacionr," />
+<meta itemprop="keywords" content="rstats,rstatsES,datascience,ggplot2,mapas,maps," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Todos los caminos conducen a Microcentro"/>
 <meta name="twitter:description" content="Idea Analizar la concentración de la infraestructura de la administración pública. La hipótesis por detrás de este informe exploratorio asume la presencia de una alta concentración de innmuebles en ciertas zonas, principalmente en aquella denominada “Microcentro”, hecho que genera una gran movilización de personas hacia mismos lugares con una consecuente saturación del sistema de transporte, por un lado y de servicios, por otro.
@@ -58,8 +58,8 @@ Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de 
 Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de personas no es aconsejable a la hora de combatir enfermedades producidas por virus como el COVID, potencia las consecuencias negativas de dicha distribución geográfica de los inmuebles estatales y refuerza la necesidad de impulsar una política pública que apunte a la desconcentración." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-10-14T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-10-14T00:00:00+00:00" />
+<meta property="article:published_time" content="2022-10-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-10-01T00:00:00+00:00" />
 
 
 
@@ -67,11 +67,11 @@ Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de 
 
     <meta property="article:section" content="rstatsES" />
 
-    <meta property="article:section" content="mapas" />
+    <meta property="article:section" content="analisis" />
 
 
 
-    <meta property="article:published_time" content="2022-10-14 00:00:00 &#43;0000 UTC" />
+    <meta property="article:published_time" content="2022-10-01 00:00:00 &#43;0000 UTC" />
 
 
 
@@ -184,9 +184,9 @@ Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de 
 <h2 id="urgando-en-la-información-disponible">Urgando en la información disponible</h2>
 <p>La informaciuón con la que se cuenta es aquella referida a los Inmuebles Propios del Estado Nacional y Alquilados, provista por la Dirección Nacional del Registro de Bienes Inmuebles - Agencia de Administración de Bienes del Estado - Jefatura de Gabinete de Ministros.</p>
 <p>Una de las primeras observaciones alude a la presencia de varios campos que indican que la información que contiene la base es para absolutamente todos los edificios en manos del Estado Nacional Argentino (propios o en alquiler), sea que estén ubicados dentro o fuera del país y, en el primer caso, en qué jurisdicción.</p>
-<img src="https://estacion-r.netlify.app/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 <p>Para este análisis, vamos a quedarnos unicamente con aquellos localizados en Argentina y, a su vez, en la Ciudad Autónoma de Buenos Aires (CABA). Notamos cómo en la Ciudad Autónoma de Buenos Aires, centro adminitrativo del país, se concetra practicamente la totalidad de los inmuebles <strong>(97,5%)</strong></p>
-<img src="https://estacion-r.netlify.app/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 <p>Tal como se mencionó anteriormente, el análisis se centra en la distribución de inmuebles ubicados en la CABA. Una vez seleccionado nuestro universo de análisis, se procede a localizar geográficamente sobre un mapa la ubicación de cada uno de los edificios:</p>
 <pre><code>## Reading layer `CABA_comunas' from data source 
 ##   `https://bitsandbricks.github.io/data/CABA_comunas.geojson' 
@@ -197,7 +197,7 @@ Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de 
 ## Bounding box:  xmin: -58.53152 ymin: -34.70529 xmax: -58.33514 ymax: -34.52754
 ## Geodetic CRS:  WGS 84
 </code></pre>
-<img src="https://estacion-r.netlify.app/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 <p>Podemos notar que ciertos puntos presentan un color intenso. Esto nos permite sospechar que una misma dirección aparece varias veces en la base de datos. Tratemos de quedarnos con una sóla fila por dirección, intentando no perder información en el camino, como la superficie en mts2 del edificio (posible estimador de cantidad de personas por edificio a utilizar en un futuro):</p>
 <p>Para ello, se crea una variable que contenga la información de la calle y el número en un mismo campo, y así poder identificar si se encuentra duplicada la fila.</p>
 <p>Encontramos, efectivamente, que hay 247 direcciones duplicadas y 207 coordenadas duplicadas. Esto se debe, principalmente, a que en aquellos edificios donde el Estado dispone de más de un piso, se registra cada uno como un caso diferente.</p>
@@ -220,13 +220,13 @@ Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de 
 ## #   ⁶​duplicados_coord
 </code></pre>
 <p>Procedemos entonces a eliminar los edificios duplicados para evitar el doble conteo. Su peso por superficie, en caso de considerarlo, seguirá siendo posible de analizar.</p>
-<img src="https://estacion-r.netlify.app/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 <p>A continuación se puede ver cómo se distribuyen los edificios según la comuna en donde estén ubicados y notar que tenemos casos donde no se dispone de información sobre a cuál de ellas pertenecen:</p>
-<div id="kcvcjotros" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="mdishhyfav" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
-<p>#kcvcjotros .gt_table {
+<p>#mdishhyfav .gt_table {
 display: table;
 border-collapse: collapse;
 margin-left: auto;
@@ -250,7 +250,7 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_heading {
+<p>#mdishhyfav .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -261,7 +261,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_title {
+<p>#mdishhyfav .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -272,7 +272,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }</p>
-<p>#kcvcjotros .gt_subtitle {
+<p>#mdishhyfav .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
@@ -283,12 +283,12 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }</p>
-<p>#kcvcjotros .gt_bottom_border {
+<p>#mdishhyfav .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_col_headings {
+<p>#mdishhyfav .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -302,7 +302,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_col_heading {
+<p>#mdishhyfav .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -321,7 +321,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }</p>
-<p>#kcvcjotros .gt_column_spanner_outer {
+<p>#mdishhyfav .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -332,13 +332,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }</p>
-<p>#kcvcjotros .gt_column_spanner_outer:first-child {
+<p>#mdishhyfav .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }</p>
-<p>#kcvcjotros .gt_column_spanner_outer:last-child {
+<p>#mdishhyfav .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }</p>
-<p>#kcvcjotros .gt_column_spanner {
+<p>#mdishhyfav .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -349,7 +349,7 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }</p>
-<p>#kcvcjotros .gt_group_heading {
+<p>#mdishhyfav .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -373,7 +373,7 @@ border-right-width: 1px;
 border-right-color: #D3D3D3;
 vertical-align: middle;
 }</p>
-<p>#kcvcjotros .gt_empty_group_heading {
+<p>#mdishhyfav .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -387,13 +387,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }</p>
-<p>#kcvcjotros .gt_from_md &gt; :first-child {
+<p>#mdishhyfav .gt_from_md &gt; :first-child {
 margin-top: 0;
 }</p>
-<p>#kcvcjotros .gt_from_md &gt; :last-child {
+<p>#mdishhyfav .gt_from_md &gt; :last-child {
 margin-bottom: 0;
 }</p>
-<p>#kcvcjotros .gt_row {
+<p>#mdishhyfav .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -411,7 +411,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }</p>
-<p>#kcvcjotros .gt_stub {
+<p>#mdishhyfav .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -423,7 +423,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }</p>
-<p>#kcvcjotros .gt_stub_row_group {
+<p>#mdishhyfav .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -436,10 +436,10 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }</p>
-<p>#kcvcjotros .gt_row_group_first td {
+<p>#mdishhyfav .gt_row_group_first td {
 border-top-width: 2px;
 }</p>
-<p>#kcvcjotros .gt_summary_row {
+<p>#mdishhyfav .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -448,14 +448,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }</p>
-<p>#kcvcjotros .gt_first_summary_row {
+<p>#mdishhyfav .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_first_summary_row.thick {
+<p>#mdishhyfav .gt_first_summary_row.thick {
 border-top-width: 2px;
 }</p>
-<p>#kcvcjotros .gt_last_summary_row {
+<p>#mdishhyfav .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -464,7 +464,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_grand_summary_row {
+<p>#mdishhyfav .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -473,7 +473,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }</p>
-<p>#kcvcjotros .gt_first_grand_summary_row {
+<p>#mdishhyfav .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -482,10 +482,10 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_striped {
+<p>#mdishhyfav .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }</p>
-<p>#kcvcjotros .gt_table_body {
+<p>#mdishhyfav .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -493,7 +493,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_footnotes {
+<p>#mdishhyfav .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -506,7 +506,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_footnote {
+<p>#mdishhyfav .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-left: 4px;
@@ -514,7 +514,7 @@ padding-right: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }</p>
-<p>#kcvcjotros .gt_sourcenotes {
+<p>#mdishhyfav .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -527,58 +527,58 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }</p>
-<p>#kcvcjotros .gt_sourcenote {
+<p>#mdishhyfav .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }</p>
-<p>#kcvcjotros .gt_left {
+<p>#mdishhyfav .gt_left {
 text-align: left;
 }</p>
-<p>#kcvcjotros .gt_center {
+<p>#mdishhyfav .gt_center {
 text-align: center;
 }</p>
-<p>#kcvcjotros .gt_right {
+<p>#mdishhyfav .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }</p>
-<p>#kcvcjotros .gt_font_normal {
+<p>#mdishhyfav .gt_font_normal {
 font-weight: normal;
 }</p>
-<p>#kcvcjotros .gt_font_bold {
+<p>#mdishhyfav .gt_font_bold {
 font-weight: bold;
 }</p>
-<p>#kcvcjotros .gt_font_italic {
+<p>#mdishhyfav .gt_font_italic {
 font-style: italic;
 }</p>
-<p>#kcvcjotros .gt_super {
+<p>#mdishhyfav .gt_super {
 font-size: 65%;
 }</p>
-<p>#kcvcjotros .gt_footnote_marks {
+<p>#mdishhyfav .gt_footnote_marks {
 font-style: italic;
 font-weight: normal;
 font-size: 75%;
 vertical-align: 0.4em;
 }</p>
-<p>#kcvcjotros .gt_asterisk {
+<p>#mdishhyfav .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }</p>
-<p>#kcvcjotros .gt_indent_1 {
+<p>#mdishhyfav .gt_indent_1 {
 text-indent: 5px;
 }</p>
-<p>#kcvcjotros .gt_indent_2 {
+<p>#mdishhyfav .gt_indent_2 {
 text-indent: 10px;
 }</p>
-<p>#kcvcjotros .gt_indent_3 {
+<p>#mdishhyfav .gt_indent_3 {
 text-indent: 15px;
 }</p>
-<p>#kcvcjotros .gt_indent_4 {
+<p>#mdishhyfav .gt_indent_4 {
 text-indent: 20px;
 }</p>
-<p>#kcvcjotros .gt_indent_5 {
+<p>#mdishhyfav .gt_indent_5 {
 text-indent: 25px;
 }
 </style></p>
@@ -624,9 +624,9 @@ text-indent: 25px;
 </table>
 </div>
 <p>Una vez descartados los casos sin información, se nota claramente la concentración de inmuebles del Estado Nacional en la <strong>Comuna 1</strong>, con más de la mitad de los inmuebles <strong>(52.7)</strong> y muy lejos de la <strong>Comuna 14</strong>, en segundo lugar, quien concentra un <strong>9.6</strong> de los mismos.</p>
-<img src="https://estacion-r.netlify.app/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 <p>Intenemos armar un mapa de coropletas:</p>
-<img src="https://estacion-r.netlify.app/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 <p>En el mapa se puede identificar claramente la concentración extrema de oficinas del Estado Nacional en la comuna 1.</p>
 <p>Podríamos precisar en una escala menor esta distribución, por ejemplo, por radios censales:</p>
 <pre><code>## Reading layer `CABA_rc' from data source 
@@ -637,13 +637,13 @@ text-indent: 25px;
 ## Bounding box:  xmin: -58.53092 ymin: -34.70574 xmax: -58.33455 ymax: -34.528
 ## Geodetic CRS:  WGS 84
 </code></pre>
-<img src="https://estacion-r.netlify.app/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-13-1.png" width="672" />
-<img src="https://estacion-r.netlify.app/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-14-1.png" width="672" />
 <p>Otra forma de visualizar la información es a través de los gráficos de densidad. En este caso, se puede identificar una clara zona predominante (como vimos, principalmente en la Comuna 1) y pequeñas zonas poco densas en cuanto a la cantidad de edificios del Estado.</p>
 <pre><code>##      left    bottom     right       top 
 ## -58.53800 -34.68466 -58.33475 -34.52943
 </code></pre>
-<img src="https://estacion-r.netlify.app/posts/2022-10-14-todos-los-caminos-conducen-a-microcentro_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+<img src="https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/index_files/figure-html/unnamed-chunk-15-1.png" width="672" />
 <p>(Breve) Conclusión.</p>
 <p>Desde el punto de vista de la movilidad de personas al trabajo, comprobamos que (casi) todes vamos para el mismo lado, o dicho de otra forma, que más de la mitad de los inmuebles del Estado se ubican en una sóla Comuna lo que, inevitablemente, genera un flujo de personas hacia la misma dirección. Esto, por un lado, conlleva consecuencias negativas importantes tanto para la calidad como para la capacidad de servicio del transporte público (y que, a su vez, afecta a la calidad de vida de las personas).</p>
 <p>Por otro lado, una mejor redistribución de los inmuebles podría generar una mejor distribución de los recursos económicos que se movilizan para ofrecer servicios a las personas que deben movilizarse hacia esos destinos para trabajar. Y no sólo nos referimos a servicios desde una perspectiva comercial. La redistribución podría facilitar el acceso a la seguridad y a la salud de la población del resto de las comunas, por ejemplo.</p>
@@ -934,12 +934,11 @@ text-indent: 25px;
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
         <span class="tag"><a href="https://estacion-r.netlify.app/tags/rstats/">rstats</a></span>
-        <span class="tag"><a href="https://estacion-r.netlify.app/tags/rstates/">rstatES</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/rstatses/">rstatsES</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/datascience/">datascience</a></span>
         <span class="tag"><a href="https://estacion-r.netlify.app/tags/ggplot2/">ggplot2</a></span>
         <span class="tag"><a href="https://estacion-r.netlify.app/tags/mapas/">mapas</a></span>
         <span class="tag"><a href="https://estacion-r.netlify.app/tags/maps/">maps</a></span>
-        <span class="tag"><a href="https://estacion-r.netlify.app/tags/datascience/">datascience</a></span>
-        <span class="tag"><a href="https://estacion-r.netlify.app/tags/estacionr/">estacionr</a></span>
         
     </p>
 
@@ -948,7 +947,7 @@ text-indent: 25px;
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
 
         <span class="tag"><a href="https://estacion-r.netlify.app/categories/rstatses/">rstatsES</a></span>
-        <span class="tag"><a href="https://estacion-r.netlify.app/categories/mapas/">mapas</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/categories/analisis/">analisis</a></span>
         
     </p>
 
@@ -972,7 +971,7 @@ text-indent: 25px;
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
         
-          2022-10-13 19:00
+          2022-09-30 19:00
         
 
          
@@ -1075,6 +1074,23 @@ text-indent: 25px;
       </div>
 
     
+    <div class="pagination">
+        
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">¡1, 2... paquete!</span>
+                </a>
+            </span>
+            
+
+            
+        </div>
+    </div>
+
 
     
 

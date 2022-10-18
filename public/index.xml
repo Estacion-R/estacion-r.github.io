@@ -6,11 +6,20 @@
     <description>Recent content on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Fri, 14 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>¡1, 2... paquete!</title>
+      <link>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</link>
+      <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</guid>
+      <description>@import url(https://fonts.googleapis.com/css?family=Glegoo);.showMore{font-size: 14px;display:block;cursor: pointer;}.showMore + input{display:none;}.showMore + input + *{display:none;}.showMore + input:checked + *{display:block;}blockquote {margin-left: 0;font-size: 12px;background: #e5f5f9;}Si tenés más de 30 años probablemente hayas conocido los postres 1,2, LISTO! Y si no, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!</description>
+    </item>
+    
     <item>
       <title>Todos los caminos conducen a Microcentro</title>
       <link>https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/</link>
-      <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/</guid>
       <description>Idea Analizar la concentración de la infraestructura de la administración pública. La hipótesis por detrás de este informe exploratorio asume la presencia de una alta concentración de innmuebles en ciertas zonas, principalmente en aquella denominada “Microcentro”, hecho que genera una gran movilización de personas hacia mismos lugares con una consecuente saturación del sistema de transporte, por un lado y de servicios, por otro.
@@ -42,9 +51,8 @@ Una de las razones para elegir este caso de uso, además de la curiosidad, es el
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/perfil/</guid>
-      <description>| Presentación
-Hola! , soy Pablo Tiscornia Licenciado en Sociología (Universidad de Buenos Aires - UBA), especializado en metodología, recolección, procesamiento, análisis y comunicación de información estadística. Últimamente me encuentro enfocado en la mejora de procesos de trabajo vinculados al tratamiento de datos y en el desarrollo de estrategias para la apertura de datos. Todo con R bajo el brazo.
-⚡ Si el cartel dice Datos Abiertos, estadística, R, Software Libre, metodología o programación, ENTRO.</description>
+      <description>Hola! , soy Pablo Tiscornia Licenciado en Sociología (Universidad de Buenos Aires - UBA), especializado en metodología, recolección, procesamiento, análisis y comunicación de información estadística. Últimamente me encuentro enfocado en la mejora de procesos de trabajo vinculados al tratamiento de datos y en el desarrollo de estrategias para la apertura de datos. Todo con R bajo el brazo.
+⚡ Si el cartel dice Sociología, Datos Abiertos, estadística, R, Software Libre, metodología o programación, ENTRO.</description>
     </item>
     
     <item>
@@ -76,9 +84,9 @@ Diseñar y armar este proyecto fue (y es) un trabajo arduo, basado en el comprom
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/proyectos/</guid>
-      <description>Paquete {eph}. Una caja de herramientas para el procesamiento de la Encuesta Permanente de Hogares (EPH-INDEC)
+      <description>  Paquete {eph}. Una caja de herramientas para el procesamiento de la Encuesta Permanente de Hogares (EPH-INDEC)
     SINTA Sistema de Información Turística de la Argentina
-   {r-universe/dnme-minturdep} Caja de Herramientas para el procesamiento de datos de la Dirección Nacional de Mercados y Estadística del Ministerio de Turism y Deporte de la Argentina    {r_tips} Un bot colaborativo que tira #rtips para trabajar con R   &amp;quot; alt=&amp;ldquo;alt text&amp;rdquo; width=&amp;ldquo;200&amp;rdquo;/&amp;gt;</description>
+   {r-universe/dnme-minturdep} Caja de Herramientas para el procesamiento de datos de la Dirección Nacional de Mercados y Estadística del Ministerio de Turism y Deporte de la Argentina    {r_tips} Un bot colaborativo que tira #rtips para trabajar con R   </description>
     </item>
     
   </channel>

@@ -2,8 +2,6 @@
 title: 
 ---
 
-| **Presentación**
-
 ### Hola! <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">, soy Pablo Tiscornia
 
 <div style="text-align: left; display: grid; grid-template-columns: 2fr 1fr;">
@@ -21,12 +19,23 @@ Licenciado en Sociología (Universidad de Buenos Aires - UBA), especializado en 
 </div>
 
 
-⚡ Si el cartel dice Datos Abiertos,  estadística, R, Software Libre, metodología o programación, ENTRO.
+⚡ Si el cartel dice Sociología, Datos Abiertos, estadística, R, Software Libre, metodología o programación, ENTRO.
 
 🔭 Actualmente estoy trabajando como Coordinador de Datos en la Dirección de Mercados y Estadística del Ministerio de Turismo y Deportes. Allí desarrollamos el [SINTA](https://www.yvera.tur.ar/sinta/) y el [Portal de Datos Abiertos](https://datos.yvera.gob.ar/).
 
 
 <br>
+
+| **Proyectos**
+
+- Co-autor del paquete [`{eph}`](https://holatam.github.io/eph/)
+
+- Co-autor del universo de paquetes para el procesamiento de datos en Turismo [dnme-minturdep](https://dnme-minturdep.r-universe.dev/ui#packages)
+
+- [#rtips](https://twitter.com/r_tipss/). Un bot colaborativo de tips sobre el mundo R
+
+- [Repositorio de paquetes latinoamericanos](https://github.com/pablotis/asombrosos-paquetes-r-latinoamerica). Un bot colaborativo de tips sobre el mundo R
+
 
 | **Desempeño profesional**
 
@@ -39,23 +48,15 @@ Ya han pasado más de **9 años** vinculado a la estadística y el procesamiento
 
 - El **Centro de Estudios para el Desarrollo Económico Metropolitano (CEDEM)** de la [Dirección General de Estadísticas y Censos (DGEyC)](https://www.estadisticaciudad.gob.ar/eyc/) de la Ciudad Autónoma de Buenos Aires.
 
-<br>
+
 
 | **Docencia**
 
-- Instructor Certíficado de Rstudio.
+- Instructor Certificado de [Rstudio](https://www.rstudio.com/).
 
 - [Más de 4 años como docente de programación en R](/cursos_r), en instituciones como la FLACSO, INDEC, IDAES-UNSAM, UTDT, IIGG, ASET, UNGS, entre otras.
 
-<br>
 
-<br>
 
-| **Colaboración**
 
-- Co-autor del paquete [`{eph}`](https://holatam.github.io/eph/)
-
-- Co-autor del universo de paquetes para el procesamiento de datos en Turismo [dnme-minturdep](https://dnme-minturdep.r-universe.dev/ui#packages)
-
-- Co-Organizador de la Comunidad [R en Buenos Aires](https://renbaires.github.io/)
 
