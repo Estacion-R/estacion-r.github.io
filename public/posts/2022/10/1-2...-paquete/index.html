@@ -41,7 +41,7 @@
 <meta itemprop="name" content="¡1, 2... paquete!">
 <meta itemprop="description" content="@import url(https://fonts.googleapis.com/css?family=Glegoo);.showMore{font-size: 14px;display:block;cursor: pointer;}.showMore &#43; input{display:none;}.showMore &#43; input &#43; *{display:none;}.showMore &#43; input:checked &#43; *{display:block;}blockquote {margin-left: 0;font-size: 12px;background: #e5f5f9;}Si tenés más de 30 años probablemente hayas conocido los postres 1,2, LISTO! Y si no, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!"><meta itemprop="datePublished" content="2022-10-17T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-10-17T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1909">
+<meta itemprop="wordCount" content="1955">
 <meta itemprop="keywords" content="rstats,rstatES,paquetes,packages,development,desarrollo," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="¡1, 2... paquete!"/>
@@ -78,6 +78,18 @@
 
 
 
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZC91NVHQK"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-0ZC91NVHQK', { 'anonymize_ip': false });
+}
+</script>
 
 
     </head>
@@ -133,7 +145,7 @@
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        9 minutes
+        10 minutes
 
         
       </p>
@@ -235,7 +247,7 @@ Luego vamos a crearlo con la siguiente función (asegúrate de poner la ruta que
 </ul>
 </blockquote>
 <p><strong>Paso 2, armar las funciones (o adaptar las que ya tenemos hechas).</strong> Aquí es donde debemos ir a buscar esas funciones que dieron la razón de ser del paquete. El destino de esas funciones es la carpeta <code>R</code> que se creo automáticamente al comienzo. En principio la idea es que tengamos un R script por cada función, luego podemos agrupar más de una por script, pero al principio es más prolijo e intuitivo arrancar por la primera versión.</p>
-<p>La función que nos va a asistir en este paso es <code>usethis::use_r()</code> (en el paréntesis indicamos el nombre de la función). Al ejecutarla pasarán dos cosas: (1) se creará automáticamente el archivo .R, directo en la carpeta R y (2) se abrirá para ya definir el contenido de la función. Por ejemplo:</p>
+<p>La función que nos va a asistir en este paso es <code>usethis::use_r(&quot;nombre_de_la_funcion&quot;)</code> (en el paréntesis indicamos el nombre de la función). Al ejecutarla pasarán dos cosas: (1) se creará automáticamente el archivo .R, directo en la carpeta R y (2) se abrirá el mismo para ya definir el contenido de la función. Por ejemplo:</p>
 <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">usethis</span><span style="color:#f92672">::</span><span style="color:#75af00">use_r</span><span style="color:#111">(</span><span style="color:#d88200">&#34;risa_ja&#34;</span><span style="color:#111">)</span>
 </code></pre></div><p>Una vez en el R script, defino el contenido de la función (notar que el nombre del script y el nombre de la función son iguales) y guardo el archivo:</p>
 <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">risa_ja</span> <span style="color:#f92672">&lt;-</span> <span style="color:#75af00">function</span><span style="color:#111">(){</span>
@@ -248,7 +260,7 @@ Luego vamos a crearlo con la siguiente función (asegúrate de poner la ruta que
 <p><img src="img/paquete_check.gif" alt=""></p>
 <p>Lo importante de este paso es revisar el último mensaje, que de salir todo bien debería figurar algo así:</p>
 <p><img src="img/paquete_check_resultado.png" alt=""></p>
-<p>Por suerte la explicación de estos tres bloques (<em>errors</em>, <em>warning</em> y <em>note</em>) es bastante intuitiva. Lo que más nos importa es que <span style="color:green"> <code>errors</code></span> figure en cero. De no ser así es lo primero que deberíamos revisar. Por suerte, inmediatamente arriba de este último mensaje tenemos más pistas sobre qué es lo que encontró el  <code>check()</code> como para que aparezca, por ejemplo, un <span style="color:red"> <code>1 warning</code></span> (en este caso, falta darle una licencia al paquete, cosa que haremos en los próximos pasos).</p>
+<p>Por suerte la explicación de estos tres bloques (<em>errors</em>, <em>warning</em> y <em>note</em>) es bastante intuitiva. Lo que más nos importa es que <span style="color:green"> <code>errors</code></span> figure en cero. De no ser así es lo primero que deberíamos revisar. Por suerte, inmediatamente arriba de este último mensaje tenemos más pistas sobre qué es lo que encontró el  <code>check()</code> como para que aparezca, por ejemplo, un <span style="color:red"> <code>1 warning</code></span> (en este caso, falta darle una licencia al paquete, cosa que haremos en los próximos pasos). Vale decir que aún con <code>warnings</code> y <code>notes</code> podemos avanzar, aunque no es lo recomendable.</p>
 <p><strong>Paso 4, darle una licencia al paquete.</strong> Aquí no profundizaremos mucho ya que el paso es bien sencillo y lo que puede tomar más tiempo es decidir por qué tipo de licencia optar. En nuestro caso vamos a ir por GPL-3<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <p>La función que debemos para cumplir con este paso es:</p>
 <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">usethis</span><span style="color:#f92672">::</span><span style="color:#75af00">use_gpl3_license</span><span style="color:#111">()</span>
@@ -257,7 +269,7 @@ Luego vamos a crearlo con la siguiente función (asegúrate de poner la ruta que
 <p>Pero aquí debemos separar entre documentar una función y documentar un paquete, van a ser dos pasos diferentes. Vamos por el primero.</p>
 <p><strong>Documentar una función.</strong> Lo que vamos a hacer es lo siguiente: en el mismo R script donde definimos nuestra nueva función (<code>risa_ja()</code>) vamos a pararnos en la primera línea y dirigirnos a la ventana de Rstudio <em><strong>Code &ndash;&gt; Insert Roxygen sckeleton</strong></em>:</p>
 <p><img src="img/paquete_funcion_doc.gif" alt=""></p>
-<p>Hecho esto, Rstudio automaticamente agregar al menos 6 líneas de código que servirán para documentar lo básico de nuestra función (nombre, descripción, parámetros -si los hay-, ejemplo de uso, al menos para empezar).
+<p>Hecho esto, Rstudio automaticamente agregar al menos 6 líneas de código que servirán para documentar lo básico de nuestra función (nombre, descripción, parámetros -si los hay-, ejemplo de uso, eso al menos para empezar).
 En nuestro caso, debería quedar algo así:</p>
 <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#&#39; risa_ja</span>
 <span style="color:#75715e">#&#39; @description Función que genera una carcajada</span>
@@ -271,25 +283,27 @@ En nuestro caso, debería quedar algo así:</p>
   <span style="color:#75af00">print</span><span style="color:#111">(</span><span style="color:#d88200">&#34;jajajajajaja&#34;</span><span style="color:#111">)</span>
 
 <span style="color:#111">}</span>
-</code></pre></div><p>Una vez que completamos estos campos, corremos la función <code>devtools::document()</code>. Con ella se va a crear una carpeta llamada <strong>man</strong> en donde se irán listando archivos <code>.md</code> que contienen esta documentación que completamos, uno por cada función que tengamos en cada R.script.</p>
+</code></pre></div><p><strong>Spoiler alert</strong></p>
+<p>Al final del camino, cuando consultemos por la ayuda de la función deberíamos ver algo así:
+<img src="img/spoiler_help.png" alt=""></p>
+<p>Una vez que completamos estos campos, corremos la función <code>devtools::document()</code>. Con ella se va a crear una carpeta llamada <strong>man</strong> en donde se irán listando archivos <code>.md</code> que contienen esta documentación que completamos, uno por cada función que tengamos en cada R.script.</p>
 <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">devtools</span><span style="color:#f92672">::</span><span style="color:#75af00">document</span><span style="color:#111">()</span>
-</code></pre></div><p><img src="img/carpetas_man.png" alt=""></p>
-<p>Por otro lado se va a actualizar el archivo que ya existía llamado <strong>NAMESPACE</strong>, donde se irán listando las funciones que creamos. Importante, no editar este archivo a mano! esa tarea se la vamos a dejar al <code>document()</code>.</p>
-<p><strong>Paso 6, chequear que esté todo bien e&hellip; instalar el paquete! (estamos cerca!).</strong> Nuevamente vamos a correr el <code>devtools::check()</code> (es muy importante chequear!), y revisar que con lo nuevo que hemos corrido estemos bien encaminados/as para lo que tan ansiadamente queremos hacer: instalar el paquete en nuestras computadoras!</p>
+</code></pre></div><p>Por otro lado se va a actualizar el archivo que ya existía llamado <strong>NAMESPACE</strong>, donde se irán listando las funciones que creamos. Importante, no editar estos archivos a mano! esa tarea se la vamos a dejar al <code>document()</code>.</p>
+<p><strong>Paso 6, chequear que esté todo bien e&hellip; instalar el paquete! (estamos cerca!).</strong> Nuevamente vamos a correr el <code>devtools::check()</code> (como habrás notado, es muy importante chequear), y revisar que con lo nuevo que hemos corrido estemos bien encaminados/as para lo que tan ansiadamente queremos hacer: instalar el paquete en nuestras computadoras!</p>
 <p>Si todo sale bien, nuestro nuevo <code>check()</code> debería verse así:</p>
 <p><img src="img/paquete_check_v2.png" alt="">
 <img src="https://media.tenor.com/qdg13PqYbxMAAAAM/yes-baby.gif" alt=""></p>
 <p>No demoremos más, antes de que alguien se arrepienta, instalemos nuestro paquete ejecutando la siguiente sentencia en nuestras consolas:</p>
 <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">devtools</span><span style="color:#f92672">::</span><span style="color:#75af00">install</span><span style="color:#111">()</span>
-</code></pre></div><p>De ahora en más, nuestro paquete ya está instalado en la computadora y disponible para ser usado. Y la mejor manera de comprobarlo es&hellip; probándolo!</p>
+</code></pre></div><p>Una vez hecho esto, nuestro paquete ya se encuentra instalado en la computadora y disponible para ser convocado vía el clásico <code>library()</code>. Y la mejor manera de comprobarlo es&hellip; probándolo!</p>
 <p>Veamos cómo al comenzar a escribirlo en un <code>library()</code> Rstudio lo sugiere como autocompletado:</p>
 <p><img src="img/paquete_libreria.png" alt=""></p>
 <h3 id="éxito">Éxito.</h3>
 <p>Hemos logrado sin grandes sobresaltos armar nuestro primer paquete. Esta es una guía mínima de cómo hacerlo, hay muuuuucho más al respecto. Si te interesa invito nuevamente a que pases por el libro <a href="https://r-pkgs.org/data.html">R Packages (2e)</a>. Aunque en inglés, es de la mejor documentación para el armado de paquetes.</p>
-<p>Va también, de forma resumida, cómo podrías seguir avanzando en el desarrollo de tu paquete:</p>
+<p>Va también, de forma resumida, cómo podrías seguir avanzando de cara a futuro:</p>
 <ul>
 <li>
-<p>Vincular este flujo de trabajo con GIT y Github. Esto te permitiría dejar disponible a tu nuevo paquete en un repositorio para que otras personas también puedan descargárselo. No incluí esto ya que la intención era concentrarnos en el armado del paquete, esquivando así la aventura que es adentrarse en Github (aventura más que recomendada por cierto!)</p>
+<p>Vincular este flujo de trabajo con GIT y Github. Esto te permitiría dejar disponible a tu nuevo paquete en un repositorio para que otras personas también puedan descargárselo. No incluí esto ya que la intención era concentrarnos en el armado de una versión mínima, esquivando la aventura que es adentrarse en Github (aventura más que recomendada por cierto!).</p>
 </li>
 <li>
 <p>Armar <em>tests</em> de tus funciones. Esto ayuda a la robustez de tu desarrollo, comprobando de diferentes formas que tu función hace lo que se espera que haga (a veces las cosas funcionan pero no como uno quiere!). Probá jugar con <code>usethis::use_testthat()</code>, luego <code>usethis::use_test()</code> para finalizar con <code>devtools::test()</code>, a ver qué pasa!. <a href="https://r-pkgs.org/testing-basics.html">Acá te dejo la referencia en el libro que trata este tema</a></p>
@@ -309,8 +323,7 @@ En nuestro caso, debería quedar algo así:</p>
 <li>Chequeá que esté todo bien con <code>devtools::check()</code></li>
 <li>Instalá la nueva versión de tu paquete con la nueva función! &ndash;&gt; <code>devtools::install()</code></li>
 </ol>
-<br>
-<p>Eso es todo, espero que haya sido ameno y, sobre todo, ¡útil! Cualquier comentario o duda podés dejar un comentario o escribirme por alguna de las redes.</p>
+<p>Eso es todo, espero que haya sido ameno y, sobre todo, ¡útil! Cualquier comentario o duda podés dejarlo por acá o escribirme por alguna de las redes sociales sin problema.</p>
 <script defer src="https://cdn.commento.io/js/commento.js"></script>
 <div id="commento"></div>
 <section class="footnotes" role="doc-endnotes">
@@ -363,7 +376,7 @@ En nuestro caso, debería quedar algo así:</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        1909 Words
+        1955 Words
       </p>
 
       <p>

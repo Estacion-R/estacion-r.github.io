@@ -15,7 +15,7 @@ contentDir: content
 dataDir: data
 layoutDir: layouts
 publishDir: public
-googleAnalytics: G-0ZC91NVHQK
+googleAnalytics: "G-0ZC91NVHQK"
 buildDrafts: no
 buildFuture: no
 buildExpired: no
