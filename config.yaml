@@ -81,6 +81,10 @@ params:
       url: "https://www.linkedin.com/in/ptiscornia/"
     - name: email
       url: "pablotisco@gmail.com"
+    - name: buymeacoffee
+      url: https://www.buymeacoffee.com/pablotis
+    - name: cafecito
+      url: https://cafecito.app/pablotisco
 # languages:
 #   en:
 #     copyright: <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"

@@ -3,9 +3,11 @@
 - [amazon](https://simpleicons.org/?q=amazon)
 - [anilist](https://simpleicons.org/?q=anilist)
 - [box](https://simpleicons.org/?q=box)
+- [buymeacoffee](https://simpleicons.org/?q=buymeacoffee)
 - [behance](https://simpleicons.org/?q=behance)
 - [bitbucket](https://simpleicons.org/?q=bitbucket)
 - case - generic briefcase icon for work based links
+- [cafecito](https://simpleicons.org/?q=coffescript)
 - [codesandbox](https://simpleicons.org/?q=codesandbox)
 - [codechef](https://simpleicons.org/?q=codechef)
 - [codepen](https://simpleicons.org/?q=codepen)
