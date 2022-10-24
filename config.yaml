@@ -100,21 +100,21 @@ params:
 #     weight: 2
 menu:
   main:
-    - name: Autor
-      url: perfil/
-      weight: 10
     - name: Blog
       url: posts/
-      weight: 20
+      weight: 10
     - name: Proyectos
       url: proyectos/
-      weight: 30
+      weight: 20
     - name: Enseñar + R
       url: cursos_r/
+      weight: 30
+    - name: Autor
+      url: perfil/
       weight: 40
-    - name: Aportes
-      url: aportes/
-      weight: 50  
+    # - name: Aportes
+    #   url: aportes/
+    #   weight: 50  
 markup:
   goldmark:
     renderer:
