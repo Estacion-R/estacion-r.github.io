@@ -2,7 +2,7 @@
 title: ¡1, 2... paquete!
 description: "Agradecimientos profundos para Yanina Bellini Saibene y Federico Baraghian por su lectura, devolución y aportes!"
 author: 'Pablo Tiscornia'
-date: '2022-10-17'
+date: '2022-10-24'
 slug: 1-2-paquete
 categories:
   - rstatsES
