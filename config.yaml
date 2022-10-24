@@ -85,6 +85,8 @@ params:
       url: https://www.buymeacoffee.com/pablotis
     - name: cafecito
       url: https://cafecito.app/pablotisco
+    - name: paypal
+      url: https://paypal.me/pablotiscornia
 # languages:
 #   en:
 #     copyright: <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"

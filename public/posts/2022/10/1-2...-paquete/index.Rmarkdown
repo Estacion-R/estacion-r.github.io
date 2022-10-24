@@ -1,5 +1,6 @@
 ---
 title: ¡1, 2... paquete!
+subtitle: "Agradecimientos profundos para [Yanina Bellini Saibene](https://github.com/yabellini) y Federico Baraghian por su lectura, devolución y aportes!
 author: ''
 date: '2022-10-17'
 slug: 1-2-paquete
@@ -46,7 +47,7 @@ blockquote {
 }
 ```
 
-Si tenés más de 30 años probablemente hayas conocido los postres 1,2, LISTO! Y si no, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!). Los pasos, además, eran muy sencillos: Abrir el sobre, volcar el contenido del sobre en una taza, mezclar con leche y... ¡listo! a disfrutar. 
+Si tenés más de 30 años (y vivís o viviste en Argentina) probablemente hayas conocido los postres 1,2, LISTO! Para quienes no lo conozcan, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!). Los pasos, además, eran muy sencillos: Abrir el sobre, volcar el contenido del sobre en una taza, mezclar con leche y... ¡listo! a disfrutar. 
 
 ```{r echo = FALSE, fig.align="center"}
 knitr::include_graphics("http://k30.kn3.net/taringa/A/6/0/A/7/1/LeandroD17/C3C.jpg")
@@ -59,7 +60,7 @@ Como en el postre, en este post voy a tratar de mostrar cómo en pocos pasos pod
 
 Podemos pensar al camino del o la programadora en R como aquel que (puede) transita(r) por las siguientes etapas, no necesariamente de forma ordenada ni sin caos, ansiedad, frustración pero también con aciertos y, cada tanto, algunas victorias:
 
-1. **La Era del script.** Podemos considerarla como la instancia con la que nos incorporamos al lenguaje. Puede ser un R script o un Rmarkdown, el punto es que escribimos un sinfin de secuencias de código con mucha repetición, probablemente poca automatización, o con alguna más bien rústica y no sistemática.
+1. **La Era del script.** Podemos considerarla como la instancia con la que nos incorporamos al lenguaje. En este punto nos encontramos escribiendo un sinfín de secuencias de código con mucha repetición, probablemente poca automatización, o con alguna más bien rústica y no sistemática.
 
 1. **La Era de la función.** En nuestros scripts empezamos a necesitar no repetir tanto (porque lo hacemos mucho). Nos cuentan que existen las funciones, las vemos como algo maravilloso y al mismo tiempo doloroso de construir. Pero cuando le agarramos la mano no podemos parar.
 
@@ -74,13 +75,16 @@ b. necesitan armar un paquete
 
 ## Bibliografía de referencia
 
-Me voy a basar en la documentación [R Packages (2e)](https://r-pkgs.org/data.html) cuyos autores son [Jennifer Bryan](https://jennybryan.org/) y [Hadley Wickham](https://hadley.nz/). Este libro está disponible y accesible de forma gratuita en internet. Está escrito sólo en inglés, pero en uno muy sencillo y ameno, fácil de digerir. Ambos autores tienen una inclinación por poner el foco en la accesibilidad a la hora de transmitir conocimiento, cosa para nada despreciable en el mundo de la programación.
+Me voy a basar en la documentación [R Packages (2e)](https://r-pkgs.org/data.html) cuyos autores son [Jennifer Bryan](https://jennybryan.org/) y [Hadley Wickham](https://hadley.nz/). Este libro está disponible y accesible de forma gratuita en internet. Está escrito sólo en inglés, pero en uno muy sencillo y ameno, fácil de digerir[^1]. 
+
+[^1]: Ambos autores tienen una inclinación por poner el foco en la accesibilidad a la hora de transmitir conocimiento, cosa para nada despreciable en el mundo de la programación.
 
 
 ## Manos a la obra
 
-Voy a mostrar los mínimos pasos necesarios para armar un paquete y para ello voy a... ¡armar un paquete! La idea es no quedarnos en lo expositivo, sino que se pueda replicar (y adaptar) el ejemplo.
+Voy a mostrar los mínimos pasos necesarios para armar un paquete y para ello voy a... ¡armar un paquete! La idea es no quedarnos en lo expositivo, sino que se pueda replicar (y adaptar) el ejemplo. Para ello vamos a trabajar en Rstudio[^2], siendo de las plataformas más populares para escribir en R. La idea es simplemente abrir el programa y en un R script ir escribiendo el código necesario que iremos dejando a continuación. No es necesario que guardes este script, aunque puedes hacerlo para dejar asentado los pasos recorridos.
 
+[^2]: 
 
 ### Librerías de trabajo
 
@@ -107,7 +111,7 @@ Como resultado vas a poder ver que se te ha creado un proyecto nuevo con el nomb
 
 
 <blockquote>
-  <label class="showMore" for="_1"> 🚧️ En pocas palabras</label>
+  <label class="showMore" for="_1"> 👆🏼️ En pocas palabras</label>
   <input id="_1" type="checkbox">
   <div>
   
@@ -119,13 +123,13 @@ Como resultado vas a poder ver que se te ha creado un proyecto nuevo con el nomb
   
   - **risas.Rproj** es el archivo del proyecto creado
   
-  - **.gitignore** contiene aquellos archivos que no queremos que interactuen con Github[^1]
+  - **.gitignore** contiene aquellos archivos que no queremos que interactuen con Github[^3]
   
   - **NAMESPACE** declara aquellas funciones que nuestro paquete declara para uso externo y aquellas funciones externas que nuestro paquete importa.</div>
 </blockquote>
 
 
-[^1]: Otro post sobre Github ya se encuentra en producción
+[^3]: Otro post sobre Github ya se encuentra en producción
 
 
 **Paso 2, armar las funciones (o adaptar las que ya tenemos hechas).** Aquí es donde debemos ir a buscar esas funciones que dieron la razón de ser del paquete. El destino de esas funciones es la carpeta `R` que se creo automáticamente al comienzo. En principio la idea es que tengamos un R script por cada función, luego podemos agrupar más de una por script, pero al principio es más prolijo e intuitivo arrancar por la primera versión.
@@ -158,9 +162,9 @@ Lo importante de este paso es revisar el último mensaje, que de salir todo bien
 
 Por suerte la explicación de estos tres bloques (_errors_, _warning_ y _note_) es bastante intuitiva. Lo que más nos importa es que <span style="color:green"> `errors`</span> figure en cero. De no ser así es lo primero que deberíamos revisar. Por suerte, inmediatamente arriba de este último mensaje tenemos más pistas sobre qué es lo que encontró el  `check()` como para que aparezca, por ejemplo, un <span style="color:red"> `1 warning`</span> (en este caso, falta darle una licencia al paquete, cosa que haremos en los próximos pasos). Vale decir que aún con `warnings` y `notes` podemos avanzar, aunque no es lo recomendable. 
 
-**Paso 4, darle una licencia al paquete.** Aquí no profundizaremos mucho ya que el paso es bien sencillo y lo que puede tomar más tiempo es decidir por qué tipo de licencia optar. En nuestro caso vamos a ir por GPL-3[^2]
+**Paso 4, darle una licencia al paquete.** Aquí no profundizaremos mucho ya que el paso es bien sencillo y lo que puede tomar más tiempo es decidir por qué tipo de licencia optar. En nuestro caso vamos a ir por GPL-3[^4]
 
-[^2]: Más información sobre la licencia GPLv3, aquí: https://www.gnu.org/licenses/gpl-3.0.en.html
+[^4]: Más información sobre la licencia GPLv3, aquí: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 La función que debemos para cumplir con este paso es:
 
@@ -170,9 +174,9 @@ usethis::use_gpl3_license()
 
 Con ella se creará un nuevo archivo en la carpeta del proyecto llamado `LICENSE.md`.
 
-**Paso 5, documentación del paquete.** Esta etapa es muy importante. Y esto es porque una de las razones por las cuales hacer un paquete es la posibilidad de documentar, actividad cuya popularidad es inversamente proporcional a la importancia que tiene. ¿Por qué documentar? Puede haber varias respuestas, pero la más palpable puede ser que la documentación nos ahorra dolores de cabeza (a nosotros/as o a otros/as). Una función puede ser intuitiva para quien la diseña (o no!), pero al retomar su uso después de un tiempo podemos no tener claro cómo es que se usaba, los parámetros que tiene y el resultado que genera. **Para ello es clave la documentación**, porque es justamente eso lo que resolvemos, dejar en claro lo que hace una función y la forma de utilizarla para llegar a ese resultado.
+**Paso 5, documentación del paquete.** Esta es una de las razones por las cuales es buena idea hacer un paquete, la posibilidad de documentar; actividad cuya popularidad es inversamente proporcional a la importancia que tiene. ¿Por qué documentar? Puede haber varias respuestas, pero la más palpable puede ser que la documentación nos ahorra dolores de cabeza (a nosotros/as o a otros/as). Una función puede ser intuitiva para quien la diseña (o no!), pero al retomar su uso después de un tiempo podemos no tener claro cómo es que se usaba, los parámetros que tiene y el resultado que genera. **Para ello es clave la documentación**, porque es justamente eso lo que resolvemos, dejar en claro lo que hace una función y la forma de utilizarla para llegar a ese resultado.
 
-Pero aquí debemos separar entre documentar una función y documentar un paquete, van a ser dos pasos diferentes. Vamos por el primero.
+Vale mencionar que debemos diferenciar entre documentar una función y documentar un paquete, van a ser dos pasos diferentes. Veamos el primero.
 
 **Documentar una función.** Lo que vamos a hacer es lo siguiente: en el mismo R script donde definimos nuestra nueva función (`risa_ja()`) vamos a pararnos en la primera línea y dirigirnos a la ventana de Rstudio ***Code --> Insert Roxygen sckeleton***: 
 
@@ -219,6 +223,8 @@ Si todo sale bien, nuestro nuevo `check()` debería verse así:
 
 ![](img/paquete_check_v2.png)
 ![](https://media.tenor.com/qdg13PqYbxMAAAAM/yes-baby.gif)
+
+Si todo no sale tan bien (alguna nota, error o advertencia), podemos revisar el capítulo [**R CMD check**](https://r-pkgs.org/check.html) del libro y revisar qué puede estar pasando.
 
 No demoremos más, antes de que alguien se arrepienta, instalemos nuestro paquete ejecutando la siguiente sentencia en nuestras consolas:
 
