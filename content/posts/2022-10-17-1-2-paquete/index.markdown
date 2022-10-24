@@ -82,7 +82,7 @@ Me voy a basar en la documentación [R Packages (2e)](https://r-pkgs.org/data.ht
 
 Voy a mostrar los mínimos pasos necesarios para armar un paquete y para ello voy a... ¡armar un paquete! La idea es no quedarnos en lo expositivo, sino que se pueda replicar (y adaptar) el ejemplo. Para ello vamos a trabajar en Rstudio[^2], siendo de las plataformas más populares para escribir en R. La idea es simplemente abrir el programa y en un R script ir escribiendo el código necesario que iremos dejando a continuación. No es necesario que guardes este script, aunque puedes hacerlo para dejar asentado los pasos recorridos.
 
-[^2]: 
+[^2]: https://www.rstudio.com/
 
 ### Librerías de trabajo
 
