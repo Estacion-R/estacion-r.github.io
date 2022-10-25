@@ -34,7 +34,7 @@ Licenciado en Sociología (Universidad de Buenos Aires - UBA), especializado en 
 
 - [#rtips](https://twitter.com/r_tipss/). Un bot colaborativo de tips sobre el mundo R
 
-- [Repositorio de paquetes latinoamericanos](https://github.com/pablotis/asombrosos-paquetes-r-latinoamerica). Un bot colaborativo de tips sobre el mundo R
+- [Repositorio de paquetes latinoamericanos](https://github.com/pablotis/asombrosos-paquetes-r-latinoamerica). Un espacio donde juntar y encontrar el desarrollo de paquetes por y para latinoamericanos y latinoamericanas.
 
 
 | **Desempeño profesional**
