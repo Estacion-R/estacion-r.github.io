@@ -5,7 +5,7 @@ title: "Cursos"
 | Lista de cursos y recursos que dicto o he diseñado y cuyo material se encuentra disponible.
 
 
-<div style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
+<div style="text-align: left; display: grid; grid-template-columns: 1fr 1fr;">
   <div>
 
 - [**Ciencias Sociales Computacionales y Humanidades Digitales**](https://noticias.unsam.edu.ar/wp-content/uploads/2022/02/Cs-Computacionales-dga2022.pdf) (IDAES-UNSAM). Módulo 1. Introducción a la Ciencia de Datos para Científicos Sociales
@@ -22,7 +22,7 @@ title: "Cursos"
 
 
 
-<div style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
+<div style="text-align: left; display: grid; grid-template-columns: 1fr 1fr;">
   <div>
 
 - [**Big Data e Inteligencia Territorial (FLACSO)**](https://www.flacso.org.ar/formacion-academica/big-data-e-inteligencia-territorial/)
@@ -36,7 +36,7 @@ title: "Cursos"
 </div>
 
 
-<div style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
+<div style="text-align: left; display: grid; grid-template-columns: 1fr 1fr;">
   <div>
 
 - [**Instrumentos de Análisis Urbanos II (UTDT)**](https://tuqmano.github.io/geo_utdt/index.html)
@@ -50,10 +50,10 @@ title: "Cursos"
 </div>
 
 
-<div style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
+<div style="text-align: left; display: grid; grid-template-columns: 1fr 1fr;">
   <div>
 
-- [**Introducción al procesamiento de datos con R para Ciencias Sociales.** Aplicación práctica en la Encuesta Permanente de Hogares](https://intro-r-eph.netlify.app/)
+- [**Introducción al procesamiento de datos con R para Ciencias Sociales.**](https://intro-r-eph.netlify.app/) Aplicación práctica en la Encuesta Permanente de Hogares
 
 
   </div>
@@ -64,10 +64,10 @@ title: "Cursos"
 
 
 
-<div style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
+<div style="text-align: left; display: grid; grid-template-columns: 1fr 1fr;">
   <div>
 
-- [**Introducción a R para Ciencias Sociales - IIGG**](https://pablotis.github.io/r_iigg/)
+- [**Introducción a R para Ciencias Sociales**](https://pablotis.github.io/r_iigg/) - IIGG
 
 
   </div>
@@ -78,10 +78,10 @@ title: "Cursos"
 
 
 
-<div style="text-align: center; display: grid; grid-template-columns: 1fr 1fr;">
+<div style="text-align: left; display: grid; grid-template-columns: 1fr 1fr;">
   <div>
 
-- [**SOFTWARE ESTADÍSTICO R APLICADO AL ANÁLISIS Y PROCESAMIENTO DE LA INFORMACIÓN ESTADÍSTICA DEL INDEC - INDEC**](https://github.com/pablotis/Curso_R_INDEC)
+- [**Software estadístico R**](https://github.com/pablotis/Curso_R_INDEC), aplicado al análisis y procesamiento de la información estadística del INDEC.
 
 
   </div>
