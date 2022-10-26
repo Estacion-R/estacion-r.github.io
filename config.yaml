@@ -103,15 +103,18 @@ menu:
     - name: Blog
       url: posts/
       weight: 10
-    - name: Proyectos
-      url: proyectos/
-      weight: 20
     - name: Enseñar + R
       url: cursos_r/
-      weight: 30
+      weight: 20
     - name: Autor
       url: perfil/
+      weight: 30
+    - name: Proyectos
+      url: proyectos/
       weight: 40
+    - name: Suscripción
+      url: suscripcion/
+      weight: 50
     # - name: Aportes
     #   url: aportes/
     #   weight: 50  
