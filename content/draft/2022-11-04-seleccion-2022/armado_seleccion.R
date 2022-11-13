@@ -17,6 +17,7 @@ jugadores_wiki <- readr::read_rds("content/draft/2022-11-04-seleccion-2022/data/
 
 ### seleccion
 anio <- 2022
+
 seleccion_arg <- as.data.frame(fb_player_urls(glue::glue("https://fbref.com/en/squads/f9fddd6e/{anio}/Argentina-Men-Stats"), time_pause = 3))
 
 colnames(seleccion_arg)[1] <- "url"
@@ -31,12 +32,8 @@ seleccion_arg <- seleccion_arg %>%
 seleccion_def <- jugadores_wiki |> 
   left_join(seleccion_arg, by = "nombre_join")
 
-no_match <- seleccion_def |> 
-  filter(is.na(url))
-
-prueba2 <- prueba |> 
-  mutate
-
+# no_match <- seleccion_def |> 
+#   filter(is.na(url))
 
 
 
