@@ -1,0 +1,149 @@
+---
+title: Seleccion 2022
+author: Pablo Tiscornia
+date: '2022-11-04'
+slug: seleccion-2022
+categories:
+  - analisis
+  - rstatsES
+  - RStats
+tags:
+  - rstats
+  - rstatsES
+  - copadelmundo
+  - mundia2022
+  - worldcup2022
+  - argentina
+comments: no
+images: ~
+---
+
+
+```{r}
+library(tidyverse)
+library(worldfootballR)
+library(rvest)
+library(stringr)
+#devtools::install_github("politicaargentina/geoAr")
+library(geoAr)
+```
+
+Indicadores:
+
+- Localidad / Provincia de orígen del jugador
+  - Serie de tiempo
+  
+- % de jugadores en liga local al momento del cierre de lista
+
+- País/Liga donde se encuentra el jugador al momento del cierre de lissta
+
+
+
+Hoy cerró la lista de convocados al mundial 
+
+```{r}
+anio <- 2022
+
+### Lista de jugadores
+jugadores <- player_dictionary_mapping()
+
+### Prueba con Messi
+seleccion_arg <- as.data.frame(fb_player_urls(glue::glue("https://fbref.com/en/squads/f9fddd6e/{anio}/Argentina-Men-Stats")))
+colnames(seleccion_arg)[1] <- "url"
+
+
+seleccion_arg <- seleccion_arg %>% 
+  mutate(jugador = str_replace(string = url, pattern = "^.+/", replacement = ""),
+         jugador = str_replace_all(jugador, pattern = "-", replacement = " "),
+         info_jugador = NA_character_)
+
+
+
+for (i in 1:nrow(seleccion_arg)) {
+  
+  seleccion_arg[i, "info_jugador"] <- read_html(seleccion_arg[i,1]) %>% 
+    html_element(css = "#meta p:nth-child(5)") %>% 
+    html_text2()
+    
+  }
+
+no_match <- seleccion_arg %>% 
+  filter(!str_starts(info_jugador, "Born"))
+
+for (i in 1:nrow(no_match)) {
+  
+  no_match[i, "info_jugador"] <- read_html(no_match[i,1]) %>% 
+    html_element(css = "#meta p:nth-child(4)") %>% 
+    html_text2()
+    
+  }
+
+seleccion_arg <- seleccion_arg %>% 
+  filter(str_starts(info_jugador, "Born")) %>% 
+  bind_rows(no_match)
+
+rm(no_match, jugadores)
+```
+
+```{r}
+seleccion_arg <- seleccion_arg %>% 
+  mutate(origen = str_replace(string = info_jugador, pattern = "^.+ in", replacement = ""),
+         provincia = NA_character_) %>% 
+  separate(col = origen, into = c("localidad", "pais"), sep = ",")
+
+sin_loc <- seleccion_arg %>% 
+  filter(is.na(pais)) %>% 
+  mutate(localidad = case_when(str_detect(jugador, "Otamendi") ~ "Ciudad de Buenos Aires",
+                               str_detect(jugador, "Tagliafico") ~ "Almirante Brown",
+                               str_detect(jugador, "Gomez") ~ "Ciudad de Buenos Aires",
+                               str_detect(jugador, "Aguero") ~ "Quilmes",
+                               str_detect(jugador, "Simeone") ~ "Ciudad de Buenos Aires",
+                               str_detect(jugador, "Quarta") ~ "Mar del Plata",
+                               str_detect(jugador, "Rossi") ~ "Ciudad de Buenos Aires",
+                               str_detect(jugador, "Medina") ~ "Villa Fiorito"))
+
+seleccion_arg <- seleccion_arg %>% 
+  filter(!is.na(pais)) %>% 
+  bind_rows(sin_loc) %>% 
+  mutate(pais = "Argentina",
+         localidad = str_to_lower(str_trim(localidad, side = "both")))
+
+rm(sin_loc)
+```
+
+```{r}
+url_loc <- "https://wms.ign.gob.ar/geoserver/bahra/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=bahra%3Alocalidad_bahra&outputFormat=csv"
+#url_ent <- "https://wms.ign.gob.ar/geoserver/bahra/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=bahra%3Aentidad_bahra&outputFormat=csv"
+
+bahra <- read_delim(url_loc) %>% 
+  select(nombre_geografico, nombre_provincia, codigo_indec_provincia, 10:13, geom)
+
+bahra <- bahra %>% 
+  mutate(nombre_geografico = str_to_lower(nombre_geografico))
+
+prueba_loc <- seleccion_arg %>% 
+  select(-provincia) %>% 
+  left_join(bahra, by = c("localidad" = "nombre_geografico"))
+
+prueba <- seleccion_arg %>% 
+  mutate(nombre_provincia = case_when(jugador == "Alexis Mac Allister" ~ "La Pampa",
+                                      jugador == "Eduardo Salvio" ~ "Buenos Aires",
+                                      jugador == "Rodrigo De Paul" ~ "Buenos Aires",
+                                      jugador == "Nicolas Gonzalez" ~ "Buenos Aires",
+                                      jugador == "Nicolas Dominguez" ~ "Buenos Aires",
+                                      jugador == "Maximiliano Meza" ~ "Corrientes",
+                                      jugador == "Manuel Lanzini" ~ "Buenos Aires",
+                                      jugador == "Guido Rodriguez" ~ "Buenos Aires",
+                                      jugador == "Gonzalo Montiel" ~ "Buenos Aires",
+                                      jugador == "Facundo Medina" ~ "Buenos Aires",
+                                      jugador == "Agustin Marchesin" ~ "Buenos Aires",
+                                      TRUE ~ nombre_provincia),
+         localidad = case_when(jugador == "Facundo Medina" ~ "Villa fiorito", 
+                               TRUE ~ localidad),
+         codigo_indec_provincia = case_when(nombre_provincia == "Buenos Aires" ~ "06",
+                                            nombre_provincia == "Corrientes" ~ "18",
+                                            TRUE ~ codigo_indec_provincia))
+
+
+```
+
