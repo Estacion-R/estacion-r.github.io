@@ -29,16 +29,21 @@ seleccion_arg <- seleccion_arg %>%
          nombre_join = stringr::str_to_lower(jugador),
          nombre_join = stringi::stri_trans_general(nombre_join,"Latin-ASCII"))
 
+
 seleccion_def <- jugadores_wiki |> 
   left_join(seleccion_arg, by = "nombre_join")
 
-# no_match <- seleccion_def |> 
-#   filter(is.na(url))
-
+seleccion_def <- seleccion_def |> 
+  mutate(url = case_when(nombre_join == "enzo fernandez" ~ "https://fbref.com/en/players/5ff4ab71/Enzo-Fernandez",
+                         nombre_join == "lionel scaloni" ~ "https://fbref.com/en/players/6cc4990c/Lionel-Scaloni",
+                         TRUE ~ url),
+         jugador = case_when(nombre_join == "enzo fernandez" ~ "Enzo Fernandez",
+                             nombre_join == "lionel scaloni" ~ "Lionel Scaloni",
+                             TRUE ~ jugador))
 
 
 ### Agrego info de localidad
-for (i in 1:nrow(seleccion_arg)) {
+for (i in 1:nrow(seleccion_def)) {
   
   seleccion_arg[i, "info_jugador"] <- read_html(seleccion_arg[i,1]) %>% 
     html_element(css = "#meta p:nth-child(5)") %>% 
