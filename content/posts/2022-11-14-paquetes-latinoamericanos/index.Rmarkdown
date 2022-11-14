@@ -17,14 +17,17 @@ tags:
   - rstatsES
   - awesome
 slug: paquetes-latinoamericanos
-comments: no
+comments: yes
+images: ~
 ---
 
-```{r echo=FALSE, out.width = "400px", out.height="480px",fig.align='center'}
-knitr::include_graphics(here::here("content/img/sanmaRtin.png"))
-```
+<img style="display: block; margin: auto;"
+src="img/sanmaRtin.png">
 
-## Contexto {-}
+<p style="text-align: center;">
+</p>
+
+## Contexto
 
 ¿Qué hace que un lenguaje crezca, se desarrolle, mejore y hasta evolucione? Seguramente la respuesta no entra en un posteo de un simple blog. Lo que sí podríamos decir es que tanto el desarrollo de librerías o paquetes como la presencia de una comunidad de usuarios y usuarias son aspectos fundamentales.
 

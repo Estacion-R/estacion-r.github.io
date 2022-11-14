@@ -1,27 +1,33 @@
 ---
 title: Paquetes de R Latinoamericanos
-author: "Pablo Tiscornia, Patricia Loto"
-date: '2022-10-28'
-slug: paquetes-latinoamericanos
+author: Pablo Tiscornia, Patricia Loto
+date: '2022-11-14'
 categories:
-  - desarrollo de paquetes
-  - rstatsES
-tags:
-  - desarrollo
-  - datascience
   - paquetes
-  - packages
-  - rstats
   - rstatsES
+  - desarrollo de paquetes
+tags:
+  - datascience
+  - desarrollo
   - development
   - latinoamerica
-comments: no
+  - packages
+  - paquetes
+  - rstats
+  - rstatsES
+  - awesome
+slug: paquetes-latinoamericanos
+comments: yes
 images: ~
 ---
 
-<img src="../../img/sanmaRtin.png" width="400px" height="480px" style="display: block; margin: auto;" />
+<img style="display: block; margin: auto;"
+src="img/sanmaRtin.png">
 
-## Contexto {-}
+<p style="text-align: center;">
+</p>
+
+## Contexto
 
 ¿Qué hace que un lenguaje crezca, se desarrolle, mejore y hasta evolucione? Seguramente la respuesta no entra en un posteo de un simple blog. Lo que sí podríamos decir es que tanto el desarrollo de librerías o paquetes como la presencia de una comunidad de usuarios y usuarias son aspectos fundamentales.
 
