@@ -59,15 +59,20 @@ Entonces, ¿cómo contribuir? Para ello, armamos [una pequeña sección](https:/
 
 - **Contactándonos**, escribiendo a las siguientes casillas con el paquete que tenes entre manos, lo evaluamos y agregamos sin problema:
 
-  * **Pablo Tiscornia**: pablotisco@gmail.com
+  * Pablo Tiscornia: pablotisco@gmail.com
   
-  * **Patricia Loto**: patricia.andrea.loto@gmail.com
+  * Patricia Loto: patricia.andrea.loto@gmail.com
   
-  * **Andrea Gomez Vargas**: andrea.gomezv11@gmail.com
+  * Andrea Gomez Vargas: andrea.gomezv11@gmail.com
   
   <br>
   
 ¡Esperamos tu paquete para sumarlo al repo!
 
 <br>
+
 <img src="https://media.giphy.com/media/fXsfNy8saoEgMo0Nc9/giphy.gif" width="480px" height="480px" style="display: block; margin: auto;" />
+
+
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+<div id="commento"></div>
