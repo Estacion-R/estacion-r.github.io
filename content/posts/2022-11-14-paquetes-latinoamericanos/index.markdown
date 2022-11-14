@@ -21,11 +21,15 @@ comments: yes
 images: ~
 ---
 
+| Autores: _Pablo Tiscornia y Patricia Loto_
+
 <img style="display: block; margin: auto;"
 src="img/sanmaRtin.png">
 
 <p style="text-align: center;">
 </p>
+
+
 
 ## Contexto
 
