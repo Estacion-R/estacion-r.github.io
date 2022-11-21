@@ -25,7 +25,7 @@ options(scipen = 999)
 ## Mundial 2022
 
 El mundial ya arrancó y la ansiedad (¿de la buena?) copó al mundo. Y a mí también. 
-Pero este es un mundial particular. Para esta competencia abundan los datos y las fuentes de donde obtenerlos. Es por esto que decidí reflotar [un ejercicio](https://twitter.com/pabblo_h/status/1006536967406931971?s=20&t=_SnCXvM_S9yxF5PNDznQ1g) que había armado allá por el Mundial anterior (2018), en donde mostraba información sobre la Selección Argentina. En aquel momento junté la data de forma manual, a través de publicaciones en Wikipedia. Así llegué a un laborioso excel y armé las visualizaciones con flourish, una plataforma que permite de forma gratuita e intuitiva contar histórias sin necesidad de saber programar ni mucho menos.
+Pero este es un mundial particular. Para esta competencia abundan los datos y las fuentes de donde obtenerlos. Es por esto que decidí reflotar [un ejercicio](https://twitter.com/pabblo_h/status/1006536967406931971?s=20&t=_SnCXvM_S9yxF5PNDznQ1g) que había armado allá por el Mundial anterior (2018), en donde mostraba información sobre la Selección Argentina. En aquel momento junté la data de forma manual, a través de publicaciones en Wikipedia. Así llegué a un laborioso excel y armé las visualizaciones con flourish, una plataforma que permite de forma gratuita e intuitiva contar historias sin necesidad de saber programar ni mucho menos.
 
 Con esta gran excusa para volver a poner las manos en la data me propuse automatizar aquello que había hecho a mano y, además, poner a disposición la información que encuentre. Encaré así un pequeño proyecto de dos etapas:
 
@@ -33,11 +33,17 @@ Con esta gran excusa para volver a poner las manos en la data me propuse automat
 
 2) Analizar brevemente la información encontrada, como excusa para volver a jugar con R y las visualizaciones
 
+
+![](img/patriota_arg.png)
+
+
 ## Los datos
 
 La pregunta que motivó este proyecto allá por el Mundial 2018 rondó por el lugar de orígen de los convocados a la selección Argentina. Para ello necesitaba una fuente con dicha información y encontré como mejor candidata a Wikipedia. En aquel momento entre página por página que refería a la lista final de convocados a la Selección y armé una base de datos sencilla, **a mano**. DOLIÓ.
 
-Para este mundial se me ocurrió reproducir el ejercicio pero de forma ~~un poco más~~ automática. La estrategia entonces fue escrapear ("raspar" y extraer los datos de una página de forma programática) wikipedia y armar así las bases. El script que armé se puede ver [acá](https://github.com/pablotis/seleccion_argentina/blob/main/scripts/scraper_lista_convocados.R). El resultado fue un [repositorio abierto](https://github.com/pablotis/seleccion_argentina) que contiene tanto el ejercicio como  el conjunto de datasets armados.
+Para este mundial se me ocurrió reproducir el ejercicio pero de forma ~~un poco más~~ automática. La estrategia consistió en dos instancias. La primera fue obtener el listado definitivo de seleccionados para cada mundial. Para ello fui a escrapear ("raspar" y extraer los datos de una página de forma programática) wikipedia y armar así una primera base llamada `lista_convocados_wikipedia.rds`. El script que armé se puede ver [acá](https://github.com/pablotis/seleccion_argentina/blob/main/scripts/scraper_lista_convocados.R). 
+Un segundo ejercicio consistió en "pegarle" a cada listado de jugadores la url que contiene el acceso al perfil y las estadísticas de los jugadores, de donde podría, por ejemplo, también extraer la localidad de nacimiento de cad auno. 
+El resultado de ambos procesos fue un [repositorio abierto](https://github.com/pablotis/seleccion_argentina) que contiene tanto el ejercicio como el conjunto de datasets armados.
 
 ![](img/sel_wikipedia.png)
 
@@ -65,7 +71,7 @@ Una vez obtenida la información, sistematizada y almacenada en bases de datos, 
 
 ```{r}
 ### Cargo bases de la seleccion
-ruta <- here::here("content/draft/2022-11-04-seleccion-2022/data/")
+ruta <- here::here("content/posts/2022-11-21-seleccion-arg/data/")
 
 seleccion_arg <- list.files(path = ruta, pattern = "seleccion") |> 
   purrr::map_df(~ readr::read_rds(paste0(ruta, "/", .))) |> 
@@ -76,8 +82,8 @@ seleccion_arg <- list.files(path = ruta, pattern = "seleccion") |>
 ```{r}
 ### Seteo estéticas
 fuente_gral <- "Encode"
-img_fondo <- here::here("content/draft/2022-11-04-seleccion-2022/img/fondo_arg12.png")
-img <- png::readPNG(here::here("content/draft/2022-11-04-seleccion-2022/img/fondo_arg1.png"))
+img_fondo <- here::here("content/posts/2022-11-21-seleccion-arg/img/fondo_arg12.png")
+img <- png::readPNG(here::here("content/posts/2022-11-21-seleccion-arg/img/fondo_arg1.png"))
 
 ### Paleta oficial
 col_celeste <- "#73ACDF"
