@@ -1,0 +1,89 @@
+---
+title: ¡r_tips en Mastodon!
+author: Pablo Tiscornia
+date: '2023-09-14'
+slug: r-tips-en-mastodon
+categories:
+  - rstatES
+  - RStats
+  - R
+  - mastodon
+  - x
+  - twitter
+  - datascience
+  - cienciadedatos
+tags:
+  - untagged
+toc: no
+images: ~
+---
+
+
+## ¡r_tips no ha muerto! 
+
+Después de mucho trabajo y no sin frustración, el bot de [r_tips](https://botsin.space/@r_tips) está activo y publicando de forma automática tips sobre nuestro lenguaje de programación preferido [[R]](https://www.r-project.org/) en la red social [mastodon]
+
+```{r out.width="80%"}
+knitr::include_graphics("img/r_tips.jpeg")
+```
+
+
+## ¿Qué es [r_tips]?
+
+r_tips es un bot que nació con el fin de contribuir al desarrollo del lenguaje de programación [R], difundiendo _tips_ que ayuden al día a día con este lenguaje y, por qué no, que también nos permitan divertirnos jugando con los datos. La principal razón de que haya desarrollado este bot es la de devolver un poco de todo lo que la comunidad me ha dado, facilitando código, experiencia y conocimiento y todo ¡sin pedir nada cambio!.
+
+El primer hogar de esta cuenta fue (y sigue siendo) [Twitter](https://twitter.com/), red social que, tras ser comprada por Elon Musk pasó a llamarse [X](https://x.com/). Este cambio no se dió sin sobresaltos, tanto en la paltaforma como en las _reglas de juego_ impuestas por su nuevo dueño. Pero, más allá de ello, quizás el principal problema (al menos para el bot [r_tips](https://twitter.com/r_tipss)) fue la inestabilidad e impredecibilidad de su futuro en esta red social más el gran costo que, por esto, implicaba en su mantenimiento. 
+
+```{r echo=FALSE}
+# blogdown::shortcode(
+#   "tweet", user = "r_tipss", id = "852205086956818432"
+# )
+```
+
+<blockquote class="twitter-tweet"><p lang="es" dir="ltr">🎉Habemus Rtips en Mastodon! 🎉<br> <br>Si andas por esa red, seguí a @r_tips@botsin.space y alimentate de los mejores tips para R.<br> <br>Esta cuenta seguirá funcionando de modo manual mientras que en Mastodon ya está automatizada (no habrá día sin <a href="https://twitter.com/hashtag/Rtips?src=hash&amp;ref_src=twsrc%5Etfw">#Rtips</a>!) <a href="https://t.co/JONNQNSrSv">pic.twitter.com/JONNQNSrSv</a></p>&mdash; r_tips (@r_tipss) <a href="https://twitter.com/r_tipss/status/1702322811627552937?ref_src=twsrc%5Etfw">September 14, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+Otro gran factor para replantear la existencia del bot en Twitter es el anuncio de [Lluís Revilla Sancho](https://llrs.dev/), célebre del aún más celebre paquete [{rtweet}](https://docs.ropensci.org/rtweet/), respecto al fin del mantenimiento de la librería que permitía acceder y automatizar la interacción entre Twitter y R, logrando con ello poder hacer tanto análisis de datos con la información generada por la red social como también la creación de bot (como r_tips) que de forma automática publicaban tuits todos los días. [Acá pueden profundizar más sobre los motivos](https://llrs.dev/post/2023/03/20/rtweet-starts-using-api-v2/)
+
+```{r}
+knitr::include_graphics("img/fin_rtweet.png")
+```
+
+
+Esto fue llevandome, poco a poco, a buscar una alternativa que se alinee con los fundamentos principales de r_tips y que, al mismo tiempo, le permita subsistir sin sobrecarga de tiempo insumido en su mantenimiento (que sea automático o, de mínima, lo más automático posible). Así es como llegamos, r_tips y yo, a [Mastodon](https://mastodon.social/explore)! 
+
+## ¿Qué es [mastodon]?
+
+```{r}
+knitr::include_graphics("img/mastodon.png")
+```
+
+
+> _Mastodon es un software libre desarrollado para implementar las redes sociales de microblogueo que conforman al fediverso, con una gran semejanza a Twitter, siendo lanzada junto con su dominio principal «mastodon.social» en octubre de 2016_[^1]
+
+[^1]: [Wikipedia](https://es.wikipedia.org/wiki/Mastodon_(red_social))
+
+En pocas palabras, mastodon es una red social, como [Twitter](https://x.com/) (ahora [X](https://x.com/)). Esto es, usuarios y usuarias que a través de toots (tuis) se expresan. Sin embargo, hay algunas diferencias claves:
+
+Primero y la más importante: los espacios en donde se interactúa no le pertenecen todos a una misma persona (como le pertenece X a Elon Musk), sino a comunidades agrupadas en distintos espacios conocidos como _instancias_ (o federación descentralizada de servidores), basadas en código libre y abierto, publicado en [Github](https://github.com/mastodon/mastodon). 
+
+Cada _instancia_ tiene _algo_ en común que le da su razón de ser. Por ejemplo, hay instancias que tienden a aglomerar usuarios y usuarias interesados en las [Ciencias Sociales](https://sciences.social/aboutc), en [tecnología, software libre y còdigo abierto](https://fosstodon.org/explore) o simplemente en el [intercambio social](https://mastodon.social/explore). Cada espacio tiene reglas definidas por los administradores y uno puede registrarse en más de un espacio al mismo tiempo o incluso migrar una cuenta (con seguidores incluídos) de instancia en instancia.
+
+<iframe src="https://botsin.space/@r_tips/111049710094872273/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400" allowfullscreen="allowfullscreen"></iframe>
+
+En Mastodon es bastante más sencillo (y hasta promovido) el acceso a APIS para poder automatizar el intercambio entre la instancia y R. Y, cómo no podría ser de otra manera, quien resume este procedimiento es un paquete de R llamado [{rtoot}](https://schochastics.github.io/rtoot/). Con el, sumado a las Github Actions[^2], se puede lograr automatizar el posteo de toots con una periodicidad configurada a gusto. 
+
+Si alguien está interesado en el paso a paso para lograrlo, dejó [aquí un post](https://www.rostrum.blog/posts/2023-02-09-londmapbotstodon/index.html) sobre como hacerlo. A mi me sirvió mucho, tras unas cuantas horas de intentarlo sin éxito.
+
+[^2]: No hablaré aquí de ellas, pero basicamente es una herramienta ofrecida por Github para automatizar procesos. En mi caso, que se corra un script de R todos los días -menos fines de semana, por supuesto, que el bot también descansa).
+
+## ¿Cómo sigue la historia?
+
+r_tips seguirá tanto en X como en mastodon. La diferencia será que, al lograr automatizar la publicación de toots en la red social del mastodonte, allí habrá un tip por día, SIN EXCEPCIÓN, mientras que en X trataré de replicar el tip de forma manual, siempre que pueda.
+
+Así que ya saben, pasen por [r_tips](botsin.space/@r_tips) (v.x) o [r_tips](https://x.com/r_tipss) (v.mastodon) y disfruten del bello y potente lenguaje de programación [R].
+
+<iframe src="https://giphy.com/embed/3oEjHSNWEQN0DbSULu" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/lionsgatehomeent-arnold-schwarzenegger-terminator-2-hasta-la-vista-3oEjHSNWEQN0DbSULu">via GIPHY</a></p>
+
+<br>
+
+**¡Buen provecho!**

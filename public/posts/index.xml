@@ -5,16 +5,203 @@
         <description>Recent content in Posts on Estación 🇷</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>es-AR</language>
-        <lastBuildDate>Mon, 17 Oct 2022 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 14 Sep 2023 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://estacion-r.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>¡r_tips en Mastodon!</title>
+            <link>https://estacion-r.netlify.app/posts/2023/09/r_tips-en-mastodon/</link>
+            <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
+            
+            <guid>https://estacion-r.netlify.app/posts/2023/09/r_tips-en-mastodon/</guid>
+            <description>¡r_tips no ha muerto! Después de mucho trabajo y no sin frustración, el bot de r_tips está activo y publicando de forma automática tips sobre nuestro lenguaje de programación preferido [R] en la red social [mastodon]
+knitr::include_graphics(&amp;quot;img/r_tips.jpeg&amp;quot;)  ¿Qué es [r_tips]? r_tips es un bot que nació con el fin de contribuir al desarrollo del lenguaje de programación [R], difundiendo tips que ayuden al día a día con este lenguaje y, por qué no, que también nos permitan divertirnos jugando con los datos.</description>
+            <content type="html"><![CDATA[
+
+
+<div id="r_tips-no-ha-muerto" class="section level2">
+<h2>¡r_tips no ha muerto!</h2>
+<p>Después de mucho trabajo y no sin frustración, el bot de <a href="https://botsin.space/@r_tips">r_tips</a> está activo y publicando de forma automática tips sobre nuestro lenguaje de programación preferido <a href="https://www.r-project.org/">[R]</a> en la red social [mastodon]</p>
+<pre class="r"><code>knitr::include_graphics(&quot;img/r_tips.jpeg&quot;)</code></pre>
+<p><img src="img/r_tips.jpeg" width="80%" /></p>
+</div>
+<div id="qué-es-r_tips" class="section level2">
+<h2>¿Qué es [r_tips]?</h2>
+<p>r_tips es un bot que nació con el fin de contribuir al desarrollo del lenguaje de programación [R], difundiendo <em>tips</em> que ayuden al día a día con este lenguaje y, por qué no, que también nos permitan divertirnos jugando con los datos. La principal razón de que haya desarrollado este bot es la de devolver un poco de todo lo que la comunidad me ha dado, facilitando código, experiencia y conocimiento y todo ¡sin pedir nada cambio!.</p>
+<p>El primer hogar de esta cuenta fue (y sigue siendo) <a href="https://twitter.com/">Twitter</a>, red social que, tras ser comprada por Elon Musk pasó a llamarse <a href="https://x.com/">X</a>. Este cambio no se dió sin sobresaltos, tanto en la paltaforma como en las <em>reglas de juego</em> impuestas por su nuevo dueño. Pero, más allá de ello, quizás el principal problema (al menos para el bot <a href="https://twitter.com/r_tipss">r_tips</a>) fue la inestabilidad e impredecibilidad de su futuro en esta red social más el gran costo que, por esto, implicaba en su mantenimiento.</p>
+<blockquote class="twitter-tweet">
+<p lang="es" dir="ltr">
+🎉Habemus Rtips en Mastodon! 🎉<br> <br>Si andas por esa red, seguí a <span class="citation">@r_tips</span><span class="citation">@botsin.space</span> y alimentate de los mejores tips para R.<br> <br>Esta cuenta seguirá funcionando de modo manual mientras que en Mastodon ya está automatizada (no habrá día sin <a href="https://twitter.com/hashtag/Rtips?src=hash&amp;ref_src=twsrc%5Etfw">#Rtips</a>!) <a href="https://t.co/JONNQNSrSv">pic.twitter.com/JONNQNSrSv</a>
+</p>
+— r_tips (<span class="citation">@r_tipss</span>) <a href="https://twitter.com/r_tipss/status/1702322811627552937?ref_src=twsrc%5Etfw">September 14, 2023</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>Otro gran factor para replantear la existencia del bot en Twitter es el anuncio de <a href="https://llrs.dev/">Lluís Revilla Sancho</a>, célebre del aún más celebre paquete <a href="https://docs.ropensci.org/rtweet/">{rtweet}</a>, respecto al fin del mantenimiento de la librería que permitía acceder y automatizar la interacción entre Twitter y R, logrando con ello poder hacer tanto análisis de datos con la información generada por la red social como también la creación de bot (como r_tips) que de forma automática publicaban tuits todos los días. <a href="https://llrs.dev/post/2023/03/20/rtweet-starts-using-api-v2/">Acá pueden profundizar más sobre los motivos</a></p>
+<pre class="r"><code>knitr::include_graphics(&quot;img/fin_rtweet.png&quot;)</code></pre>
+<p><img src="img/fin_rtweet.png" width="388" /></p>
+<p>Esto fue llevandome, poco a poco, a buscar una alternativa que se alinee con los fundamentos principales de r_tips y que, al mismo tiempo, le permita subsistir sin sobrecarga de tiempo insumido en su mantenimiento (que sea automático o, de mínima, lo más automático posible). Así es como llegamos, r_tips y yo, a <a href="https://mastodon.social/explore">Mastodon</a>!</p>
+</div>
+<div id="qué-es-mastodon" class="section level2">
+<h2>¿Qué es [mastodon]?</h2>
+<pre class="r"><code>knitr::include_graphics(&quot;img/mastodon.png&quot;)</code></pre>
+<p><img src="img/mastodon.png" width="108" /></p>
+<blockquote>
+<p><em>Mastodon es un software libre desarrollado para implementar las redes sociales de microblogueo que conforman al fediverso, con una gran semejanza a Twitter, siendo lanzada junto con su dominio principal «mastodon.social» en octubre de 2016</em><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+</blockquote>
+<p>En pocas palabras, mastodon es una red social, como <a href="https://x.com/">Twitter</a> (ahora <a href="https://x.com/">X</a>). Esto es, usuarios y usuarias que a través de toots (tuis) se expresan. Sin embargo, hay algunas diferencias claves:</p>
+<p>Primero y la más importante: los espacios en donde se interactúa no le pertenecen todos a una misma persona (como le pertenece X a Elon Musk), sino a comunidades agrupadas en distintos espacios conocidos como <em>instancias</em> (o federación descentralizada de servidores), basadas en código libre y abierto, publicado en <a href="https://github.com/mastodon/mastodon">Github</a>.</p>
+<p>Cada <em>instancia</em> tiene <em>algo</em> en común que le da su razón de ser. Por ejemplo, hay instancias que tienden a aglomerar usuarios y usuarias interesados en las <a href="https://sciences.social/aboutc">Ciencias Sociales</a>, en <a href="https://fosstodon.org/explore">tecnología, software libre y còdigo abierto</a> o simplemente en el <a href="https://mastodon.social/explore">intercambio social</a>. Cada espacio tiene reglas definidas por los administradores y uno puede registrarse en más de un espacio al mismo tiempo o incluso migrar una cuenta (con seguidores incluídos) de instancia en instancia.</p>
+<iframe src="https://botsin.space/@r_tips/111049710094872273/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400" allowfullscreen="allowfullscreen">
+</iframe>
+<p>En Mastodon es bastante más sencillo (y hasta promovido) el acceso a APIS para poder automatizar el intercambio entre la instancia y R. Y, cómo no podría ser de otra manera, quien resume este procedimiento es un paquete de R llamado <a href="https://schochastics.github.io/rtoot/">{rtoot}</a>. Con el, sumado a las Github Actions<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, se puede lograr automatizar el posteo de toots con una periodicidad configurada a gusto.</p>
+<p>Si alguien está interesado en el paso a paso para lograrlo, dejó <a href="https://www.rostrum.blog/posts/2023-02-09-londmapbotstodon/index.html">aquí un post</a> sobre como hacerlo. A mi me sirvió mucho, tras unas cuantas horas de intentarlo sin éxito.</p>
+</div>
+<div id="cómo-sigue-la-historia" class="section level2">
+<h2>¿Cómo sigue la historia?</h2>
+<p>r_tips seguirá tanto en X como en mastodon. La diferencia será que, al lograr automatizar la publicación de toots en la red social del mastodonte, allí habrá un tip por día, SIN EXCEPCIÓN, mientras que en X trataré de replicar el tip de forma manual, siempre que pueda.</p>
+<p>Así que ya saben, pasen por <a href="botsin.space/@r_tips">r_tips</a> (v.x) o <a href="https://x.com/r_tipss">r_tips</a> (v.mastodon) y disfruten del bello y potente lenguaje de programación [R].</p>
+<iframe src="https://giphy.com/embed/3oEjHSNWEQN0DbSULu" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen>
+</iframe>
+<p>
+<a href="https://giphy.com/gifs/lionsgatehomeent-arnold-schwarzenegger-terminator-2-hasta-la-vista-3oEjHSNWEQN0DbSULu">via GIPHY</a>
+</p>
+<p><br></p>
+<p><strong>¡Buen provecho!</strong></p>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="fn1"><p><a href="https://es.wikipedia.org/wiki/Mastodon_(red_social)">Wikipedia</a><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>No hablaré aquí de ellas, pero basicamente es una herramienta ofrecida por Github para automatizar procesos. En mi caso, que se corra un script de R todos los días -menos fines de semana, por supuesto, que el bot también descansa).<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Seleccion Argentina 2022</title>
+            <link>https://estacion-r.netlify.app/posts/2022/11/seleccion-argentina-2022/</link>
+            <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
+            
+            <guid>https://estacion-r.netlify.app/posts/2022/11/seleccion-argentina-2022/</guid>
+            <description>Mundial 2022 El mundial ya arrancó y la ansiedad (¿de la buena?) copó al mundo. Y a mí también. Pero este es un mundial particular. Para esta competencia abundan los datos y las fuentes de donde obtenerlos. Es por esto que decidí reflotar un ejercicio que había armado allá por el Mundial anterior (2018), en donde mostraba información sobre la Selección Argentina. En aquel momento junté la data de forma manual, a través de publicaciones en Wikipedia.</description>
+            <content type="html"><![CDATA[<h2 id="mundial-2022">Mundial 2022</h2>
+<p>El mundial ya arrancó y la ansiedad (¿de la buena?) copó al mundo. Y a mí también.
+Pero este es un mundial particular. Para esta competencia abundan los datos y las fuentes de donde obtenerlos. Es por esto que decidí reflotar <a href="https://twitter.com/pabblo_h/status/1006536967406931971?s=20&amp;t=_SnCXvM_S9yxF5PNDznQ1g">un ejercicio</a> que había armado allá por el Mundial anterior (2018), en donde mostraba información sobre la Selección Argentina. En aquel momento junté la data de forma manual, a través de publicaciones en Wikipedia. Así llegué a un laborioso excel y armé las visualizaciones con flourish, una plataforma que permite de forma gratuita e intuitiva contar historias sin necesidad de saber programar ni mucho menos.</p>
+<p>Con esta gran excusa para volver a poner las manos en la data me propuse automatizar aquello que había hecho a mano y, además, poner a disposición la información que encuentre. Encaré así un pequeño proyecto de dos etapas:</p>
+<ol>
+<li>
+<p>Armar un dataset de la selección por cada mundial a través de dos fuentes: <a href="https://www.wikipedia.org/">Wikipedia</a> y un muy buen paquete de R llamado <a href="https://jaseziv.github.io/worldfootballR/index.html">worldfootballR</a>, desde donde se puede acceder a diferentes  páginas de internet con información estadística de jugadores, clubes y hasta ligas del mundo entero.</p>
+</li>
+<li>
+<p>Analizar brevemente la información encontrada, como excusa para volver a jugar con R y las visualizaciones</p>
+</li>
+</ol>
+<p><img src="img/patriota_arg.png" alt=""></p>
+<h2 id="los-datos">Los datos</h2>
+<p>La pregunta que motivó este proyecto allá por el Mundial 2018 rondó por el lugar de orígen de los convocados a la selección Argentina. Para ello necesitaba una fuente con dicha información y encontré como mejor candidata a Wikipedia. En aquel momento entre página por página que refería a la lista final de convocados a la Selección y armé una base de datos sencilla, <strong>a mano</strong>. DOLIÓ.</p>
+<p>Para este mundial se me ocurrió reproducir el ejercicio pero de forma <del>un poco más</del> automática. La estrategia consistió en dos instancias. La primera fue obtener el listado definitivo de seleccionados para cada mundial. Para ello fui a escrapear (&ldquo;raspar&rdquo; y extraer los datos de una página de forma programática) wikipedia y armar así una primera base llamada <code>lista_convocados_wikipedia.rds</code>. El script que armé se puede ver <a href="https://github.com/pablotis/seleccion_argentina/blob/main/scripts/scraper_lista_convocados.R">acá</a>.
+Un segundo ejercicio consistió en &ldquo;pegarle&rdquo; a cada listado de jugadores la url que contiene el acceso al perfil y las estadísticas de los jugadores, de donde podría, por ejemplo, también extraer la localidad de nacimiento de cad auno.
+El resultado de ambos procesos fue un <a href="https://github.com/pablotis/seleccion_argentina">repositorio abierto</a> que contiene tanto el ejercicio como el conjunto de datasets armados.</p>
+<p><img src="img/sel_wikipedia.png" alt=""></p>
+<p>El siguiente paso fue combinar la información de wikipedia con aquella que podía extraer a través del paquete <code>worldfootbalR</code>, específicamente de una de las páginas con las que se conecta: <a href="https://fbref.com/es/">fbref</a>. De allí podía extraer la ciudad de la que es oriundo cada jugador y dejar también las bases para seguir indagando por más información.</p>
+<p><img src="img/fbref.png" alt=""></p>
+<h2 id="presentando-los-datos">Presentando los datos</h2>
+<p>Una vez obtenida la información, sistematizada y almacenada en bases de datos, decidí jugar con un par de gráficos, apenas para explorar los resultados<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Van tres simples visualizaciones a modo de ejemplo de lo que se puede hacer con las bases:</p>
+<h3 id="heading"></h3>
+<img src="https://estacion-r.netlify.app/posts/2022/11/seleccion-argentina-2022/index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.gif" alt=""><!-- --></p>
+<h4 id="cantidad-de-jugadores-convocados-por-la-selección-argentina-según-la-provincia-de-orígen">Cantidad de jugadores convocados por la Selección Argentina según la provincia de orígen.</h4>
+<img src="https://estacion-r.netlify.app/posts/2022/11/seleccion-argentina-2022/index_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+<h2 id="cómo-seguir">¿Cómo seguir?</h2>
+<p>En las bases disponibles está el link que permite extraer la información de cada jugador volcada en <a href="https://fbref.com/es/equipos/f9fddd6e/Argentina-Stats">fbref</a>. Con ello vas a poder no sólo caracterizar el lugar de orígen sino introducirte en las estadísticas de cada jugador y compararlas a lo largo de los mundiales (de 1978 en adelante).</p>
+<p>Queda también limpiar la georreferenciación de las localidades de nacimiento de los jugadores, no en todos está dicha información y podrían hacerse lindas cosas con ello.</p>
+<p>¡Buen provecho!</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Dejo <a href="">acá el código</a> para reproducir, adaptar y seguir jugando!&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Paquetes de R Latinoamericanos</title>
+            <link>https://estacion-r.netlify.app/posts/2022/11/paquetes-de-r-latinoamericanos/</link>
+            <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
+            
+            <guid>https://estacion-r.netlify.app/posts/2022/11/paquetes-de-r-latinoamericanos/</guid>
+            <description>| Autores: Pablo Tiscornia y Patricia Loto
+Contexto ¿Qué hace que un lenguaje crezca, se desarrolle, mejore y hasta evolucione? Seguramente la respuesta no entra en un posteo de un simple blog. Lo que sí podríamos decir es que tanto el desarrollo de librerías o paquetes como la presencia de una comunidad de usuarios y usuarias son aspectos fundamentales.
+Si asumimos que una de las principales tareas de una librería es ofrecer una caja de herramientas orientada a resolver (o al menos facilitar la resolución de) un problema, qué mejor fuente de pruebas, errores, preguntas, desafíos y, sobre todo, soluciones que la de una comunidad que intercambia en espacios abiertos, accesibles, respetuosos y cuya premisa in-negociable sea la de compartir conocimiento.</description>
+            <content type="html"><![CDATA[<p>| Autores: <em>Pablo Tiscornia y Patricia Loto</em></p>
+<p><img style="display: block; margin: auto;"
+src="img/sanmaRtin.png"></p>
+<p style="text-align: center;">
+</p>
+<h2 id="contexto">Contexto</h2>
+<p>¿Qué hace que un lenguaje crezca, se desarrolle, mejore y hasta evolucione? Seguramente la respuesta no entra en un posteo de un simple blog. Lo que sí podríamos decir es que tanto el desarrollo de librerías o paquetes como la presencia de una comunidad de usuarios y usuarias son aspectos fundamentales.</p>
+<p>Si asumimos que una de las principales tareas de una librería es ofrecer una caja de herramientas orientada a resolver (o al menos facilitar la resolución de) un problema, qué mejor fuente de pruebas, errores, preguntas, desafíos y, sobre todo, soluciones que la de una comunidad que intercambia en espacios abiertos, accesibles, respetuosos y cuya premisa in-negociable sea la de compartir conocimiento.</p>
+<p>Es en este contexto que junto a <a href="https://github.com/PatriLoto"><strong>Patricia Loto</strong></a> hemos decidido crear el repositorio abierto <a href="https://github.com/pablotis/asombrosos-paquetes-r-latinoamerica"><strong>Asombrosos paquetes en latinoamerica</strong></a>, como un lugar donde alojar y encontrar el conjunto de paquetes que se desarrollan en Latinoamérica. Esto último (lo de <em>latinoamérica</em>) no es inocente. Entendemos que abundan los espacios de habla inglesa que comparten y difunden conocimiento y no hay los suficientes de habla hispana, más aún en este lado del hemisferio.</p>
+<h2 id="asombrosos-paquetes-en-latinoamerica">Asombrosos paquetes en latinoamerica</h2>
+<p>El repositorio es sencillo, el objetivo es encontrarnos entre desarrolladores y desarrolladoras del lenguaje R en latinoamérica. Las condiciones de entrada son simples:</p>
+<ul>
+<li>
+<p>Que el código del paquete sea abierto.</p>
+</li>
+<li>
+<p>Que quien lo produce sea de latinoamérica (elija su propia definición de <em>ser</em>).</p>
+</li>
+</ul>
+<h2 id="un-repositorio-colaborativo">Un repositorio colaborativo</h2>
+<p>Un punto no menor: la intención es que el repositorio no &ldquo;dependa&rdquo; de un par de personas. Nuestra aspiración es que se alimente de quien, o bien haya creado, o bien sea usuario o usuaria de un paquete en R.</p>
+<p>Entonces, ¿cómo contribuir? Para ello, armamos <a href="https://github.com/pablotis/asombrosos-paquetes-r-latinoamerica#c%C3%B3mo-contribuir">una pequeña sección</a>. La idea es que no sea un espacio mantenido por &ldquo;expertos&rdquo;, sino que quien quiera sumar pueda hacerlo. Se nos ocurrieron tres caminos:</p>
+<ul>
+<li>
+<p>A través de <strong>Github</strong>:</p>
+<ul>
+<li>
+<p>Vía <a href="https://docs.github.com/es/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">Pull Requests</a></p>
+</li>
+<li>
+<p>Vía un <a href="https://github.com/pablotis/asombrosos-paquetes-r-latinoamerica/issues">issue</a> con, por ejemplo, título a lo <em>&ldquo;Agregar paquete x&rdquo;</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Contactándonos</strong>, escribiendo a las siguientes casillas con el paquete que tenes entre manos, lo evaluamos y agregamos sin problema:</p>
+<ul>
+<li>
+<p>Pablo Tiscornia: <a href="mailto:pablotisco@gmail.com">pablotisco@gmail.com</a></p>
+</li>
+<li>
+<p>Patricia Loto: <a href="mailto:patricia.andrea.loto@gmail.com">patricia.andrea.loto@gmail.com</a></p>
+</li>
+<li>
+<p>Andrea Gomez Vargas: <a href="mailto:andrea.gomezv11@gmail.com">andrea.gomezv11@gmail.com</a></p>
+</li>
+</ul>
+<br>
+</li>
+</ul>
+<p>¡Esperamos tu paquete para sumarlo al repo!</p>
+<br>
+<img src="https://media.giphy.com/media/fXsfNy8saoEgMo0Nc9/giphy.gif" width="480px" height="480px" style="display: block; margin: auto;" />
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+<div id="commento"></div>
+]]></content>
+        </item>
         
         <item>
             <title>¡1, 2... paquete!</title>
             <link>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</link>
-            <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
+            <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
             
             <guid>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</guid>
-            <description>@import url(https://fonts.googleapis.com/css?family=Glegoo);.showMore{font-size: 14px;display:block;cursor: pointer;}.showMore + input{display:none;}.showMore + input + *{display:none;}.showMore + input:checked + *{display:block;}blockquote {margin-left: 0;font-size: 12px;background: #e5f5f9;}Si tenés más de 30 años probablemente hayas conocido los postres 1,2, LISTO! Y si no, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!</description>
+            <description>@import url(https://fonts.googleapis.com/css?family=Glegoo); .showMore{ font-size: 14px; display:block; cursor: pointer; } .showMore + input{ display:none; } .showMore + input + *{ display:none; } .showMore + input:checked + *{ display:block; } blockquote { margin-left: 0; font-size: 12px; background: #e5f5f9; }  Si tenés más de 30 años (y vivís o viviste en Argentina) probablemente hayas conocido los postres 1,2, LISTO! Para quienes no lo conozcan, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!</description>
             <content type="html"><![CDATA[<style type="text/css">
 @import url(https://fonts.googleapis.com/css?family=Glegoo);
 
@@ -41,29 +228,29 @@ blockquote {
   background: #e5f5f9;
 }
 </style>
-<p>Si tenés más de 30 años probablemente hayas conocido los postres 1,2, LISTO! Y si no, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!). Los pasos, además, eran muy sencillos: Abrir el sobre, volcar el contenido del sobre en una taza, mezclar con leche y&hellip; ¡listo! a disfrutar.</p>
+<p>Si tenés más de 30 años (y vivís o viviste en Argentina) probablemente hayas conocido los postres 1,2, LISTO! Para quienes no lo conozcan, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!). Los pasos, además, eran muy sencillos: Abrir el sobre, volcar el contenido en una taza, mezclar con leche y&hellip; ¡listo! a disfrutar.</p>
 <img src="http://k30.kn3.net/taringa/A/6/0/A/7/1/LeandroD17/C3C.jpg" style="display: block; margin: auto;" />
 <p>Como en el postre, en este post voy a tratar de mostrar cómo en pocos pasos podemos pasar de tener un montón de funciones desperdigadas por despelotados scripts a un paquete de R que las contenga. Como se imaginarán, no serán dos (o tres), pero sí mostraré cómo se puede hacer de forma sencilla y efectiva, sin necesidad de entender todo lo que está pasando por detrás.</p>
 <h2 id="por-qué-un-paquete">¿Por qué un paquete?</h2>
 <p>Podemos pensar al camino del o la programadora en R como aquel que (puede) transita(r) por las siguientes etapas, no necesariamente de forma ordenada ni sin caos, ansiedad, frustración pero también con aciertos y, cada tanto, algunas victorias:</p>
 <ol>
 <li>
-<p><strong>La Era del script.</strong> Podemos considerarla como la instancia con la que nos incorporamos al lenguaje. Puede ser un R script o un Rmarkdown, el punto es que escribimos un sinfin de secuencias de código con mucha repetición, probablemente poca automatización, o con alguna más bien rústica y no sistemática.</p>
+<p><strong>La Era del script.</strong> Podemos considerarla como la instancia con la que nos incorporamos al lenguaje. En este punto nos encontramos escribiendo un sinfín de secuencias de código con mucha repetición, probablemente poca automatización, o con alguna más bien rústica y no sistemática.</p>
 </li>
 <li>
 <p><strong>La Era de la función.</strong> En nuestros scripts empezamos a necesitar no repetir tanto (porque lo hacemos mucho). Nos cuentan que existen las funciones, las vemos como algo maravilloso y al mismo tiempo doloroso de construir. Pero cuando le agarramos la mano no podemos parar.</p>
 </li>
 <li>
-<p><strong>La era del paquete.</strong> Nos empezamos a cansar de ir a buscar funciones por proyectos mal organizados, hechos ad hoc para algo en particular y que ya no recordamos bien en qué carpeta lo dejamos, o siquiera si era ese el proyecto en el que habíamos escrito la función. Los paquetes ya eran algo que escuchábamos hablar, pero eso es para gente que trabaja en la NASA, no estamos a la altura.</p>
+<p><strong>La Era del paquete.</strong> Nos empezamos a cansar de ir a buscar funciones por proyectos mal organizados, hechos ad hoc para algo en particular y que ya no recordamos bien en qué carpeta lo dejamos, o siquiera si era ese el proyecto en el que habíamos escrito la función. Los paquetes ya eran algo que escuchábamos hablar, pero eso es para gente que trabaja en la NASA, no estamos a la altura.</p>
 </li>
 </ol>
 <p>Este post tiene como objetivo aquellas personas que están transitando la tercera etapa, por dos razones más que nada:</p>
 <p>a. saben escribir funciones (rústicas, no sofisticadas, pero funciones al fin), y</p>
 <p>b. necesitan armar un paquete</p>
 <h2 id="bibliografía-de-referencia">Bibliografía de referencia</h2>
-<p>Me voy a basar en la documentación <a href="https://r-pkgs.org/data.html">R Packages (2e)</a> cuyos autores son <a href="https://jennybryan.org/">Jennifer Bryan</a> y <a href="https://hadley.nz/">Hadley Wickham</a>. Este libro está disponible y accesible de forma gratuita en internet. Está escrito sólo en inglés, pero en uno muy sencillo y ameno, fácil de digerir. Ambos autores tienen una inclinación por poner el foco en la accesibilidad a la hora de transmitir conocimiento, cosa para nada despreciable en el mundo de la programación.</p>
+<p>Me voy a basar en la documentación <a href="https://r-pkgs.org/data.html">R Packages (2e)</a> cuyos autores son <a href="https://jennybryan.org/">Jennifer Bryan</a> y <a href="https://hadley.nz/">Hadley Wickham</a>. Este libro está disponible y accesible de forma gratuita en internet. Está escrito sólo en inglés, pero en uno muy sencillo y ameno, fácil de digerir<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
 <h2 id="manos-a-la-obra">Manos a la obra</h2>
-<p>Voy a mostrar los mínimos pasos necesarios para armar un paquete y para ello voy a&hellip; ¡armar un paquete! La idea es no quedarnos en lo expositivo, sino que se pueda replicar (y adaptar) el ejemplo.</p>
+<p>Voy a mostrar los mínimos pasos necesarios para armar un paquete y para ello voy a&hellip; ¡armar un paquete! La idea es no quedarnos en lo expositivo, sino que se pueda replicar (y adaptar) el ejemplo. Para ello vamos a trabajar en Rstudio<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, siendo de las plataformas más populares para escribir en R. La idea es simplemente abrir el programa y en un R script ir escribiendo el código necesario que iremos dejando a continuación. No es necesario que guardes este script, aunque puedes hacerlo para dejar asentado los pasos recorridos.</p>
 <h3 id="librerías-de-trabajo">Librerías de trabajo</h3>
 <p>Para armar nuestro paquete necesitaremos de las siguientes librerías, las cuales nos van a proveer de funciones para facilitar el desarrollo del paquete.</p>
 <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75af00">library</span><span style="color:#111">(</span><span style="color:#111">devtools</span><span style="color:#111">)</span>
@@ -74,7 +261,7 @@ Luego vamos a crearlo con la siguiente función (asegúrate de poner la ruta que
 </code></pre></div><p>Como resultado vas a poder ver que se te ha creado un proyecto nuevo con el nombre del paquete y una estructura de archivos como la de esta imagen:</p>
 <p><img src="img/carpetas_paquete.png" alt=""></p>
 <blockquote>
-  <label class="showMore" for="_1"> 🚧️ En pocas palabras</label>
+  <label class="showMore" for="_1"> 👆🏼️ En pocas palabras</label>
   <input id="_1" type="checkbox">
   <div>
 <ul>
@@ -91,7 +278,7 @@ Luego vamos a crearlo con la siguiente función (asegúrate de poner la ruta que
 <p><strong>risas.Rproj</strong> es el archivo del proyecto creado</p>
 </li>
 <li>
-<p><strong>.gitignore</strong> contiene aquellos archivos que no queremos que interactuen con Github<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p><strong>.gitignore</strong> contiene aquellos archivos que no queremos que interactuen con Github<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
 </li>
 <li>
 <p><strong>NAMESPACE</strong> declara aquellas funciones que nuestro paquete declara para uso externo y aquellas funciones externas que nuestro paquete importa.</div></p>
@@ -113,12 +300,12 @@ Luego vamos a crearlo con la siguiente función (asegúrate de poner la ruta que
 <p>Lo importante de este paso es revisar el último mensaje, que de salir todo bien debería figurar algo así:</p>
 <p><img src="img/paquete_check_resultado.png" alt=""></p>
 <p>Por suerte la explicación de estos tres bloques (<em>errors</em>, <em>warning</em> y <em>note</em>) es bastante intuitiva. Lo que más nos importa es que <span style="color:green"> <code>errors</code></span> figure en cero. De no ser así es lo primero que deberíamos revisar. Por suerte, inmediatamente arriba de este último mensaje tenemos más pistas sobre qué es lo que encontró el  <code>check()</code> como para que aparezca, por ejemplo, un <span style="color:red"> <code>1 warning</code></span> (en este caso, falta darle una licencia al paquete, cosa que haremos en los próximos pasos). Vale decir que aún con <code>warnings</code> y <code>notes</code> podemos avanzar, aunque no es lo recomendable.</p>
-<p><strong>Paso 4, darle una licencia al paquete.</strong> Aquí no profundizaremos mucho ya que el paso es bien sencillo y lo que puede tomar más tiempo es decidir por qué tipo de licencia optar. En nuestro caso vamos a ir por GPL-3<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p><strong>Paso 4, darle una licencia al paquete.</strong> Aquí no profundizaremos mucho ya que el paso es bien sencillo y lo que puede tomar más tiempo es decidir por qué tipo de licencia optar. En nuestro caso vamos a ir por GPL-3<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
 <p>La función que debemos para cumplir con este paso es:</p>
 <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">usethis</span><span style="color:#f92672">::</span><span style="color:#75af00">use_gpl3_license</span><span style="color:#111">()</span>
 </code></pre></div><p>Con ella se creará un nuevo archivo en la carpeta del proyecto llamado <code>LICENSE.md</code>.</p>
-<p><strong>Paso 5, documentación del paquete.</strong> Esta etapa es muy importante. Y esto es porque una de las razones por las cuales hacer un paquete es la posibilidad de documentar, actividad cuya popularidad es inversamente proporcional a la importancia que tiene. ¿Por qué documentar? Puede haber varias respuestas, pero la más palpable puede ser que la documentación nos ahorra dolores de cabeza (a nosotros/as o a otros/as). Una función puede ser intuitiva para quien la diseña (o no!), pero al retomar su uso después de un tiempo podemos no tener claro cómo es que se usaba, los parámetros que tiene y el resultado que genera. <strong>Para ello es clave la documentación</strong>, porque es justamente eso lo que resolvemos, dejar en claro lo que hace una función y la forma de utilizarla para llegar a ese resultado.</p>
-<p>Pero aquí debemos separar entre documentar una función y documentar un paquete, van a ser dos pasos diferentes. Vamos por el primero.</p>
+<p><strong>Paso 5, documentación del paquete.</strong> Esta es una de las razones por las cuales es buena idea hacer un paquete, la posibilidad de documentar; actividad cuya popularidad es inversamente proporcional a la importancia que tiene. ¿Por qué documentar? Puede haber varias respuestas, pero la más palpable puede ser que la documentación nos ahorra dolores de cabeza (a nosotros/as o a otros/as). Una función puede ser intuitiva para quien la diseña (o no!), pero al retomar su uso después de un tiempo podemos no tener claro cómo es que se usaba, los parámetros que tiene y el resultado que genera. <strong>Para ello es clave la documentación</strong>, porque es justamente eso lo que resolvemos, dejar en claro lo que hace una función y la forma de utilizarla para llegar a ese resultado.</p>
+<p>Vale mencionar que debemos diferenciar entre documentar una función y documentar un paquete, van a ser dos pasos diferentes. Veamos el primero.</p>
 <p><strong>Documentar una función.</strong> Lo que vamos a hacer es lo siguiente: en el mismo R script donde definimos nuestra nueva función (<code>risa_ja()</code>) vamos a pararnos en la primera línea y dirigirnos a la ventana de Rstudio <em><strong>Code &ndash;&gt; Insert Roxygen sckeleton</strong></em>:</p>
 <p><img src="img/paquete_funcion_doc.gif" alt=""></p>
 <p>Hecho esto, Rstudio automaticamente agregar al menos 6 líneas de código que servirán para documentar lo básico de nuestra función (nombre, descripción, parámetros -si los hay-, ejemplo de uso, eso al menos para empezar).
@@ -145,6 +332,7 @@ En nuestro caso, debería quedar algo así:</p>
 <p>Si todo sale bien, nuestro nuevo <code>check()</code> debería verse así:</p>
 <p><img src="img/paquete_check_v2.png" alt="">
 <img src="https://media.tenor.com/qdg13PqYbxMAAAAM/yes-baby.gif" alt=""></p>
+<p>Si todo no sale tan bien (alguna nota, error o advertencia), podemos revisar el capítulo <a href="https://r-pkgs.org/check.html"><strong>R CMD check</strong></a> del libro y revisar qué puede estar pasando.</p>
 <p>No demoremos más, antes de que alguien se arrepienta, instalemos nuestro paquete ejecutando la siguiente sentencia en nuestras consolas:</p>
 <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#111">devtools</span><span style="color:#f92672">::</span><span style="color:#75af00">install</span><span style="color:#111">()</span>
 </code></pre></div><p>Una vez hecho esto, nuestro paquete ya se encuentra instalado en la computadora y disponible para ser convocado vía el clásico <code>library()</code>. Y la mejor manera de comprobarlo es&hellip; probándolo!</p>
@@ -182,10 +370,16 @@ En nuestro caso, debería quedar algo así:</p>
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Otro post sobre Github ya se encuentra en producción&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Ambos autores tienen una inclinación por poner el foco en la accesibilidad a la hora de transmitir conocimiento, cosa para nada despreciable en el mundo de la programación.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>Más información sobre la licencia GPLv3, aquí: <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">https://www.gnu.org/licenses/gpl-3.0.en.html</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><a href="https://www.rstudio.com/">https://www.rstudio.com/</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Otro post sobre Github ya se encuentra en producción&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Más información sobre la licencia GPLv3, aquí: <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">https://www.gnu.org/licenses/gpl-3.0.en.html</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>

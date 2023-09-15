@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "C:/Users/pablo/Documents/Pablo/Proyectos/Blogs/estacion-r.io",
+	"sourceRoot": "/home/pablote/Pablo/Proyectos/estacion-r.github.io",
 	"sources": [
 		"themes/hugo-theme-hello-friend-ng/assets/scss/main.scss",
 		"themes/hugo-theme-hello-friend-ng/assets/scss/_normalize.scss",

@@ -6,14 +6,53 @@
     <description>Recent content on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Mon, 17 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>¡r_tips en Mastodon!</title>
+      <link>https://estacion-r.netlify.app/posts/2023/09/r_tips-en-mastodon/</link>
+      <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/posts/2023/09/r_tips-en-mastodon/</guid>
+      <description>¡r_tips no ha muerto! Después de mucho trabajo y no sin frustración, el bot de r_tips está activo y publicando de forma automática tips sobre nuestro lenguaje de programación preferido [R] en la red social [mastodon]
+knitr::include_graphics(&amp;quot;img/r_tips.jpeg&amp;quot;)  ¿Qué es [r_tips]? r_tips es un bot que nació con el fin de contribuir al desarrollo del lenguaje de programación [R], difundiendo tips que ayuden al día a día con este lenguaje y, por qué no, que también nos permitan divertirnos jugando con los datos.</description>
+    </item>
+    
+    <item>
+      <title>Seleccion Argentina 2022</title>
+      <link>https://estacion-r.netlify.app/draft/seleccion-2022/</link>
+      <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/draft/seleccion-2022/</guid>
+      <description>Mundial 2022 El mundial ya arrancó y la ansiedad (¿de la buena?) copó al mundo. Y a mí también. Pero este es un mundial particular. Para esta competencia abundan los datos y las fuentes de donde obtenerlos. Es por esto que decidí reflotar un ejercicio que había armado allá por el Mundial anterior (2018), en donde mostraba información sobre la Selección Argentina. En aquel momento junté la data de forma manual, a través de publicaciones en Wikipedia.</description>
+    </item>
+    
+    <item>
+      <title>Seleccion Argentina 2022</title>
+      <link>https://estacion-r.netlify.app/posts/2022/11/seleccion-argentina-2022/</link>
+      <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/posts/2022/11/seleccion-argentina-2022/</guid>
+      <description>Mundial 2022 El mundial ya arrancó y la ansiedad (¿de la buena?) copó al mundo. Y a mí también. Pero este es un mundial particular. Para esta competencia abundan los datos y las fuentes de donde obtenerlos. Es por esto que decidí reflotar un ejercicio que había armado allá por el Mundial anterior (2018), en donde mostraba información sobre la Selección Argentina. En aquel momento junté la data de forma manual, a través de publicaciones en Wikipedia.</description>
+    </item>
+    
+    <item>
+      <title>Paquetes de R Latinoamericanos</title>
+      <link>https://estacion-r.netlify.app/posts/2022/11/paquetes-de-r-latinoamericanos/</link>
+      <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/posts/2022/11/paquetes-de-r-latinoamericanos/</guid>
+      <description>| Autores: Pablo Tiscornia y Patricia Loto
+Contexto ¿Qué hace que un lenguaje crezca, se desarrolle, mejore y hasta evolucione? Seguramente la respuesta no entra en un posteo de un simple blog. Lo que sí podríamos decir es que tanto el desarrollo de librerías o paquetes como la presencia de una comunidad de usuarios y usuarias son aspectos fundamentales.
+Si asumimos que una de las principales tareas de una librería es ofrecer una caja de herramientas orientada a resolver (o al menos facilitar la resolución de) un problema, qué mejor fuente de pruebas, errores, preguntas, desafíos y, sobre todo, soluciones que la de una comunidad que intercambia en espacios abiertos, accesibles, respetuosos y cuya premisa in-negociable sea la de compartir conocimiento.</description>
+    </item>
+    
     <item>
       <title>¡1, 2... paquete!</title>
       <link>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</link>
-      <pubDate>Mon, 17 Oct 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</guid>
-      <description>@import url(https://fonts.googleapis.com/css?family=Glegoo);.showMore{font-size: 14px;display:block;cursor: pointer;}.showMore + input{display:none;}.showMore + input + *{display:none;}.showMore + input:checked + *{display:block;}blockquote {margin-left: 0;font-size: 12px;background: #e5f5f9;}Si tenés más de 30 años probablemente hayas conocido los postres 1,2, LISTO! Y si no, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!</description>
+      <description>@import url(https://fonts.googleapis.com/css?family=Glegoo); .showMore{ font-size: 14px; display:block; cursor: pointer; } .showMore + input{ display:none; } .showMore + input + *{ display:none; } .showMore + input:checked + *{ display:block; } blockquote { margin-left: 0; font-size: 12px; background: #e5f5f9; }  Si tenés más de 30 años (y vivís o viviste en Argentina) probablemente hayas conocido los postres 1,2, LISTO! Para quienes no lo conozcan, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!</description>
     </item>
     
     <item>
@@ -27,12 +66,22 @@ Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de 
     </item>
     
     <item>
+      <title>México. ¿México?</title>
+      <link>https://estacion-r.netlify.app/draft/un-arg-en-mex/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/draft/un-arg-en-mex/</guid>
+      <description>Presentación. Mediante este posteo inauguro un espacio donde pretendo compartir reflexiones e ideas varias relacionadas al mundo de R, código abierto, procesamiento de datos, (con suerte) algo de sociología, tips y alguna que otra yerba útil.
+Como tema inaugural (y como excusa) emprendí un trabajo para intentar conocer y caracterizar lo que a partir de este año será, por un lado, mi país de residencia, y por el otro (justito), el país en el que mi querida Argentina enfrentara en la fase de grupos del mundial de fútbol masculino 2022: México.</description>
+    </item>
+    
+    <item>
       <title>ranking-solterxs</title>
       <link>https://estacion-r.netlify.app/draft/ranking-solterxs/</link>
       <pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/draft/ranking-solterxs/</guid>
-      <description>#.......................Configuración .Rmd.......................knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = TRUE)IntroducciónEste post nace como ejercicio para probar los mapas de XXX del autor XXX. El “caso de uso” será conocer la participación de personas solteras sobre el conjunto de la población mayor de 18 años en los 31 principales aglomerados relevados por la Encuesta Permanente de Hogares (EPH-INDEC)1
+      <description>#.......................Configuración .Rmd....................... knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = TRUE) Introducción Este post nace como ejercicio para probar los mapas de XXX del autor XXX. El “caso de uso” será conocer la participación de personas solteras sobre el conjunto de la población mayor de 18 años en los 31 principales aglomerados relevados por la Encuesta Permanente de Hogares (EPH-INDEC)1
 Una de las razones para elegir este caso de uso, además de la curiosidad, es el “match” que hay entre el tipo de visualización y el dato disponible.</description>
     </item>
     
@@ -51,42 +100,8 @@ Una de las razones para elegir este caso de uso, además de la curiosidad, es el
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/perfil/</guid>
-      <description>Hola! , soy Pablo Tiscornia Licenciado en Sociología (Universidad de Buenos Aires - UBA), especializado en metodología, recolección, procesamiento, análisis y comunicación de información estadística. Últimamente me encuentro enfocado en la mejora de procesos de trabajo vinculados al tratamiento de datos y en el desarrollo de estrategias para la apertura de datos. Todo con R bajo el brazo.
-⚡ Si el cartel dice Sociología, Datos Abiertos, estadística, R, Software Libre, metodología o programación, ENTRO.</description>
-    </item>
-    
-    <item>
-      <title>Aportes</title>
-      <link>https://estacion-r.netlify.app/aportes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/aportes/</guid>
-      <description>Todo el material de este espacio es de acceso libre y gratuito, basados en la filosofía de apertura que nutrió mucho del contenido que encontrarás aquí.
-Diseñar y armar este proyecto fue (y es) un trabajo arduo, basado en el compromiso de brindar más y mejor conocimiento sobre el lenguaje de programación R para el análisis de información estadística. La propuesta es fomentar el uso de este software para todas aquellas personas que no provienen del campo de la programación, de sistemas o con un background específico de estos mundos.</description>
-    </item>
-    
-    <item>
-      <title>Cursos</title>
-      <link>https://estacion-r.netlify.app/cursos_r/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/cursos_r/</guid>
-      <description>| Lista de cursos y recursos que dicto o he diseñado y cuyo material se encuentra disponible.
-  Ciencias Sociales Computacionales y Humanidades Digitales (IDAES-UNSAM). Módulo 1. Introducción a la Ciencia de Datos para Científicos Sociales
-    Big Data e Inteligencia Territorial (FLACSO)
-    Instrumentos de Análisis Urbanos II (UTDT)
-    Introducción al procesamiento de datos con R para Ciencias Sociales.</description>
-    </item>
-    
-    <item>
-      <title>Proyectos</title>
-      <link>https://estacion-r.netlify.app/proyectos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/proyectos/</guid>
-      <description>  Paquete {eph}. Una caja de herramientas para el procesamiento de la Encuesta Permanente de Hogares (EPH-INDEC)
-    SINTA Sistema de Información Turística de la Argentina
-   {r-universe/dnme-minturdep} Caja de Herramientas para el procesamiento de datos de la Dirección Nacional de Mercados y Estadística del Ministerio de Turism y Deporte de la Argentina    {r_tips} Un bot colaborativo que tira #rtips para trabajar con R   </description>
+      <description>Hola! , soy Pablo Tiscornia  Licenciado en Sociología (Universidad de Buenos Aires - UBA), especializado en metodología, recolección, procesamiento, análisis y comunicación de información estadística. Últimamente me encuentro enfocado en la mejora de procesos de trabajo vinculados al tratamiento de datos y en el desarrollo de estrategias para la apertura de datos. Todo con R bajo el brazo.
+    ⚡ Si el cartel dice Sociología, Datos Abiertos, estadística, R, Software Libre, metodología o programación, ENTRO.</description>
     </item>
     
   </channel>

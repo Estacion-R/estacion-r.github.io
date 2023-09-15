@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Pablo Tiscornia">
+<meta name="description" content="Presentación. Mediante este posteo inauguro un espacio donde pretendo compartir reflexiones e ideas varias relacionadas al mundo de R, código abierto, procesamiento de datos, (con suerte) algo de sociología, tips y alguna que otra yerba útil.
+Como tema inaugural (y como excusa) emprendí un trabajo para intentar conocer y caracterizar lo que a partir de este año será, por un lado, mi país de residencia, y por el otro (justito), el país en el que mi querida Argentina enfrentara en la fase de grupos del mundial de fútbol masculino 2022: México." />
+<meta name="keywords" content=", argentina, mexico, rstats, rstatsES" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://estacion-r.netlify.app/draft/un-arg-en-mex/" />
+
+
+    <title>
+        
+            México. ¿México? :: Estación 🇷 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://estacion-r.netlify.app/main.2b2aff83103a75e8bb97afd71207f490b64858992128ccdc0d7a08690fa018ba.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://estacion-r.netlify.app/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://estacion-r.netlify.app/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://estacion-r.netlify.app/favicon-16x16.png">
+    <link rel="manifest" href="https://estacion-r.netlify.app/site.webmanifest">
+    <link rel="mask-icon" href="https://estacion-r.netlify.app/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://estacion-r.netlify.app/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="México. ¿México?">
+<meta itemprop="description" content="Presentación. Mediante este posteo inauguro un espacio donde pretendo compartir reflexiones e ideas varias relacionadas al mundo de R, código abierto, procesamiento de datos, (con suerte) algo de sociología, tips y alguna que otra yerba útil.
+Como tema inaugural (y como excusa) emprendí un trabajo para intentar conocer y caracterizar lo que a partir de este año será, por un lado, mi país de residencia, y por el otro (justito), el país en el que mi querida Argentina enfrentara en la fase de grupos del mundial de fútbol masculino 2022: México."><meta itemprop="datePublished" content="2022-03-12T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-03-12T00:00:00+00:00" />
+<meta itemprop="wordCount" content="880">
+<meta itemprop="keywords" content="argentina,mexico,rstats,rstatsES," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="México. ¿México?"/>
+<meta name="twitter:description" content="Presentación. Mediante este posteo inauguro un espacio donde pretendo compartir reflexiones e ideas varias relacionadas al mundo de R, código abierto, procesamiento de datos, (con suerte) algo de sociología, tips y alguna que otra yerba útil.
+Como tema inaugural (y como excusa) emprendí un trabajo para intentar conocer y caracterizar lo que a partir de este año será, por un lado, mi país de residencia, y por el otro (justito), el país en el que mi querida Argentina enfrentara en la fase de grupos del mundial de fútbol masculino 2022: México."/>
+
+
+
+
+    <meta property="og:title" content="México. ¿México?" />
+<meta property="og:description" content="Presentación. Mediante este posteo inauguro un espacio donde pretendo compartir reflexiones e ideas varias relacionadas al mundo de R, código abierto, procesamiento de datos, (con suerte) algo de sociología, tips y alguna que otra yerba útil.
+Como tema inaugural (y como excusa) emprendí un trabajo para intentar conocer y caracterizar lo que a partir de este año será, por un lado, mi país de residencia, y por el otro (justito), el país en el que mi querida Argentina enfrentara en la fase de grupos del mundial de fútbol masculino 2022: México." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://estacion-r.netlify.app/draft/un-arg-en-mex/" /><meta property="article:section" content="draft" />
+<meta property="article:published_time" content="2022-03-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-03-12T00:00:00+00:00" />
+
+
+
+
+
+    <meta property="article:section" content="R" />
+
+
+
+    <meta property="article:published_time" content="2022-03-12 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZC91NVHQK"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-0ZC91NVHQK', { 'anonymize_ip': false });
+}
+</script>
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://estacion-r.netlify.app/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text">$ cd/estacion-r</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://estacion-r.netlify.app/posts/">Blog</a></li><li><a href="https://estacion-r.netlify.app/cursos_r/">Enseñar &#43; R</a></li><li><a href="https://estacion-r.netlify.app/perfil/">Autor</a></li><li><a href="https://estacion-r.netlify.app/proyectos/">Proyectos</a></li><li><a href="https://estacion-r.netlify.app/suscripcion/">Suscripción</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://estacion-r.netlify.app/draft/un-arg-en-mex/">México. ¿México?</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <h2 id="presentación">Presentación.</h2>
+<p>Mediante este posteo inauguro un espacio donde pretendo compartir reflexiones e ideas varias relacionadas al mundo de R, código abierto, procesamiento de datos, (con suerte) algo de sociología, tips y alguna que otra yerba útil.</p>
+<p>Como tema inaugural (y como excusa) emprendí un trabajo para intentar conocer y caracterizar lo que a partir de este año será, por un lado, mi país de residencia, y por el otro (justito), el país en el que mi querida Argentina enfrentara en la <a href="https://www.fifa.com/es/tournaments/mens/worldcup/qatar2022/match-center/400235462">fase de grupos del mundial de fútbol masculino 2022</a>: <strong>México</strong>.
+La idea es, entonces, conocer un poco más de este (ya) bello país, todo a través de información estadística. En este primer paso voy a indagar sobre su población, buscando qué cuentan los <strong>principales indicadores sociodemográficos</strong>.</p>
+<h2 id="fuente-de-datos">Fuente de datos.</h2>
+<p>Para poder comenzar a responder estas preguntas hice lo que toda persona que trabaja con datos (de bien) suele hacer: buscarlos. Y qué mejor forma que ir a la fuente de todas las fuentes, al centro de producción estadística que la mayoría de los países tienen para contar (al menos de forma cuantitativa) cómo es su población, su economía, etc. En México este organismo se llama <strong><a href="https://www.inegi.org.mx/">Instituto Nacional de Estadística y Geografía (de ahora en más INEGI)</a></strong></p>
+<img src="img/inegi_logo.png" width="50%" style="display: block; margin: auto;" />
+<p>El <strong>INEGI</strong> es una institución modelo en Latinoamérica en cuanto a producción de información estadística. La cantidad de datos que produce, procesa y difunde es extremadamente rica y abarca un sinfín de temáticas vinculadas a la sociología, demografía, economía, salud, educación, etc., etc., etc.</p>
+<p>Surfeando en este mar de información, me encontré con una, por momentos, inabarcable cantidad de recursos que parecen podrían ayudar a dar respuesta a las preguntas que me estaban dando vueltas. La más llamativa (¡muy gratamente!): <a href="https://www.inegi.org.mx/programas/ccpv/2020/"><strong>el Censo 2020</strong></a>. En la página podemos ver que el operativo ya se encuentra en etapa de difusión de la información a través de tabulados pre-procesados (genial), pero no se dispone de una base de microdatos para generar información <em>a medida</em> (no tan genial)<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, al menos para aquellas variables que necesito. Vale decir que esto no es algo sencillo de lograr para ninguna Oficina de Estadística en ningún lugar del planeta. Estas suelen tomarse su tiempo para disponibilizar este tipo de recursos, si es lo llegan a hacer (<a href="https://redatam.indec.gob.ar/argbin/RpWebEngine.exe/PortalAction?BASE=CPV2010B">hola REDATAM</a>👋).</p>
+<p>Esta fue la principal razón por la que empecé a buscar (también en el <strong>INEGI</strong>) alguna fuente que me permita hacer cruces más bien <em>quisquillosos</em>, digamos. ¡Y lo logré! Me encontré con la (escuchen qué bien suena) <strong>Encuesta Nacional de la Dinámica Demográfica 2018</strong> (de ahora en adelante <strong>ENADID</strong>) -<a href="https://www.inegi.org.mx/contenidos/productos/prod_serv/contenidos/espanol/bvinegi/productos/nueva_estruc/702825188504.pdf">chusmead aquí</a>-, cuyos principales objetivos son los de <em>proporcionar información estadística relacionada con el nivel y comportamiento de los componentes de la dinámica demográfica: fecundidad, mortalidad y migración (interna e internacional); así como otros temas referidos a la población, los hogares y las viviendas.</em></p>
+<img src="img/enadid.jpg" width="45%" style="display: block; margin: auto;" />
+<h2 id="mucho-ruido-y-pocas-nueces">Mucho ruido y pocas nueces.</h2>
+<p>Vamos al grano, no sin antes (¿y las nueces?) puntear lo necesario para incursionar en los datos:</p>
+<p><strong>1. Las herramientas</strong><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<ul>
+<li>El objetivo es obtener una base de datos y procesar la información con <a href="https://www.r-project.org/"><strong>R</strong></a>. Para ello vamos a R como nuestro lenguaje de procesamiento y se podrá <a href="link">acá</a> poder ver el código con el cual armo el conjunto de tablas y gráficos.</li>
+</ul>
+<p><strong>2. La fuente de información</strong></p>
+<ul>
+<li>La base de datos se puede disponer directo de la página del <a href="https://www.inegi.org.mx/programas/enadid/2018/#Microdatos"><strong>INEGI</strong></a></li>
+</ul>
+<p><strong>3. La metadata (la información de la información):</strong></p>
+<ul>
+<li>Se tendrá a mano, siempre, <a href="https://www.inegi.org.mx/rnm/index.php/catalog/554/data-dictionary/F6?file_name=TSDem">el diccionario de registro</a> para así saber bien a qué variables refieren las columnas y sus valores.</li>
+</ul>
+<h2 id="primeros-resultados2">Primeros resultados<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>:</h2>
+<h3 id="vamos-por-la-primera-gran-pregunta-cuántos-habitantes-hay-en-méxico">Vamos por la primera gran pregunta: ¿Cuántos habitantes hay en México?</h3>
+<pre tabindex="0"><code>## Warning in questionr::wtd.table(x = x_vec, y = y_vec, weights = weights_vec, :
+## 'na.rm' and 'na.show' are ignored when 'useNA' is provided.
+
+## Warning in questionr::wtd.table(x = x_vec, y = y_vec, weights = weights_vec, :
+## 'na.rm' and 'na.show' are ignored when 'useNA' is provided.
+## Warning in prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L, :
+## 'big.mark' and 'decimal.mark' are both '.', which could be confusing
+
+## Warning in prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L, :
+## 'big.mark' and 'decimal.mark' are both '.', which could be confusing
+</code></pre><img src="https://estacion-r.netlify.app/draft/un-arg-en-mex/index_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+<h3 id="características-de-los-habitantes">Características de los habitantes</h3>
+<pre tabindex="0"><code>## Warning in questionr::wtd.table(x = x_vec, y = y_vec, weights = weights_vec, :
+## 'na.rm' and 'na.show' are ignored when 'useNA' is provided.
+
+## Warning in questionr::wtd.table(x = x_vec, y = y_vec, weights = weights_vec, :
+## 'na.rm' and 'na.show' are ignored when 'useNA' is provided.
+</code></pre><p>¿Cuántos de estos son extranjeros?</p>
+<h3 id="cuántos-argentinos-y-argentinas-hay-en-méxico">¿Cuántos argentinos y argentinas hay en México?</h3>
+<h3 id="cantidad-de-argentinos-en-méxico">Cantidad de Argentinos en México</h3>
+<h2 id="anexo-metodológico">ANEXO METODOLÓGICO</h2>
+<pre tabindex="0"><code>b_total &lt;- b_total %&gt;% 
+  rename(lugar_nac = p3_7) %&gt;% 
+  mutate(lugar_nac = case_when(lugar_nac == 1 ~ &quot;Aquí, en este estado&quot;,
+                               lugar_nac == 2 ~ &quot;En otro estado&quot;,
+                               lugar_nac == 3 ~ &quot;En Estados Unidos de América&quot;,
+                               lugar_nac == 4 ~ &quot;En otro país&quot;,
+                               lugar_nac == 5 ~ &quot;No especificado&quot;))
+</code></pre><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Vale mencionar que el organismo ofrece una muestra para probar procesamientos (cuyas estimaciones no son válidas) y luego hacer una solicitud para obtener los resultados reales.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Al final del posteo, en la sección <strong>ANEXO</strong> dejaré un bloque de código con todo el proceso de limpieza y asignación de etiquetas que será necesario para tener una salida inteligible de los datos procesados&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Tener en cuenta para todos los resultados aquí expuestos que la información publicada refiere al año <strong>2018</strong>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/argentina/">argentina</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/mexico/">mexico</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/rstats/">rstats</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/rstatses/">rstatsES</a></span>
+        
+    </p>
+
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://estacion-r.netlify.app/categories/r/">R</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2023</span>
+            <span><a href="https://estacion-r.netlify.app">Pablo Tiscornia</a></span>
+            
+            <span><a href="https://estacion-r.netlify.app/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://estacion-r.netlify.app/bundle.min.18199b5b12b49221b3a37bd7922e5f71cc8f3601ed0f25c9eeb7d7b18f17d2398cc2db1784f2de04615069e8190e65c1edc58c73c67d4de54f355730d72d08e9.js" integrity="sha512-GBmbWxK0kiGzo3vXki5fccyPNgHtDyXJ7rfXsY8X0jmMwtsXhPLeBGFQaegZDmXB7cWMc8Z9TeVPNVcw1y0I6Q=="></script>
+
+
+
+    </body>
+</html>

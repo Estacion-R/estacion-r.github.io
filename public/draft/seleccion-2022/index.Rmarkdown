@@ -1,0 +1,239 @@
+---
+title: Seleccion Argentina 2022
+author: Pablo Tiscornia
+date: '2022-11-21'
+categories:
+  - analisis
+  - RStats
+  - rstatsES
+tags:
+  - argentina
+  - copadelmundo
+  - mundia2022
+  - rstats
+  - rstatsES
+  - worldcup2022
+slug: seleccion-2022
+comments: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+options(scipen = 999)
+```
+
+## Mundial 2022
+
+El mundial ya arrancó y la ansiedad (¿de la buena?) copó al mundo. Y a mí también. 
+Pero este es un mundial particular. Para esta competencia abundan los datos y las fuentes de donde obtenerlos. Es por esto que decidí reflotar [un ejercicio](https://twitter.com/pabblo_h/status/1006536967406931971?s=20&t=_SnCXvM_S9yxF5PNDznQ1g) que había armado allá por el Mundial anterior (2018), en donde mostraba información sobre la Selección Argentina. En aquel momento junté la data de forma manual, a través de publicaciones en Wikipedia. Así llegué a un laborioso excel y armé las visualizaciones con flourish, una plataforma que permite de forma gratuita e intuitiva contar histórias sin necesidad de saber programar ni mucho menos.
+
+Con esta gran excusa para volver a poner las manos en la data me propuse automatizar aquello que había hecho a mano y, además, poner a disposición la información que encuentre. Encaré así un pequeño proyecto de dos etapas:
+
+1) Armar un dataset de la selección por cada mundial a través de dos fuentes: [Wikipedia](https://www.wikipedia.org/) y un muy buen paquete de R llamado [worldfootballR](https://jaseziv.github.io/worldfootballR/index.html), desde donde se puede acceder a diferentes  páginas de internet con información estadística de jugadores, clubes y hasta ligas del mundo entero.
+
+2) Analizar brevemente la información encontrada, como excusa para volver a jugar con R y las visualizaciones
+
+## Los datos
+
+La pregunta que motivó este proyecto allá por el Mundial 2018 rondó por el lugar de orígen de los convocados a la selección Argentina. Para ello necesitaba una fuente con dicha información y encontré como mejor candidata a Wikipedia. En aquel momento entre página por página que refería a la lista final de convocados a la Selección y armé una base de datos sencilla, **a mano**. DOLIÓ.
+
+Para este mundial se me ocurrió reproducir el ejercicio pero de forma ~~un poco más~~ automática. La estrategia entonces fue escrapear ("raspar" y extraer los datos de una página de forma programática) wikipedia y armar así las bases. El script que armé se puede ver [acá](https://github.com/pablotis/seleccion_argentina/blob/main/scripts/scraper_lista_convocados.R). El resultado fue un [repositorio abierto](https://github.com/pablotis/seleccion_argentina) que contiene tanto el ejercicio como  el conjunto de datasets armados.
+
+![](img/sel_wikipedia.png)
+
+El siguiente paso fue combinar la información de wikipedia con aquella que podía extraer a través del paquete `worldfootbalR`, específicamente de una de las páginas con las que se conecta: [fbref](https://fbref.com/es/). De allí podía extraer la ciudad de la que es oriundo cada jugador y dejar también las bases para seguir indagando por más información.
+
+![](img/fbref.png)
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(worldfootballR)
+library(rvest)
+library(stringr)
+library(geoAr)
+library(showtext)
+library(sf)
+library(gganimate)
+```
+
+## Presentando los datos
+
+Una vez obtenida la información, sistematizada y almacenada en bases de datos, decidí jugar con un par de gráficos, apenas para explorar los resultados[^1]. Van tres simples visualizaciones a modo de ejemplo de lo que se puede hacer con las bases:
+
+[^1]: Dejo [acá el código]() para reproducir, adaptar y seguir jugando!
+### 
+
+```{r}
+### Cargo bases de la seleccion
+ruta <- here::here("content/draft/2022-11-04-seleccion-2022/data/")
+
+seleccion_arg <- list.files(path = ruta, pattern = "seleccion") |> 
+  purrr::map_df(~ readr::read_rds(paste0(ruta, "/", .))) |> 
+  mutate(nombre_provincia = case_when(pais == "Francia" ~ "Francia",
+                                      TRUE ~ nombre_provincia))
+```
+
+```{r}
+### Seteo estéticas
+fuente_gral <- "Encode"
+img_fondo <- here::here("content/draft/2022-11-04-seleccion-2022/img/fondo_arg12.png")
+img <- png::readPNG(here::here("content/draft/2022-11-04-seleccion-2022/img/fondo_arg1.png"))
+
+### Paleta oficial
+col_celeste <- "#73ACDF"
+col_amarillo <- "#F6B50E"
+col_blanco <- "#FFFFFF"
+```
+
+
+```{r}
+tabla_prov <- seleccion_arg |> 
+  count(nombre_provincia, name = "cantidad")
+
+font_add_google("Encode Sans", "Encode")
+showtext_auto()
+
+graf_1 <- tabla_prov |> 
+  ggplot() +
+  geom_col(aes(x = cantidad, 
+               y = reorder(nombre_provincia, cantidad)),
+           fill = col_celeste) +
+  labs(title = "Cantidad de jugadores por provincia de origen",
+       subtitle = "Selección Argentina. Acumulado de Mundiales 1978-2022",
+       caption = "Elaboración propia en base a wikipedia y fbred.com",
+       x = "Cantidad de jugadores",
+       y = "") +
+  theme_minimal() +
+  theme(
+    plot.margin = margin(40, 20, 20, 40),
+    text = element_text(size = 20, family = fuente_gral),
+    #axis.text.x = element_text(color = "grey"),
+    axis.title.x = element_text(size = 15, color = "grey"),
+    plot.caption = element_text(color = "#F6B50E", hjust = -0.8)) +
+  geom_vline(xintercept = 0, colour = "darkgray")
+
+
+ggimage::ggbackground(graf_1, background = img_fondo)
+```
+
+
+```{r}
+tabla_prov_mundial <- seleccion_arg |> 
+  count(mundial, nombre_provincia, name = "cantidad")
+
+data <- tabla_prov_mundial %>%
+  #mutate(mundial = as.Date(mundial)) |> 
+  group_by(mundial) %>%
+  arrange(-cantidad) %>%
+  mutate(rank=row_number(),
+         cantidad_x2 = cantidad * 10000) |> 
+  filter(!is.na(cantidad))
+
+
+graf_2 <- data |> 
+  mutate(mundial = lubridate::year(as.Date(paste0(mundial, "-", "01-01")))) |> 
+  ggplot(aes(x = -rank, 
+             y = cantidad_x2,
+             group = nombre_provincia)) +
+  ggpubr::background_image(img) +
+  geom_tile(aes(y = cantidad_x2 / 2, height = cantidad_x2), fill = col_celeste, width = 0.9) +
+  geom_text(aes(label = nombre_provincia), hjust = "right", colour = "black", fontface = "bold", nudge_y = -2000) +
+  geom_text(aes(label = scales::comma(cantidad)), hjust = "left", nudge_y = 1000, colour = "grey30") +
+  coord_flip(clip="off") +
+  theme_void() +
+  theme(
+    text = element_text(size = 15, family = fuente_gral),
+    plot.caption = element_text(color = "#F6B50E", hjust = -0.3),
+    #plot.margin = margin(1,1,1,2,"cm"),
+    plot.margin = margin(40, 20, 20, 40),
+    axis.text.y=element_blank(),
+    axis.text.x = element_blank()) +
+  transition_states(mundial, transition_length = 1, state_length = 1) +
+  enter_fade() + 
+  exit_shrink() +
+  ease_aes('sine-in-out') +
+  labs(title = "Cantidad de jugadores por provincia de origen",
+       subtitle='Mundial {closest_state}',
+       caption = "Elaboración propia en base a wikipedia y fbred.com")
+
+animate(graf_2, 
+        nframes = 200, 
+        fps = 10, 
+        #end_pause = 10, 
+        #width = 1200, height = 900
+        )
+
+```
+
+
+
+#### Cantidad de jugadores convocados por la Selección Argentina según la provincia de orígen.
+```{r}
+sin_cod_prov <- seleccion_arg |> 
+  filter(is.na(codigo_indec_provincia)) |> 
+  select(nombre_provincia)
+
+#unique(sin_cod_prov$nombre_provincia)
+
+seleccion_arg <- seleccion_arg |> 
+  mutate(codigo_indec_provincia = case_when(nombre_provincia == "Santa Fe" ~ "82",
+                                            nombre_provincia == "Tucumán" ~ "90",
+                                            TRUE ~ codigo_indec_provincia))
+
+### Cargo capa de Arg.
+capa_arg <- geoAr::get_geo("ARGENTINA", level = "provincia")
+
+seleccion_arg_geo <- seleccion_arg |> 
+  left_join(capa_arg, by = c("codigo_indec_provincia" = "codprov_censo")) |> 
+  st_as_sf()
+
+tabla_geo <- seleccion_arg_geo |> 
+  group_by(nombre_provincia, codigo_indec_provincia, geometry) |> 
+  count(nombre_provincia, name = "cantidad")
+
+tabla_geo <- capa_arg |> 
+  as.data.frame() |> 
+  left_join(tabla_geo) |> 
+  st_as_sf()
+
+fun_color_range <- colorRampPalette(c("white", "#e3eef8", "#73acdf")) 
+my_colors <- fun_color_range(20)
+
+
+graf_mapa <- ggplot() +
+  geom_sf(data = tabla_geo, 
+          aes(fill = cantidad),
+          colour = "lightgrey",
+          alpha=0.8) +
+  #scale_fill_seleccion() +
+  scale_fill_gradient(
+    low = max(my_colors),
+    high = min(my_colors),
+    #low = "#f1f6fb", 
+    #low = "#9dc4e8",
+    #high = "#73acdf",
+    #high = "#39566f",
+    na.value = "#e5e5e5",
+    breaks = seq(from = min(tabla_geo$cantidad, na.rm = TRUE), to = max(tabla_geo$cantidad, na.rm = T), by = 40)) +
+  theme_void() +
+  theme(
+    plot.margin = margin(40, 20, 20, 40),
+    text = element_text(size = 20, family = fuente_gral),
+    #axis.text.x = element_text(color = "grey"),
+    axis.title.x = element_text(size = 15, color = "grey"),
+    plot.caption = element_text(color = "#F6B50E", hjust = -0.8))
+
+  
+ggimage::ggbackground(graf_mapa, background = img_fondo)
+  
+  
+```
+
+
+## ¿Cómo seguir? 
+
+En las bases disponibles está el link que permite extraer la información de cada jugador volcada en [fbref](https://fbref.com/es/equipos/f9fddd6e/Argentina-Stats). Con ello vas a poder no sólo caracterizar el lugar de orígen sino introducirte en las estadísticas de cada jugador y compararlas a lo largo de los mundiales (de 1978 en adelante).
+
+Queda también limpiar la georreferenciación de las localidades de nacimiento de los jugadores, no en todos está dicha información y podrían hacerse lindas cosas con ello. 
+
+¡Buen provecho!
