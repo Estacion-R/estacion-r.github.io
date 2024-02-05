@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>packages on Estación 🇷</title>
-    <link>https://estacion-r.netlify.app/suscripcion/tags/packages/</link>
+    <link>https://estacion-r.netlify.app/tags/packages/</link>
     <description>Recent content in packages on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Mon, 14 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/suscripcion/tags/packages/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/tags/packages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Paquetes de R Latinoamericanos</title>
-      <link>https://estacion-r.netlify.app/suscripcion/posts/2022/11/paquetes-de-r-latinoamericanos/</link>
+      <link>https://estacion-r.netlify.app/posts/2022/11/paquetes-de-r-latinoamericanos/</link>
       <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/suscripcion/posts/2022/11/paquetes-de-r-latinoamericanos/</guid>
+      <guid>https://estacion-r.netlify.app/posts/2022/11/paquetes-de-r-latinoamericanos/</guid>
       <description>| Autores: Pablo Tiscornia y Patricia Loto
 Contexto ¿Qué hace que un lenguaje crezca, se desarrolle, mejore y hasta evolucione? Seguramente la respuesta no entra en un posteo de un simple blog. Lo que sí podríamos decir es que tanto el desarrollo de librerías o paquetes como la presencia de una comunidad de usuarios y usuarias son aspectos fundamentales.
 Si asumimos que una de las principales tareas de una librería es ofrecer una caja de herramientas orientada a resolver (o al menos facilitar la resolución de) un problema, qué mejor fuente de pruebas, errores, preguntas, desafíos y, sobre todo, soluciones que la de una comunidad que intercambia en espacios abiertos, accesibles, respetuosos y cuya premisa in-negociable sea la de compartir conocimiento.</description>
@@ -20,10 +20,10 @@ Si asumimos que una de las principales tareas de una librería es ofrecer una ca
     
     <item>
       <title>¡1, 2... paquete!</title>
-      <link>https://estacion-r.netlify.app/suscripcion/posts/2022/10/1-2...-paquete/</link>
+      <link>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</link>
       <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/suscripcion/posts/2022/10/1-2...-paquete/</guid>
+      <guid>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</guid>
       <description>@import url(https://fonts.googleapis.com/css?family=Glegoo); .showMore{ font-size: 14px; display:block; cursor: pointer; } .showMore + input{ display:none; } .showMore + input + *{ display:none; } .showMore + input:checked + *{ display:block; } blockquote { margin-left: 0; font-size: 12px; background: #e5f5f9; }  Si tenés más de 30 años (y vivís o viviste en Argentina) probablemente hayas conocido los postres 1,2, LISTO! Para quienes no lo conozcan, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!</description>
     </item>
     

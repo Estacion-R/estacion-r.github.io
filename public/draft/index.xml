@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Drafts on Estación 🇷</title>
-    <link>https://estacion-r.netlify.app/suscripcion/draft/</link>
+    <link>https://estacion-r.netlify.app/draft/</link>
     <description>Recent content in Drafts on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Mon, 29 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/suscripcion/draft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/draft/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>R &#43; Tendencias de Google</title>
-      <link>https://estacion-r.netlify.app/suscripcion/draft/r-tendencias-de-google/</link>
+      <link>https://estacion-r.netlify.app/draft/r-tendencias-de-google/</link>
       <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/suscripcion/draft/r-tendencias-de-google/</guid>
+      <guid>https://estacion-r.netlify.app/draft/r-tendencias-de-google/</guid>
       <description>#install.packages(&amp;#39;gtrendsR&amp;#39;) # if (!require(&amp;quot;devtools&amp;quot;)) install.packages(&amp;quot;devtools&amp;quot;) # devtools::install_github(&amp;quot;PMassicotte/gtrendsR&amp;quot;) library(gtrendsR) library(tidyverse) ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ── ## ✔ dplyr 1.1.4 ✔ readr 2.1.4 ## ✔ forcats 1.0.0 ✔ stringr 1.5.1 ## ✔ ggplot2 3.4.4 ✔ tibble 3.2.1 ## ✔ lubridate 1.9.3 ✔ tidyr 1.3.0 ## ✔ purrr 1.0.2 ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ── ## ✖ dplyr::filter() masks stats::filter() ## ✖ dplyr::lag() masks stats::lag() ## ℹ Use the conflicted package (&amp;lt;http://conflicted.</description>
     </item>
     
     <item>
       <title>Seleccion Argentina 2022</title>
-      <link>https://estacion-r.netlify.app/suscripcion/draft/seleccion-2022/</link>
+      <link>https://estacion-r.netlify.app/draft/seleccion-2022/</link>
       <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/suscripcion/draft/seleccion-2022/</guid>
+      <guid>https://estacion-r.netlify.app/draft/seleccion-2022/</guid>
       <description>Mundial 2022 El mundial ya arrancó y la ansiedad (¿de la buena?) copó al mundo. Y a mí también. Pero este es un mundial particular. Para esta competencia abundan los datos y las fuentes de donde obtenerlos. Es por esto que decidí reflotar un ejercicio que había armado allá por el Mundial anterior (2018), en donde mostraba información sobre la Selección Argentina. En aquel momento junté la data de forma manual, a través de publicaciones en Wikipedia.</description>
     </item>
     
     <item>
       <title>México. ¿México?</title>
-      <link>https://estacion-r.netlify.app/suscripcion/draft/un-arg-en-mex/</link>
+      <link>https://estacion-r.netlify.app/draft/un-arg-en-mex/</link>
       <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/suscripcion/draft/un-arg-en-mex/</guid>
+      <guid>https://estacion-r.netlify.app/draft/un-arg-en-mex/</guid>
       <description>Presentación. Mediante este posteo inauguro un espacio donde pretendo compartir reflexiones e ideas varias relacionadas al mundo de R, código abierto, procesamiento de datos, (con suerte) algo de sociología, tips y alguna que otra yerba útil.
 Como tema inaugural (y como excusa) emprendí un trabajo para intentar conocer y caracterizar lo que a partir de este año será, por un lado, mi país de residencia, y por el otro (justito), el país en el que mi querida Argentina enfrentara en la fase de grupos del mundial de fútbol masculino 2022: México.</description>
     </item>
     
     <item>
       <title>ranking-solterxs</title>
-      <link>https://estacion-r.netlify.app/suscripcion/draft/ranking-solterxs/</link>
+      <link>https://estacion-r.netlify.app/draft/ranking-solterxs/</link>
       <pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/suscripcion/draft/ranking-solterxs/</guid>
+      <guid>https://estacion-r.netlify.app/draft/ranking-solterxs/</guid>
       <description>#.......................Configuración .Rmd....................... knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = TRUE) Introducción Este post nace como ejercicio para probar los mapas de XXX del autor XXX. El “caso de uso” será conocer la participación de personas solteras sobre el conjunto de la población mayor de 18 años en los 31 principales aglomerados relevados por la Encuesta Permanente de Hogares (EPH-INDEC)1
 Una de las razones para elegir este caso de uso, además de la curiosidad, es el “match” que hay entre el tipo de visualización y el dato disponible.</description>
     </item>

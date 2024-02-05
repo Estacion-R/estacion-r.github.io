@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>paquetes on Estación 🇷</title>
-    <link>https://estacion-r.netlify.app/suscripcion/categories/paquetes/</link>
+    <link>https://estacion-r.netlify.app/categories/paquetes/</link>
     <description>Recent content in paquetes on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Mon, 14 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/suscripcion/categories/paquetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/categories/paquetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Paquetes de R Latinoamericanos</title>
-      <link>https://estacion-r.netlify.app/suscripcion/posts/2022/11/paquetes-de-r-latinoamericanos/</link>
+      <link>https://estacion-r.netlify.app/posts/2022/11/paquetes-de-r-latinoamericanos/</link>
       <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/suscripcion/posts/2022/11/paquetes-de-r-latinoamericanos/</guid>
+      <guid>https://estacion-r.netlify.app/posts/2022/11/paquetes-de-r-latinoamericanos/</guid>
       <description>| Autores: Pablo Tiscornia y Patricia Loto
 Contexto ¿Qué hace que un lenguaje crezca, se desarrolle, mejore y hasta evolucione? Seguramente la respuesta no entra en un posteo de un simple blog. Lo que sí podríamos decir es que tanto el desarrollo de librerías o paquetes como la presencia de una comunidad de usuarios y usuarias son aspectos fundamentales.
 Si asumimos que una de las principales tareas de una librería es ofrecer una caja de herramientas orientada a resolver (o al menos facilitar la resolución de) un problema, qué mejor fuente de pruebas, errores, preguntas, desafíos y, sobre todo, soluciones que la de una comunidad que intercambia en espacios abiertos, accesibles, respetuosos y cuya premisa in-negociable sea la de compartir conocimiento.</description>

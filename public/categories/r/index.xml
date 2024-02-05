@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on Estación 🇷</title>
-    <link>https://estacion-r.netlify.app/suscripcion/categories/r/</link>
+    <link>https://estacion-r.netlify.app/categories/r/</link>
     <description>Recent content in R on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Thu, 14 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/suscripcion/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/categories/r/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>¡r_tips en Mastodon!</title>
-      <link>https://estacion-r.netlify.app/suscripcion/posts/2023/09/r_tips-en-mastodon/</link>
+      <link>https://estacion-r.netlify.app/posts/2023/09/r_tips-en-mastodon/</link>
       <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/suscripcion/posts/2023/09/r_tips-en-mastodon/</guid>
+      <guid>https://estacion-r.netlify.app/posts/2023/09/r_tips-en-mastodon/</guid>
       <description>¡r_tips no ha muerto! Después de mucho trabajo y no sin frustración, el bot de r_tips está activo y publicando de forma automática tips sobre nuestro lenguaje de programación preferido [R] en la red social [mastodon]
 knitr::include_graphics(&amp;quot;img/r_tips.jpeg&amp;quot;)  ¿Qué es [r_tips]? r_tips es un bot que nació con el fin de contribuir al desarrollo del lenguaje de programación [R], difundiendo tips que ayuden al día a día con este lenguaje y, por qué no, que también nos permitan divertirnos jugando con los datos.</description>
     </item>
     
     <item>
       <title>México. ¿México?</title>
-      <link>https://estacion-r.netlify.app/suscripcion/draft/un-arg-en-mex/</link>
+      <link>https://estacion-r.netlify.app/draft/un-arg-en-mex/</link>
       <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/suscripcion/draft/un-arg-en-mex/</guid>
+      <guid>https://estacion-r.netlify.app/draft/un-arg-en-mex/</guid>
       <description>Presentación. Mediante este posteo inauguro un espacio donde pretendo compartir reflexiones e ideas varias relacionadas al mundo de R, código abierto, procesamiento de datos, (con suerte) algo de sociología, tips y alguna que otra yerba útil.
 Como tema inaugural (y como excusa) emprendí un trabajo para intentar conocer y caracterizar lo que a partir de este año será, por un lado, mi país de residencia, y por el otro (justito), el país en el que mi querida Argentina enfrentara en la fase de grupos del mundial de fútbol masculino 2022: México.</description>
     </item>
