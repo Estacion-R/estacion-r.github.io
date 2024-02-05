@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>maps on Estación 🇷</title>
-    <link>https://estacion-r.netlify.app/tags/maps/</link>
+    <link>https://estacion-r.netlify.app/suscripcion/tags/maps/</link>
     <description>Recent content in maps on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Sat, 01 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/tags/maps/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/suscripcion/tags/maps/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Todos los caminos conducen a Microcentro</title>
-      <link>https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/posts/2022/10/todos-los-caminos-conducen-a-microcentro/</link>
       <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/posts/2022/10/todos-los-caminos-conducen-a-microcentro/</guid>
       <description>Idea Analizar la concentración de la infraestructura de la administración pública. La hipótesis por detrás de este informe exploratorio asume la presencia de una alta concentración de innmuebles en ciertas zonas, principalmente en aquella denominada “Microcentro”, hecho que genera una gran movilización de personas hacia mismos lugares con una consecuente saturación del sistema de transporte, por un lado y de servicios, por otro.
 Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de personas no es aconsejable a la hora de combatir enfermedades producidas por virus como el COVID, potencia las consecuencias negativas de dicha distribución geográfica de los inmuebles estatales y refuerza la necesidad de impulsar una política pública que apunte a la desconcentración.</description>
     </item>

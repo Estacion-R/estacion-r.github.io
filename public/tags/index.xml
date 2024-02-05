@@ -2,98 +2,98 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Estación 🇷</title>
-    <link>https://estacion-r.netlify.app/tags/</link>
+    <link>https://estacion-r.netlify.app/suscripcion/tags/</link>
     <description>Recent content in Tags on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Thu, 14 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/suscripcion/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>untagged</title>
-      <link>https://estacion-r.netlify.app/tags/untagged/</link>
-      <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
+      <title>google</title>
+      <link>https://estacion-r.netlify.app/suscripcion/tags/google/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/tags/untagged/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/tags/google/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>argentina</title>
-      <link>https://estacion-r.netlify.app/tags/argentina/</link>
-      <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
+      <title>rstatES</title>
+      <link>https://estacion-r.netlify.app/suscripcion/tags/rstates/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/tags/argentina/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>copadelmundo</title>
-      <link>https://estacion-r.netlify.app/tags/copadelmundo/</link>
-      <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/copadelmundo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mundia2022</title>
-      <link>https://estacion-r.netlify.app/tags/mundia2022/</link>
-      <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/mundia2022/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/tags/rstates/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rstats</title>
-      <link>https://estacion-r.netlify.app/tags/rstats/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/tags/rstats/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/suscripcion/tags/rstats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tendencias</title>
+      <link>https://estacion-r.netlify.app/suscripcion/tags/tendencias/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/suscripcion/tags/tendencias/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>trends</title>
+      <link>https://estacion-r.netlify.app/suscripcion/tags/trends/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/suscripcion/tags/trends/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>untagged</title>
+      <link>https://estacion-r.netlify.app/suscripcion/tags/untagged/</link>
+      <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/suscripcion/tags/untagged/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>argentina</title>
+      <link>https://estacion-r.netlify.app/suscripcion/tags/argentina/</link>
       <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/tags/rstats/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/tags/argentina/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>copadelmundo</title>
+      <link>https://estacion-r.netlify.app/suscripcion/tags/copadelmundo/</link>
+      <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/suscripcion/tags/copadelmundo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mundia2022</title>
+      <link>https://estacion-r.netlify.app/suscripcion/tags/mundia2022/</link>
+      <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/suscripcion/tags/mundia2022/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rstatsES</title>
-      <link>https://estacion-r.netlify.app/tags/rstatses/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/tags/rstatses/</link>
       <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/tags/rstatses/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>worldcup2022</title>
-      <link>https://estacion-r.netlify.app/tags/worldcup2022/</link>
-      <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/worldcup2022/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>awesome</title>
-      <link>https://estacion-r.netlify.app/tags/awesome/</link>
-      <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/awesome/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>datascience</title>
-      <link>https://estacion-r.netlify.app/tags/datascience/</link>
-      <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/datascience/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>desarrollo</title>
-      <link>https://estacion-r.netlify.app/tags/desarrollo/</link>
-      <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/desarrollo/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/tags/rstatses/</guid>
       <description></description>
     </item>
     

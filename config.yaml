@@ -1,5 +1,6 @@
-baseURL: https://estacion-r.netlify.app
+baseURL: https://estacion-r.netlify.app/suscripcion/
 title: "Estación 🇷"
+popup: true
 languageCode: es-AR
 theme: hugo-theme-hello-friend-ng
 PygmentsCodeFences: yes
@@ -74,7 +75,7 @@ params:
     logoText: $ cd/estacion-r
   social:
     - name: twitter
-      url: https://twitter.com/pabblo_h
+      url: https://twitter.com/r_tipss
     - name: github
       url: https://github.com/pablotis
     - name: linkedin

@@ -1,3 +1,7 @@
+
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c1cf8fb6c9dfcb4c672a80c8d/6ea6c190124f36653b279617c.js");</script>
+
+
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -7,6 +11,11 @@
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="{{ .Site.Params.themeColor }}" />
 <link rel="canonical" href="{{ .Permalink }}" />
+
+{{ if .Params.popup }}
+    <link rel="stylesheet" href="{{ "assets/scss/custom.scss" | absURL }}">
+    <script defer src="{{ "js/custom.js" | absURL }}"></script>
+{{ end }}
 
 {{ block "title" . }}
     <title>
@@ -71,3 +80,7 @@
 {{- if .Site.GoogleAnalytics }}
     {{ template "_internal/google_analytics.html" . }}
 {{- end}}
+
+
+
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c1cf8fb6c9dfcb4c672a80c8d/6ea6c190124f36653b279617c.js");</script>

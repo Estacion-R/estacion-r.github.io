@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>documentacion on Estación 🇷</title>
-    <link>https://estacion-r.netlify.app/categories/documentacion/</link>
+    <link>https://estacion-r.netlify.app/suscripcion/categories/documentacion/</link>
     <description>Recent content in documentacion on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/categories/documentacion/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/suscripcion/categories/documentacion/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>¡1, 2... paquete!</title>
-      <link>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/posts/2022/10/1-2...-paquete/</link>
       <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/posts/2022/10/1-2...-paquete/</guid>
       <description>@import url(https://fonts.googleapis.com/css?family=Glegoo); .showMore{ font-size: 14px; display:block; cursor: pointer; } .showMore + input{ display:none; } .showMore + input + *{ display:none; } .showMore + input:checked + *{ display:block; } blockquote { margin-left: 0; font-size: 12px; background: #e5f5f9; }  Si tenés más de 30 años (y vivís o viviste en Argentina) probablemente hayas conocido los postres 1,2, LISTO! Para quienes no lo conozcan, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!</description>
     </item>
     

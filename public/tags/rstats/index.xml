@@ -2,35 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rstats on Estación 🇷</title>
-    <link>https://estacion-r.netlify.app/tags/rstats/</link>
+    <link>https://estacion-r.netlify.app/suscripcion/tags/rstats/</link>
     <description>Recent content in rstats on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Mon, 21 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/tags/rstats/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/suscripcion/tags/rstats/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>R &#43; Tendencias de Google</title>
+      <link>https://estacion-r.netlify.app/suscripcion/draft/r-tendencias-de-google/</link>
+      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/suscripcion/draft/r-tendencias-de-google/</guid>
+      <description>#install.packages(&amp;#39;gtrendsR&amp;#39;) # if (!require(&amp;quot;devtools&amp;quot;)) install.packages(&amp;quot;devtools&amp;quot;) # devtools::install_github(&amp;quot;PMassicotte/gtrendsR&amp;quot;) library(gtrendsR) library(tidyverse) ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ── ## ✔ dplyr 1.1.4 ✔ readr 2.1.4 ## ✔ forcats 1.0.0 ✔ stringr 1.5.1 ## ✔ ggplot2 3.4.4 ✔ tibble 3.2.1 ## ✔ lubridate 1.9.3 ✔ tidyr 1.3.0 ## ✔ purrr 1.0.2 ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ── ## ✖ dplyr::filter() masks stats::filter() ## ✖ dplyr::lag() masks stats::lag() ## ℹ Use the conflicted package (&amp;lt;http://conflicted.</description>
+    </item>
+    
     <item>
       <title>Seleccion Argentina 2022</title>
-      <link>https://estacion-r.netlify.app/draft/seleccion-2022/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/draft/seleccion-2022/</link>
       <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/draft/seleccion-2022/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/draft/seleccion-2022/</guid>
       <description>Mundial 2022 El mundial ya arrancó y la ansiedad (¿de la buena?) copó al mundo. Y a mí también. Pero este es un mundial particular. Para esta competencia abundan los datos y las fuentes de donde obtenerlos. Es por esto que decidí reflotar un ejercicio que había armado allá por el Mundial anterior (2018), en donde mostraba información sobre la Selección Argentina. En aquel momento junté la data de forma manual, a través de publicaciones en Wikipedia.</description>
     </item>
     
     <item>
       <title>Seleccion Argentina 2022</title>
-      <link>https://estacion-r.netlify.app/posts/2022/11/seleccion-argentina-2022/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/posts/2022/11/seleccion-argentina-2022/</link>
       <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/posts/2022/11/seleccion-argentina-2022/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/posts/2022/11/seleccion-argentina-2022/</guid>
       <description>Mundial 2022 El mundial ya arrancó y la ansiedad (¿de la buena?) copó al mundo. Y a mí también. Pero este es un mundial particular. Para esta competencia abundan los datos y las fuentes de donde obtenerlos. Es por esto que decidí reflotar un ejercicio que había armado allá por el Mundial anterior (2018), en donde mostraba información sobre la Selección Argentina. En aquel momento junté la data de forma manual, a través de publicaciones en Wikipedia.</description>
     </item>
     
     <item>
       <title>Paquetes de R Latinoamericanos</title>
-      <link>https://estacion-r.netlify.app/posts/2022/11/paquetes-de-r-latinoamericanos/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/posts/2022/11/paquetes-de-r-latinoamericanos/</link>
       <pubDate>Mon, 14 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/posts/2022/11/paquetes-de-r-latinoamericanos/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/posts/2022/11/paquetes-de-r-latinoamericanos/</guid>
       <description>| Autores: Pablo Tiscornia y Patricia Loto
 Contexto ¿Qué hace que un lenguaje crezca, se desarrolle, mejore y hasta evolucione? Seguramente la respuesta no entra en un posteo de un simple blog. Lo que sí podríamos decir es que tanto el desarrollo de librerías o paquetes como la presencia de una comunidad de usuarios y usuarias son aspectos fundamentales.
 Si asumimos que una de las principales tareas de una librería es ofrecer una caja de herramientas orientada a resolver (o al menos facilitar la resolución de) un problema, qué mejor fuente de pruebas, errores, preguntas, desafíos y, sobre todo, soluciones que la de una comunidad que intercambia en espacios abiertos, accesibles, respetuosos y cuya premisa in-negociable sea la de compartir conocimiento.</description>
@@ -38,40 +47,31 @@ Si asumimos que una de las principales tareas de una librería es ofrecer una ca
     
     <item>
       <title>¡1, 2... paquete!</title>
-      <link>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/posts/2022/10/1-2...-paquete/</link>
       <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/posts/2022/10/1-2...-paquete/</guid>
       <description>@import url(https://fonts.googleapis.com/css?family=Glegoo); .showMore{ font-size: 14px; display:block; cursor: pointer; } .showMore + input{ display:none; } .showMore + input + *{ display:none; } .showMore + input:checked + *{ display:block; } blockquote { margin-left: 0; font-size: 12px; background: #e5f5f9; }  Si tenés más de 30 años (y vivís o viviste en Argentina) probablemente hayas conocido los postres 1,2, LISTO! Para quienes no lo conozcan, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!</description>
     </item>
     
     <item>
       <title>Todos los caminos conducen a Microcentro</title>
-      <link>https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/posts/2022/10/todos-los-caminos-conducen-a-microcentro/</link>
       <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/posts/2022/10/todos-los-caminos-conducen-a-microcentro/</guid>
       <description>Idea Analizar la concentración de la infraestructura de la administración pública. La hipótesis por detrás de este informe exploratorio asume la presencia de una alta concentración de innmuebles en ciertas zonas, principalmente en aquella denominada “Microcentro”, hecho que genera una gran movilización de personas hacia mismos lugares con una consecuente saturación del sistema de transporte, por un lado y de servicios, por otro.
 Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de personas no es aconsejable a la hora de combatir enfermedades producidas por virus como el COVID, potencia las consecuencias negativas de dicha distribución geográfica de los inmuebles estatales y refuerza la necesidad de impulsar una política pública que apunte a la desconcentración.</description>
     </item>
     
     <item>
       <title>México. ¿México?</title>
-      <link>https://estacion-r.netlify.app/draft/un-arg-en-mex/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/draft/un-arg-en-mex/</link>
       <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/draft/un-arg-en-mex/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/draft/un-arg-en-mex/</guid>
       <description>Presentación. Mediante este posteo inauguro un espacio donde pretendo compartir reflexiones e ideas varias relacionadas al mundo de R, código abierto, procesamiento de datos, (con suerte) algo de sociología, tips y alguna que otra yerba útil.
 Como tema inaugural (y como excusa) emprendí un trabajo para intentar conocer y caracterizar lo que a partir de este año será, por un lado, mi país de residencia, y por el otro (justito), el país en el que mi querida Argentina enfrentara en la fase de grupos del mundial de fútbol masculino 2022: México.</description>
-    </item>
-    
-    <item>
-      <title>R &#43; Tendencias de Google</title>
-      <link>https://estacion-r.netlify.app/draft/r-tendencias-de-google/</link>
-      <pubDate>Wed, 01 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/draft/r-tendencias-de-google/</guid>
-      <description></description>
     </item>
     
   </channel>

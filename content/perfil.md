@@ -52,7 +52,7 @@ Ya han pasado más de **9 años** vinculado a la estadística y el procesamiento
 
 | **Docencia**
 
-- Instructor Certificado de [Rstudio](https://www.rstudio.com/).
+- Instructor Certificado de [The Carpentries](https://carpentries.org/).
 
 - [Más de 4 años como docente de programación en R](/cursos_r), en instituciones como la FLACSO, INDEC, IDAES-UNSAM, UTDT, IIGG, ASET, UNGS, entre otras.
 

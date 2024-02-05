@@ -2,98 +2,98 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Estación 🇷</title>
-    <link>https://estacion-r.netlify.app/categories/</link>
+    <link>https://estacion-r.netlify.app/suscripcion/categories/</link>
     <description>Recent content in Categories on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Thu, 14 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/suscripcion/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>cienciadedatos</title>
-      <link>https://estacion-r.netlify.app/categories/cienciadedatos/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/categories/cienciadedatos/</link>
       <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/categories/cienciadedatos/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/categories/cienciadedatos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>datascience</title>
-      <link>https://estacion-r.netlify.app/categories/datascience/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/categories/datascience/</link>
       <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/categories/datascience/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/categories/datascience/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mastodon</title>
-      <link>https://estacion-r.netlify.app/categories/mastodon/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/categories/mastodon/</link>
       <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/categories/mastodon/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/categories/mastodon/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>https://estacion-r.netlify.app/categories/r/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/categories/r/</link>
       <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/categories/r/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rstatES</title>
-      <link>https://estacion-r.netlify.app/categories/rstates/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/categories/rstates/</link>
       <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/categories/rstates/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/categories/rstates/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RStats</title>
-      <link>https://estacion-r.netlify.app/categories/rstats/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/categories/rstats/</link>
       <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/categories/rstats/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/categories/rstats/</guid>
       <description></description>
     </item>
     
     <item>
       <title>twitter</title>
-      <link>https://estacion-r.netlify.app/categories/twitter/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/categories/twitter/</link>
       <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/categories/twitter/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/categories/twitter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>x</title>
-      <link>https://estacion-r.netlify.app/categories/x/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/categories/x/</link>
       <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/categories/x/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/categories/x/</guid>
       <description></description>
     </item>
     
     <item>
       <title>analisis</title>
-      <link>https://estacion-r.netlify.app/categories/analisis/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/categories/analisis/</link>
       <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/categories/analisis/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/categories/analisis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rstatsES</title>
-      <link>https://estacion-r.netlify.app/categories/rstatses/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/categories/rstatses/</link>
       <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/categories/rstatses/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/categories/rstatses/</guid>
       <description></description>
     </item>
     

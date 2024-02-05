@@ -1,7 +1,7 @@
 ---
 title: R + Tendencias de Google
 author: Pablo Tiscornia
-date: '2021-12-01'
+date: '2024-01-29'
 slug: r-tendencias-de-google
 categories: []
 tags:
@@ -15,10 +15,7 @@ images: ~
 ---
 
 
-
-
-
-```{r}
+```{r message=FALSE, warning=FALSE}
 #install.packages('gtrendsR')
 # if (!require("devtools")) install.packages("devtools")
 # devtools::install_github("PMassicotte/gtrendsR")
@@ -26,6 +23,10 @@ images: ~
 library(gtrendsR)
 library(tidyverse)
 library(gt)
+library(magick)
+library(patchwork)
+library(png)
+library(grid)
 ```
 
 
@@ -40,38 +41,83 @@ Supongamos que necesitamos (si, ne-ce-si-ta-mos) conocer en qué lugar se encuen
 
 ## Manos en la masa
 
-Lo primero que vamos a hacer es crear un obejto `tendencias` donde mediante la función `gtrends()` almacenaresmos el resultado de una consulta a la API de Google en base a un término particular que definamos. La función es muy sencilla, con sólo especificar en el parámetro `keyword = ` qué palabras queremos extraer la función hará el trabajo sucio de devolvernos, entre todas las búsquedas, aquellas relativas a esa palabra. Pero hay que decir que para ciertos términos esta tarea puede no ser tan simple (aunque se resuelve bastante fácil). 
+Lo primero que vamos a hacer es crear un obejto `tendencias` mediante la función `gtrends()` almacenaremos el resultado de una consulta a la API de Google en base a un término particular que definamos. La función es muy sencilla, con sólo especificar en el parámetro `keyword = ` qué palabras queremos extraer la función hará el trabajo sucio de devolvernos, entre todas las búsquedas, aquellas relativas a esa palabra. Pero hay que decir que para ciertos términos esta tarea puede no ser tan simple (aunque se resuelve bastante fácil). 
 
-En el caso de programas como R, el término que definimos es una letra, por lo que Google puede traernos resultados de búsquedas que no tengan que ver con R como programa para procesamiento de información estadística. Para ello vamos a recurrir a los **COMO CARAJO SE LLAMA**.
+En el caso de programas como R, el término que definimos es una letra, por lo que Google puede traernos resultados de búsquedas que no tengan que ver con R como programa para procesamiento de información estadística. Para ello vamos a recurrir a los **COMO DIABLOS SE LLAMA**.
 
 La idea es que, siempre que se busque a R como programa estadístico, Google le asigna un _id_ específico que permite discernir entre búsquedas. Lo mismo para el resto de las palabras, por lo que, una vez aclarado esto, la sentencia final quedaría así:
 
 ```{r}
+### Creo el objeto tendencias
+# tendencias <- gtrends(
+#   keyword = "Mate",
+#   gprop = "web",
+#   geo = "AR",
+#   time = "all") 
+
 tendencias <- gtrends(
-  keyword = c("/m/0212jm", "/m/05ymvd", "/m/018fh1"),
+  keyword = c("Lionel Messi", "Inter Miami CF"),
   gprop = "web",
-  geo = "AR",
-  time = "2018-01-01 2021-10-30",
-  hl = "en")
+  #geo = "AR",
+  time = "today+5-y")
 ```
 
+```{r}
+### Me quedo con la comparación entre regiones
+tend_region <- tendencias$interest_by_region
 
-```{r echo=FALSE}
+tend_tiempo <- tendencias$interest_over_time |> 
+  mutate(hits = case_when(hits == "<1" ~ "0",
+                          .default = hits),
+         hits = as.numeric(hits))
 
+hits_min <- min(tend_tiempo$hits)
+hits_max <- max(tend_tiempo$hits)
+date_max <- tend_tiempo |> filter(hits == hits_max) |> pull(date)
+date_min <- tend_tiempo |> filter(hits == hits_min) |> pull(date) |> max()
 
-tendencias_serie <- tendencias$interest_over_time
+#mate_cite <- '<a href="https://www.flaticon.es/iconos-gratis/mate" title="mate iconos">Mate iconos creados por Freepik - Flaticon</a>'
 
-tendencias_serie <- tendencias_serie %>% 
-  mutate(keyword = case_when(keyword == "/m/0212jm" ~ "R",
-                   keyword == "/m/05ymvd" ~ "Stata",
-                   keyword == "/m/018fh1" ~ "SPSS"))
-# Viz
-tendencias_serie %>% 
+p <- tend_tiempo %>% 
   ggplot(aes(x = date, y = hits, group = keyword, col = keyword)) +
-  geom_line() +
-  geom_smooth(span=0.2, se=FALSE) +
-  theme_bw() + 
-  labs(title = "Búsquedas en Google sobre Software para procesamiento de datos", 
-       x = "Fecha", y = "Interés relativo", fill = "Término")
-```
+  geom_line(color = "lightgrey") +
+  geom_smooth(span=0.2, se=FALSE, aes(color = keyword))
+  geom_point(data = tend_tiempo |> 
+               filter(hits %in% c(hits_max, hits_min)) |> 
+               mutate(point_color = case_when(hits == hits_min ~ "Fecha menos googleada",
+                                              hits == hits_max ~ "Fecha más googleada")),
+             aes(x = date, y = hits, color = point_color)) +
+  scale_color_manual("", values = c("green", "red")) +
+  annotate(geom = "text", x = date_max, y = hits_max, label = paste(month(date_max, label = TRUE),
+                                                                    year(date_max), sep = "-"), hjust = 1.1) +
+  annotate(geom = "text", x = date_min, y = hits_min, label = paste(month(date_min, label = TRUE),
+                                                                    year(date_min), sep = "-"), hjust = -0.1) +
+  theme_minimal() + 
+  labs(title = glue::glue("Googleada: Mate. Evolución 2004-{year(today())}"), 
+       x = "Fecha", y = "Interés relativo", caption = "Source: Google Trends")
 
+
+mate_raw <- magick::image_read("img/mate.png")%>%
+  image_scale("50") 
+
+### Agrego logo de mate
+mate <- readPNG("img/mate.png", native = TRUE)
+
+
+
+# ggp_image <- p +                  # Combine plot & image
+#   inset_element(p = my_image,
+#                 left = -0.7,
+#                 bottom = 0.55,
+#                 right = 0.95,
+#                 top = 0.95)
+# ggp_image     
+```
+```{r}
+g <- rasterGrob(mate, 
+                width = 3, 
+                height = .4)
+
+p +
+  annotation_custom(g, xmin = 1190778600, xmax = 1257584000, ymin = 40, ymax = 110)
+```

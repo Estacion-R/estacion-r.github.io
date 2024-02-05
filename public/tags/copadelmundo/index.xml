@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>copadelmundo on Estación 🇷</title>
-    <link>https://estacion-r.netlify.app/tags/copadelmundo/</link>
+    <link>https://estacion-r.netlify.app/suscripcion/tags/copadelmundo/</link>
     <description>Recent content in copadelmundo on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Mon, 21 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/tags/copadelmundo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/suscripcion/tags/copadelmundo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Seleccion Argentina 2022</title>
-      <link>https://estacion-r.netlify.app/draft/seleccion-2022/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/draft/seleccion-2022/</link>
       <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/draft/seleccion-2022/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/draft/seleccion-2022/</guid>
       <description>Mundial 2022 El mundial ya arrancó y la ansiedad (¿de la buena?) copó al mundo. Y a mí también. Pero este es un mundial particular. Para esta competencia abundan los datos y las fuentes de donde obtenerlos. Es por esto que decidí reflotar un ejercicio que había armado allá por el Mundial anterior (2018), en donde mostraba información sobre la Selección Argentina. En aquel momento junté la data de forma manual, a través de publicaciones en Wikipedia.</description>
     </item>
     
     <item>
       <title>Seleccion Argentina 2022</title>
-      <link>https://estacion-r.netlify.app/posts/2022/11/seleccion-argentina-2022/</link>
+      <link>https://estacion-r.netlify.app/suscripcion/posts/2022/11/seleccion-argentina-2022/</link>
       <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/posts/2022/11/seleccion-argentina-2022/</guid>
+      <guid>https://estacion-r.netlify.app/suscripcion/posts/2022/11/seleccion-argentina-2022/</guid>
       <description>Mundial 2022 El mundial ya arrancó y la ansiedad (¿de la buena?) copó al mundo. Y a mí también. Pero este es un mundial particular. Para esta competencia abundan los datos y las fuentes de donde obtenerlos. Es por esto que decidí reflotar un ejercicio que había armado allá por el Mundial anterior (2018), en donde mostraba información sobre la Selección Argentina. En aquel momento junté la data de forma manual, a través de publicaciones en Wikipedia.</description>
     </item>
     

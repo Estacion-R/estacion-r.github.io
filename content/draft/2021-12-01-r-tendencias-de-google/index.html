@@ -1,7 +1,7 @@
 ---
 title: R + Tendencias de Google
 author: Pablo Tiscornia
-date: '2021-12-01'
+date: '2024-01-29'
 slug: r-tendencias-de-google
 categories: []
 tags:
@@ -16,3 +16,69 @@ images: ~
 
 
 
+<pre class="r"><code>#install.packages(&#39;gtrendsR&#39;)
+# if (!require(&quot;devtools&quot;)) install.packages(&quot;devtools&quot;)
+# devtools::install_github(&quot;PMassicotte/gtrendsR&quot;)
+
+library(gtrendsR)
+library(tidyverse)</code></pre>
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.4
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.3     ✔ tidyr     1.3.0
+## ✔ purrr     1.0.2     
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<pre class="r"><code>library(gt)</code></pre>
+<div id="analizando-la-tendencia-de-software-en-argentina" class="section level2">
+<h2>Analizando la tendencia de #software en Argentina</h2>
+<p>Mediante el siguiente código vamos a jugar con el paquete <code>{gtrendsR}</code> y ver cómo de forma muy sencilla podemos trabajar con tendencias de Google directamente desde R.</p>
+</div>
+<div id="caso-de-uso" class="section level2">
+<h2>Caso de uso</h2>
+<p>Supongamos que necesitamos (si, ne-ce-si-ta-mos) conocer en qué lugar se encuentra R entre las búsquedas de google y, sobre todo (sí, so-bre-to-do) compararlo con sus compañeros de cuarto: PYTHON, SPSS y STATA.</p>
+</div>
+<div id="manos-en-la-masa" class="section level2">
+<h2>Manos en la masa</h2>
+<p>Lo primero que vamos a hacer es crear un obejto <code>tendencias</code> mediante la función <code>gtrends()</code> almacenaremos el resultado de una consulta a la API de Google en base a un término particular que definamos. La función es muy sencilla, con sólo especificar en el parámetro <code>keyword =</code> qué palabras queremos extraer la función hará el trabajo sucio de devolvernos, entre todas las búsquedas, aquellas relativas a esa palabra. Pero hay que decir que para ciertos términos esta tarea puede no ser tan simple (aunque se resuelve bastante fácil).</p>
+<p>En el caso de programas como R, el término que definimos es una letra, por lo que Google puede traernos resultados de búsquedas que no tengan que ver con R como programa para procesamiento de información estadística. Para ello vamos a recurrir a los <strong>COMO DIABLOS SE LLAMA</strong>.</p>
+<p>La idea es que, siempre que se busque a R como programa estadístico, Google le asigna un <em>id</em> específico que permite discernir entre búsquedas. Lo mismo para el resto de las palabras, por lo que, una vez aclarado esto, la sentencia final quedaría así:</p>
+<pre class="r"><code>### Creo el objeto tendencias
+tendencias &lt;- gtrends(
+  keyword = &quot;Mate&quot;,
+  gprop = &quot;web&quot;,
+  geo = &quot;AR&quot;,
+  time = &quot;all&quot;) 
+
+### Me quedo con la comparación entre regiones
+tend_region &lt;- tendencias$interest_by_region</code></pre>
+<pre class="r"><code>tend_tiempo &lt;- tendencias$interest_over_time
+
+hits_min &lt;- min(tend_tiempo$hits)
+hits_max &lt;- max(tend_tiempo$hits)
+date_max &lt;- tend_tiempo |&gt; filter(hits == hits_max) |&gt; pull(date)
+date_min &lt;- tend_tiempo |&gt; filter(hits == hits_min) |&gt; pull(date) |&gt; max()
+
+tend_tiempo %&gt;% 
+  ggplot(aes(x = date, y = hits, group = keyword, col = keyword)) +
+  geom_line(color = &quot;lightgrey&quot;) +
+  geom_smooth(span=0.2, se=FALSE, color = &quot;black&quot;) +
+  geom_point(data = tend_tiempo |&gt; 
+               filter(hits %in% c(hits_max, hits_min)) |&gt; 
+               mutate(point_color = case_when(hits == hits_min ~ &quot;Fecha menos googleada&quot;,
+                                              hits == hits_max ~ &quot;Fecha más googleada&quot;)),
+             aes(x = date, y = hits, color = point_color)) +
+  scale_color_manual(&quot;&quot;, values = c(&quot;green&quot;, &quot;red&quot;)) +
+  annotate(geom = &quot;text&quot;, x = date_max, y = hits_max, label = paste(month(date_max, label = TRUE),
+                                                                    year(date_max), sep = &quot;-&quot;), hjust = 1.1) +
+  annotate(geom = &quot;text&quot;, x = date_min, y = hits_min, label = paste(month(date_min, label = TRUE),
+                                                                    year(date_min), sep = &quot;-&quot;), hjust = -0.1) +
+  theme_minimal() + 
+  labs(title = glue::glue(&quot;Googleada: Mate. Evolución 2004-{year(today())}&quot;), 
+       x = &quot;Período&quot;, y = &quot;Interés relativo&quot;, caption = &quot;Source: Google Trends&quot;)</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
