@@ -14,7 +14,6 @@ tags:
   - trends
   - ggplot2
   - tendencias
-draft: yes
 toc: no
 images: ~
 ---
@@ -211,3 +210,6 @@ Finalmente, llegamos a nuestro gráfico combinando una fuente de datos como la A
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-10-1.png" width="672" />
 
+
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+<div id="commento"></div>

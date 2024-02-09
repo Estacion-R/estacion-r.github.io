@@ -6,7 +6,16 @@
     <description>Recent content in RStats on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Thu, 14 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/categories/rstats/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/categories/rstats/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analizando tendencias de Google con R: Messi vs Taylor Swift</title>
+      <link>https://estacion-r.netlify.app/posts/2024/02/analizando-tendencias-de-google-con-r-messi-vs-taylor-swift/</link>
+      <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/posts/2024/02/analizando-tendencias-de-google-con-r-messi-vs-taylor-swift/</guid>
+      <description>Si uno tuviese que pensar en mega estrellas reconocidas en (casi) todos los rincones del mundo, dos nombres que sin lugar a dudas llegan a la mente son Taylor Swift y Lionel Messi. Jóvenes (¡muy!) y extremadamente talentosos, estos personajes han llegado a la cima de todo en su profesión, tocando corazones de miles de millones (!!!) y rompiendo con todo tipo de records y estadísticas a nivel mundial e histórico.</description>
+    </item>
+    
     <item>
       <title>¡r_tips en Mastodon!</title>
       <link>https://estacion-r.netlify.app/posts/2023/09/r_tips-en-mastodon/</link>
