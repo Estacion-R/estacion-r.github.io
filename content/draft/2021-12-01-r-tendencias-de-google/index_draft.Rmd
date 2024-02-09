@@ -16,6 +16,11 @@ editor_options:
   chunk_output_type: console
 ---
 
+```{r}
+     #.......................Configuración .Rmd.......................
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = TRUE)
+```
+
 ¿Sabías que [Taylor Swift](https://www.taylorswift.com/) viene hace 
 
 ```{r message=FALSE, warning=FALSE}
