@@ -6,14 +6,16 @@
     <description>Recent content in trends on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Mon, 29 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/tags/trends/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/tags/trends/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>R &#43; Tendencias de Google</title>
+      <title>R &#43; Tendencias de Google: ¿Messi o Taylor Swift?</title>
       <link>https://estacion-r.netlify.app/draft/r-tendencias-de-google/</link>
-      <pubDate>Mon, 29 Jan 2024 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 06 Feb 2024 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/draft/r-tendencias-de-google/</guid>
-      <description>#install.packages(&amp;#39;gtrendsR&amp;#39;) # if (!require(&amp;quot;devtools&amp;quot;)) install.packages(&amp;quot;devtools&amp;quot;) # devtools::install_github(&amp;quot;PMassicotte/gtrendsR&amp;quot;) library(gtrendsR) library(tidyverse) ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ── ## ✔ dplyr 1.1.4 ✔ readr 2.1.4 ## ✔ forcats 1.0.0 ✔ stringr 1.5.1 ## ✔ ggplot2 3.4.4 ✔ tibble 3.2.1 ## ✔ lubridate 1.9.3 ✔ tidyr 1.3.0 ## ✔ purrr 1.0.2 ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ── ## ✖ dplyr::filter() masks stats::filter() ## ✖ dplyr::lag() masks stats::lag() ## ℹ Use the conflicted package (&amp;lt;http://conflicted.</description>
+      <description>¿Sabías que Taylor Swift viene hace
+#install.packages(&amp;#39;gtrendsR&amp;#39;) library(gtrendsR) library(tidyverse) library(gt) library(glue) library(magick) library(patchwork) library(png) library(grid) Analizando la tendencia de #software en Argentina Mediante el siguiente código vamos a jugar con el paquete {gtrendsR} y ver cómo de forma muy sencilla podemos trabajar con tendencias de Google directamente desde R.
+ Caso de uso Supongamos que necesitamos (si, ne-ce-si-ta-mos) conocer en qué lugar se encuentra R entre las búsquedas de google y, sobre todo (sí, so-bre-to-do) compararlo con sus compañeros de cuarto: PYTHON, SPSS y STATA.</description>
     </item>
     
   </channel>

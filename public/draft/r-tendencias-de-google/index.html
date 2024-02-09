@@ -8,7 +8,9 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Pablo Tiscornia">
-<meta name="description" content="#install.packages(&amp;#39;gtrendsR&amp;#39;) # if (!require(&amp;quot;devtools&amp;quot;)) install.packages(&amp;quot;devtools&amp;quot;) # devtools::install_github(&amp;quot;PMassicotte/gtrendsR&amp;quot;) library(gtrendsR) library(tidyverse) ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ── ## ✔ dplyr 1.1.4 ✔ readr 2.1.4 ## ✔ forcats 1.0.0 ✔ stringr 1.5.1 ## ✔ ggplot2 3.4.4 ✔ tibble 3.2.1 ## ✔ lubridate 1.9.3 ✔ tidyr 1.3.0 ## ✔ purrr 1.0.2 ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ── ## ✖ dplyr::filter() masks stats::filter() ## ✖ dplyr::lag() masks stats::lag() ## ℹ Use the conflicted package (&amp;lt;http://conflicted." />
+<meta name="description" content="¿Sabías que Taylor Swift viene hace
+#install.packages(&amp;#39;gtrendsR&amp;#39;) library(gtrendsR) library(tidyverse) library(gt) library(glue) library(magick) library(patchwork) library(png) library(grid) Analizando la tendencia de #software en Argentina Mediante el siguiente código vamos a jugar con el paquete {gtrendsR} y ver cómo de forma muy sencilla podemos trabajar con tendencias de Google directamente desde R.
+ Caso de uso Supongamos que necesitamos (si, ne-ce-si-ta-mos) conocer en qué lugar se encuentra R entre las búsquedas de google y, sobre todo (sí, so-bre-to-do) compararlo con sus compañeros de cuarto: PYTHON, SPSS y STATA." />
 <meta name="keywords" content=", rstatES, google, tendencias, trends, rstats" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -19,7 +21,7 @@
 
     <title>
         
-            R &#43; Tendencias de Google :: Estación 🇷 
+            R &#43; Tendencias de Google: ¿Messi o Taylor Swift? :: Estación 🇷 
         
     </title>
 
@@ -43,24 +45,30 @@
     <meta name="msapplication-TileColor" content="">
 
 
-<meta itemprop="name" content="R &#43; Tendencias de Google">
-<meta itemprop="description" content="#install.packages(&#39;gtrendsR&#39;) # if (!require(&quot;devtools&quot;)) install.packages(&quot;devtools&quot;) # devtools::install_github(&quot;PMassicotte/gtrendsR&quot;) library(gtrendsR) library(tidyverse) ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ── ## ✔ dplyr 1.1.4 ✔ readr 2.1.4 ## ✔ forcats 1.0.0 ✔ stringr 1.5.1 ## ✔ ggplot2 3.4.4 ✔ tibble 3.2.1 ## ✔ lubridate 1.9.3 ✔ tidyr 1.3.0 ## ✔ purrr 1.0.2 ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ── ## ✖ dplyr::filter() masks stats::filter() ## ✖ dplyr::lag() masks stats::lag() ## ℹ Use the conflicted package (&lt;http://conflicted."><meta itemprop="datePublished" content="2024-01-29T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2024-01-29T00:00:00+00:00" />
-<meta itemprop="wordCount" content="539">
+<meta itemprop="name" content="R &#43; Tendencias de Google: ¿Messi o Taylor Swift?">
+<meta itemprop="description" content="¿Sabías que Taylor Swift viene hace
+#install.packages(&#39;gtrendsR&#39;) library(gtrendsR) library(tidyverse) library(gt) library(glue) library(magick) library(patchwork) library(png) library(grid) Analizando la tendencia de #software en Argentina Mediante el siguiente código vamos a jugar con el paquete {gtrendsR} y ver cómo de forma muy sencilla podemos trabajar con tendencias de Google directamente desde R.
+ Caso de uso Supongamos que necesitamos (si, ne-ce-si-ta-mos) conocer en qué lugar se encuentra R entre las búsquedas de google y, sobre todo (sí, so-bre-to-do) compararlo con sus compañeros de cuarto: PYTHON, SPSS y STATA."><meta itemprop="datePublished" content="2024-02-06T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2024-02-06T00:00:00+00:00" />
+<meta itemprop="wordCount" content="695">
 <meta itemprop="keywords" content="rstatES,google,tendencias,trends,rstats," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="R &#43; Tendencias de Google"/>
-<meta name="twitter:description" content="#install.packages(&#39;gtrendsR&#39;) # if (!require(&quot;devtools&quot;)) install.packages(&quot;devtools&quot;) # devtools::install_github(&quot;PMassicotte/gtrendsR&quot;) library(gtrendsR) library(tidyverse) ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ── ## ✔ dplyr 1.1.4 ✔ readr 2.1.4 ## ✔ forcats 1.0.0 ✔ stringr 1.5.1 ## ✔ ggplot2 3.4.4 ✔ tibble 3.2.1 ## ✔ lubridate 1.9.3 ✔ tidyr 1.3.0 ## ✔ purrr 1.0.2 ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ── ## ✖ dplyr::filter() masks stats::filter() ## ✖ dplyr::lag() masks stats::lag() ## ℹ Use the conflicted package (&lt;http://conflicted."/>
+<meta name="twitter:title" content="R &#43; Tendencias de Google: ¿Messi o Taylor Swift?"/>
+<meta name="twitter:description" content="¿Sabías que Taylor Swift viene hace
+#install.packages(&#39;gtrendsR&#39;) library(gtrendsR) library(tidyverse) library(gt) library(glue) library(magick) library(patchwork) library(png) library(grid) Analizando la tendencia de #software en Argentina Mediante el siguiente código vamos a jugar con el paquete {gtrendsR} y ver cómo de forma muy sencilla podemos trabajar con tendencias de Google directamente desde R.
+ Caso de uso Supongamos que necesitamos (si, ne-ce-si-ta-mos) conocer en qué lugar se encuentra R entre las búsquedas de google y, sobre todo (sí, so-bre-to-do) compararlo con sus compañeros de cuarto: PYTHON, SPSS y STATA."/>
 
 
 
 
-    <meta property="og:title" content="R &#43; Tendencias de Google" />
-<meta property="og:description" content="#install.packages(&#39;gtrendsR&#39;) # if (!require(&quot;devtools&quot;)) install.packages(&quot;devtools&quot;) # devtools::install_github(&quot;PMassicotte/gtrendsR&quot;) library(gtrendsR) library(tidyverse) ## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ── ## ✔ dplyr 1.1.4 ✔ readr 2.1.4 ## ✔ forcats 1.0.0 ✔ stringr 1.5.1 ## ✔ ggplot2 3.4.4 ✔ tibble 3.2.1 ## ✔ lubridate 1.9.3 ✔ tidyr 1.3.0 ## ✔ purrr 1.0.2 ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ── ## ✖ dplyr::filter() masks stats::filter() ## ✖ dplyr::lag() masks stats::lag() ## ℹ Use the conflicted package (&lt;http://conflicted." />
+    <meta property="og:title" content="R &#43; Tendencias de Google: ¿Messi o Taylor Swift?" />
+<meta property="og:description" content="¿Sabías que Taylor Swift viene hace
+#install.packages(&#39;gtrendsR&#39;) library(gtrendsR) library(tidyverse) library(gt) library(glue) library(magick) library(patchwork) library(png) library(grid) Analizando la tendencia de #software en Argentina Mediante el siguiente código vamos a jugar con el paquete {gtrendsR} y ver cómo de forma muy sencilla podemos trabajar con tendencias de Google directamente desde R.
+ Caso de uso Supongamos que necesitamos (si, ne-ce-si-ta-mos) conocer en qué lugar se encuentra R entre las búsquedas de google y, sobre todo (sí, so-bre-to-do) compararlo con sus compañeros de cuarto: PYTHON, SPSS y STATA." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://estacion-r.netlify.app/draft/r-tendencias-de-google/" /><meta property="article:section" content="draft" />
-<meta property="article:published_time" content="2024-01-29T00:00:00+00:00" />
-<meta property="article:modified_time" content="2024-01-29T00:00:00+00:00" />
+<meta property="article:published_time" content="2024-02-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-02-06T00:00:00+00:00" />
 
 
 
@@ -68,7 +76,7 @@
 
 
 
-    <meta property="article:published_time" content="2024-01-29 00:00:00 &#43;0000 UTC" />
+    <meta property="article:published_time" content="2024-02-06 00:00:00 &#43;0000 UTC" />
 
 
 
@@ -145,7 +153,7 @@ if (!doNotTrack) {
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://estacion-r.netlify.app/draft/r-tendencias-de-google/">R + Tendencias de Google</a></h2>
+            <h2 class="post-title"><a href="https://estacion-r.netlify.app/draft/r-tendencias-de-google/">R + Tendencias de Google: ¿Messi o Taylor Swift?</a></h2>
 
             
             
@@ -155,23 +163,16 @@ if (!doNotTrack) {
                 
 
 
+<p>¿Sabías que <a href="https://www.taylorswift.com/">Taylor Swift</a> viene hace</p>
 <pre class="r"><code>#install.packages(&#39;gtrendsR&#39;)
-# if (!require(&quot;devtools&quot;)) install.packages(&quot;devtools&quot;)
-# devtools::install_github(&quot;PMassicotte/gtrendsR&quot;)
-
 library(gtrendsR)
-library(tidyverse)</code></pre>
-<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-## ✔ dplyr     1.1.4     ✔ readr     2.1.4
-## ✔ forcats   1.0.0     ✔ stringr   1.5.1
-## ✔ ggplot2   3.4.4     ✔ tibble    3.2.1
-## ✔ lubridate 1.9.3     ✔ tidyr     1.3.0
-## ✔ purrr     1.0.2     
-## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()
-## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-<pre class="r"><code>library(gt)</code></pre>
+library(tidyverse)
+library(gt)
+library(glue)
+library(magick)
+library(patchwork)
+library(png)
+library(grid)</code></pre>
 <div id="analizando-la-tendencia-de-software-en-argentina" class="section level2">
 <h2>Analizando la tendencia de #software en Argentina</h2>
 <p>Mediante el siguiente código vamos a jugar con el paquete <code>{gtrendsR}</code> y ver cómo de forma muy sencilla podemos trabajar con tendencias de Google directamente desde R.</p>
@@ -185,41 +186,106 @@ library(tidyverse)</code></pre>
 <p>Lo primero que vamos a hacer es crear un obejto <code>tendencias</code> mediante la función <code>gtrends()</code> almacenaremos el resultado de una consulta a la API de Google en base a un término particular que definamos. La función es muy sencilla, con sólo especificar en el parámetro <code>keyword =</code> qué palabras queremos extraer la función hará el trabajo sucio de devolvernos, entre todas las búsquedas, aquellas relativas a esa palabra. Pero hay que decir que para ciertos términos esta tarea puede no ser tan simple (aunque se resuelve bastante fácil).</p>
 <p>En el caso de programas como R, el término que definimos es una letra, por lo que Google puede traernos resultados de búsquedas que no tengan que ver con R como programa para procesamiento de información estadística. Para ello vamos a recurrir a los <strong>COMO DIABLOS SE LLAMA</strong>.</p>
 <p>La idea es que, siempre que se busque a R como programa estadístico, Google le asigna un <em>id</em> específico que permite discernir entre búsquedas. Lo mismo para el resto de las palabras, por lo que, una vez aclarado esto, la sentencia final quedaría así:</p>
-<pre class="r"><code>### Creo el objeto tendencias
-tendencias &lt;- gtrends(
-  keyword = &quot;Mate&quot;,
+<pre class="r"><code>tendencias &lt;- gtrends(
+  keyword = c(&quot;Messi&quot;, &quot;Taylor Swift&quot;),
   gprop = &quot;web&quot;,
-  geo = &quot;AR&quot;,
-  time = &quot;all&quot;) 
+  #geo = &quot;AR&quot;,
+  time = &quot;today+5-y&quot;)</code></pre>
+<pre class="r"><code>### Me quedo con la comparación entre regiones
+#tend_region &lt;- tendencias$interest_by_region
 
-### Me quedo con la comparación entre regiones
-tend_region &lt;- tendencias$interest_by_region</code></pre>
-<pre class="r"><code>tend_tiempo &lt;- tendencias$interest_over_time
+tend_tiempo &lt;- tendencias$interest_over_time |&gt; 
+  mutate(hits = case_when(hits == &quot;&lt;1&quot; ~ ifelse(is.character(hits), &quot;0&quot;, 0),
+                          .default = hits),
+         hits = as.numeric(hits))
 
 hits_min &lt;- min(tend_tiempo$hits)
 hits_max &lt;- max(tend_tiempo$hits)
 date_max &lt;- tend_tiempo |&gt; filter(hits == hits_max) |&gt; pull(date)
+quien_max &lt;- tend_tiempo |&gt; filter(hits == hits_max) |&gt; pull(keyword)
 date_min &lt;- tend_tiempo |&gt; filter(hits == hits_min) |&gt; pull(date) |&gt; max()
 
-tend_tiempo %&gt;% 
+sysfonts::font_add_google(name = &quot;Gamja Flower&quot;)
+showtext::showtext_auto()
+#fuetes &lt;- sysfonts::font_info_google()
+
+p &lt;- 
+  tend_tiempo %&gt;% 
   ggplot(aes(x = date, y = hits, group = keyword, col = keyword)) +
-  geom_line(color = &quot;lightgrey&quot;) +
-  geom_smooth(span=0.2, se=FALSE, color = &quot;black&quot;) +
-  geom_point(data = tend_tiempo |&gt; 
-               filter(hits %in% c(hits_max, hits_min)) |&gt; 
-               mutate(point_color = case_when(hits == hits_min ~ &quot;Fecha menos googleada&quot;,
-                                              hits == hits_max ~ &quot;Fecha más googleada&quot;)),
-             aes(x = date, y = hits, color = point_color)) +
-  scale_color_manual(&quot;&quot;, values = c(&quot;green&quot;, &quot;red&quot;)) +
-  annotate(geom = &quot;text&quot;, x = date_max, y = hits_max, label = paste(month(date_max, label = TRUE),
-                                                                    year(date_max), sep = &quot;-&quot;), hjust = 1.1) +
-  annotate(geom = &quot;text&quot;, x = date_min, y = hits_min, label = paste(month(date_min, label = TRUE),
-                                                                    year(date_min), sep = &quot;-&quot;), hjust = -0.1) +
-  theme_minimal() + 
-  labs(title = glue::glue(&quot;Googleada: Mate. Evolución 2004-{year(today())}&quot;), 
-       x = &quot;Período&quot;, y = &quot;Interés relativo&quot;, caption = &quot;Source: Google Trends&quot;)</code></pre>
-<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="https://estacion-r.netlify.app/draft/r-tendencias-de-google/index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+  geom_line(color = &quot;#252525&quot;) +
+  geom_smooth(span=0.2, se=FALSE) +
+  scale_color_manual(values = c(&quot;#75aadb&quot;, &quot;#b454b4&quot;)) +
+  geom_point(x = date_max, y = hits_max, color = &quot;green&quot;) +
+  geom_hline(yintercept = 0) + 
+  scale_x_datetime(breaks = &quot;1 year&quot;, date_labels = &quot;%Y&quot;) +
+  annotate(geom = &quot;text&quot;, x = date_max, y = hits_max, 
+           label = glue(&quot;{month(date_max, label = TRUE)} - {year(date_max)}: {quien_max}&quot;),
+           hjust = 1.1) +
+  ### Taylor
+  geom_curve(x = 1641184000, 
+             y = 90, 
+             xend = 1679184000, 
+             yend = 10,
+             curvature = -0.4, color = &quot;#b454b4&quot;,
+             arrow = arrow(length = unit(0.03, &quot;npc&quot;))) +
+  annotate(geom = &quot;text&quot;, 
+           x = date_max, 
+           y = 90, color = &quot;#b454b4&quot;,
+           size = 15,
+           label = &quot;Comienza la gira The Eras Tour&quot;,
+           hjust = 1.8) +
+  ### Messi
+  geom_curve(x = 1641184000, 
+             y = 75, 
+             xend = 1668902400, 
+             yend = 25,
+             curvature = -0.4, color = &quot;#75aadb&quot;,
+             arrow = arrow(length = unit(0.03, &quot;npc&quot;))) +
+  annotate(geom = &quot;text&quot;, 
+           x = date_max, 
+           y = 75, 
+           size = 15,
+           color = &quot;#75aadb&quot;,
+           label = &quot;Comienza El Mundial de futbol&quot;,
+           hjust = 1.8) +
+  labs(title = glue(&quot;Googlear: Messi y Taylor Swift. Evolucion {year(today())-5}-{year(today())}&quot;), 
+       x = &quot;Fecha&quot;, y = &quot;Interes relativo&quot;, caption = &quot;Source: Google Trends&quot;) +
+  theme_minimal() +
+  theme(
+    text = element_text(color = &quot;white&quot;, size = 50, family = &quot;Gamja Flower&quot;),
+    title = element_text(size = 70),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.line = element_line(color = &quot;white&quot;),
+    axis.text = element_text(color = &quot;white&quot;),
+    legend.position = &quot;none&quot;
+  )
+#p
+
+
+### Agrego logo de mate
+messi &lt;- readPNG(here::here(&quot;content/draft/2021-12-01-r-tendencias-de-google/img/messi.png&quot;), native = TRUE)
+taylor &lt;- readPNG(here::here(&quot;content/draft/2021-12-01-r-tendencias-de-google/img/taylor.png&quot;), native = TRUE)
+
+g_messi &lt;- rasterGrob(messi, 
+                width = .2, 
+                height = .3)
+g_taylor &lt;- rasterGrob(taylor, 
+                       width = .2, 
+                       height = .3)
+
+# camcorder::gg_record(
+#   dir = &quot;img&quot;,
+#   width = 12,
+#   height = 12 * 9 / 16,
+#   dpi = 300,
+#   bg = &quot;black&quot;
+# )
+
+p &lt;- p +
+  annotation_custom(g_messi, xmin = 1545728000, xmax = 1634728000, ymin = 50, ymax = 100) +
+  annotation_custom(g_taylor, xmin = 1563728000, xmax = 1617728000, ymin = 60, ymax = 130)</code></pre>
+<p><img src="img/2024_02_08_19_03_48.675165.png" /></p>
 </div>
 
             </div>
