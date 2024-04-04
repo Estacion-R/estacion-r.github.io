@@ -13,8 +13,8 @@
       <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/posts/2023/09/r_tips-en-mastodon/</guid>
-      <description>¡r_tips no ha muerto! Después de mucho trabajo y no sin frustración, el bot de r_tips está activo y publicando de forma automática tips sobre nuestro lenguaje de programación preferido [R] en la red social [mastodon]
-knitr::include_graphics(&amp;quot;img/r_tips.jpeg&amp;quot;)  ¿Qué es [r_tips]? r_tips es un bot que nació con el fin de contribuir al desarrollo del lenguaje de programación [R], difundiendo tips que ayuden al día a día con este lenguaje y, por qué no, que también nos permitan divertirnos jugando con los datos.</description>
+      <description>¡r_tips no ha muerto!Después de mucho trabajo y no sin frustración, el bot de r_tips está activo y publicando de forma automática tips sobre nuestro lenguaje de programación preferido [R] en la red social [mastodon]
+knitr::include_graphics(&amp;quot;img/r_tips.jpeg&amp;quot;)¿Qué es [r_tips]?r_tips es un bot que nació con el fin de contribuir al desarrollo del lenguaje de programación [R], difundiendo tips que ayuden al día a día con este lenguaje y, por qué no, que también nos permitan divertirnos jugando con los datos.</description>
     </item>
     
     <item>

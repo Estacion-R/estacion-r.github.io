@@ -2,19 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://estacion-r.netlify.app/posts/2024/02/analizando-tendencias-de-google-con-r-messi-vs-taylor-swift/</loc>
-    <lastmod>2024-02-08T00:00:00+00:00</lastmod>
+    <loc>https://estacion-r.netlify.app/tags/#30daychartchallenge/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/draft/30daychartchallenge/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/posts/2024/04/#30daychartchallenge/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/categories/</loc>
-    <lastmod>2024-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/categories/cienciadedatos/</loc>
-    <lastmod>2024-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/dataviz/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/categories/dataviz/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/draft/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/</loc>
-    <lastmod>2024-02-08T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/tags/ggplot2/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/highcharter/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/plotly/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/posts/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/rstates/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/categories/rstates/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/posts/2024/02/analizando-tendencias-de-google-con-r-messi-vs-taylor-swift/</loc>
     <lastmod>2024-02-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/tags/google/</loc>
@@ -23,16 +59,7 @@
     <loc>https://estacion-r.netlify.app/categories/googletrends/</loc>
     <lastmod>2024-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://estacion-r.netlify.app/posts/</loc>
-    <lastmod>2024-02-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/categories/rstates/</loc>
-    <lastmod>2024-02-08T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://estacion-r.netlify.app/categories/rstats/</loc>
-    <lastmod>2024-02-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/tags/</loc>
     <lastmod>2024-02-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/tags/tendencias/</loc>
@@ -41,13 +68,7 @@
     <loc>https://estacion-r.netlify.app/tags/trends/</loc>
     <lastmod>2024-02-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://estacion-r.netlify.app/draft/</loc>
-    <lastmod>2024-02-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://estacion-r.netlify.app/draft/r-tendencias-de-google/</loc>
-    <lastmod>2024-02-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/tags/rstates/</loc>
     <lastmod>2024-02-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/tags/rstats/</loc>

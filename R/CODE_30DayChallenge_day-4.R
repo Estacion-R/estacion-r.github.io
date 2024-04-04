@@ -1,0 +1,81 @@
+
+#### Cargo librerías necesarias
+library(ARTofR)
+library(dplyr)
+library(purrr) 
+library(stringr)
+library(janitor)
+library(highcharter)
+library(viridisLite)
+
+#................Traigo datos gracias {datapasta}................
+df_causa_muerte_2022 <- tibble::tribble(
+  ~lugar,   ~cant,
+  "Hogar", 411803,
+  "Instituto Mexicano del Seguro Social (IMSS)", 145608,
+  "Secretaría de Salud (SSA)", 99960,
+  "Unidad médica privada", 36629,
+  "ISSSTE", 27572,
+  "Vía pública", 35392,
+  "Otro lugar", 43740,
+  "Otra unidad pública", 22549,
+  "No específicado", 18065
+)
+
+
+#..........................Preparo datos.........................
+df_causa_muerte_2022 <- df_causa_muerte_2022 |> 
+  mutate(
+    lugar = case_when(lugar %in% c("Instituto Mexicano del Seguro Social (IMSS)", "Secretaría de Salud (SSA)",
+                                   "ISSSTE", "Otra unidad pública") ~ "Unidad médica pública",
+                      .default = lugar)) |> 
+  summarise(cant = sum(cant),
+            .by = "lugar") |> 
+  mutate(porc = round(cant / sum(cant) * 100, 1),
+         faico = case_when(lugar == "Hogar" ~ "house",
+                           lugar == "Unidad médica pública" ~ "circle-h",
+                           lugar == "Unidad médica privada" ~ "hospital",
+                           lugar == "Vía pública" ~ "street-view",
+                           lugar == "Otro lugar" ~ "map",
+                           lugar == "No específicado" ~ "question"),
+         #col = substr(viridis(6), 0, 7)
+         col = c("#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854", "#ffd92f"))
+
+
+
+#.................función para renderizar íconos.................
+fa_to_png_to_datauri <- function(name, ...) {
+  
+  tmpfl <- tempfile(fileext = ".png")
+  
+  fontawesome::fa_png(name, file = tmpfl, ...)
+  
+  knitr::image_uri(tmpfl)
+  
+}
+
+
+#.........................Preparo íconos.........................
+df_viz <- df_causa_muerte_2022 |>
+  mutate(
+    uri = map2_chr(faico, col, ~fa_to_png_to_datauri(.x, fill = .y)),
+    marker = map(uri, ~ list(symbol = str_glue("url({data_uri})", data_uri = .x)))
+  )
+
+
+#..............................VIZ...............................
+hchart(
+  df_viz,
+  "item",
+  hcaes(name = lugar, y = porc),
+  name = "What I eat",
+  showInLegend = TRUE
+) |>
+  hc_plotOptions(
+    # avoid hide series due bug
+    series = list(point = list(events = list(legendItemClick = JS("function(e) {e.preventDefault() }"))))
+  ) |>
+  hc_legend(
+    labelFormat =  '{name} <span style="opacity: 0.4">{y}</span>'
+  ) |>
+  hc_colors(pull(df_viz, col))

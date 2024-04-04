@@ -6,13 +6,58 @@
     <description>Recent content in Tags on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Thu, 08 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>#30DayChartChallenge</title>
+      <link>https://estacion-r.netlify.app/tags/#30daychartchallenge/</link>
+      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/tags/#30daychartchallenge/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dataviz</title>
+      <link>https://estacion-r.netlify.app/tags/dataviz/</link>
+      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/tags/dataviz/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>ggplot2</title>
       <link>https://estacion-r.netlify.app/tags/ggplot2/</link>
-      <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/tags/ggplot2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>highcharter</title>
+      <link>https://estacion-r.netlify.app/tags/highcharter/</link>
+      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/tags/highcharter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>plotly</title>
+      <link>https://estacion-r.netlify.app/tags/plotly/</link>
+      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/tags/plotly/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rstatES</title>
+      <link>https://estacion-r.netlify.app/tags/rstates/</link>
+      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/tags/rstates/</guid>
       <description></description>
     </item>
     
@@ -44,56 +89,11 @@
     </item>
     
     <item>
-      <title>rstatES</title>
-      <link>https://estacion-r.netlify.app/tags/rstates/</link>
-      <pubDate>Tue, 06 Feb 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/rstates/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>rstats</title>
       <link>https://estacion-r.netlify.app/tags/rstats/</link>
       <pubDate>Tue, 06 Feb 2024 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/tags/rstats/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>untagged</title>
-      <link>https://estacion-r.netlify.app/tags/untagged/</link>
-      <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/untagged/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>argentina</title>
-      <link>https://estacion-r.netlify.app/tags/argentina/</link>
-      <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/argentina/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>copadelmundo</title>
-      <link>https://estacion-r.netlify.app/tags/copadelmundo/</link>
-      <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/copadelmundo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mundia2022</title>
-      <link>https://estacion-r.netlify.app/tags/mundia2022/</link>
-      <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/mundia2022/</guid>
       <description></description>
     </item>
     

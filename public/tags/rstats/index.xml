@@ -14,8 +14,8 @@
       
       <guid>https://estacion-r.netlify.app/draft/r-tendencias-de-google/</guid>
       <description>¿Sabías que Taylor Swift viene hace
-#install.packages(&amp;#39;gtrendsR&amp;#39;) library(gtrendsR) library(tidyverse) library(gt) library(glue) library(magick) library(patchwork) library(png) library(grid) Analizando la tendencia de #software en Argentina Mediante el siguiente código vamos a jugar con el paquete {gtrendsR} y ver cómo de forma muy sencilla podemos trabajar con tendencias de Google directamente desde R.
- Caso de uso Supongamos que necesitamos (si, ne-ce-si-ta-mos) conocer en qué lugar se encuentra R entre las búsquedas de google y, sobre todo (sí, so-bre-to-do) compararlo con sus compañeros de cuarto: PYTHON, SPSS y STATA.</description>
+#install.packages(&amp;#39;gtrendsR&amp;#39;)library(gtrendsR)library(tidyverse)library(gt)library(glue)library(magick)library(patchwork)library(png)library(grid)Analizando la tendencia de #software en ArgentinaMediante el siguiente código vamos a jugar con el paquete {gtrendsR} y ver cómo de forma muy sencilla podemos trabajar con tendencias de Google directamente desde R.
+Caso de usoSupongamos que necesitamos (si, ne-ce-si-ta-mos) conocer en qué lugar se encuentra R entre las búsquedas de google y, sobre todo (sí, so-bre-to-do) compararlo con sus compañeros de cuarto: PYTHON, SPSS y STATA.</description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@ Si asumimos que una de las principales tareas de una librería es ofrecer una ca
       <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</guid>
-      <description>@import url(https://fonts.googleapis.com/css?family=Glegoo); .showMore{ font-size: 14px; display:block; cursor: pointer; } .showMore + input{ display:none; } .showMore + input + *{ display:none; } .showMore + input:checked + *{ display:block; } blockquote { margin-left: 0; font-size: 12px; background: #e5f5f9; }  Si tenés más de 30 años (y vivís o viviste en Argentina) probablemente hayas conocido los postres 1,2, LISTO! Para quienes no lo conozcan, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!</description>
+      <description>@import url(https://fonts.googleapis.com/css?family=Glegoo);.showMore{font-size: 14px;display:block;cursor: pointer;}.showMore + input{display:none;}.showMore + input + *{display:none;}.showMore + input:checked + *{display:block;}blockquote {margin-left: 0;font-size: 12px;background: #e5f5f9;}Si tenés más de 30 años (y vivís o viviste en Argentina) probablemente hayas conocido los postres 1,2, LISTO! Para quienes no lo conozcan, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!</description>
     </item>
     
     <item>

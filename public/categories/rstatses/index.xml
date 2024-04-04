@@ -42,7 +42,7 @@ Si asumimos que una de las principales tareas de una librería es ofrecer una ca
       <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</guid>
-      <description>@import url(https://fonts.googleapis.com/css?family=Glegoo); .showMore{ font-size: 14px; display:block; cursor: pointer; } .showMore + input{ display:none; } .showMore + input + *{ display:none; } .showMore + input:checked + *{ display:block; } blockquote { margin-left: 0; font-size: 12px; background: #e5f5f9; }  Si tenés más de 30 años (y vivís o viviste en Argentina) probablemente hayas conocido los postres 1,2, LISTO! Para quienes no lo conozcan, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!</description>
+      <description>@import url(https://fonts.googleapis.com/css?family=Glegoo);.showMore{font-size: 14px;display:block;cursor: pointer;}.showMore + input{display:none;}.showMore + input + *{display:none;}.showMore + input:checked + *{display:block;}blockquote {margin-left: 0;font-size: 12px;background: #e5f5f9;}Si tenés más de 30 años (y vivís o viviste en Argentina) probablemente hayas conocido los postres 1,2, LISTO! Para quienes no lo conozcan, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!</description>
     </item>
     
     <item>
