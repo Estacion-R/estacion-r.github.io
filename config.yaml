@@ -74,14 +74,10 @@ params:
     logoMark: '>'
     logoText: $ cd/estacion-r
   social:
-    - name: twitter
-      url: https://twitter.com/r_tipss
-    - name: github
-      url: https://github.com/pablotis
-    - name: linkedin
-      url: "https://www.linkedin.com/in/ptiscornia/"
+    - name: Linktree
+      url: https://linktr.ee/estacion_r
     - name: email
-      url: "pablotisco@gmail.com"
+      url: "pablotiscornia@estacion-r.com"
 menu:
   main:
     - name: Blog
