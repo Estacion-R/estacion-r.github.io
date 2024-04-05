@@ -1,22 +1,15 @@
 ---
-title: '#30DayChartChallenge'
+title: Thirty Day Chart Challenge
 author: Pablo Tiscornia
 date: '2024-04-04'
-slug: 30daychartchallenge
-categories:
-  - rstatES
-  - dataviz
-  - cienciadedatos
+slug: thirty-day-chart-challenge
+categories: []
 tags:
-  - '#30DayChartChallenge'
-  - dataviz
-  - ggplot2
-  - highcharter
-  - plotly
-  - rstatES
+  - untagged
 toc: no
 images: ~
 ---
+
 
 
 ```{r echo=FALSE}
@@ -30,7 +23,6 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE)
 
 ## Día 4 - Waffle
 
-#### Cargo librerías necesarias
 ```{r librerias}
 library(ARTofR)
 library(dplyr)

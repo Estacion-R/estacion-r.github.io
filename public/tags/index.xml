@@ -62,6 +62,15 @@
     </item>
     
     <item>
+      <title>untagged</title>
+      <link>https://estacion-r.netlify.app/tags/untagged/</link>
+      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/tags/untagged/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>google</title>
       <link>https://estacion-r.netlify.app/tags/google/</link>
       <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
@@ -85,15 +94,6 @@
       <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/tags/trends/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rstats</title>
-      <link>https://estacion-r.netlify.app/tags/rstats/</link>
-      <pubDate>Tue, 06 Feb 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/rstats/</guid>
       <description></description>
     </item>
     
