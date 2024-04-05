@@ -3,9 +3,16 @@ title: Thirty Day Chart Challenge
 author: Pablo Tiscornia
 date: '2024-04-04'
 slug: thirty-day-chart-challenge
-categories: []
+categories:
+  - rstatES
+  - dataviz
+  - cienciadedatos
 tags:
-  - untagged
+  - dataviz
+  - ggplot2
+  - highcharter
+  - plotly
+  - rstatES
 toc: no
 images: ~
 ---
