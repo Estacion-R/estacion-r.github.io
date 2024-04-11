@@ -78,7 +78,6 @@ library(lubridate) # Paquete para datos con formato fecha
 library(tictoc) # Paquete para ver cuánto demoran los procesos
 library(tidyverse)
 library(ggtext) # Paquete para darle formato al texto
-library(gt) # Paquete para armar tablas
 ```
 
 
@@ -148,16 +147,6 @@ elo %>% filter(fecha == max(fecha)) %>% # Seleccionamos los registros de la últ
   arrange(-elo) %>% # Ordenamos valores de forma decreciente
   select(-fecha) %>% # Sacamos la variable fecha
   DT::datatable(caption = glue::glue("Ranking Elo al {format(max(elo$fecha),'%d de %B de %Y')}")) # Tabla y título
-  # gt() %>%
-  # tab_header(md(glue::glue("**Ranking Elo al {format(max(elo$fecha),'%d de %B de %Y')}**"))) %>%  # Tabla y título
-  # cols_label(
-  #   pais = "**País**",
-  #   elo = "**Elo**", 
-  #   .fn = md
-  # ) %>%
-  # fmt_number(columns = elo, sep_mark = ".", decimals = 0) |> 
-  # opt_interactive()
-  
 ```
 
 La selección campeona en Qatar 2022 ocupa la primera posición, como era de esperar. También era de esperar la segunda posición. En el resto de la tabla pueden surgir algunas sorpresas, países que no creíamos que estuvieran tan bien rankeados -tal vez por tener presente su performance únicamente en el último mundial y no los enfrentamientos en otras competencias-. Adentrándonos en las profundidades de la tabla podemos detectar algunos territorios pintorescos, como el territorio dependiente de Estados Unidos Samoa Americana, la República de Palaos o las Islas Marianas del Pacífico. Selecciones con las que se podría fantasear arrancarles una victoria con nuestro equipo de amigos.
