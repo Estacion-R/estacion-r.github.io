@@ -285,6 +285,11 @@ ggplot(data = elo_arg_germany,
 
 *Soy un economista apasionado por la ciencia de datos. Tengo experiencia en el ámbito de las estadísticas oficiales y en el análisis económico, donde implementé herramientas de programación (R principalemente) para la gran parte de las tareas de trabajo.*
 
+<figure>
+<img src="foto_juan.jpeg" style="width:30.0%" alt="Juan Urricariet" />
+<figcaption aria-hidden="true">Juan Urricariet</figcaption>
+</figure>
+
 Pueden conocer su trabajo y contactarse por:
 
 **Github**: https://github.com/jurricariet
