@@ -6,94 +6,94 @@
     <description>Recent content in Tags on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Thu, 04 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>dataviz</title>
-      <link>https://estacion-r.netlify.app/tags/dataviz/</link>
-      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
+      <title>analisis</title>
+      <link>https://estacion-r.netlify.app/tags/analisis/</link>
+      <pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/tags/dataviz/</guid>
+      <guid>https://estacion-r.netlify.app/tags/analisis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>argentina</title>
+      <link>https://estacion-r.netlify.app/tags/argentina/</link>
+      <pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/tags/argentina/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dt</title>
+      <link>https://estacion-r.netlify.app/tags/dt/</link>
+      <pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/tags/dt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elo</title>
+      <link>https://estacion-r.netlify.app/tags/elo/</link>
+      <pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/tags/elo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>futbol</title>
+      <link>https://estacion-r.netlify.app/tags/futbol/</link>
+      <pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/tags/futbol/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ggplot2</title>
       <link>https://estacion-r.netlify.app/tags/ggplot2/</link>
-      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/tags/ggplot2/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>highcharter</title>
-      <link>https://estacion-r.netlify.app/tags/highcharter/</link>
-      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
+      <title>ggtext</title>
+      <link>https://estacion-r.netlify.app/tags/ggtext/</link>
+      <pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/tags/highcharter/</guid>
+      <guid>https://estacion-r.netlify.app/tags/ggtext/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>plotly</title>
-      <link>https://estacion-r.netlify.app/tags/plotly/</link>
-      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
+      <title>lubridate</title>
+      <link>https://estacion-r.netlify.app/tags/lubridate/</link>
+      <pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/tags/plotly/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rstatES</title>
-      <link>https://estacion-r.netlify.app/tags/rstates/</link>
-      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/rstates/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>google</title>
-      <link>https://estacion-r.netlify.app/tags/google/</link>
-      <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/google/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tendencias</title>
-      <link>https://estacion-r.netlify.app/tags/tendencias/</link>
-      <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/tendencias/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>trends</title>
-      <link>https://estacion-r.netlify.app/tags/trends/</link>
-      <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/tags/trends/</guid>
+      <guid>https://estacion-r.netlify.app/tags/lubridate/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rstats</title>
       <link>https://estacion-r.netlify.app/tags/rstats/</link>
-      <pubDate>Tue, 06 Feb 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate>
       
       <guid>https://estacion-r.netlify.app/tags/rstats/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>untagged</title>
-      <link>https://estacion-r.netlify.app/tags/untagged/</link>
-      <pubDate>Thu, 14 Sep 2023 00:00:00 +0000</pubDate>
+      <title>rstatsES</title>
+      <link>https://estacion-r.netlify.app/tags/rstatses/</link>
+      <pubDate>Wed, 10 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://estacion-r.netlify.app/tags/untagged/</guid>
+      <guid>https://estacion-r.netlify.app/tags/rstatses/</guid>
       <description></description>
     </item>
     

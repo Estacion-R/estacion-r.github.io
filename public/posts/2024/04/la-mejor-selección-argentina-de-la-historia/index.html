@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c1cf8fb6c9dfcb4c672a80c8d/6ea6c190124f36653b279617c.js");</script>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Juan Urricariet">
+<meta name="description" content="Este artículo propone indagar en un método de puntuación que permite analizar selecciones de fútbol a lo largo de la historia: el puntaje Elo. Para ello nos valdremos de R para hacer scraping web, procesamiento de datos y visualizaciones" />
+<meta name="keywords" content=", seleccion, argentina, futbol, elo, rstats, rstatsES, analisis, ggplot2, lubridate, rvest, tidyverse, dt, ggtext" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/" />
+
+
+
+
+    <title>
+        
+            ¿La mejor selección Argentina de la historia? :: Estación 🇷 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://estacion-r.netlify.app/main.2b2aff83103a75e8bb97afd71207f490b64858992128ccdc0d7a08690fa018ba.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://estacion-r.netlify.app/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://estacion-r.netlify.app/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://estacion-r.netlify.app/favicon-16x16.png">
+    <link rel="manifest" href="https://estacion-r.netlify.app/site.webmanifest">
+    <link rel="mask-icon" href="https://estacion-r.netlify.app/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="https://estacion-r.netlify.app/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="¿La mejor selección Argentina de la historia?">
+<meta itemprop="description" content="Este artículo propone indagar en un método de puntuación que permite analizar selecciones de fútbol a lo largo de la historia: el puntaje Elo. Para ello nos valdremos de R para hacer scraping web, procesamiento de datos y visualizaciones"><meta itemprop="datePublished" content="2024-04-10T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2024-04-10T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2582">
+<meta itemprop="keywords" content="seleccion,argentina,futbol,elo,rstats,rstatsES,analisis,ggplot2,lubridate,rvest,tidyverse,dt,ggtext," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="¿La mejor selección Argentina de la historia?"/>
+<meta name="twitter:description" content="Este artículo propone indagar en un método de puntuación que permite analizar selecciones de fútbol a lo largo de la historia: el puntaje Elo. Para ello nos valdremos de R para hacer scraping web, procesamiento de datos y visualizaciones"/>
+
+
+
+
+    <meta property="og:title" content="¿La mejor selección Argentina de la historia?" />
+<meta property="og:description" content="Este artículo propone indagar en un método de puntuación que permite analizar selecciones de fútbol a lo largo de la historia: el puntaje Elo. Para ello nos valdremos de R para hacer scraping web, procesamiento de datos y visualizaciones" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-04-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-04-10T00:00:00+00:00" />
+
+
+
+
+
+    <meta property="article:section" content="analisis" />
+
+    <meta property="article:section" content="scrapping" />
+
+    <meta property="article:section" content="articulo" />
+
+    <meta property="article:section" content="futbol" />
+
+    <meta property="article:section" content="seleccion" />
+
+    <meta property="article:section" content="argentina" />
+
+
+
+    <meta property="article:published_time" content="2024-04-10 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZC91NVHQK"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-0ZC91NVHQK', { 'anonymize_ip': false });
+}
+</script>
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://estacion-r.netlify.app/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text">$ cd/estacion-r</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://estacion-r.netlify.app/posts/">Blog</a></li><li><a href="https://estacion-r.netlify.app/cursos_r/">Enseñar &#43; R</a></li><li><a href="https://estacion-r.netlify.app/perfil/">Autor</a></li><li><a href="https://estacion-r.netlify.app/proyectos/">Proyectos</a></li><li><a href="https://estacion-r.netlify.app/suscripcion/">Suscripción</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        13 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/">¿La mejor selección Argentina de la historia?</a>
+      </h1>
+
+      
+        <div class="post-excerpt">Este artículo propone indagar en un método de puntuación que permite analizar selecciones de fútbol a lo largo de la historia: el puntaje Elo. Para ello nos valdremos de R para hacer scraping web, procesamiento de datos y visualizaciones</div>
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/core-js/shim.min.js"></script>
+<script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/react/react.min.js"></script>
+<script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/react/react-dom.min.js"></script>
+<script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/reactwidget/react-tools.js"></script>
+<script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/htmlwidgets/htmlwidgets.js"></script>
+<link href="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/reactable/reactable.css" rel="stylesheet" />
+<script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/reactable-binding/reactable.js"></script>
+<p>La pregunta que da título a este artículo, obviamente, no tiene una respuesta correcta. Las ponderaciones históricas, y más aún en el ámbito del fútbol, tienen un componente subjetivo importante. Muchas veces, la impronta generacional resulta decisiva: tenemos mayor cariño por equipos que nos deslumbraron en nuestra infancia o juventud y otros que simplemente no pudimos ver en tiempo real o los documentos fílmicos son escasos. Existieron equipos que llegaron más lejos de lo que su juego sugirió y otros que tuvieron grandes planteles pero que no culminaron con un trofeo.</p>
+<center>
+<figure>
+<img src="argentina_2006.jpg" style="width:60.0%" alt="Selección del Mundial 2006" />
+<figcaption aria-hidden="true">Selección del Mundial 2006</figcaption>
+</figure>
+</center>
+<br>
+<p>También hubo selecciones que basaron su juego en el funcionamiento colectivo y otros que destacaron por tener una estrella deslumbrante.</p>
+<center>
+<figure>
+<img src="argentina_1986.jpg" style="width:120.0%" alt="Selección campeona Mundial 1986" />
+<figcaption aria-hidden="true">Selección campeona Mundial 1986</figcaption>
+</figure>
+</center>
+<br>
+<p>Estas y muchas otras variables influyen en nuestra elección personal. En esta oportunidad, queremos hacer uso de un sistema que no es el dueño de la verdad, pero puede ser de utilidad para acompañar nuestras percepciones con algún sustento en los datos. Y para practicar R.</p>
+<h2 id="qué-es-el-sistema-elo">¿Qué es el sistema Elo?</h2>
+<p>El nombre proviene de su inventor, Árpád Élő, quien ideó un sistema de puntuación para la clasificación de jugadores de ajedrez, adoptada luego por la Federación Internacional de Ajedrez (FIDE). El método puede ser aplicado para cualquier competencia que enfrente equipos o jugadores entre sí. Consiste en otorgar un puntaje a cada participante relacionado con el rival que enfrenta, y se actualiza en cada partido o competencia. La <a href="https://www.eloratings.net/about">fórmula matemática que lo calcula</a> tiene en cuenta la diferencia de puntaje entre ambos competidores. En términos futbolísticos, obtener un triunfo frente a Brasil otorgará un mayor puntaje -o disminuirá menos, en caso de perder- que uno ante Islas Feroe. Además, en el caso del fútbol se agrega una ponderación de acuerdo a la localía -vale más ganar de visitante- y a la competición en que se enmarca el encuentro -vencer en la final de la Copa del Mundo otorga más puntaje que hacerlo en un amistoso-. Actualmente la FIFA utiliza este sistema para sus clasificaciones oficiales <a href="https://inside.fifa.com/es/fifa-world-ranking/men">masculina</a> y <a href="https://inside.fifa.com/es/fifa-world-ranking/women">femenina</a>.</p>
+<h2 id="obtención-de-los-datos">Obtención de los datos</h2>
+<p>Para jugar un poco con los datos vamos a presentar un breve código que extrae los puntajes de todos los países de la página web <a href="https://www.international-football.net/elo-ratings-table">https://www.international-football.net/elo-ratings-table</a>. Los datos comienzan en 1873, tiempos en los que solo se registran enfrentamientos en el clásico británico Inglaterra-Escocia.<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>La idea detrás del código para obtener los datos es hacer una serie de consultas a la página donde se publican los puntajes, de manera que vaya devolviendo los resultados para cada fecha que se elija.
+Proponemos que se consulte por el primer día de cada mes entre 1873 y la fecha actual. Si bien podría hacerse para todos los días, el tiempo que demoraría sería excesivo, por lo que para ahorrar tiempo -este proceso demora unos 50 minutos- vamos a extraer solo una tabla por mes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Librerías utilizadas</span>
+<span style="color:#75af00">library</span><span style="color:#111">(</span><span style="color:#111">rvest</span><span style="color:#111">)</span> <span style="color:#75715e"># Paquete para implementar scraping web</span>
+<span style="color:#75af00">library</span><span style="color:#111">(</span><span style="color:#111">lubridate</span><span style="color:#111">)</span> <span style="color:#75715e"># Paquete para datos con formato fecha</span>
+<span style="color:#75af00">library</span><span style="color:#111">(</span><span style="color:#111">tictoc</span><span style="color:#111">)</span> <span style="color:#75715e"># Paquete para ver cuánto demoran los procesos</span>
+<span style="color:#75af00">library</span><span style="color:#111">(</span><span style="color:#111">tidyverse</span><span style="color:#111">)</span>
+<span style="color:#75af00">library</span><span style="color:#111">(</span><span style="color:#111">ggtext</span><span style="color:#111">)</span> <span style="color:#75715e"># Paquete para darle formato al texto</span>
+<span style="color:#75af00">library</span><span style="color:#111">(</span><span style="color:#111">gt</span><span style="color:#111">)</span> <span style="color:#75715e"># Paquete para armar tablas</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Fechas que se van a consultar: desde 1873 a 2024, el 1 de cada mes</span>
+<span style="color:#111">fechas</span> <span style="color:#f92672">&lt;-</span> <span style="color:#75af00">seq.Date</span><span style="color:#111">(</span><span style="color:#111">from</span> <span style="color:#f92672">=</span> <span style="color:#75af00">as.Date</span><span style="color:#111">(</span><span style="color:#d88200">&#34;1873-01-01&#34;</span><span style="color:#111">),</span>
+                   <span style="color:#111">to</span> <span style="color:#f92672">=</span> <span style="color:#75af00">Sys.Date</span><span style="color:#111">(),</span>
+                   <span style="color:#111">by</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;month&#34;</span><span style="color:#111">)</span>
+
+<span style="color:#75715e"># Lista para guardar las tablas según fecha</span>
+<span style="color:#111">tabla_ratings</span> <span style="color:#f92672">&lt;-</span> <span style="color:#75af00">list</span><span style="color:#111">()</span> 
+
+<span style="color:#75af00">tic</span><span style="color:#111">()</span> <span style="color:#75715e"># Con esta función comenzamos a tomar el tiempo que tomará el procesamiento, hasta que se ejecute la función toc()</span>
+
+<span style="color:#75715e"># Consulta: Con un for loop, se recorre la tabla de puntajes para cada fecha</span>
+<span style="color:#75af00">for </span><span style="color:#111">(</span><span style="color:#111">i</span> <span style="color:#111">in</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#75af00">length</span><span style="color:#111">(</span><span style="color:#111">fechas</span><span style="color:#111">)){</span>
+  <span style="color:#111">link</span> <span style="color:#f92672">&lt;-</span> <span style="color:#111">glue</span><span style="color:#f92672">::</span><span style="color:#75af00">glue</span><span style="color:#111">(</span><span style="color:#d88200">&#34;https://www.international-football.net/elo-ratings-table?year={year(fechas[i])}&amp;month={month(fechas[i])}&amp;day={day(fechas[i])}&#34;</span><span style="color:#111">)</span>
+  <span style="color:#111">elo_page</span> <span style="color:#f92672">&lt;-</span> <span style="color:#75af00">read_html</span><span style="color:#111">(</span><span style="color:#111">link</span><span style="color:#111">)</span> <span style="color:#75715e"># Lectura de la parte HTML estática de la web</span>
+  
+  <span style="color:#75715e"># Extracción de los elementos de texto de la web</span>
+  <span style="color:#111">summaries_css</span> <span style="color:#f92672">&lt;-</span> <span style="color:#111">elo_page</span> <span style="color:#f92672">%&gt;%</span>
+    <span style="color:#75af00">html_elements</span><span style="color:#111">(</span><span style="color:#d88200">&#34;td&#34;</span><span style="color:#111">)</span>
+  
+  <span style="color:#111">elo_summaries</span> <span style="color:#f92672">&lt;-</span> <span style="color:#75af00">html_text</span><span style="color:#111">(</span><span style="color:#111">summaries_css</span><span style="color:#111">)</span>
+  
+  <span style="color:#75715e"># Manipulación de cada tabla para tener un resultado limpio</span>
+  <span style="color:#111">rating</span> <span style="color:#f92672">&lt;-</span> <span style="color:#75af00">as.data.frame</span><span style="color:#111">(</span><span style="color:#111">elo_summaries</span><span style="color:#111">)</span> <span style="color:#f92672">%&gt;%</span> <span style="color:#75715e"># Convierto a data frame</span>
+    <span style="color:#75af00">rename</span><span style="color:#111">(</span><span style="color:#111">v1</span> <span style="color:#f92672">=</span> <span style="color:#111">elo_summaries</span><span style="color:#111">)</span> <span style="color:#f92672">%&gt;%</span> <span style="color:#75715e"># Cambio de nombre a la variable</span>
+    <span style="color:#75af00">filter</span><span style="color:#111">(</span><span style="color:#111">v1</span> <span style="color:#f92672">!=</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">)</span> <span style="color:#f92672">%&gt;%</span> <span style="color:#75715e"># Saco filas vacías</span>
+    <span style="color:#75af00">slice</span><span style="color:#111">(</span><span style="color:#f92672">-</span><span style="color:#75af00">c</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span><span style="color:#111">))</span> <span style="color:#75715e"># Excluyo las primeras 2 filas</span>
+  
+  <span style="color:#75715e"># La tabla que devuelve contiene el nombre de país y su puntaje en filas consecutivas</span>
+  <span style="color:#111">row_odd</span> <span style="color:#f92672">&lt;-</span> <span style="color:#75af00">seq_len</span><span style="color:#111">(</span><span style="color:#75af00">nrow</span><span style="color:#111">(</span><span style="color:#111">rating</span><span style="color:#111">))</span> <span style="color:#f92672">%%</span> <span style="color:#ae81ff">2</span>  <span style="color:#75715e"># Selecciono las filas que son impares</span>
+  
+  <span style="color:#75715e"># Armo la tabla: las filas impares son el país y las pares el puntaje. Añado la columna fecha</span>
+  <span style="color:#111">tabla_ratings[[i]]</span> <span style="color:#f92672">&lt;-</span> <span style="color:#75af00">data.frame</span><span style="color:#111">(</span><span style="color:#111">pais</span> <span style="color:#f92672">=</span> <span style="color:#111">rating[row_odd</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span> <span style="color:#111">]</span><span style="color:#111">,</span>
+                                   <span style="color:#111">elo</span> <span style="color:#f92672">=</span>  <span style="color:#111">rating[row_odd</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span> <span style="color:#111">]</span><span style="color:#111">,</span>
+                                   <span style="color:#111">fecha</span> <span style="color:#f92672">=</span> <span style="color:#111">fechas[i]</span><span style="color:#111">)</span>
+  <span style="color:#75af00">print</span><span style="color:#111">(</span><span style="color:#111">fechas[i]</span><span style="color:#111">)</span>
+<span style="color:#111">}</span>
+
+<span style="color:#75af00">toc</span><span style="color:#111">()</span> <span style="color:#75715e"># Termina el conteo de tiempo que tomó el proceso</span>
+
+<span style="color:#75715e"># Unifico todas las tablas en 1</span>
+<span style="color:#111">tabla</span> <span style="color:#f92672">&lt;-</span> <span style="color:#75af00">do.call</span><span style="color:#111">(</span><span style="color:#111">bind_rows</span><span style="color:#111">,</span> 
+                 <span style="color:#111">tabla_ratings</span><span style="color:#111">)</span>
+
+<span style="color:#75715e"># Guardo en formato .rds:</span>
+<span style="color:#75af00">write_rds</span><span style="color:#111">(</span><span style="color:#111">tabla</span><span style="color:#111">,</span> 
+          <span style="color:#111">glue</span><span style="color:#f92672">::</span><span style="color:#75af00">glue</span><span style="color:#111">(</span><span style="color:#d88200">&#34;data/elo_ranks_{fechas[1]}_{fechas[length(fechas)]}.rds&#34;</span><span style="color:#111">))</span>
+</code></pre></div><p>De esta manera tenemos, en una única tabla, los puntajes Elo de las selecciones nacionales entre 1873 y 2024.
+Veamos cómo está el ranking actualmente</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Lectura de la tabla en formato rds</span>
+<span style="color:#111">elo</span> <span style="color:#f92672">&lt;-</span> <span style="color:#75af00">read_rds</span><span style="color:#111">(</span><span style="color:#d88200">&#34;elo_ranks_1873-01-01_2024-04-01.rds&#34;</span><span style="color:#111">)</span> <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#75af00">mutate</span><span style="color:#111">(</span><span style="color:#111">elo</span> <span style="color:#f92672">=</span> <span style="color:#75af00">as.numeric</span><span style="color:#111">(</span><span style="color:#111">elo</span><span style="color:#111">),</span> 
+         <span style="color:#111">pais</span> <span style="color:#f92672">=</span> <span style="color:#75af00">ifelse</span><span style="color:#111">(</span><span style="color:#111">pais</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#34;Falkland Islands&#34;</span><span style="color:#111">,</span> 
+                       <span style="color:#111">yes</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;Islas Malvinas&#34;</span><span style="color:#111">,</span>
+                       <span style="color:#111">no</span> <span style="color:#f92672">=</span> <span style="color:#111">pais</span><span style="color:#111">))</span>
+
+<span style="color:#75715e"># Mostramos la tabla de forma interactiva, con la función datatable del paquete {DT}</span>
+<span style="color:#111">elo</span> <span style="color:#f92672">%&gt;%</span> <span style="color:#75af00">filter</span><span style="color:#111">(</span><span style="color:#111">fecha</span> <span style="color:#f92672">==</span> <span style="color:#75af00">max</span><span style="color:#111">(</span><span style="color:#111">fecha</span><span style="color:#111">))</span> <span style="color:#f92672">%&gt;%</span> <span style="color:#75715e"># Seleccionamos los registros de la última fecha</span>
+  <span style="color:#75af00">arrange</span><span style="color:#111">(</span><span style="color:#f92672">-</span><span style="color:#111">elo</span><span style="color:#111">)</span> <span style="color:#f92672">%&gt;%</span> <span style="color:#75715e"># Ordenamos valores de forma decreciente</span>
+  <span style="color:#75af00">select</span><span style="color:#111">(</span><span style="color:#f92672">-</span><span style="color:#111">fecha</span><span style="color:#111">)</span> <span style="color:#f92672">%&gt;%</span> <span style="color:#75715e"># Sacamos la variable fecha</span>
+  <span style="color:#75af00">gt</span><span style="color:#111">()</span> <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#75af00">tab_header</span><span style="color:#111">(</span><span style="color:#75af00">md</span><span style="color:#111">(</span><span style="color:#111">glue</span><span style="color:#f92672">::</span><span style="color:#75af00">glue</span><span style="color:#111">(</span><span style="color:#d88200">&#34;**Ranking Elo al {format(max(elo$fecha),&#39;%d de %B de %Y&#39;)}**&#34;</span><span style="color:#111">)))</span> <span style="color:#f92672">%&gt;%</span>  <span style="color:#75715e"># Tabla y título</span>
+  <span style="color:#75af00">cols_label</span><span style="color:#111">(</span>
+    <span style="color:#111">pais</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;**País**&#34;</span><span style="color:#111">,</span>
+    <span style="color:#111">elo</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;**Elo**&#34;</span><span style="color:#111">,</span> 
+    <span style="color:#111">.fn</span> <span style="color:#f92672">=</span> <span style="color:#111">md</span>
+  <span style="color:#111">)</span> <span style="color:#f92672">%&gt;%</span>
+  <span style="color:#75af00">fmt_number</span><span style="color:#111">(</span><span style="color:#111">columns</span> <span style="color:#f92672">=</span> <span style="color:#111">elo</span><span style="color:#111">,</span> <span style="color:#111">sep_mark</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;.&#34;</span><span style="color:#111">,</span> <span style="color:#111">decimals</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#f92672">|&gt;</span> 
+  <span style="color:#75af00">opt_interactive</span><span style="color:#111">()</span>
+</code></pre></div><div id="pkosnjorgu" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pkosnjorgu table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+&#10;#pkosnjorgu thead, #pkosnjorgu tbody, #pkosnjorgu tfoot, #pkosnjorgu tr, #pkosnjorgu td, #pkosnjorgu th {
+  border-style: none;
+}
+&#10;#pkosnjorgu p {
+  margin: 0;
+  padding: 0;
+}
+&#10;#pkosnjorgu .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+&#10;#pkosnjorgu .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+&#10;#pkosnjorgu .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+&#10;#pkosnjorgu .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+&#10;#pkosnjorgu .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+&#10;#pkosnjorgu .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+&#10;#pkosnjorgu .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+&#10;#pkosnjorgu .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+&#10;#pkosnjorgu .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+&#10;#pkosnjorgu .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+&#10;#pkosnjorgu .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+&#10;#pkosnjorgu .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+&#10;#pkosnjorgu .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+&#10;#pkosnjorgu .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+&#10;#pkosnjorgu .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+&#10;#pkosnjorgu .gt_from_md > :first-child {
+  margin-top: 0;
+}
+&#10;#pkosnjorgu .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+&#10;#pkosnjorgu .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+&#10;#pkosnjorgu .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#pkosnjorgu .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+&#10;#pkosnjorgu .gt_row_group_first td {
+  border-top-width: 2px;
+}
+&#10;#pkosnjorgu .gt_row_group_first th {
+  border-top-width: 2px;
+}
+&#10;#pkosnjorgu .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#pkosnjorgu .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+&#10;#pkosnjorgu .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+&#10;#pkosnjorgu .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+&#10;#pkosnjorgu .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#pkosnjorgu .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+&#10;#pkosnjorgu .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+&#10;#pkosnjorgu .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+&#10;#pkosnjorgu .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+&#10;#pkosnjorgu .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+&#10;#pkosnjorgu .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#pkosnjorgu .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+&#10;#pkosnjorgu .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+&#10;#pkosnjorgu .gt_left {
+  text-align: left;
+}
+&#10;#pkosnjorgu .gt_center {
+  text-align: center;
+}
+&#10;#pkosnjorgu .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+&#10;#pkosnjorgu .gt_font_normal {
+  font-weight: normal;
+}
+&#10;#pkosnjorgu .gt_font_bold {
+  font-weight: bold;
+}
+&#10;#pkosnjorgu .gt_font_italic {
+  font-style: italic;
+}
+&#10;#pkosnjorgu .gt_super {
+  font-size: 65%;
+}
+&#10;#pkosnjorgu .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+&#10;#pkosnjorgu .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+&#10;#pkosnjorgu .gt_indent_1 {
+  text-indent: 5px;
+}
+&#10;#pkosnjorgu .gt_indent_2 {
+  text-indent: 10px;
+}
+&#10;#pkosnjorgu .gt_indent_3 {
+  text-indent: 15px;
+}
+&#10;#pkosnjorgu .gt_indent_4 {
+  text-indent: 20px;
+}
+&#10;#pkosnjorgu .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<div style="font-family:system-ui, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif;border-top-style:solid;border-top-width:2px;border-top-color:#D3D3D3;">
+<div class="gt_heading gt_title gt_font_normal" style="text-size:bigger;"><strong>Ranking Elo al 01 de abril de 2024</strong></div>
+<div class="gt_heading gt_subtitle "></div>
+</div>
+<div id="pkosnjorgu" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<script type="application/json" data-for="pkosnjorgu">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"pais":["Argentina","France","Brazil","Spain","Portugal","England","Colombia","Uruguay","Belgium","Netherlands","Italy","Croatia","Germany","Ecuador","Ukraine","Austria","Japan","Hungary","Denmark","Iran","Switzerland","United States","Mexico","Serbia","Scotland","Senegal","Czech Republic","Russia","Australia","Morocco","Turkey","Peru","Venezuela","Greece","Slovenia","Norway","South Korea","Poland","Canada","Chile","Wales","Panama","Paraguay","Sweden","Tunisia","Uzbekistan","Algeria","Romania","Slovakia","Georgia","Mali","Qatar","Iraq","Jamaica","Egypt","Ivory Coast","Nigeria","Finland","Albania","Saudi Arabia","Ireland","Costa Rica","Bolivia","Jordan","Cape Verde","South Africa","Montenegro","Equatorial Guinea","Israel","Cameroon","North Macedonia","Iceland","Oman","Dem. Rep. of Congo","New Zealand","Northern Ireland","Luxembourg","Kosovo","Angola","United Arab Emirates","Burkina Faso","Ghana","Azerbaijan","Haiti","Honduras","Guatemala","Zambia","Guinea","Bosnia and Herzegovina","Bulgaria","Kazakhstan","Bahrain","Armenia","Northern Cyprus","Belarus","Syria","Martinique","Gabon","Kurdistan","Palestine","Trinidad and Tobago","Thailand","Libya","Kenya","China","El Salvador","Mauritania","Togo","Tajikistan","Namibia","Mozambique","North Korea","Uganda","Guinea-Bissau","Gambia","Estonia","Tanzania","Benin","Moldova","Reunion","Botswana","Latvia","Indonesia","Rwanda","Curaçao","Lithuania","Kuwait","Guadeloupe","Zanzibar","Zimbabwe","Central African Republic","Cyprus","Nicaragua","Sudan","Sierra Leone","Suriname","Comoros","Cuba","Malawi","Madagascar","Ethiopia","Solomon Islands","French Guiana","Burundi","Lebanon","Congo","Guyana","Kyrgyzstan","Vietnam","Faroe Islands","Malaysia","Malta","Liberia","Eswatini","Lesotho","Niger","New Caledonia","Fiji","Mayotte","Turkmenistan","Dominican Republic","India","Chad","Tahiti","Eritrea","Bermuda","South Sudan","Puerto Rico","Singapore","Afghanistan","Andorra","Grenada","Saint Lucia","Yemen","Papua New Guinea","Saint Kitts and Nevis","Saint Vincent and the Grenadines","Belize","São Tomé e Príncipe","Hong Kong","Gibraltar","Vanuatu","Philippines","Montserrat","Mauritius","Antigua and Barbuda","Somaliland","Dominica","Aruba","Western Sahara","Liechtenstein","Greenland","Saint Martin","Barbados","Djibouti","Bangladesh","Myanmar","Somalia","Chinese Taipei","Monaco","Nepal","Maldives","Sint Maarten","Seychelles","Bonaire","Cambodia","Pakistan","Bahamas","Cayman Islands","Mongolia","Chagos Islands","San Marino","Tuvalu","Samoa","Saint Barthelemy","Sri Lanka","Wallis and Futuna","Guam","Vatican","Turks and Caicos","Cook Islands","Saint Pierre and Miquelon","Laos","Macau","British Virgin Islands","Tibet","Brunei","US Virgin Islands","Timor-Leste","Bhutan","Islas Malvinas","Anguilla","Micronesia","Kiribati","Niue","Tonga","Northern Mariana Islands","Palau","American Samoa"],"elo":[2139,2085,2028,2019,2013,1999,1998,1989,1986,1968,1956,1953,1921,1873,1863,1857,1851,1842,1822,1818,1804,1800,1800,1788,1776,1776,1772,1772,1768,1767,1750,1746,1744,1740,1739,1737,1731,1721,1716,1713,1710,1707,1705,1697,1679,1666,1666,1664,1655,1650,1649,1647,1643,1638,1637,1631,1629,1623,1613,1612,1607,1605,1605,1599,1582,1575,1572,1558,1558,1558,1552,1545,1542,1534,1526,1516,1513,1509,1508,1508,1503,1503,1494,1494,1488,1487,1485,1479,1478,1473,1470,1460,1456,1456,1454,1446,1437,1433,1424,1419,1417,1416,1409,1406,1404,1398,1396,1391,1388,1373,1366,1366,1363,1362,1357,1356,1355,1353,1347,1346,1343,1341,1341,1341,1339,1331,1330,1327,1326,1323,1320,1318,1316,1314,1311,1307,1305,1305,1301,1296,1295,1290,1288,1281,1281,1275,1273,1269,1269,1268,1264,1261,1252,1250,1250,1241,1234,1222,1217,1212,1208,1194,1191,1186,1144,1143,1137,1130,1118,1114,1113,1096,1094,1094,1083,1080,1078,1075,1067,1056,1047,1046,1045,1022,1012,1011,1002,1001,998,996,959,953,942,938,933,932,919,906,906,903,889,879,872,855,842,842,827,817,799,790,785,777,756,745,727,707,701,698,692,690,685,677,665,665,654,630,621,618,610,607,571,571,565,545,496,481,434,403,377]},"columns":[{"id":"pais","name":"<strong>País<\/strong>","type":"character","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["Argentina","France","Brazil","Spain","Portugal","England","Colombia","Uruguay","Belgium","Netherlands","Italy","Croatia","Germany","Ecuador","Ukraine","Austria","Japan","Hungary","Denmark","Iran","Switzerland","United States","Mexico","Serbia","Scotland","Senegal","Czech Republic","Russia","Australia","Morocco","Turkey","Peru","Venezuela","Greece","Slovenia","Norway","South Korea","Poland","Canada","Chile","Wales","Panama","Paraguay","Sweden","Tunisia","Uzbekistan","Algeria","Romania","Slovakia","Georgia","Mali","Qatar","Iraq","Jamaica","Egypt","Ivory Coast","Nigeria","Finland","Albania","Saudi Arabia","Ireland","Costa Rica","Bolivia","Jordan","Cape Verde","South Africa","Montenegro","Equatorial Guinea","Israel","Cameroon","North Macedonia","Iceland","Oman","Dem. Rep. of Congo","New Zealand","Northern Ireland","Luxembourg","Kosovo","Angola","United Arab Emirates","Burkina Faso","Ghana","Azerbaijan","Haiti","Honduras","Guatemala","Zambia","Guinea","Bosnia and Herzegovina","Bulgaria","Kazakhstan","Bahrain","Armenia","Northern Cyprus","Belarus","Syria","Martinique","Gabon","Kurdistan","Palestine","Trinidad and Tobago","Thailand","Libya","Kenya","China","El Salvador","Mauritania","Togo","Tajikistan","Namibia","Mozambique","North Korea","Uganda","Guinea-Bissau","Gambia","Estonia","Tanzania","Benin","Moldova","Reunion","Botswana","Latvia","Indonesia","Rwanda","Curaçao","Lithuania","Kuwait","Guadeloupe","Zanzibar","Zimbabwe","Central African Republic","Cyprus","Nicaragua","Sudan","Sierra Leone","Suriname","Comoros","Cuba","Malawi","Madagascar","Ethiopia","Solomon Islands","French Guiana","Burundi","Lebanon","Congo","Guyana","Kyrgyzstan","Vietnam","Faroe Islands","Malaysia","Malta","Liberia","Eswatini","Lesotho","Niger","New Caledonia","Fiji","Mayotte","Turkmenistan","Dominican Republic","India","Chad","Tahiti","Eritrea","Bermuda","South Sudan","Puerto Rico","Singapore","Afghanistan","Andorra","Grenada","Saint Lucia","Yemen","Papua New Guinea","Saint Kitts and Nevis","Saint Vincent and the Grenadines","Belize","São Tomé e Príncipe","Hong Kong","Gibraltar","Vanuatu","Philippines","Montserrat","Mauritius","Antigua and Barbuda","Somaliland","Dominica","Aruba","Western Sahara","Liechtenstein","Greenland","Saint Martin","Barbados","Djibouti","Bangladesh","Myanmar","Somalia","Chinese Taipei","Monaco","Nepal","Maldives","Sint Maarten","Seychelles","Bonaire","Cambodia","Pakistan","Bahamas","Cayman Islands","Mongolia","Chagos Islands","San Marino","Tuvalu","Samoa","Saint Barthelemy","Sri Lanka","Wallis and Futuna","Guam","Vatican","Turks and Caicos","Cook Islands","Saint Pierre and Miquelon","Laos","Macau","British Virgin Islands","Tibet","Brunei","US Virgin Islands","Timor-Leste","Bhutan","Islas Malvinas","Anguilla","Micronesia","Kiribati","Niue","Tonga","Northern Mariana Islands","Palau","American Samoa"],"html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"elo","name":"<strong>Elo<\/strong>","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["2.139","2.085","2.028","2.019","2.013","1.999","1.998","1.989","1.986","1.968","1.956","1.953","1.921","1.873","1.863","1.857","1.851","1.842","1.822","1.818","1.804","1.800","1.800","1.788","1.776","1.776","1.772","1.772","1.768","1.767","1.750","1.746","1.744","1.740","1.739","1.737","1.731","1.721","1.716","1.713","1.710","1.707","1.705","1.697","1.679","1.666","1.666","1.664","1.655","1.650","1.649","1.647","1.643","1.638","1.637","1.631","1.629","1.623","1.613","1.612","1.607","1.605","1.605","1.599","1.582","1.575","1.572","1.558","1.558","1.558","1.552","1.545","1.542","1.534","1.526","1.516","1.513","1.509","1.508","1.508","1.503","1.503","1.494","1.494","1.488","1.487","1.485","1.479","1.478","1.473","1.470","1.460","1.456","1.456","1.454","1.446","1.437","1.433","1.424","1.419","1.417","1.416","1.409","1.406","1.404","1.398","1.396","1.391","1.388","1.373","1.366","1.366","1.363","1.362","1.357","1.356","1.355","1.353","1.347","1.346","1.343","1.341","1.341","1.341","1.339","1.331","1.330","1.327","1.326","1.323","1.320","1.318","1.316","1.314","1.311","1.307","1.305","1.305","1.301","1.296","1.295","1.290","1.288","1.281","1.281","1.275","1.273","1.269","1.269","1.268","1.264","1.261","1.252","1.250","1.250","1.241","1.234","1.222","1.217","1.212","1.208","1.194","1.191","1.186","1.144","1.143","1.137","1.130","1.118","1.114","1.113","1.096","1.094","1.094","1.083","1.080","1.078","1.075","1.067","1.056","1.047","1.046","1.045","1.022","1.012","1.011","1.002","1.001","998","996","959","953","942","938","933","932","919","906","906","903","889","879","872","855","842","842","827","817","799","790","785","777","756","745","727","707","701","698","692","690","685","677","665","665","654","630","621","618","610","607","571","571","565","545","496","481","434","403","377"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}}],"defaultPageSize":10,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"showSortable":true,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"headerStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"pkosnjorgu","dataKey":"2753b1149e9aeaf83cd981f7c6bb403b"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style"],"jsHooks":[]}</script>
+</div>
+<p>La selección campeona en Qatar 2022 ocupa la primera posición, como era de esperar. También era de esperar la segunda posición. En el resto de la tabla pueden surgir algunas sorpresas, países que no creíamos que estuvieran tan bien rankeados -tal vez por tener presente su performance únicamente en el último mundial y no los enfrentamientos en otras competencias-. Adentrándonos en las profundidades de la tabla podemos detectar algunos territorios pintorescos, como el territorio dependiente de Estados Unidos Samoa Americana, la República de Palaos o las Islas Marianas del Pacífico. Selecciones con las que se podría fantasear arrancarles una victoria con nuestro equipo de amigos.</p>
+<h2 id="argentina-en-el-tiempo">Argentina en el tiempo</h2>
+<p>Si nos enfocamos en la selección Argentina, podemos seguir su derrotero desde el año 1902. Los picos cuando se obtuvieron las 3 Copas Mundiales son elocuentes. Llama la atención la clasificación durante las décadas de 1940 y 1950, tiempos en los cuales la selección albiceleste tenía grandes participaciones en los Campeonatos Sudamericanos (actual Copa América). En 1957, por ejemplo, <a href="https://es.wikipedia.org/wiki/Campeonato_Sudamericano_1957">la Argentina obtiene el torneo continental con grandes goleadas (4-0 a Uruguay, 3-0 a Brasil) de la mano de la delantera de <em>Los Carasucias</em></a>.</p>
+<center>
+<figure>
+<img src="carasucias.webp" style="width:70.0%" alt="Selección 1957" />
+<figcaption aria-hidden="true">Selección 1957</figcaption>
+</figure>
+</center>
+<br>
+<p>El puntaje más bajo de la serie corresponde a abril de 1990: el entonces campéon del mundo no hacía pie en la preparación para el mundial de ese año, que culminaría en un subcampeonato.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Graficamos la serie de Argentina</span>
+<span style="color:#111">elo</span> <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#75af00">filter</span><span style="color:#111">(</span><span style="color:#111">pais</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#34;Argentina&#34;</span><span style="color:#111">)</span> <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#75af00">ggplot</span><span style="color:#111">(</span><span style="color:#75af00">aes</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#f92672">=</span><span style="color:#111">fecha</span><span style="color:#111">,</span>
+             <span style="color:#111">y</span><span style="color:#f92672">=</span><span style="color:#111">elo</span><span style="color:#111">))</span><span style="color:#f92672">+</span>
+  <span style="color:#75af00">geom_point</span><span style="color:#111">(</span><span style="color:#111">data</span> <span style="color:#f92672">=</span> <span style="color:#111">elo</span> <span style="color:#f92672">%&gt;%</span> 
+               <span style="color:#75af00">filter</span><span style="color:#111">(</span><span style="color:#111">pais</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#34;Argentina&#34;</span> <span style="color:#f92672">&amp;</span> <span style="color:#111">fecha</span> <span style="color:#f92672">%in%</span> <span style="color:#75af00">as.Date</span><span style="color:#111">(</span><span style="color:#75af00">c</span><span style="color:#111">(</span><span style="color:#d88200">&#34;1978-08-01&#34;</span><span style="color:#111">,</span><span style="color:#d88200">&#34;1986-08-01&#34;</span><span style="color:#111">,</span><span style="color:#d88200">&#34;2023-01-01&#34;</span><span style="color:#111">))),</span>
+             <span style="color:#111">color</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;gold&#34;</span><span style="color:#111">,</span>
+             <span style="color:#111">size</span><span style="color:#f92672">=</span><span style="color:#ae81ff">10</span><span style="color:#111">)</span><span style="color:#f92672">+</span>
+  <span style="color:#75af00">geom_line</span><span style="color:#111">(</span><span style="color:#111">color</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;#75aadb&#34;</span><span style="color:#111">)</span><span style="color:#f92672">+</span>
+  <span style="color:#75af00">theme_minimal</span><span style="color:#111">()</span><span style="color:#f92672">+</span>
+  <span style="color:#75af00">labs</span><span style="color:#111">(</span><span style="color:#111">x</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">,</span>
+       <span style="color:#111">y</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">,</span>
+       <span style="color:#111">title</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;Puntaje Elo de Argentina&#34;</span><span style="color:#111">,</span>
+       <span style="color:#111">subtitle</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">)</span>
+</code></pre></div><img src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
+<p>Los datos del puntaje Elo permiten dar una respuesta a nuestra pregunta incial: el mayor nivel alcanzado por la selección Argentina coincide con la obtención de la última Copa del Mundo. Muchas personas, estimamos, compartirán esta apreciación.</p>
+<center>
+<figure>
+<img src="argentina_campeon_22.webp" style="width:70.0%" alt="Selección campeona Mundial 2022" />
+<figcaption aria-hidden="true">Selección campeona Mundial 2022</figcaption>
+</figure>
+</center>
+<h2 id="mano-a-mano">Mano a mano</h2>
+<p>El puntaje Elo nos permite hacer un seguimiento en el tiempo de algunos duelos históricos de selecciones. La memoria reciente de los mundiales no es grata a la hora de recordar los enfrentamientos argentinos con Alemania. En el siglo XXI el país europeo eliminó tres veces seguidas a Argentina (en 2006, 2010 y la final de 2014). A falta de enfrentamientos más recientes podemos hacer uso de las estadísticas que nos provee nuestro amigo Elo. En la actualidad, la diferencia de puntuación a favor de Argentina (esto es el puntaje Elo de Argentina menos el de Alemania) es la mayor desde hace más de 80 años.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Armamos una tabla con los resultados de Argentina y Alemania</span>
+<span style="color:#111">elo_arg_germany</span> <span style="color:#f92672">&lt;-</span> <span style="color:#111">elo</span> <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#75af00">filter</span><span style="color:#111">(</span><span style="color:#111">pais</span> <span style="color:#f92672">%in%</span> <span style="color:#75af00">c</span><span style="color:#111">(</span><span style="color:#d88200">&#34;Argentina&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;Germany&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;West Germany&#34;</span><span style="color:#111">))</span> <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#75af00">pivot_wider</span><span style="color:#111">(</span><span style="color:#111">names_from</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;pais&#34;</span><span style="color:#111">,</span>
+              <span style="color:#111">values_from</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;elo&#34;</span><span style="color:#111">)</span> <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#75af00">mutate</span><span style="color:#111">(</span><span style="color:#111">Germany</span> <span style="color:#f92672">=</span> <span style="color:#75af00">ifelse</span><span style="color:#111">(</span><span style="color:#75af00">is.na</span><span style="color:#111">(</span><span style="color:#111">Germany</span><span style="color:#111">),</span> 
+                          <span style="color:#111">yes</span> <span style="color:#f92672">=</span> <span style="color:#111">`West Germany`</span><span style="color:#111">,</span> 
+                          <span style="color:#111">no</span> <span style="color:#f92672">=</span> <span style="color:#111">Germany</span><span style="color:#111">))</span> <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#75af00">mutate</span><span style="color:#111">(</span><span style="color:#111">dif</span> <span style="color:#f92672">=</span> <span style="color:#111">Argentina</span> <span style="color:#f92672">-</span> <span style="color:#111">Germany</span><span style="color:#111">)</span> <span style="color:#f92672">%&gt;%</span> <span style="color:#75715e"># Diferencia de puntajes</span>
+  <span style="color:#75af00">pivot_longer</span><span style="color:#111">(</span><span style="color:#111">cols</span> <span style="color:#f92672">=</span> <span style="color:#75af00">c</span><span style="color:#111">(</span><span style="color:#d88200">&#34;Argentina&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;Germany&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;dif&#34;</span><span style="color:#111">),</span>
+               <span style="color:#111">names_to</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;var&#34;</span><span style="color:#111">,</span>
+               <span style="color:#111">values_to</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;val&#34;</span><span style="color:#111">)</span> <span style="color:#f92672">%&gt;%</span> 
+  <span style="color:#75af00">mutate</span><span style="color:#111">(</span><span style="color:#111">var_tipo</span> <span style="color:#f92672">=</span> <span style="color:#75af00">ifelse</span><span style="color:#111">(</span><span style="color:#111">var</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#34;dif&#34;</span><span style="color:#111">,</span>
+                           <span style="color:#111">yes</span><span style="color:#f92672">=</span> <span style="color:#d88200">&#34;dif&#34;</span><span style="color:#111">,</span>
+                           <span style="color:#111">no</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;elo&#34;</span><span style="color:#111">),</span> 
+         <span style="color:#111">var_tipo</span> <span style="color:#f92672">=</span> <span style="color:#75af00">factor</span><span style="color:#111">(</span><span style="color:#111">var_tipo</span><span style="color:#111">,</span><span style="color:#111">levels</span> <span style="color:#f92672">=</span> <span style="color:#75af00">c</span><span style="color:#111">(</span><span style="color:#d88200">&#34;elo&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;dif&#34;</span><span style="color:#111">),</span>
+                           <span style="color:#111">labels</span> <span style="color:#f92672">=</span> <span style="color:#75af00">c</span><span style="color:#111">(</span><span style="color:#d88200">&#34;elo&#34;</span><span style="color:#111">,</span><span style="color:#d88200">&#34;dif&#34;</span><span style="color:#111">)))</span> <span style="color:#75715e"># Convertimos a formato factor</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Graficamos la evolución de las series de Argentina y Alemania, junto con la diferencia</span>
+<span style="color:#75af00">ggplot</span><span style="color:#111">(</span><span style="color:#111">data</span> <span style="color:#f92672">=</span> <span style="color:#111">elo_arg_germany</span><span style="color:#111">,</span>
+       <span style="color:#75af00">aes</span><span style="color:#111">(</span><span style="color:#111">x</span> <span style="color:#f92672">=</span> <span style="color:#111">fecha</span><span style="color:#111">,</span>
+           <span style="color:#111">y</span> <span style="color:#f92672">=</span> <span style="color:#111">val</span><span style="color:#111">))</span> <span style="color:#f92672">+</span> 
+  <span style="color:#75af00">geom_line</span><span style="color:#111">(</span><span style="color:#75af00">aes</span><span style="color:#111">(</span><span style="color:#111">color</span> <span style="color:#f92672">=</span> <span style="color:#111">var</span><span style="color:#111">),</span>
+            <span style="color:#111">data</span> <span style="color:#f92672">=</span> <span style="color:#111">elo_arg_germany</span> <span style="color:#f92672">%&gt;%</span> 
+              <span style="color:#75af00">filter</span><span style="color:#111">(</span><span style="color:#111">var_tipo</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#34;elo&#34;</span><span style="color:#111">))</span><span style="color:#f92672">+</span> <span style="color:#75715e"># Líneas de ambas series</span>
+  <span style="color:#75af00">geom_col</span><span style="color:#111">(</span><span style="color:#111">data</span> <span style="color:#f92672">=</span> <span style="color:#111">elo_arg_germany</span> <span style="color:#f92672">%&gt;%</span> 
+             <span style="color:#75af00">filter</span><span style="color:#111">(</span><span style="color:#111">var_tipo</span> <span style="color:#f92672">==</span> <span style="color:#d88200">&#34;dif&#34;</span><span style="color:#111">),</span>
+           <span style="color:#111">fill</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;gold&#34;</span><span style="color:#111">)</span><span style="color:#f92672">+</span> <span style="color:#75715e"># Columnas con la diferencia entre ambas</span>
+  <span style="color:#75af00">facet_grid</span><span style="color:#111">(</span><span style="color:#111">facets</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;var_tipo&#34;</span><span style="color:#111">,</span>
+             <span style="color:#111">scales</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;free_y&#34;</span><span style="color:#111">)</span><span style="color:#f92672">+</span>
+  <span style="color:#75af00">scale_color_manual</span><span style="color:#111">(</span><span style="color:#111">values</span> <span style="color:#f92672">=</span> <span style="color:#75af00">c</span><span style="color:#111">(</span><span style="color:#d88200">&#34;#75aadb&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;#DD0000&#34;</span><span style="color:#111">),</span>
+                     <span style="color:#111">name</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;&#34;</span><span style="color:#111">)</span><span style="color:#f92672">+</span>
+  <span style="color:#75af00">theme</span><span style="color:#111">(</span>
+    <span style="color:#111">text</span> <span style="color:#f92672">=</span> <span style="color:#75af00">element_text</span><span style="color:#111">(</span><span style="color:#111">family</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;Encode Sans&#34;</span><span style="color:#111">),</span> 
+    <span style="color:#111">plot.title</span> <span style="color:#f92672">=</span>  <span style="color:#75af00">element_markdown</span><span style="color:#111">(</span><span style="color:#111">size</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span><span style="color:#111">,</span> <span style="color:#111">face</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;bold&#34;</span><span style="color:#111">),</span>
+    <span style="color:#111">plot.subtitle</span> <span style="color:#f92672">=</span> <span style="color:#75af00">element_markdown</span><span style="color:#111">(</span><span style="color:#111">size</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span><span style="color:#111">,</span> <span style="color:#111">face</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;bold&#34;</span><span style="color:#111">),</span>
+    <span style="color:#111">plot.caption</span>  <span style="color:#f92672">=</span> <span style="color:#75af00">element_markdown</span><span style="color:#111">(</span><span style="color:#111">size</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span><span style="color:#111">),</span>
+    <span style="color:#111">strip.text.y</span>  <span style="color:#f92672">=</span> <span style="color:#75af00">element_text</span><span style="color:#111">(</span><span style="color:#111">size</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span><span style="color:#111">,</span> <span style="color:#111">face</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;bold&#34;</span><span style="color:#111">),</span>
+    <span style="color:#111">axis.text.x</span>   <span style="color:#f92672">=</span> <span style="color:#75af00">element_text</span><span style="color:#111">(</span><span style="color:#111">size</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span><span style="color:#111">,</span> <span style="color:#111">angle</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">90</span><span style="color:#111">),</span>
+    <span style="color:#111">axis.text.y</span>   <span style="color:#f92672">=</span> <span style="color:#75af00">element_text</span><span style="color:#111">(</span><span style="color:#111">size</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span><span style="color:#111">),</span>
+    <span style="color:#111">panel.grid.minor.x</span> <span style="color:#f92672">=</span> <span style="color:#75af00">element_blank</span><span style="color:#111">(),</span>
+    <span style="color:#111">panel.grid.major.x</span> <span style="color:#f92672">=</span> <span style="color:#75af00">element_blank</span><span style="color:#111">(),</span>
+    <span style="color:#111">legend.position</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;none&#34;</span><span style="color:#111">,</span>
+    <span style="color:#111">strip.placement</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;outside&#34;</span><span style="color:#111">,</span>
+    <span style="color:#111">legend.title</span> <span style="color:#f92672">=</span> <span style="color:#75af00">element_blank</span><span style="color:#111">())</span><span style="color:#f92672">+</span>
+  <span style="color:#75af00">theme_minimal</span><span style="color:#111">()</span><span style="color:#f92672">+</span>
+  <span style="color:#75af00">labs</span><span style="color:#111">(</span><span style="color:#111">x</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">,</span>
+       <span style="color:#111">y</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;&#34;</span><span style="color:#111">,</span>
+       <span style="color:#111">title</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;Puntaje Elo de Argentina y Alemania y diferencia entre ambos&#34;</span><span style="color:#111">,</span>
+       <span style="color:#111">subtitle</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;Aplica Alemania Occidental durante la división&#34;</span><span style="color:#111">)</span>
+</code></pre></div><img src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Es posible extraer, con un código muy similar, los datos de la web de la FIFA, pero estos inician recién en 1993.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/seleccion/">seleccion</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/argentina/">argentina</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/futbol/">futbol</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/elo/">elo</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/rstats/">rstats</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/rstatses/">rstatsES</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/analisis/">analisis</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/ggplot2/">ggplot2</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/lubridate/">lubridate</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/rvest/">rvest</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/tidyverse/">tidyverse</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/dt/">dt</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/tags/ggtext/">ggtext</a></span>
+        
+    </p>
+
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://estacion-r.netlify.app/categories/analisis/">analisis</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/categories/scrapping/">scrapping</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/categories/articulo/">articulo</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/categories/futbol/">futbol</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/categories/seleccion/">seleccion</a></span>
+        <span class="tag"><a href="https://estacion-r.netlify.app/categories/argentina/">argentina</a></span>
+        
+    </p>
+
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        2582 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2024-04-09 18:00
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2024%2f04%2fla-mejor-selecci%25C3%25B3n-argentina-de-la-historia%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2024%2f04%2fla-mejor-selecci%25C3%25B3n-argentina-de-la-historia%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=%c2%bfLa%20mejor%20selecci%c3%b3n%20Argentina%20de%20la%20historia%3f&amp;caption=%c2%bfLa%20mejor%20selecci%c3%b3n%20Argentina%20de%20la%20historia%3f&amp;canonicalUrl=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2024%2f04%2fla-mejor-selecci%25C3%25B3n-argentina-de-la-historia%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=%c2%bfLa%20mejor%20selecci%c3%b3n%20Argentina%20de%20la%20historia%3f&amp;body=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2024%2f04%2fla-mejor-selecci%25C3%25B3n-argentina-de-la-historia%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2024%2f04%2fla-mejor-selecci%25C3%25B3n-argentina-de-la-historia%2f&amp;media=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2024%2f04%2fla-mejor-selecci%25C3%25B3n-argentina-de-la-historia%2f;description=%c2%bfLa%20mejor%20selecci%c3%b3n%20Argentina%20de%20la%20historia%3f" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2024%2f04%2fla-mejor-selecci%25C3%25B3n-argentina-de-la-historia%2f&amp;title=%c2%bfLa%20mejor%20selecci%c3%b3n%20Argentina%20de%20la%20historia%3f&amp;summary=%c2%bfLa%20mejor%20selecci%c3%b3n%20Argentina%20de%20la%20historia%3f&amp;source=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2024%2f04%2fla-mejor-selecci%25C3%25B3n-argentina-de-la-historia%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2024%2f04%2fla-mejor-selecci%25C3%25B3n-argentina-de-la-historia%2f&amp;resubmit=true&amp;title=%c2%bfLa%20mejor%20selecci%c3%b3n%20Argentina%20de%20la%20historia%3f" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2024%2f04%2fla-mejor-selecci%25C3%25B3n-argentina-de-la-historia%2f;title=%c2%bfLa%20mejor%20selecci%c3%b3n%20Argentina%20de%20la%20historia%3f" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=%c2%bfLa%20mejor%20selecci%c3%b3n%20Argentina%20de%20la%20historia%3f%20https%3a%2f%2festacion-r.netlify.app%2fposts%2f2024%2f04%2fla-mejor-selecci%25C3%25B3n-argentina-de-la-historia%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2024%2f04%2fla-mejor-selecci%25C3%25B3n-argentina-de-la-historia%2f&amp;t=%c2%bfLa%20mejor%20selecci%c3%b3n%20Argentina%20de%20la%20historia%3f" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=%c2%bfLa%20mejor%20selecci%c3%b3n%20Argentina%20de%20la%20historia%3f&amp;url=https%3a%2f%2festacion-r.netlify.app%2fposts%2f2024%2f04%2fla-mejor-selecci%25C3%25B3n-argentina-de-la-historia%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+      </div>
+
+    
+    <div class="pagination">
+        
+
+        <div class="pagination__buttons">
+            
+
+            
+            <span class="button next">
+                <a href="https://estacion-r.netlify.app/posts/2024/04/thirty-day-chart-challenge/">
+                    <span class="button__text">Thirty Day Chart Challenge</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2024</span>
+            <span><a href="https://estacion-r.netlify.app/">Pablo Tiscornia</a></span>
+            
+            <span><a href="https://estacion-r.netlify.app/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span><span>Made by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://estacion-r.netlify.app/bundle.min.18199b5b12b49221b3a37bd7922e5f71cc8f3601ed0f25c9eeb7d7b18f17d2398cc2db1784f2de04615069e8190e65c1edc58c73c67d4de54f355730d72d08e9.js" integrity="sha512-GBmbWxK0kiGzo3vXki5fccyPNgHtDyXJ7rfXsY8X0jmMwtsXhPLeBGFQaegZDmXB7cWMc8Z9TeVPNVcw1y0I6Q=="></script>
+
+
+
+    </body>
+</html>

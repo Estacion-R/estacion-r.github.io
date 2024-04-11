@@ -106,12 +106,21 @@ hchart(
   name = "What I eat",
   showInLegend = TRUE
   ) |>
+  hc_title(
+    text = "Distribución de las defunciones según sitio de ocurrencia",
+    useHTML = TRUE
+  ) |> 
+  hc_subtitle(
+    text = "México 🇲🇽. Año 2022"
+  ) |> 
+  hc_caption(
+    text = "Fuente: INEGI. Estadísticas de Defunciones Registradas (EDR), 2022") |> 
   hc_plotOptions(
     # avoid hide series due bug
     series = list(point = list(events = list(legendItemClick = JS("function(e) {e.preventDefault() }"))))
   ) |>
   hc_legend(
-    labelFormat =  '{name} <span style="opacity: 0.4">{y}</span>'
+    labelFormat =  '{name} <span style="opacity: 0.4">{y}%</span>'
   ) |>
   hc_colors(pull(df_viz, col))
 ```
@@ -128,3 +137,8 @@ hchart(
 
 - Código: [LINK](https://github.com/pablotis/estacion-r.github.io/tree/main/R/CODE_30DayChallenge_day-4.R)
 
+
+
+
+
+## Día 5 - Divergente

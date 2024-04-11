@@ -40,6 +40,7 @@ taxonomies:
   series: series
   tag: tags
 params:
+  defaultTheme: "light"
   customCSS: []
   customJS: []
   dateform: Jan 2, 2006
@@ -50,7 +51,7 @@ params:
   disableReadOtherPosts: no
   enableGlobalLanguageMenu: no
   enableSharingButtons: yes
-  enableThemeToggle: no
+  enableThemeToggle: yes
   favicon:
     color:
       mask: '#1b1c1d'

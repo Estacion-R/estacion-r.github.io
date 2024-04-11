@@ -136,6 +136,11 @@ if (!doNotTrack) {
                     </svg>
                 </span>
             
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
         </span>
     </span>
 </header>
@@ -170,7 +175,7 @@ if (!doNotTrack) {
 
       <div class="post-content">
         <h2 id="mundial-2022">Mundial 2022</h2>
-<p>El mundial ya arrancó y la ansiedad (¿de la buena?) copó al mundo. Y a mí también. 
+<p>El mundial ya arrancó y la ansiedad (¿de la buena?) copó al mundo. Y a mí también.
 Pero este es un mundial particular. Para esta competencia abundan los datos y las fuentes de donde obtenerlos. Es por esto que decidí reflotar <a href="https://twitter.com/pabblo_h/status/1006536967406931971?s=20&amp;t=_SnCXvM_S9yxF5PNDznQ1g">un ejercicio</a> que había armado allá por el Mundial anterior (2018), en donde mostraba información sobre la Selección Argentina. En aquel momento junté la data de forma manual, a través de publicaciones en Wikipedia. Así llegué a un laborioso excel y armé las visualizaciones con flourish, una plataforma que permite de forma gratuita e intuitiva contar historias sin necesidad de saber programar ni mucho menos.</p>
 <p>Con esta gran excusa para volver a poner las manos en la data me propuse automatizar aquello que había hecho a mano y, además, poner a disposición la información que encuentre. Encaré así un pequeño proyecto de dos etapas:</p>
 <ol>
@@ -184,8 +189,8 @@ Pero este es un mundial particular. Para esta competencia abundan los datos y la
 <p><img src="img/patriota_arg.png" alt=""></p>
 <h2 id="los-datos">Los datos</h2>
 <p>La pregunta que motivó este proyecto allá por el Mundial 2018 rondó por el lugar de orígen de los convocados a la selección Argentina. Para ello necesitaba una fuente con dicha información y encontré como mejor candidata a Wikipedia. En aquel momento entre página por página que refería a la lista final de convocados a la Selección y armé una base de datos sencilla, <strong>a mano</strong>. DOLIÓ.</p>
-<p>Para este mundial se me ocurrió reproducir el ejercicio pero de forma <del>un poco más</del> automática. La estrategia consistió en dos instancias. La primera fue obtener el listado definitivo de seleccionados para cada mundial. Para ello fui a escrapear (&ldquo;raspar&rdquo; y extraer los datos de una página de forma programática) wikipedia y armar así una primera base llamada <code>lista_convocados_wikipedia.rds</code>. El script que armé se puede ver <a href="https://github.com/pablotis/seleccion_argentina/blob/main/scripts/scraper_lista_convocados.R">acá</a>. 
-Un segundo ejercicio consistió en &ldquo;pegarle&rdquo; a cada listado de jugadores la url que contiene el acceso al perfil y las estadísticas de los jugadores, de donde podría, por ejemplo, también extraer la localidad de nacimiento de cad auno. 
+<p>Para este mundial se me ocurrió reproducir el ejercicio pero de forma <del>un poco más</del> automática. La estrategia consistió en dos instancias. La primera fue obtener el listado definitivo de seleccionados para cada mundial. Para ello fui a escrapear (&ldquo;raspar&rdquo; y extraer los datos de una página de forma programática) wikipedia y armar así una primera base llamada <code>lista_convocados_wikipedia.rds</code>. El script que armé se puede ver <a href="https://github.com/pablotis/seleccion_argentina/blob/main/scripts/scraper_lista_convocados.R">acá</a>.
+Un segundo ejercicio consistió en &ldquo;pegarle&rdquo; a cada listado de jugadores la url que contiene el acceso al perfil y las estadísticas de los jugadores, de donde podría, por ejemplo, también extraer la localidad de nacimiento de cad auno.
 El resultado de ambos procesos fue un <a href="https://github.com/pablotis/seleccion_argentina">repositorio abierto</a> que contiene tanto el ejercicio como el conjunto de datasets armados.</p>
 <p><img src="img/sel_wikipedia.png" alt=""></p>
 <p>El siguiente paso fue combinar la información de wikipedia con aquella que podía extraer a través del paquete <code>worldfootbalR</code>, específicamente de una de las páginas con las que se conecta: <a href="https://fbref.com/es/">fbref</a>. De allí podía extraer la ciudad de la que es oriundo cada jugador y dejar también las bases para seguir indagando por más información.</p>

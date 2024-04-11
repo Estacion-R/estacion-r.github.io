@@ -2,8 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://estacion-r.netlify.app/tags/analisis/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/categories/analisis/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/argentina/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/categories/argentina/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/categories/articulo/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://estacion-r.netlify.app/categories/</loc>
-    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/dt/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/elo/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/futbol/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/categories/futbol/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/ggplot2/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/ggtext/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/lubridate/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/posts/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/rstats/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/rstatses/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/rvest/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/categories/scrapping/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/seleccion/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/categories/seleccion/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/tidyverse/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/</loc>
+    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/categories/cienciadedatos/</loc>
     <lastmod>2024-04-04T00:00:00+00:00</lastmod>
@@ -14,28 +83,16 @@
     <loc>https://estacion-r.netlify.app/categories/dataviz/</loc>
     <lastmod>2024-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://estacion-r.netlify.app/</loc>
-    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/tags/ggplot2/</loc>
-    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://estacion-r.netlify.app/tags/highcharter/</loc>
     <lastmod>2024-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/tags/plotly/</loc>
     <lastmod>2024-04-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://estacion-r.netlify.app/posts/</loc>
-    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://estacion-r.netlify.app/tags/rstates/</loc>
     <lastmod>2024-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/categories/rstates/</loc>
-    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/tags/</loc>
     <lastmod>2024-04-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/posts/2024/04/thirty-day-chart-challenge/</loc>
@@ -65,9 +122,6 @@
     <loc>https://estacion-r.netlify.app/draft/r-tendencias-de-google/</loc>
     <lastmod>2024-02-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://estacion-r.netlify.app/tags/rstats/</loc>
-    <lastmod>2024-02-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://estacion-r.netlify.app/categories/datascience/</loc>
     <lastmod>2023-09-14T00:00:00+00:00</lastmod>
   </url><url>
@@ -89,19 +143,10 @@
     <loc>https://estacion-r.netlify.app/posts/2023/09/r_tips-en-mastodon/</loc>
     <lastmod>2023-09-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://estacion-r.netlify.app/categories/analisis/</loc>
-    <lastmod>2022-11-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/tags/argentina/</loc>
-    <lastmod>2022-11-21T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://estacion-r.netlify.app/tags/copadelmundo/</loc>
     <lastmod>2022-11-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/tags/mundia2022/</loc>
-    <lastmod>2022-11-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/tags/rstatses/</loc>
     <lastmod>2022-11-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/categories/rstatses/</loc>
