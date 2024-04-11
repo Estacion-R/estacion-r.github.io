@@ -281,4 +281,14 @@ ggplot(data = elo_arg_germany,
 
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />
 
+## Conociendo al autor **\[Juan Urricariet\]**
+
+*Soy un economista apasionado por la ciencia de datos. Tengo experiencia en el ámbito de las estadísticas oficiales y en el análisis económico, donde implementé herramientas de programación (R principalemente) para la gran parte de las tareas de trabajo.*
+
+Pueden conocer su trabajo y contactarse por:
+
+**Github**: https://github.com/jurricariet
+
+📬: juanurricariet@gmail.com
+
 [^1]: Es posible extraer, con un código muy similar, los datos de la web de la FIFA, pero estos inician recién en 1993.
