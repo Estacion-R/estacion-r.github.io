@@ -271,7 +271,7 @@ viz
 
 #### Recursos utilizados:
 
-- Código: [LINK](https://github.com/pablotis/estacion-r.github.io/tree/main/R/CODE_30DayChallenge_day-4.R)
+- Código: [LINK](https://github.com/pablotis/estacion-r.github.io/tree/main/R/CODE_30DayChallenge_day-15.R)
 
 - Fuente: INDEC. 
 
