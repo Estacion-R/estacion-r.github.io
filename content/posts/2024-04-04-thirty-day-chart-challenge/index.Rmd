@@ -195,11 +195,13 @@ viz <-
              color = "red") +
   geom_text(x = valor_min$periodo, y = valor_min$nivel_general,
             label = paste0(valor_min$nivel_general, "%"),
-            color = "red", hjust = -0.5) +
+            color = "red", hjust = -0.5,
+            family = "Ubuntu") +
   annotate('text', 
            x = "2019-1" , y = valor_min$nivel_general + 10,
            label = paste("Valor mínimo:", valor_min$periodo), 
-           size = 4, color = "red") +
+           size = 4, color = "red",
+           family = "Ubuntu") +
   annotate(
     'curve',
     x = "2019-1", xend = "2020-4",
@@ -215,12 +217,14 @@ viz <-
              color = "green") +
   geom_text(x = valor_max$periodo, y = valor_max$nivel_general,
             label = paste0(valor_max$nivel_general, "%"),
-            color = "green", hjust = -0.2) +
+            color = "green", hjust = -0.2,
+            family = "Ubuntu") +
   annotate('text', 
            x = "2019-8" , 
            y = 75,
            label = paste("Valor Máximo:", valor_max$periodo), 
-           size = 4, color = "green") +
+           size = 4, color = "green",
+           family = "Ubuntu") +
   annotate('curve',
            x = "2021-1", xend = "2022-8",
            y = 75, yend = valor_max$nivel_general,
@@ -234,12 +238,14 @@ viz <-
              color = "darkgrey") +
   geom_text(x = valor_ult$periodo, y = valor_ult$nivel_general,
             label = paste0(valor_ult$nivel_general, "%"),
-            color = "darkgrey", hjust = 1.2) +
+            color = "darkgrey", hjust = 1.2,
+            family = "Ubuntu") +
   annotate('text', 
            x = "2022-1" , 
            y = 45,
            label = paste("Valor Último:", valor_ult$periodo), 
-           size = 4, color = "darkgrey") +
+           size = 4, color = "darkgrey",
+           family = "Ubuntu") +
   annotate('curve',
            x = "2023-1", xend = "2024-1",
            y = 45, yend = valor_ult$nivel_general-1,
@@ -248,6 +254,7 @@ viz <-
            curvature = 0.5,
            arrow = arrow(length = unit(0.3, 'cm'))
   ) +
+  theme_minimal() +
   labs(x = "", y = "",
        #color = "Período",
        title = "Utilización de la Capacidad Instalada en la Industria.",
