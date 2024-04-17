@@ -268,7 +268,9 @@ viz <-
         axis.title.y = element_text(size = rel(1)),
         legend.text = element_text(size = rel(1.25)),
         legend.title = element_text(size = rel(1)),
-        strip.text = element_text(face = "bold", size = rel(.1))
+        strip.text = element_text(face = "bold", size = rel(.1)),
+        panel.grid = element_blank()
+        
         #axis.text.x = element_blank(), 
         #axis.ticks.x = element_blank()
   )
