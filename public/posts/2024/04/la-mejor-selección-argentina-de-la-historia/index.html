@@ -46,7 +46,7 @@
 <meta itemprop="name" content="¿La mejor selección Argentina de la historia?">
 <meta itemprop="description" content="Este artículo propone indagar en un método de puntuación que permite analizar selecciones de fútbol a lo largo de la historia: el puntaje Elo. Para ello nos valdremos de R para hacer scraping web, procesamiento de datos y visualizaciones"><meta itemprop="datePublished" content="2024-04-10T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2024-04-10T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2582">
+<meta itemprop="wordCount" content="1764">
 <meta itemprop="keywords" content="seleccion,argentina,futbol,elo,rstats,rstatsES,analisis,ggplot2,lubridate,rvest,tidyverse,dt,ggtext," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="¿La mejor selección Argentina de la historia?"/>
@@ -162,7 +162,7 @@ if (!doNotTrack) {
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        13 minutes
+        9 minutes
 
         
       </p>
@@ -182,13 +182,15 @@ if (!doNotTrack) {
       
 
       <div class="post-content">
-        <script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/core-js/shim.min.js"></script>
-<script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/react/react.min.js"></script>
-<script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/react/react-dom.min.js"></script>
-<script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/reactwidget/react-tools.js"></script>
-<script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/htmlwidgets/htmlwidgets.js"></script>
-<link href="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/reactable/reactable.css" rel="stylesheet" />
-<script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/reactable-binding/reactable.js"></script>
+        <script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/htmlwidgets/htmlwidgets.js"></script>
+<link href="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/datatables-binding/datatables.js"></script>
+<script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/jquery/jquery-3.6.0.min.js"></script>
+<link href="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/crosstalk/css/crosstalk.min.css" rel="stylesheet" />
+<script src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/crosstalk/js/crosstalk.min.js"></script>
 <p>La pregunta que da título a este artículo, obviamente, no tiene una respuesta correcta. Las ponderaciones históricas, y más aún en el ámbito del fútbol, tienen un componente subjetivo importante. Muchas veces, la impronta generacional resulta decisiva: tenemos mayor cariño por equipos que nos deslumbraron en nuestra infancia o juventud y otros que simplemente no pudimos ver en tiempo real o los documentos fílmicos son escasos. Existieron equipos que llegaron más lejos de lo que su juego sugirió y otros que tuvieron grandes planteles pero que no culminaron con un trofeo.</p>
 <center>
 <figure>
@@ -278,412 +280,19 @@ Veamos cómo está el ranking actualmente</p>
 <span style="color:#111">elo</span> <span style="color:#f92672">%&gt;%</span> <span style="color:#75af00">filter</span><span style="color:#111">(</span><span style="color:#111">fecha</span> <span style="color:#f92672">==</span> <span style="color:#75af00">max</span><span style="color:#111">(</span><span style="color:#111">fecha</span><span style="color:#111">))</span> <span style="color:#f92672">%&gt;%</span> <span style="color:#75715e"># Seleccionamos los registros de la última fecha</span>
   <span style="color:#75af00">arrange</span><span style="color:#111">(</span><span style="color:#f92672">-</span><span style="color:#111">elo</span><span style="color:#111">)</span> <span style="color:#f92672">%&gt;%</span> <span style="color:#75715e"># Ordenamos valores de forma decreciente</span>
   <span style="color:#75af00">select</span><span style="color:#111">(</span><span style="color:#f92672">-</span><span style="color:#111">fecha</span><span style="color:#111">)</span> <span style="color:#f92672">%&gt;%</span> <span style="color:#75715e"># Sacamos la variable fecha</span>
-  <span style="color:#75af00">gt</span><span style="color:#111">()</span> <span style="color:#f92672">%&gt;%</span>
-  <span style="color:#75af00">tab_header</span><span style="color:#111">(</span><span style="color:#75af00">md</span><span style="color:#111">(</span><span style="color:#111">glue</span><span style="color:#f92672">::</span><span style="color:#75af00">glue</span><span style="color:#111">(</span><span style="color:#d88200">&#34;**Ranking Elo al {format(max(elo$fecha),&#39;%d de %B de %Y&#39;)}**&#34;</span><span style="color:#111">)))</span> <span style="color:#f92672">%&gt;%</span>  <span style="color:#75715e"># Tabla y título</span>
-  <span style="color:#75af00">cols_label</span><span style="color:#111">(</span>
-    <span style="color:#111">pais</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;**País**&#34;</span><span style="color:#111">,</span>
-    <span style="color:#111">elo</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;**Elo**&#34;</span><span style="color:#111">,</span> 
-    <span style="color:#111">.fn</span> <span style="color:#f92672">=</span> <span style="color:#111">md</span>
-  <span style="color:#111">)</span> <span style="color:#f92672">%&gt;%</span>
-  <span style="color:#75af00">fmt_number</span><span style="color:#111">(</span><span style="color:#111">columns</span> <span style="color:#f92672">=</span> <span style="color:#111">elo</span><span style="color:#111">,</span> <span style="color:#111">sep_mark</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;.&#34;</span><span style="color:#111">,</span> <span style="color:#111">decimals</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#f92672">|&gt;</span> 
-  <span style="color:#75af00">opt_interactive</span><span style="color:#111">()</span>
-</code></pre></div><div id="pkosnjorgu" class=".gt_table" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#pkosnjorgu table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-&#10;#pkosnjorgu thead, #pkosnjorgu tbody, #pkosnjorgu tfoot, #pkosnjorgu tr, #pkosnjorgu td, #pkosnjorgu th {
-  border-style: none;
-}
-&#10;#pkosnjorgu p {
-  margin: 0;
-  padding: 0;
-}
-&#10;#pkosnjorgu .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-&#10;#pkosnjorgu .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-&#10;#pkosnjorgu .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-&#10;#pkosnjorgu .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-&#10;#pkosnjorgu .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-&#10;#pkosnjorgu .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-&#10;#pkosnjorgu .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-&#10;#pkosnjorgu .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-&#10;#pkosnjorgu .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-&#10;#pkosnjorgu .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-&#10;#pkosnjorgu .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-&#10;#pkosnjorgu .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-&#10;#pkosnjorgu .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-&#10;#pkosnjorgu .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-&#10;#pkosnjorgu .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-&#10;#pkosnjorgu .gt_from_md > :first-child {
-  margin-top: 0;
-}
-&#10;#pkosnjorgu .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-&#10;#pkosnjorgu .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-&#10;#pkosnjorgu .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-&#10;#pkosnjorgu .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-&#10;#pkosnjorgu .gt_row_group_first td {
-  border-top-width: 2px;
-}
-&#10;#pkosnjorgu .gt_row_group_first th {
-  border-top-width: 2px;
-}
-&#10;#pkosnjorgu .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-&#10;#pkosnjorgu .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-&#10;#pkosnjorgu .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-&#10;#pkosnjorgu .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-&#10;#pkosnjorgu .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-&#10;#pkosnjorgu .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-&#10;#pkosnjorgu .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-&#10;#pkosnjorgu .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-&#10;#pkosnjorgu .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-&#10;#pkosnjorgu .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-&#10;#pkosnjorgu .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-&#10;#pkosnjorgu .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-&#10;#pkosnjorgu .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-&#10;#pkosnjorgu .gt_left {
-  text-align: left;
-}
-&#10;#pkosnjorgu .gt_center {
-  text-align: center;
-}
-&#10;#pkosnjorgu .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-&#10;#pkosnjorgu .gt_font_normal {
-  font-weight: normal;
-}
-&#10;#pkosnjorgu .gt_font_bold {
-  font-weight: bold;
-}
-&#10;#pkosnjorgu .gt_font_italic {
-  font-style: italic;
-}
-&#10;#pkosnjorgu .gt_super {
-  font-size: 65%;
-}
-&#10;#pkosnjorgu .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-&#10;#pkosnjorgu .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-&#10;#pkosnjorgu .gt_indent_1 {
-  text-indent: 5px;
-}
-&#10;#pkosnjorgu .gt_indent_2 {
-  text-indent: 10px;
-}
-&#10;#pkosnjorgu .gt_indent_3 {
-  text-indent: 15px;
-}
-&#10;#pkosnjorgu .gt_indent_4 {
-  text-indent: 20px;
-}
-&#10;#pkosnjorgu .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-<div style="font-family:system-ui, &#39;Segoe UI&#39;, Roboto, Helvetica, Arial, sans-serif;border-top-style:solid;border-top-width:2px;border-top-color:#D3D3D3;">
-<div class="gt_heading gt_title gt_font_normal" style="text-size:bigger;"><strong>Ranking Elo al 01 de abril de 2024</strong></div>
-<div class="gt_heading gt_subtitle "></div>
-</div>
-<div id="pkosnjorgu" class="reactable html-widget" style="width:auto;height:auto;"></div>
-<script type="application/json" data-for="pkosnjorgu">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"pais":["Argentina","France","Brazil","Spain","Portugal","England","Colombia","Uruguay","Belgium","Netherlands","Italy","Croatia","Germany","Ecuador","Ukraine","Austria","Japan","Hungary","Denmark","Iran","Switzerland","United States","Mexico","Serbia","Scotland","Senegal","Czech Republic","Russia","Australia","Morocco","Turkey","Peru","Venezuela","Greece","Slovenia","Norway","South Korea","Poland","Canada","Chile","Wales","Panama","Paraguay","Sweden","Tunisia","Uzbekistan","Algeria","Romania","Slovakia","Georgia","Mali","Qatar","Iraq","Jamaica","Egypt","Ivory Coast","Nigeria","Finland","Albania","Saudi Arabia","Ireland","Costa Rica","Bolivia","Jordan","Cape Verde","South Africa","Montenegro","Equatorial Guinea","Israel","Cameroon","North Macedonia","Iceland","Oman","Dem. Rep. of Congo","New Zealand","Northern Ireland","Luxembourg","Kosovo","Angola","United Arab Emirates","Burkina Faso","Ghana","Azerbaijan","Haiti","Honduras","Guatemala","Zambia","Guinea","Bosnia and Herzegovina","Bulgaria","Kazakhstan","Bahrain","Armenia","Northern Cyprus","Belarus","Syria","Martinique","Gabon","Kurdistan","Palestine","Trinidad and Tobago","Thailand","Libya","Kenya","China","El Salvador","Mauritania","Togo","Tajikistan","Namibia","Mozambique","North Korea","Uganda","Guinea-Bissau","Gambia","Estonia","Tanzania","Benin","Moldova","Reunion","Botswana","Latvia","Indonesia","Rwanda","Curaçao","Lithuania","Kuwait","Guadeloupe","Zanzibar","Zimbabwe","Central African Republic","Cyprus","Nicaragua","Sudan","Sierra Leone","Suriname","Comoros","Cuba","Malawi","Madagascar","Ethiopia","Solomon Islands","French Guiana","Burundi","Lebanon","Congo","Guyana","Kyrgyzstan","Vietnam","Faroe Islands","Malaysia","Malta","Liberia","Eswatini","Lesotho","Niger","New Caledonia","Fiji","Mayotte","Turkmenistan","Dominican Republic","India","Chad","Tahiti","Eritrea","Bermuda","South Sudan","Puerto Rico","Singapore","Afghanistan","Andorra","Grenada","Saint Lucia","Yemen","Papua New Guinea","Saint Kitts and Nevis","Saint Vincent and the Grenadines","Belize","São Tomé e Príncipe","Hong Kong","Gibraltar","Vanuatu","Philippines","Montserrat","Mauritius","Antigua and Barbuda","Somaliland","Dominica","Aruba","Western Sahara","Liechtenstein","Greenland","Saint Martin","Barbados","Djibouti","Bangladesh","Myanmar","Somalia","Chinese Taipei","Monaco","Nepal","Maldives","Sint Maarten","Seychelles","Bonaire","Cambodia","Pakistan","Bahamas","Cayman Islands","Mongolia","Chagos Islands","San Marino","Tuvalu","Samoa","Saint Barthelemy","Sri Lanka","Wallis and Futuna","Guam","Vatican","Turks and Caicos","Cook Islands","Saint Pierre and Miquelon","Laos","Macau","British Virgin Islands","Tibet","Brunei","US Virgin Islands","Timor-Leste","Bhutan","Islas Malvinas","Anguilla","Micronesia","Kiribati","Niue","Tonga","Northern Mariana Islands","Palau","American Samoa"],"elo":[2139,2085,2028,2019,2013,1999,1998,1989,1986,1968,1956,1953,1921,1873,1863,1857,1851,1842,1822,1818,1804,1800,1800,1788,1776,1776,1772,1772,1768,1767,1750,1746,1744,1740,1739,1737,1731,1721,1716,1713,1710,1707,1705,1697,1679,1666,1666,1664,1655,1650,1649,1647,1643,1638,1637,1631,1629,1623,1613,1612,1607,1605,1605,1599,1582,1575,1572,1558,1558,1558,1552,1545,1542,1534,1526,1516,1513,1509,1508,1508,1503,1503,1494,1494,1488,1487,1485,1479,1478,1473,1470,1460,1456,1456,1454,1446,1437,1433,1424,1419,1417,1416,1409,1406,1404,1398,1396,1391,1388,1373,1366,1366,1363,1362,1357,1356,1355,1353,1347,1346,1343,1341,1341,1341,1339,1331,1330,1327,1326,1323,1320,1318,1316,1314,1311,1307,1305,1305,1301,1296,1295,1290,1288,1281,1281,1275,1273,1269,1269,1268,1264,1261,1252,1250,1250,1241,1234,1222,1217,1212,1208,1194,1191,1186,1144,1143,1137,1130,1118,1114,1113,1096,1094,1094,1083,1080,1078,1075,1067,1056,1047,1046,1045,1022,1012,1011,1002,1001,998,996,959,953,942,938,933,932,919,906,906,903,889,879,872,855,842,842,827,817,799,790,785,777,756,745,727,707,701,698,692,690,685,677,665,665,654,630,621,618,610,607,571,571,565,545,496,481,434,403,377]},"columns":[{"id":"pais","name":"<strong>País<\/strong>","type":"character","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["Argentina","France","Brazil","Spain","Portugal","England","Colombia","Uruguay","Belgium","Netherlands","Italy","Croatia","Germany","Ecuador","Ukraine","Austria","Japan","Hungary","Denmark","Iran","Switzerland","United States","Mexico","Serbia","Scotland","Senegal","Czech Republic","Russia","Australia","Morocco","Turkey","Peru","Venezuela","Greece","Slovenia","Norway","South Korea","Poland","Canada","Chile","Wales","Panama","Paraguay","Sweden","Tunisia","Uzbekistan","Algeria","Romania","Slovakia","Georgia","Mali","Qatar","Iraq","Jamaica","Egypt","Ivory Coast","Nigeria","Finland","Albania","Saudi Arabia","Ireland","Costa Rica","Bolivia","Jordan","Cape Verde","South Africa","Montenegro","Equatorial Guinea","Israel","Cameroon","North Macedonia","Iceland","Oman","Dem. Rep. of Congo","New Zealand","Northern Ireland","Luxembourg","Kosovo","Angola","United Arab Emirates","Burkina Faso","Ghana","Azerbaijan","Haiti","Honduras","Guatemala","Zambia","Guinea","Bosnia and Herzegovina","Bulgaria","Kazakhstan","Bahrain","Armenia","Northern Cyprus","Belarus","Syria","Martinique","Gabon","Kurdistan","Palestine","Trinidad and Tobago","Thailand","Libya","Kenya","China","El Salvador","Mauritania","Togo","Tajikistan","Namibia","Mozambique","North Korea","Uganda","Guinea-Bissau","Gambia","Estonia","Tanzania","Benin","Moldova","Reunion","Botswana","Latvia","Indonesia","Rwanda","Curaçao","Lithuania","Kuwait","Guadeloupe","Zanzibar","Zimbabwe","Central African Republic","Cyprus","Nicaragua","Sudan","Sierra Leone","Suriname","Comoros","Cuba","Malawi","Madagascar","Ethiopia","Solomon Islands","French Guiana","Burundi","Lebanon","Congo","Guyana","Kyrgyzstan","Vietnam","Faroe Islands","Malaysia","Malta","Liberia","Eswatini","Lesotho","Niger","New Caledonia","Fiji","Mayotte","Turkmenistan","Dominican Republic","India","Chad","Tahiti","Eritrea","Bermuda","South Sudan","Puerto Rico","Singapore","Afghanistan","Andorra","Grenada","Saint Lucia","Yemen","Papua New Guinea","Saint Kitts and Nevis","Saint Vincent and the Grenadines","Belize","São Tomé e Príncipe","Hong Kong","Gibraltar","Vanuatu","Philippines","Montserrat","Mauritius","Antigua and Barbuda","Somaliland","Dominica","Aruba","Western Sahara","Liechtenstein","Greenland","Saint Martin","Barbados","Djibouti","Bangladesh","Myanmar","Somalia","Chinese Taipei","Monaco","Nepal","Maldives","Sint Maarten","Seychelles","Bonaire","Cambodia","Pakistan","Bahamas","Cayman Islands","Mongolia","Chagos Islands","San Marino","Tuvalu","Samoa","Saint Barthelemy","Sri Lanka","Wallis and Futuna","Guam","Vatican","Turks and Caicos","Cook Islands","Saint Pierre and Miquelon","Laos","Macau","British Virgin Islands","Tibet","Brunei","US Virgin Islands","Timor-Leste","Bhutan","Islas Malvinas","Anguilla","Micronesia","Kiribati","Niue","Tonga","Northern Mariana Islands","Palau","American Samoa"],"html":true,"align":"left","headerStyle":{"font-weight":"normal"}},{"id":"elo","name":"<strong>Elo<\/strong>","type":"numeric","style":"function(rowInfo, colInfo) {\nconst rowIndex = rowInfo.index + 1\n}","cell":["2.139","2.085","2.028","2.019","2.013","1.999","1.998","1.989","1.986","1.968","1.956","1.953","1.921","1.873","1.863","1.857","1.851","1.842","1.822","1.818","1.804","1.800","1.800","1.788","1.776","1.776","1.772","1.772","1.768","1.767","1.750","1.746","1.744","1.740","1.739","1.737","1.731","1.721","1.716","1.713","1.710","1.707","1.705","1.697","1.679","1.666","1.666","1.664","1.655","1.650","1.649","1.647","1.643","1.638","1.637","1.631","1.629","1.623","1.613","1.612","1.607","1.605","1.605","1.599","1.582","1.575","1.572","1.558","1.558","1.558","1.552","1.545","1.542","1.534","1.526","1.516","1.513","1.509","1.508","1.508","1.503","1.503","1.494","1.494","1.488","1.487","1.485","1.479","1.478","1.473","1.470","1.460","1.456","1.456","1.454","1.446","1.437","1.433","1.424","1.419","1.417","1.416","1.409","1.406","1.404","1.398","1.396","1.391","1.388","1.373","1.366","1.366","1.363","1.362","1.357","1.356","1.355","1.353","1.347","1.346","1.343","1.341","1.341","1.341","1.339","1.331","1.330","1.327","1.326","1.323","1.320","1.318","1.316","1.314","1.311","1.307","1.305","1.305","1.301","1.296","1.295","1.290","1.288","1.281","1.281","1.275","1.273","1.269","1.269","1.268","1.264","1.261","1.252","1.250","1.250","1.241","1.234","1.222","1.217","1.212","1.208","1.194","1.191","1.186","1.144","1.143","1.137","1.130","1.118","1.114","1.113","1.096","1.094","1.094","1.083","1.080","1.078","1.075","1.067","1.056","1.047","1.046","1.045","1.022","1.012","1.011","1.002","1.001","998","996","959","953","942","938","933","932","919","906","906","903","889","879","872","855","842","842","827","817","799","790","785","777","756","745","727","707","701","698","692","690","685","677","665","665","654","630","621","618","610","607","571","571","565","545","496","481","434","403","377"],"html":true,"align":"right","headerStyle":{"font-weight":"normal"}}],"defaultPageSize":10,"showPageSizeOptions":false,"pageSizeOptions":[10,25,50,100],"paginationType":"numbers","showPagination":true,"showPageInfo":true,"minRows":1,"showSortable":true,"height":"auto","theme":{"color":"#333333","backgroundColor":"#FFFFFF","stripedColor":"rgba(128,128,128,0.05)","style":{"fontFamily":"system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"},"headerStyle":{"borderTopStyle":"solid","borderTopWidth":"2px","borderTopColor":"#D3D3D3","borderBottomStyle":"solid","borderBottomWidth":"2px","borderBottomColor":"#D3D3D3"}},"elementId":"pkosnjorgu","dataKey":"2753b1149e9aeaf83cd981f7c6bb403b"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.style","tag.attribs.columns.1.style"],"jsHooks":[]}</script>
-</div>
-<p>La selección campeona en Qatar 2022 ocupa la primera posición, como era de esperar. También era de esperar la segunda posición. En el resto de la tabla pueden surgir algunas sorpresas, países que no creíamos que estuvieran tan bien rankeados -tal vez por tener presente su performance únicamente en el último mundial y no los enfrentamientos en otras competencias-. Adentrándonos en las profundidades de la tabla podemos detectar algunos territorios pintorescos, como el territorio dependiente de Estados Unidos Samoa Americana, la República de Palaos o las Islas Marianas del Pacífico. Selecciones con las que se podría fantasear arrancarles una victoria con nuestro equipo de amigos.</p>
+  <span style="color:#111">DT</span><span style="color:#f92672">::</span><span style="color:#75af00">datatable</span><span style="color:#111">(</span><span style="color:#111">caption</span> <span style="color:#f92672">=</span> <span style="color:#111">glue</span><span style="color:#f92672">::</span><span style="color:#75af00">glue</span><span style="color:#111">(</span><span style="color:#d88200">&#34;Ranking Elo al {format(max(elo$fecha),&#39;%d de %B de %Y&#39;)}&#34;</span><span style="color:#111">))</span> <span style="color:#75715e"># Tabla y título</span>
+</code></pre></div><div class="datatables html-widget html-fill-item" id="htmlwidget-1" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","vertical":false,"caption":"<caption>Ranking Elo al 01 de abril de 2024<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226","227","228","229","230","231","232","233","234","235","236","237","238","239"],["Argentina","France","Brazil","Spain","Portugal","England","Colombia","Uruguay","Belgium","Netherlands","Italy","Croatia","Germany","Ecuador","Ukraine","Austria","Japan","Hungary","Denmark","Iran","Switzerland","United States","Mexico","Serbia","Scotland","Senegal","Czech Republic","Russia","Australia","Morocco","Turkey","Peru","Venezuela","Greece","Slovenia","Norway","South Korea","Poland","Canada","Chile","Wales","Panama","Paraguay","Sweden","Tunisia","Uzbekistan","Algeria","Romania","Slovakia","Georgia","Mali","Qatar","Iraq","Jamaica","Egypt","Ivory Coast","Nigeria","Finland","Albania","Saudi Arabia","Ireland","Costa Rica","Bolivia","Jordan","Cape Verde","South Africa","Montenegro","Equatorial Guinea","Israel","Cameroon","North Macedonia","Iceland","Oman","Dem. Rep. of Congo","New Zealand","Northern Ireland","Luxembourg","Kosovo","Angola","United Arab Emirates","Burkina Faso","Ghana","Azerbaijan","Haiti","Honduras","Guatemala","Zambia","Guinea","Bosnia and Herzegovina","Bulgaria","Kazakhstan","Bahrain","Armenia","Northern Cyprus","Belarus","Syria","Martinique","Gabon","Kurdistan","Palestine","Trinidad and Tobago","Thailand","Libya","Kenya","China","El Salvador","Mauritania","Togo","Tajikistan","Namibia","Mozambique","North Korea","Uganda","Guinea-Bissau","Gambia","Estonia","Tanzania","Benin","Moldova","Reunion","Botswana","Latvia","Indonesia","Rwanda","Curaçao","Lithuania","Kuwait","Guadeloupe","Zanzibar","Zimbabwe","Central African Republic","Cyprus","Nicaragua","Sudan","Sierra Leone","Suriname","Comoros","Cuba","Malawi","Madagascar","Ethiopia","Solomon Islands","French Guiana","Burundi","Lebanon","Congo","Guyana","Kyrgyzstan","Vietnam","Faroe Islands","Malaysia","Malta","Liberia","Eswatini","Lesotho","Niger","New Caledonia","Fiji","Mayotte","Turkmenistan","Dominican Republic","India","Chad","Tahiti","Eritrea","Bermuda","South Sudan","Puerto Rico","Singapore","Afghanistan","Andorra","Grenada","Saint Lucia","Yemen","Papua New Guinea","Saint Kitts and Nevis","Saint Vincent and the Grenadines","Belize","São Tomé e Príncipe","Hong Kong","Gibraltar","Vanuatu","Philippines","Montserrat","Mauritius","Antigua and Barbuda","Somaliland","Dominica","Aruba","Western Sahara","Liechtenstein","Greenland","Saint Martin","Barbados","Djibouti","Bangladesh","Myanmar","Somalia","Chinese Taipei","Monaco","Nepal","Maldives","Sint Maarten","Seychelles","Bonaire","Cambodia","Pakistan","Bahamas","Cayman Islands","Mongolia","Chagos Islands","San Marino","Tuvalu","Samoa","Saint Barthelemy","Sri Lanka","Wallis and Futuna","Guam","Vatican","Turks and Caicos","Cook Islands","Saint Pierre and Miquelon","Laos","Macau","British Virgin Islands","Tibet","Brunei","US Virgin Islands","Timor-Leste","Bhutan","Islas Malvinas","Anguilla","Micronesia","Kiribati","Niue","Tonga","Northern Mariana Islands","Palau","American Samoa"],[2139,2085,2028,2019,2013,1999,1998,1989,1986,1968,1956,1953,1921,1873,1863,1857,1851,1842,1822,1818,1804,1800,1800,1788,1776,1776,1772,1772,1768,1767,1750,1746,1744,1740,1739,1737,1731,1721,1716,1713,1710,1707,1705,1697,1679,1666,1666,1664,1655,1650,1649,1647,1643,1638,1637,1631,1629,1623,1613,1612,1607,1605,1605,1599,1582,1575,1572,1558,1558,1558,1552,1545,1542,1534,1526,1516,1513,1509,1508,1508,1503,1503,1494,1494,1488,1487,1485,1479,1478,1473,1470,1460,1456,1456,1454,1446,1437,1433,1424,1419,1417,1416,1409,1406,1404,1398,1396,1391,1388,1373,1366,1366,1363,1362,1357,1356,1355,1353,1347,1346,1343,1341,1341,1341,1339,1331,1330,1327,1326,1323,1320,1318,1316,1314,1311,1307,1305,1305,1301,1296,1295,1290,1288,1281,1281,1275,1273,1269,1269,1268,1264,1261,1252,1250,1250,1241,1234,1222,1217,1212,1208,1194,1191,1186,1144,1143,1137,1130,1118,1114,1113,1096,1094,1094,1083,1080,1078,1075,1067,1056,1047,1046,1045,1022,1012,1011,1002,1001,998,996,959,953,942,938,933,932,919,906,906,903,889,879,872,855,842,842,827,817,799,790,785,777,756,745,727,707,701,698,692,690,685,677,665,665,654,630,621,618,610,607,571,571,565,545,496,481,434,403,377]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>pais<\/th>\n      <th>elo<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"pais","targets":1},{"name":"elo","targets":2}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">  <span style="color:#75715e"># gt() %&gt;%</span>
+  <span style="color:#75715e"># tab_header(md(glue::glue(&#34;**Ranking Elo al {format(max(elo$fecha),&#39;%d de %B de %Y&#39;)}**&#34;))) %&gt;%  # Tabla y título</span>
+  <span style="color:#75715e"># cols_label(</span>
+  <span style="color:#75715e">#   pais = &#34;**País**&#34;,</span>
+  <span style="color:#75715e">#   elo = &#34;**Elo**&#34;, </span>
+  <span style="color:#75715e">#   .fn = md</span>
+  <span style="color:#75715e"># ) %&gt;%</span>
+  <span style="color:#75715e"># fmt_number(columns = elo, sep_mark = &#34;.&#34;, decimals = 0) |&gt; </span>
+  <span style="color:#75715e"># opt_interactive()</span>
+</code></pre></div><p>La selección campeona en Qatar 2022 ocupa la primera posición, como era de esperar. También era de esperar la segunda posición. En el resto de la tabla pueden surgir algunas sorpresas, países que no creíamos que estuvieran tan bien rankeados -tal vez por tener presente su performance únicamente en el último mundial y no los enfrentamientos en otras competencias-. Adentrándonos en las profundidades de la tabla podemos detectar algunos territorios pintorescos, como el territorio dependiente de Estados Unidos Samoa Americana, la República de Palaos o las Islas Marianas del Pacífico. Selecciones con las que se podría fantasear arrancarles una victoria con nuestro equipo de amigos.</p>
 <h2 id="argentina-en-el-tiempo">Argentina en el tiempo</h2>
 <p>Si nos enfocamos en la selección Argentina, podemos seguir su derrotero desde el año 1902. Los picos cuando se obtuvieron las 3 Copas Mundiales son elocuentes. Llama la atención la clasificación durante las décadas de 1940 y 1950, tiempos en los cuales la selección albiceleste tenía grandes participaciones en los Campeonatos Sudamericanos (actual Copa América). En 1957, por ejemplo, <a href="https://es.wikipedia.org/wiki/Campeonato_Sudamericano_1957">la Argentina obtiene el torneo continental con grandes goleadas (4-0 a Uruguay, 3-0 a Brasil) de la mano de la delantera de <em>Los Carasucias</em></a>.</p>
 <center>
@@ -769,6 +378,15 @@ Veamos cómo está el ranking actualmente</p>
        <span style="color:#111">title</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;Puntaje Elo de Argentina y Alemania y diferencia entre ambos&#34;</span><span style="color:#111">,</span>
        <span style="color:#111">subtitle</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;Aplica Alemania Occidental durante la división&#34;</span><span style="color:#111">)</span>
 </code></pre></div><img src="https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/index_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />
+<h2 id="conociendo-al-autor-juan-urricariet">Conociendo al autor <strong>[Juan Urricariet]</strong></h2>
+<p><em>Soy un economista apasionado por la ciencia de datos. Tengo experiencia en el ámbito de las estadísticas oficiales y en el análisis económico, donde implementé herramientas de programación (R principalemente) para la gran parte de las tareas de trabajo.</em></p>
+<figure>
+<img src="foto_juan.jpeg" style="width:30.0%" alt="Juan Urricariet" />
+<figcaption aria-hidden="true">Juan Urricariet</figcaption>
+</figure>
+<p>Pueden conocer su trabajo y contactarse por:</p>
+<p><strong>Github</strong>: <a href="https://github.com/jurricariet">https://github.com/jurricariet</a></p>
+<p>📬: <a href="mailto:juanurricariet@gmail.com">juanurricariet@gmail.com</a></p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -826,7 +444,7 @@ Veamos cómo está el ranking actualmente</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        2582 Words
+        1764 Words
       </p>
 
       <p>

@@ -78,7 +78,6 @@ library(lubridate) # Paquete para datos con formato fecha
 library(tictoc) # Paquete para ver cuánto demoran los procesos
 library(tidyverse)
 library(ggtext) # Paquete para darle formato al texto
-library(gt) # Paquete para armar tablas
 ```
 
 
@@ -147,16 +146,7 @@ elo <- read_rds("elo_ranks_1873-01-01_2024-04-01.rds") %>%
 elo %>% filter(fecha == max(fecha)) %>% # Seleccionamos los registros de la última fecha
   arrange(-elo) %>% # Ordenamos valores de forma decreciente
   select(-fecha) %>% # Sacamos la variable fecha
-  gt() %>%
-  tab_header(md(glue::glue("**Ranking Elo al {format(max(elo$fecha),'%d de %B de %Y')}**"))) %>%  # Tabla y título
-  cols_label(
-    pais = "**País**",
-    elo = "**Elo**", 
-    .fn = md
-  ) %>%
-  fmt_number(columns = elo, sep_mark = ".", decimals = 0) |> 
-  opt_interactive()
-  
+  DT::datatable(caption = glue::glue("Ranking Elo al {format(max(elo$fecha),'%d de %B de %Y')}")) # Tabla y título
 ```
 
 La selección campeona en Qatar 2022 ocupa la primera posición, como era de esperar. También era de esperar la segunda posición. En el resto de la tabla pueden surgir algunas sorpresas, países que no creíamos que estuvieran tan bien rankeados -tal vez por tener presente su performance únicamente en el último mundial y no los enfrentamientos en otras competencias-. Adentrándonos en las profundidades de la tabla podemos detectar algunos territorios pintorescos, como el territorio dependiente de Estados Unidos Samoa Americana, la República de Palaos o las Islas Marianas del Pacífico. Selecciones con las que se podría fantasear arrancarles una victoria con nuestro equipo de amigos.
@@ -260,4 +250,19 @@ ggplot(data = elo_arg_germany,
        title = "Puntaje Elo de Argentina y Alemania y diferencia entre ambos",
        subtitle = "Aplica Alemania Occidental durante la división")
 ```
+
+
+
+## Conociendo al autor **[Juan Urricariet]**
+
+_Soy un economista apasionado por la ciencia de datos. Tengo experiencia en el ámbito de las estadísticas oficiales y en el análisis económico, donde implementé herramientas de programación (R principalemente) para la gran parte de las tareas de trabajo._
+
+![Juan Urricariet](foto_juan.jpeg){width=30%}
+
+Pueden conocer su trabajo y contactarse por:
+
+**Github**: https://github.com/jurricariet
+
+📬: juanurricariet@gmail.com
+
 

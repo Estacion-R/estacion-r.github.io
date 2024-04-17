@@ -20,8 +20,9 @@ images: ~
 
 
 ```{r echo=FALSE}
-     #.......................Configuración .Rmd.......................
+#.......................Configuración .Rmd.......................
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE)
+options(scipen = 999)
 ```
 
 ![](https://github.com/30DayChartChallenge/Edition2024/raw/main/img/prompts.png)
@@ -41,22 +42,22 @@ library(viridisLite)
 ```
 
 ```{r data}
-     #................Traigo datos gracias {datapasta}................
+#................Traigo datos gracias {datapasta}................
 df_causa_muerte_2022 <- tibble::tribble(
-    ~lugar,   ~cant,
-    "Hogar", 411803,
-    "Instituto Mexicano del Seguro Social (IMSS)", 145608,
-    "Secretaría de Salud (SSA)", 99960,
-    "Unidad médica privada", 36629,
-    "ISSSTE", 27572,
-    "Vía pública", 35392,
-    "Otro lugar", 43740,
-    "Otra unidad pública", 22549,
-    "No específicado", 18065
+  ~lugar,   ~cant,
+  "Hogar", 411803,
+  "Instituto Mexicano del Seguro Social (IMSS)", 145608,
+  "Secretaría de Salud (SSA)", 99960,
+  "Unidad médica privada", 36629,
+  "ISSSTE", 27572,
+  "Vía pública", 35392,
+  "Otro lugar", 43740,
+  "Otra unidad pública", 22549,
+  "No específicado", 18065
 )
 
 
-     #..........................Preparo datos.........................
+#..........................Preparo datos.........................
 df_causa_muerte_2022 <- df_causa_muerte_2022 |> 
   mutate(
     lugar = case_when(lugar %in% c("Instituto Mexicano del Seguro Social (IMSS)", "Secretaría de Salud (SSA)",
@@ -76,19 +77,19 @@ df_causa_muerte_2022 <- df_causa_muerte_2022 |>
 
 
 
-     #.................función para renderizar íconos.................
+#.................función para renderizar íconos.................
 fa_to_png_to_datauri <- function(name, ...) {
-
+  
   tmpfl <- tempfile(fileext = ".png")
-
+  
   fontawesome::fa_png(name, file = tmpfl, ...)
-
+  
   knitr::image_uri(tmpfl)
-
+  
 }
 
 
-      #.........................Preparo íconos.........................
+#.........................Preparo íconos.........................
 df_viz <- df_causa_muerte_2022 |>
   mutate(
     uri = map2_chr(faico, col, ~fa_to_png_to_datauri(.x, fill = .y)),
@@ -98,14 +99,14 @@ df_viz <- df_causa_muerte_2022 |>
 
 ```{r viz}
 
-     #..............................VIZ...............................
+#..............................VIZ...............................
 hchart(
   df_viz,
   "item",
   hcaes(name = lugar, y = porc),
   name = "What I eat",
   showInLegend = TRUE
-  ) |>
+) |>
   hc_title(
     text = "Distribución de las defunciones según sitio de ocurrencia",
     useHTML = TRUE
@@ -125,20 +126,156 @@ hchart(
   hc_colors(pull(df_viz, col))
 ```
 
-<br>
 
-### Recursos utilizados:
+#### Recursos utilizados:
 
 - Referencia para crear el gráfico con `{highcharter}`: [LINK](https://jkunst.com/highcharter/articles/fontawesome.html?q=waffle#another-example) 
-    
-    - Autor: [Joshua Kunst](https://jkunst.com/)
+
+- Autor: [Joshua Kunst](https://jkunst.com/)
 
 - Paleta de colores generada en [colorbrewer2.org](https://colorbrewer2.org/#type=qualitative&scheme=Set2&n=6)
 
 - Código: [LINK](https://github.com/pablotis/estacion-r.github.io/tree/main/R/CODE_30DayChallenge_day-4.R)
 
 
+```{r eval=FALSE, echo=FALSE}
+### Día 10. Físico
+# Fuente: Donación
+
+# http://datos.salud.gob.ar/dataset/expresiones-de-voluntad/archivo/031e4dd6-c904-4d60-911c-bf8a108ffb8d
+```
+
+<br>
+
+## Día 15 - Historical
+
+```{r}
+library(datapasta)
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(ggforce)
+library(tidyr)
 
 
+### Cargo datos
+source(file = "df_capacidad_instalada.R")
 
-## Día 5 - Divergente
+
+meses_texto <- df_capacidad_inst_orig |> 
+  select(anio, mes) |> 
+  filter(anio == 2023) |> pull(mes)
+
+meses_numero <- df_capacidad_inst_orig |> 
+  select(anio, mes) |> 
+  filter(anio == 2023) |> 
+  mutate(orden = row_number()) |> pull(orden)
+
+df_capacidad_inst <- df_capacidad_inst_orig |> 
+  mutate(periodo = paste0(anio, "-", meses_numero),
+         anio = ifelse(mes == "Enero", anio, NA_character_))
+
+valor_min <- df_capacidad_inst |> filter(nivel_general == min(nivel_general)) |> select(periodo, nivel_general)
+valor_max <- df_capacidad_inst |> filter(nivel_general == max(nivel_general)) |> select(periodo, nivel_general)
+valor_ult <- df_capacidad_inst |> filter(periodo == max(periodo)) |> select(periodo, nivel_general)
+
+```
+
+```{r warning=FALSE, message=FALSE, echo=FALSE}
+viz <- 
+  df_capacidad_inst |> 
+  ggplot(aes(x = periodo, y = nivel_general, group = "")) + 
+  #scale_x_discrete(labels = ) +
+  scale_x_discrete(breaks = c("2016-1", "2017-1", "2018-1", "2019-1", "2020-1", "2021-1", "2022-1", "2023-1", "2024-1", "2025-1"), 
+                   labels = c("2016-1", "2017-1", "2018-1", "2019-1", "2020-1", "2021-1", "2022-1", "2023-1", "2024-1", "2025-1")) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1, scale = 1)) +
+  geom_line() + 
+  ### Valor mínimo
+  geom_point(aes(x = valor_min$periodo, y = valor_min$nivel_general),
+             color = "red") +
+  geom_text(x = valor_min$periodo, y = valor_min$nivel_general,
+            label = paste0(valor_min$nivel_general, "%"),
+            color = "red", hjust = -0.5) +
+  annotate('text', 
+           x = "2019-1" , y = valor_min$nivel_general + 10,
+           label = paste("Valor mínimo:", valor_min$periodo), 
+           size = 4, color = "red") +
+  annotate(
+    'curve',
+    x = "2019-1", xend = "2020-4",
+    y = 51, 
+    yend = valor_min$nivel_general,
+    color = "red",
+    linewidth = 0.5,
+    curvature = 0.5,
+    arrow = arrow(length = unit(0.3, 'cm'))
+  ) +
+  ### Valor máximo
+  geom_point(aes(x = valor_max$periodo, y = valor_max$nivel_general),
+             color = "green") +
+  geom_text(x = valor_max$periodo, y = valor_max$nivel_general,
+            label = paste0(valor_max$nivel_general, "%"),
+            color = "green", hjust = -0.2) +
+  annotate('text', 
+           x = "2019-8" , 
+           y = 75,
+           label = paste("Valor Máximo:", valor_max$periodo), 
+           size = 4, color = "green") +
+  annotate('curve',
+           x = "2021-1", xend = "2022-8",
+           y = 75, yend = valor_max$nivel_general,
+           color = "green",
+           linewidth = 0.5,
+           curvature = -0.2,
+           arrow = arrow(length = unit(0.3, 'cm'))
+  ) +
+  ### Valor último
+  geom_point(aes(x = valor_ult$periodo, y = valor_ult$nivel_general),
+             color = "darkgrey") +
+  geom_text(x = valor_ult$periodo, y = valor_ult$nivel_general,
+            label = paste0(valor_ult$nivel_general, "%"),
+            color = "darkgrey", hjust = 1.2) +
+  annotate('text', 
+           x = "2022-1" , 
+           y = 45,
+           label = paste("Valor Último:", valor_ult$periodo), 
+           size = 4, color = "darkgrey") +
+  annotate('curve',
+           x = "2023-1", xend = "2024-1",
+           y = 45, yend = valor_ult$nivel_general-1,
+           color = "darkgrey",
+           linewidth = 0.5,
+           curvature = 0.5,
+           arrow = arrow(length = unit(0.3, 'cm'))
+  ) +
+  labs(x = "", y = "",
+       #color = "Período",
+       title = "Utilización de la Capacidad Instalada en la Industria.",
+       subtitle = "Serie 2016-2024. Argentina",
+       caption = "Fuente: Elaboración propia en base al INDEC") + 
+  theme(axis.line = element_line(color = "gray30", linewidth = rel(1)),
+        text = element_text(family = "Ubuntu"),
+        plot.title = element_text(size = rel(1.7)),
+        plot.subtitle = element_text(size = rel(1)),
+        axis.title.x = element_text(size = rel(1)),
+        axis.title.y = element_text(size = rel(1)),
+        legend.text = element_text(size = rel(1.25)),
+        legend.title = element_text(size = rel(1)),
+        strip.text = element_text(face = "bold", size = rel(.1))
+        #axis.text.x = element_blank(), 
+        #axis.ticks.x = element_blank()
+  )
+
+viz
+```
+
+#### Recursos utilizados:
+
+- Código: [LINK](https://github.com/pablotis/estacion-r.github.io/tree/main/R/CODE_30DayChallenge_day-15.R)
+
+- Fuente: INDEC. 
+
+    - [LINK](https://www.indec.gob.ar/uploads/informesdeprensa/capacidad_03_24EA7D6E7000.pdf) al informe 
+    
+    - [LINK](https://www.indec.gob.ar/ftp/cuadros/economia/sh_capacidad_03_24.xls a los datos
+
