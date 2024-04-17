@@ -254,7 +254,8 @@ viz <-
            curvature = 0.5,
            arrow = arrow(length = unit(0.3, 'cm'))
   ) +
-  theme_minimal() +
+  coord_fixed(ratio = 1, xlim = c(0, 100)) +
+  theme_minimal(base_family = "Ubuntu") +
   labs(x = "", y = "",
        #color = "Período",
        title = "Utilización de la Capacidad Instalada en la Industria.",
@@ -262,13 +263,18 @@ viz <-
        caption = "Fuente: Elaboración propia en base al INDEC") + 
   theme(axis.line = element_line(color = "gray30", linewidth = rel(1)),
         text = element_text(family = "Ubuntu"),
-        plot.title = element_text(size = rel(1.7)),
-        plot.subtitle = element_text(size = rel(1)),
+        plot.title = element_text(face = "bold", size = rel(1.6), margin = margin(b = 10)),
+        plot.title.position = "panel",
+        plot.subtitle = element_text(size = rel(1), margin = margin(b = 15)),
+        #plot.caption = element_text(margin = margin(t = 10)),
+        plot.caption.position = "plot",
         axis.title.x = element_text(size = rel(1)),
         axis.title.y = element_text(size = rel(1)),
         legend.text = element_text(size = rel(1.25)),
         legend.title = element_text(size = rel(1)),
-        strip.text = element_text(face = "bold", size = rel(.1))
+        strip.text = element_text(face = "bold", size = rel(.1)),
+        panel.grid = element_blank(),
+        plot.margin = margin(rep(20, 4))
         #axis.text.x = element_blank(), 
         #axis.ticks.x = element_blank()
   )
