@@ -1,0 +1,99 @@
+
+
+
+<div id="día-10---físico" class="section level2">
+<h2>Día 10 - Físico</h2>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.5.0     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.3     ✔ tidyr     1.3.0
+## ✔ purrr     1.0.2     
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<pre class="r"><code>df_montanias &lt;- data_frame(
+  label = str_wrap(
+    c(
+      &quot;Cerro Guanaco 🇦🇷 (2010)&quot;, 
+      &quot;Cerro Cristal 🇦🇷 (2010)&quot;, 
+      &quot;Lanin 🇦🇷 (2011)&quot;, 
+      &quot;Domuyo 🇦🇷 (2017)&quot;,
+      &quot;Cajón Negro 🇦🇷 (2021)&quot;,
+      &quot;Mirador Coconetla 🇲🇽 (2022)&quot;,
+      &quot;Pico del Águila 🇲🇽 (2023)&quot;, 
+      &quot;La Malinche 🇲🇽 (2024)&quot;, 
+      &quot;Nevado de Toluca -Pico Huixqui- 🇲🇽 (2024)&quot;), 
+    15),
+  altura = c(
+    960,
+    1282,
+    3747, 
+    4702, 
+    1669,
+    3372,
+    3900,
+    4461, 
+    4450))</code></pre>
+<pre><code>## Warning: `data_frame()` was deprecated in tibble 1.1.0.
+## ℹ Please use `tibble()` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
+<pre class="r"><code>df_montanias &lt;- df_montanias |&gt; 
+  mutate(montania_color = case_when(altura &gt;= 0 &amp; altura &lt;= 1000 ~ &quot;#018571&quot;,
+                                    altura &gt;= 1001 &amp; altura &lt;= 2000 ~ &quot;#80cdc1&quot;,
+                                    altura &gt;= 2001 &amp; altura &lt;= 3000 ~ &quot;lightgray&quot;,
+                                    altura &gt;= 3001 &amp; altura &lt;= 4000 ~ &quot;#dfc27d&quot;,
+                                    altura &gt;= 4001 &amp; altura &lt;= 5000 ~ &quot;#a6611a&quot;))
+
+logo &lt;- &quot;&lt;img src=&#39;person-hiking-solid.png&#39; height=20&gt;&lt;/img&gt;&quot;
+image_title &lt;- glue::glue(&quot;{logo} &quot;)
+
+df_montanias %&gt;%
+  mutate(id = row_number(),
+         label = factor(label, label)) %&gt;%
+  group_by(label) %&gt;%
+  reframe(x = id + c(-0.67, 0.67, 0, -0.67),
+          y = c(0, 0, altura, 0)) %&gt;%
+  mutate(montania_color = case_when(y &gt;= 0 &amp; y  &lt;= 1000 ~ &quot;Hasta 1.000 mts.&quot;,
+                                    y &gt;= 1001 &amp; y  &lt;= 2000 ~ &quot;Entre 1.001 y 2.000 mts.&quot;,
+                                    y &gt;= 2001 &amp; y  &lt;= 3000 ~ &quot;Entre 2.001 y 3.000 mts.&quot;,
+                                    y &gt;= 3001 &amp; y  &lt;= 4000 ~ &quot;Entre 3.001 y 4.000 mts.&quot;,
+                                    y &gt;= 4001 &amp; y  &lt;= 5000 ~ &quot;Entre 4.001 y 5.000 mts.&quot;)) %&gt;% 
+  ggplot(aes(x, y, fill = label)) +
+  geom_hline(yintercept = 0, linetype = 1, color = &#39;black&#39;) +
+  geom_polygon() +
+  geom_text(data = df_montanias, 
+            aes(x = seq_along(label), y = 120, label = paste0(format(altura, big.mark = &quot;.&quot;), &quot; mts.&quot;)),
+            color = &#39;white&#39;, size = 2.3, fontface = &#39;bold&#39;) +
+  geom_text(data = df_montanias, 
+            aes(x = seq_along(label), y = altura, label = label),
+            nudge_y = 200, fontface = &#39;bold&#39;, size = 2.5, color = &#39;gray30&#39;) + 
+ scale_fill_manual(values = c(&quot;#018571&quot;, &quot;#80cdc1&quot;, &quot;#dfc27d&quot;, &quot;#a6611a&quot;, &quot;#80cdc1&quot;, 
+                              &quot;#dfc27d&quot;, &quot;#dfc27d&quot;,  &quot;#a6611a&quot;, &quot;#a6611a&quot;),
+                   labels = c(&quot;Test 1&quot;, &quot;test2&quot;)) +
+  labs(title = glue::glue(&quot;La escalera al cielo {image_title} (Picos alcanzados&quot;),
+       subtitle = &quot;&lt;span style = &#39;color: #018571;&#39;&gt;Entre 0 y 1000 mts.&lt;/span&gt; | 
+                   &lt;span style = &#39;color: #80cdc1;&#39;&gt;Entre 1001 y 2000 mts.&lt;/span&gt; |
+                   &lt;span style = &#39;color: lightgray;&#39;&gt;Entre 2001 y 3000 mts.&lt;/span&gt; | 
+                   &lt;span style = &#39;color: #dfc27d;&#39;&gt;Entre 3001 y 4000 mts.&lt;/span&gt; |
+                   &lt;span style = &#39;color: #a6611a;&#39;&gt;Entre 4001 y 5000 mts.&lt;/span&gt;&quot;,
+       caption = &quot;@estacion_erre | linktr.ee/estacion_r&quot;) +
+  theme_void() +
+  theme(legend.position = &#39;none&#39;,
+        text = element_text(family = &quot;Ubuntu&quot;),
+        plot.title = ggtext::element_markdown(color = &#39;gray30&#39;, 
+                                              size = 15,
+                                              hjust = 0.5,
+                                              margin = margin(5, 0, 5, 0)),
+        plot.subtitle = ggtext::element_markdown(size = 8, hjust = 0.5,
+                                                 margin = margin(5, 0, 10, 0)),
+        plot.caption = element_text(color = &quot;gray60&quot;),
+        plot.margin = margin(rep(20, 4)))</code></pre>
+<pre><code>## Warning in prettyNum(.Internal(format(x, trim, digits, nsmall, width, 3L, :
+## &#39;big.mark&#39; and &#39;decimal.mark&#39; are both &#39;.&#39;, which could be confusing</code></pre>
+<p><img src="/posts/2024-04-04-thirty-day-chart-challenge/days/day10-physical_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+</div>

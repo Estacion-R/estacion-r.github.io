@@ -1,0 +1,82 @@
+
+## Día 10 - Físico
+
+```{r}
+library(tidyverse)
+
+df_montanias <- data_frame(
+  label = str_wrap(
+    c(
+      "Cerro Guanaco 🇦🇷 (2010)", 
+      "Cerro Cristal 🇦🇷 (2010)", 
+      "Lanin 🇦🇷 (2011)", 
+      "Domuyo 🇦🇷 (2017)",
+      "Cajón Negro 🇦🇷 (2021)",
+      "Mirador Coconetla 🇲🇽 (2022)",
+      "Pico del Águila 🇲🇽 (2023)", 
+      "La Malinche 🇲🇽 (2024)", 
+      "Nevado de Toluca -Pico Huixqui- 🇲🇽 (2024)"), 
+    15),
+  altura = c(
+    960,
+    1282,
+    3747, 
+    4702, 
+    1669,
+    3372,
+    3900,
+    4461, 
+    4450))
+
+df_montanias <- df_montanias |> 
+  mutate(montania_color = case_when(altura >= 0 & altura <= 1000 ~ "#018571",
+                                    altura >= 1001 & altura <= 2000 ~ "#80cdc1",
+                                    altura >= 2001 & altura <= 3000 ~ "lightgray",
+                                    altura >= 3001 & altura <= 4000 ~ "#dfc27d",
+                                    altura >= 4001 & altura <= 5000 ~ "#a6611a"))
+
+logo <- "<img src='person-hiking-solid.png' height=20></img>"
+image_title <- glue::glue("{logo} ")
+
+df_montanias %>%
+  mutate(id = row_number(),
+         label = factor(label, label)) %>%
+  group_by(label) %>%
+  reframe(x = id + c(-0.67, 0.67, 0, -0.67),
+          y = c(0, 0, altura, 0)) %>%
+  mutate(montania_color = case_when(y >= 0 & y  <= 1000 ~ "Hasta 1.000 mts.",
+                                    y >= 1001 & y  <= 2000 ~ "Entre 1.001 y 2.000 mts.",
+                                    y >= 2001 & y  <= 3000 ~ "Entre 2.001 y 3.000 mts.",
+                                    y >= 3001 & y  <= 4000 ~ "Entre 3.001 y 4.000 mts.",
+                                    y >= 4001 & y  <= 5000 ~ "Entre 4.001 y 5.000 mts.")) %>% 
+  ggplot(aes(x, y, fill = label)) +
+  geom_hline(yintercept = 0, linetype = 1, color = 'black') +
+  geom_polygon() +
+  geom_text(data = df_montanias, 
+            aes(x = seq_along(label), y = 120, label = paste0(format(altura, big.mark = "."), " mts.")),
+            color = 'white', size = 2.3, fontface = 'bold') +
+  geom_text(data = df_montanias, 
+            aes(x = seq_along(label), y = altura, label = label),
+            nudge_y = 200, fontface = 'bold', size = 2.5, color = 'gray30') + 
+ scale_fill_manual(values = c("#018571", "#80cdc1", "#dfc27d", "#a6611a", "#80cdc1", 
+                              "#dfc27d", "#dfc27d",  "#a6611a", "#a6611a"),
+                   labels = c("Test 1", "test2")) +
+  labs(title = glue::glue("La escalera al cielo {image_title} (Picos alcanzados"),
+       subtitle = "<span style = 'color: #018571;'>Entre 0 y 1000 mts.</span> | 
+                   <span style = 'color: #80cdc1;'>Entre 1001 y 2000 mts.</span> |
+                   <span style = 'color: lightgray;'>Entre 2001 y 3000 mts.</span> | 
+                   <span style = 'color: #dfc27d;'>Entre 3001 y 4000 mts.</span> |
+                   <span style = 'color: #a6611a;'>Entre 4001 y 5000 mts.</span>",
+       caption = "@estacion_erre | linktr.ee/estacion_r") +
+  theme_void() +
+  theme(legend.position = 'none',
+        text = element_text(family = "Ubuntu"),
+        plot.title = ggtext::element_markdown(color = 'gray30', 
+                                              size = 15,
+                                              hjust = 0.5,
+                                              margin = margin(5, 0, 5, 0)),
+        plot.subtitle = ggtext::element_markdown(size = 8, hjust = 0.5,
+                                                 margin = margin(5, 0, 10, 0)),
+        plot.caption = element_text(color = "gray60"),
+        plot.margin = margin(rep(20, 4)))
+```

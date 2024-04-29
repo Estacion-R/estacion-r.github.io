@@ -292,3 +292,9 @@ viz
     
     - [LINK](https://www.indec.gob.ar/ftp/cuadros/economia/sh_capacidad_03_24.xls a los datos
 
+
+<br>
+
+```{r day10, child='days/day10-physical.Rmd', eval=TRUE}
+```
+
