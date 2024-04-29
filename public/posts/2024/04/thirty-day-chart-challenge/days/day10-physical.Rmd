@@ -1,6 +1,4 @@
 
-## Día 10 - Físico
-
 ```{r}
 library(tidyverse)
 
