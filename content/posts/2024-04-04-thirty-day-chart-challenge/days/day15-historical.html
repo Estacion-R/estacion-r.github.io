@@ -1,0 +1,98 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+## ✔ purrr     1.0.2     
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<pre class="r"><code>library(ggforce)
+library(janitor)</code></pre>
+<pre><code>## 
+## Adjuntando el paquete: &#39;janitor&#39;
+## 
+## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     chisq.test, fisher.test</code></pre>
+<pre class="r"><code>### Cargo datos
+source(file = &quot;df_capacidad_instalada.R&quot;)
+
+df_capacidad_inst_orig &lt;- df_capacidad_inst_orig |&gt; 
+  select(&quot;mes&quot; = Período, `Nivel general`) |&gt; 
+  janitor::clean_names() |&gt; 
+  janitor::remove_empty() |&gt; 
+  mutate(nivel_general = parse_number(nivel_general)) |&gt; 
+  mutate(anio = parse_number(mes)) |&gt; 
+  fill(anio) |&gt; 
+  filter(!is.na(nivel_general)) |&gt; 
+  mutate(mes = str_remove(mes, &quot;\\*&quot;))</code></pre>
+<pre><code>## value for &quot;which&quot; not specified, defaulting to c(&quot;rows&quot;, &quot;cols&quot;)</code></pre>
+<pre><code>## Warning: There was 1 warning in `mutate()`.
+## ℹ In argument: `nivel_general = parse_number(nivel_general)`.
+## Caused by warning:
+## ! 1 parsing failure.
+## row col expected     actual
+##   1  -- a number Porcentaje</code></pre>
+<pre><code>## Warning: There was 1 warning in `mutate()`.
+## ℹ In argument: `anio = parse_number(mes)`.
+## Caused by warning:
+## ! 104 parsing failures.
+## row col expected   actual
+##   3  -- a number Enero*  
+##   4  -- a number Febrero*
+##   5  -- a number Marzo*  
+##   6  -- a number Abril*  
+##   7  -- a number Mayo*   
+## ... ... ........ ........
+## See problems(...) for more details.</code></pre>
+<pre class="r"><code>meses_texto &lt;- df_capacidad_inst_orig |&gt; 
+  select(anio, mes) |&gt; 
+  filter(anio == 2023) |&gt; pull(mes)
+
+meses_numero &lt;- df_capacidad_inst_orig |&gt; 
+  select(anio, mes) |&gt; 
+  filter(anio == 2023) |&gt; 
+  mutate(orden = row_number()) |&gt; pull(orden)
+
+df_capacidad_inst &lt;- df_capacidad_inst_orig |&gt; 
+  mutate(periodo = paste0(anio, &quot;-&quot;, meses_numero),
+         periodo = factor(periodo,
+                          levels = c(&quot;2016-1&quot;, &quot;2016-2&quot;, &quot;2016-3&quot;, &quot;2016-4&quot;, &quot;2016-5&quot;, &quot;2016-6&quot;, 
+                                     &quot;2016-7&quot;, &quot;2016-8&quot;, &quot;2016-9&quot;, &quot;2016-10&quot;, &quot;2016-11&quot;, &quot;2016-12&quot;,
+                                     &quot;2017-1&quot;, &quot;2017-2&quot;, &quot;2017-3&quot;, &quot;2017-4&quot;, &quot;2017-5&quot;, &quot;2017-6&quot;, 
+                                     &quot;2017-7&quot;, &quot;2017-8&quot;, &quot;2017-9&quot;, &quot;2017-10&quot;, &quot;2017-11&quot;, &quot;2017-12&quot;,
+                                     &quot;2018-1&quot;, &quot;2018-2&quot;, &quot;2018-3&quot;, &quot;2018-4&quot;, &quot;2018-5&quot;, &quot;2018-6&quot;, 
+                                     &quot;2018-7&quot;, &quot;2018-8&quot;, &quot;2018-9&quot;, &quot;2018-10&quot;, &quot;2018-11&quot;, &quot;2018-12&quot;,
+                                     &quot;2019-1&quot;, &quot;2019-2&quot;, &quot;2019-3&quot;, &quot;2019-4&quot;, &quot;2019-5&quot;, &quot;2019-6&quot;, 
+                                     &quot;2019-7&quot;, &quot;2019-8&quot;, &quot;2019-9&quot;, &quot;2019-10&quot;, &quot;2019-11&quot;, &quot;2019-12&quot;,
+                                     &quot;2020-1&quot;, &quot;2020-2&quot;, &quot;2020-3&quot;, &quot;2020-4&quot;, &quot;2020-5&quot;, &quot;2020-6&quot;, 
+                                     &quot;2020-7&quot;, &quot;2020-8&quot;, &quot;2020-9&quot;, &quot;2020-10&quot;, &quot;2020-11&quot;, &quot;2020-12&quot;,
+                                     &quot;2021-1&quot;, &quot;2021-2&quot;, &quot;2021-3&quot;, &quot;2021-4&quot;, &quot;2021-5&quot;, &quot;2021-6&quot;, 
+                                     &quot;2021-7&quot;, &quot;2021-8&quot;, &quot;2021-9&quot;, &quot;2021-10&quot;, &quot;2021-11&quot;, &quot;2021-12&quot;,
+                                     &quot;2022-1&quot;, &quot;2022-2&quot;, &quot;2022-3&quot;, &quot;2022-4&quot;, &quot;2022-5&quot;, &quot;2022-6&quot;, 
+                                     &quot;2022-7&quot;, &quot;2022-8&quot;, &quot;2022-9&quot;, &quot;2022-10&quot;, &quot;2022-11&quot;, &quot;2022-12&quot;,
+                                     &quot;2023-1&quot;, &quot;2023-2&quot;, &quot;2023-3&quot;, &quot;2023-4&quot;, &quot;2023-5&quot;, &quot;2023-6&quot;, 
+                                     &quot;2023-7&quot;, &quot;2023-8&quot;, &quot;2023-9&quot;, &quot;2023-10&quot;, &quot;2023-11&quot;, &quot;2023-12&quot;,
+                                     &quot;2024-1&quot;, &quot;2024-2&quot;, &quot;2024-3&quot;, &quot;2024-4&quot;, &quot;2024-5&quot;, &quot;2024-6&quot;, 
+                                     &quot;2024-7&quot;, &quot;2024-8&quot;, &quot;2024-9&quot;, &quot;2024-10&quot;, &quot;2024-11&quot;, &quot;2024-12&quot;
+                          )),
+         anio = ifelse(mes == &quot;Enero&quot;, anio, NA_character_))
+
+valor_min_pand &lt;- df_capacidad_inst |&gt; filter(nivel_general == min(nivel_general)) |&gt; select(periodo, nivel_general)
+fecha_pandemia &lt;- df_capacidad_inst |&gt; filter(nivel_general == min(nivel_general)) |&gt; pull(periodo)
+valor_min &lt;- df_capacidad_inst |&gt; fill(anio) |&gt; filter(anio != 2020) |&gt; 
+  filter(nivel_general == min(nivel_general)) |&gt; select(periodo, nivel_general)
+valor_max &lt;- df_capacidad_inst |&gt; filter(nivel_general == max(nivel_general)) |&gt; select(periodo, nivel_general)
+#valor_ult &lt;- df_capacidad_inst |&gt; filter(periodo == max(periodo)) |&gt; select(periodo, nivel_general)</code></pre>
+<p><img src="/posts/2024-04-04-thirty-day-chart-challenge/days/day15-historical_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
