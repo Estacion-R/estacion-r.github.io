@@ -1,16 +1,28 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 
 
 ```{r}
-library(datapasta)
-library(readr)
-library(ggplot2)
-library(dplyr)
+library(tidyverse)
 library(ggforce)
-library(tidyr)
+library(janitor)
 
 
 ### Cargo datos
 source(file = "df_capacidad_instalada.R")
+
+df_capacidad_inst_orig <- df_capacidad_inst_orig |> 
+  select("mes" = Período, `Nivel general`) |> 
+  janitor::clean_names() |> 
+  janitor::remove_empty() |> 
+  mutate(nivel_general = parse_number(nivel_general)) |> 
+  mutate(anio = parse_number(mes)) |> 
+  fill(anio) |> 
+  filter(!is.na(nivel_general)) |> 
+  mutate(mes = str_remove(mes, "\\*"))
 
 
 meses_texto <- df_capacidad_inst_orig |> 
@@ -24,9 +36,32 @@ meses_numero <- df_capacidad_inst_orig |>
 
 df_capacidad_inst <- df_capacidad_inst_orig |> 
   mutate(periodo = paste0(anio, "-", meses_numero),
+         periodo = factor(periodo,
+                          levels = c("2016-1", "2016-2", "2016-3", "2016-4", "2016-5", "2016-6", 
+                                     "2016-7", "2016-8", "2016-9", "2016-10", "2016-11", "2016-12",
+                                     "2017-1", "2017-2", "2017-3", "2017-4", "2017-5", "2017-6", 
+                                     "2017-7", "2017-8", "2017-9", "2017-10", "2017-11", "2017-12",
+                                     "2018-1", "2018-2", "2018-3", "2018-4", "2018-5", "2018-6", 
+                                     "2018-7", "2018-8", "2018-9", "2018-10", "2018-11", "2018-12",
+                                     "2019-1", "2019-2", "2019-3", "2019-4", "2019-5", "2019-6", 
+                                     "2019-7", "2019-8", "2019-9", "2019-10", "2019-11", "2019-12",
+                                     "2020-1", "2020-2", "2020-3", "2020-4", "2020-5", "2020-6", 
+                                     "2020-7", "2020-8", "2020-9", "2020-10", "2020-11", "2020-12",
+                                     "2021-1", "2021-2", "2021-3", "2021-4", "2021-5", "2021-6", 
+                                     "2021-7", "2021-8", "2021-9", "2021-10", "2021-11", "2021-12",
+                                     "2022-1", "2022-2", "2022-3", "2022-4", "2022-5", "2022-6", 
+                                     "2022-7", "2022-8", "2022-9", "2022-10", "2022-11", "2022-12",
+                                     "2023-1", "2023-2", "2023-3", "2023-4", "2023-5", "2023-6", 
+                                     "2023-7", "2023-8", "2023-9", "2023-10", "2023-11", "2023-12",
+                                     "2024-1", "2024-2", "2024-3", "2024-4", "2024-5", "2024-6", 
+                                     "2024-7", "2024-8", "2024-9", "2024-10", "2024-11", "2024-12"
+                          )),
          anio = ifelse(mes == "Enero", anio, NA_character_))
 
-valor_min <- df_capacidad_inst |> filter(nivel_general == min(nivel_general)) |> select(periodo, nivel_general)
+valor_min_pand <- df_capacidad_inst |> filter(nivel_general == min(nivel_general)) |> select(periodo, nivel_general)
+fecha_pandemia <- df_capacidad_inst |> filter(nivel_general == min(nivel_general)) |> pull(periodo)
+valor_min <- df_capacidad_inst |> fill(anio) |> filter(anio != 2020) |> 
+  filter(nivel_general == min(nivel_general)) |> select(periodo, nivel_general)
 valor_max <- df_capacidad_inst |> filter(nivel_general == max(nivel_general)) |> select(periodo, nivel_general)
 valor_ult <- df_capacidad_inst |> filter(periodo == max(periodo)) |> select(periodo, nivel_general)
 
@@ -35,33 +70,31 @@ valor_ult <- df_capacidad_inst |> filter(periodo == max(periodo)) |> select(peri
 ```{r warning=FALSE, message=FALSE, echo=FALSE}
 viz <- 
   df_capacidad_inst |> 
-  ggplot(aes(x = periodo, y = nivel_general, group = "")) + 
-  #scale_x_discrete(labels = ) +
+  ggplot(aes(x = as.factor(periodo), y = nivel_general, group = "")) + 
   scale_x_discrete(breaks = c("2016-1", "2017-1", "2018-1", "2019-1", "2020-1", "2021-1", "2022-1", "2023-1", "2024-1", "2025-1"), 
                    labels = c("2016-1", "2017-1", "2018-1", "2019-1", "2020-1", "2021-1", "2022-1", "2023-1", "2024-1", "2025-1")) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1, scale = 1)) +
   geom_line() + 
   ### Valor mínimo
-  geom_point(aes(x = valor_min$periodo, y = valor_min$nivel_general),
-             color = "red") +
-  geom_text(x = valor_min$periodo, y = valor_min$nivel_general,
-            label = paste0(valor_min$nivel_general, "%"),
-            color = "red", hjust = -0.5,
+  geom_point(aes(x = valor_min_pand$periodo, y = valor_min_pand$nivel_general),
+             color = "orange") +
+  geom_text(x = valor_min_pand$periodo, y = valor_min_pand$nivel_general,
+            label = paste0(valor_min_pand$nivel_general, "%"),
+            color = "orange", hjust = -0.5,
             family = "Ubuntu") +
   annotate('text', 
-           x = "2019-1" , y = valor_min$nivel_general + 10,
-           label = paste("Valor mínimo:", valor_min$periodo), 
-           size = 4, color = "red",
+           x = "2019-1" , y = valor_min_pand$nivel_general + 10,
+           label = paste("Pandemia:", valor_min_pand$periodo), 
+           size = 4, color = "orange",
            family = "Ubuntu") +
-  annotate(
-    'curve',
-    x = "2019-1", xend = "2020-4",
-    y = 51, 
-    yend = valor_min$nivel_general,
-    color = "red",
-    linewidth = 0.5,
-    curvature = 0.5,
-    arrow = arrow(length = unit(0.3, 'cm'))
+  annotate('curve',
+           x = "2019-1", xend = "2020-4",
+           y = 51, 
+           yend = valor_min_pand$nivel_general,
+           color = "orange",
+           linewidth = 0.5,
+           curvature = 0.5,
+           arrow = arrow(length = unit(0.3, 'cm'))
   ) +
   ### Valor máximo
   geom_point(aes(x = valor_max$periodo, y = valor_max$nivel_general),
@@ -85,22 +118,43 @@ viz <-
            arrow = arrow(length = unit(0.3, 'cm'))
   ) +
   ### Valor último
-  geom_point(aes(x = valor_ult$periodo, y = valor_ult$nivel_general),
-             color = "darkgrey") +
-  geom_text(x = valor_ult$periodo, y = valor_ult$nivel_general,
-            label = paste0(valor_ult$nivel_general, "%"),
-            color = "darkgrey", hjust = 1.2,
+  # geom_point(aes(x = valor_ult$periodo, y = valor_ult$nivel_general),
+  #            color = "darkgrey") +
+  # geom_text(x = valor_ult$periodo, y = valor_ult$nivel_general,
+  #           label = paste0(valor_ult$nivel_general, "%"),
+  #           color = "darkgrey", hjust = 1.2,
+  #           family = "Ubuntu") +
+  # annotate('text', 
+  #          x = "2022-1" , 
+  #          y = 45,
+  #          label = paste("Valor Último:", valor_ult$periodo), 
+  #          size = 4, color = "darkgrey",
+  #          family = "Ubuntu") +
+  # annotate('curve',
+  #          x = "2023-1", xend = "2024-1",
+  #          y = 45, yend = valor_ult$nivel_general-1,
+  #          color = "darkgrey",
+  #          linewidth = 0.5,
+  #          curvature = 0.5,
+  #          arrow = arrow(length = unit(0.3, 'cm'))
+  # ) +
+  ### Valor más bajo
+  geom_point(aes(x = valor_min$periodo, y = valor_min$nivel_general),
+             color = "red") +
+  geom_text(x = valor_min$periodo, y = valor_min$nivel_general,
+            label = paste0(valor_min$nivel_general, "%"),
+            color = "red", hjust = 1.2,
             family = "Ubuntu") +
   annotate('text', 
            x = "2022-1" , 
            y = 45,
-           label = paste("Valor Último:", valor_ult$periodo), 
-           size = 4, color = "darkgrey",
+           label = paste("Valor más bajo:", valor_min$periodo), 
+           size = 4, color = "red",
            family = "Ubuntu") +
   annotate('curve',
-           x = "2023-1", xend = "2024-1",
-           y = 45, yend = valor_ult$nivel_general-1,
-           color = "darkgrey",
+           x = "2023-2", xend = valor_min$periodo,
+           y = 45, yend = valor_min$nivel_general-1,
+           color = "red",
            linewidth = 0.5,
            curvature = 0.5,
            arrow = arrow(length = unit(0.3, 'cm'))
@@ -124,7 +178,7 @@ viz <-
         legend.text = element_text(size = rel(1.25)),
         legend.title = element_text(size = rel(1)),
         strip.text = element_text(face = "bold", size = rel(.1)),
-        panel.grid = element_blank(),
+        #panel.grid = element_blank(),
         plot.margin = margin(rep(20, 4))
         #axis.text.x = element_blank(), 
         #axis.ticks.x = element_blank()
