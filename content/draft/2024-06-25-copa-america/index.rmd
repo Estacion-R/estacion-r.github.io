@@ -1,0 +1,33 @@
+---
+title: Copa America
+author: Pablo Tiscornia
+date: '2024-06-25'
+slug: copa-america
+categories:
+  - futbol
+  - shiny
+tags:
+  - rstats
+  - rstatsES
+  - futbol
+  - copaamerica
+  - argentina
+  - shinyapp
+  - shiny
+  - highcharter
+draft: yes
+toc: no
+images: ~
+---
+
+```{r}
+source(here::here("content/draft/2024-06-25-copa-america/df_copa_america.R"))
+```
+
+```{r}
+## Creo el grafico
+brackets::bracketsViewer(df_copa_america)
+
+```
+
+

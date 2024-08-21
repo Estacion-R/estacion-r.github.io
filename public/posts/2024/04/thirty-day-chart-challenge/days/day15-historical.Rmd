@@ -63,7 +63,7 @@ fecha_pandemia <- df_capacidad_inst |> filter(nivel_general == min(nivel_general
 valor_min <- df_capacidad_inst |> fill(anio) |> filter(anio != 2020) |> 
   filter(nivel_general == min(nivel_general)) |> select(periodo, nivel_general)
 valor_max <- df_capacidad_inst |> filter(nivel_general == max(nivel_general)) |> select(periodo, nivel_general)
-valor_ult <- df_capacidad_inst |> filter(periodo == max(periodo)) |> select(periodo, nivel_general)
+#valor_ult <- df_capacidad_inst |> filter(periodo == max(periodo)) |> select(periodo, nivel_general)
 
 ```
 
@@ -179,6 +179,9 @@ viz <-
         legend.title = element_text(size = rel(1)),
         strip.text = element_text(face = "bold", size = rel(.1)),
         #panel.grid = element_blank(),
+        panel.grid.minor.y = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_blank(),
         plot.margin = margin(rep(20, 4))
         #axis.text.x = element_blank(), 
         #axis.ticks.x = element_blank()
@@ -187,4 +190,3 @@ viz <-
 viz
 ```
 
-```
