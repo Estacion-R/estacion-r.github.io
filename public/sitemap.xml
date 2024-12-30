@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://estacion-r.netlify.app/posts/2024/12/adi%C3%B3s-2024.-hola-2025./</loc>
+    <lastmod>2024-12-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/</loc>
+    <lastmod>2024-12-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/posts/</loc>
+    <lastmod>2024-12-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/</loc>
+    <lastmod>2024-12-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://estacion-r.netlify.app/tags/untagged/</loc>
+    <lastmod>2024-12-30T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://estacion-r.netlify.app/tags/analisis/</loc>
     <lastmod>2024-04-10T00:00:00+00:00</lastmod>
   </url><url>
@@ -26,9 +41,6 @@
     <loc>https://estacion-r.netlify.app/tags/elo/</loc>
     <lastmod>2024-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://estacion-r.netlify.app/</loc>
-    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://estacion-r.netlify.app/tags/futbol/</loc>
     <lastmod>2024-04-10T00:00:00+00:00</lastmod>
   </url><url>
@@ -42,9 +54,6 @@
     <lastmod>2024-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/tags/lubridate/</loc>
-    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/posts/</loc>
     <lastmod>2024-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/tags/rstats/</loc>
@@ -63,9 +72,6 @@
     <lastmod>2024-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/categories/seleccion/</loc>
-    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/tags/</loc>
     <lastmod>2024-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/tags/tidyverse/</loc>
@@ -132,9 +138,6 @@
     <lastmod>2023-09-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/categories/twitter/</loc>
-    <lastmod>2023-09-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://estacion-r.netlify.app/tags/untagged/</loc>
     <lastmod>2023-09-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://estacion-r.netlify.app/categories/x/</loc>

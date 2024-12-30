@@ -5,8 +5,113 @@
         <description>Recent content in Posts on Estación 🇷</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>es-AR</language>
-        <lastBuildDate>Wed, 10 Apr 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 30 Dec 2024 00:00:00 +0000</lastBuildDate>
         <atom:link href="https://estacion-r.netlify.app/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Adiós 2024. Hola 2025.</title>
+            <link>https://estacion-r.netlify.app/posts/2024/12/adi%C3%B3s-2024.-hola-2025./</link>
+            <pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
+            
+            <guid>https://estacion-r.netlify.app/posts/2024/12/adi%C3%B3s-2024.-hola-2025./</guid>
+            <description>Resumen 2024: Un año de crecimiento y aprendizajes en Estación R Este 2024 ha sido un año emocionante para Estación R. Hemos alcanzado hitos importantes, sumado aprendizajes y contribuido a la comunidad de datos + R con nuevas iniciativas. A medida que cerramos este capítulo, miramos hacia el 2025 con más energía que nunca.
+ Lo que logramos en 2024 Cursos y formación Dos cohortes del curso “Introducción al Procesamiento de Datos con R”.</description>
+            <content type="html"><![CDATA[
+  <link rel="stylesheet" href="estilo.css" type="text/css" />
+
+
+<p><img src="img/Logo_PNG_Alta_Mesa%20de%20trabajo%201.png" width="700px" style="display: block; margin: auto;" /></p>
+<div id="resumen-2024-un-año-de-crecimiento-y-aprendizajes-en-estación-r" class="section level2">
+<h2>Resumen 2024: Un año de crecimiento y aprendizajes en Estación R</h2>
+<p>Este 2024 ha sido un año emocionante para Estación R. Hemos alcanzado hitos importantes, sumado aprendizajes y contribuido a la comunidad de datos + R con nuevas iniciativas. A medida que cerramos este capítulo, miramos hacia el 2025 con más energía que nunca.</p>
+</div>
+<div id="lo-que-logramos-en-2024" class="section level2">
+<h2>Lo que logramos en 2024</h2>
+<div id="cursos-y-formación" class="section level3">
+<h3><strong>Cursos y formación</strong></h3>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><strong>Dos cohortes del curso “Introducción al Procesamiento de Datos con R”.</strong></p>
+<p>Este curso se consolidó como una de nuestras propuestas más populares, ayudando a decenas de personas a dar sus primeros pasos en el análisis de datos con R.</p>
+</div><div class="column" style="width:4%;">
+<p> <!-- an empty Div (with a white space), serving as a column separator --></p>
+</div><div class="column" style="width:48%;">
+<p><img src="img/Flyer%20-%20Intro%20a%20R%202024.png" style="width:50.0%" /></p>
+</div>
+</div>
+<p> <!-- an empty Div again to give some extra space before the next block --></p>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><img src="img/Flyer_intro_shiny.jpeg" style="width:50.0%" /></p>
+</div><div class="column" style="width:4%;">
+<p> <!-- an empty Div (with a white space), serving as a column separator --></p>
+</div><div class="column" style="width:48%;">
+<p><strong>Nuevo curso: “Introducción al desarrollo de Dashboards y Aplicaciones web con R y Shiny”.</strong></p>
+<p>De la mano de <a href="https://www.linkedin.com/in/eli%C3%A1n-soutullo/">Elian Soutullo</a>, este curso fue un éxito en su primera versión ya estamos trabajando en una nueva edición para el 2025, además de planear talleres específicos para profundizar en estas herramientas.</p>
+</div>
+</div>
+<p> <!-- an empty Div again to give some extra space before the next block --></p>
+</div>
+<div id="contribuciones-a-la-comunidad" class="section level3">
+<h3><strong>Contribuciones a la comunidad</strong></h3>
+<ul>
+<li><p><strong>Nuestro blog</strong>: Finalmente logramos publicar algunos artículos, compartiendo experiencias, tips y reflexiones para seguir aportando al ecosistema de R.</p></li>
+<li><p><strong>Tips de R</strong>: ¡Publicamos más de <strong>200 tips de R</strong> en nuestras redes (X, LinkedIn, Mastodon y Bluesky)!. Este proyecto sigue creciendo gracias al entusiasmo y apoyo de la comunidad.</p></li>
+</ul>
+</div>
+<div id="colaboración-con-organizaciones" class="section level3">
+<h3><strong>Colaboración con organizaciones</strong></h3>
+<div class="columns">
+<div class="column" style="width:48%;">
+<p><strong>Flujo de trabajo con datos y automatización de reportes.</strong></p>
+<p>Trabajamos junto a la Agencia de Acceso a la Información Pública (AAIP) para desarrollar un flujo de trabajo que automatiza la importación, limpieza y publicación de datos. Este sistema no solo optimiza el proceso para publicar datos en el portal de datos abiertos del organismo, sino que también genera <strong>más de 200 reportes automáticos</strong> con solo unos clics.</p>
+</div><div class="column" style="width:4%;">
+<p> <!-- an empty Div (with a white space), serving as a column separator --></p>
+</div><div class="column" style="width:48%;">
+<p><img src="img/portada_trim_x_organismo-1.png" style="width:60.0%" /></p>
+</div>
+</div>
+<p> <!-- an empty Div again to give some extra space before the next block --></p>
+<p><strong>Capacitación de equipos de datos.</strong></p>
+<p>Diseñamos y llevamos adelante una capacitación al equipo de datos de la AAIP, dándoles asistencia y herramientas para que puedan mantener y mejorar el flujo de trabajo con sus propias manos.</p>
+<p><img src="img/circuito_del_dato_tidy.png" width="640" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="lo-que-se-viene-en-2025" class="section level2">
+<h2>¡Lo que se viene en 2025!</h2>
+<div id="proyectos-con-organizaciones" class="section level3">
+<h3><strong>Proyectos con organizaciones</strong></h3>
+<p>Seguiremos apoyando a las organizaciones en el diseño de flujos de trabajo con datos y tableros que faciliten el procesamiento de datos, el análisis de la información y la toma de decisiones. Siempre tratamos de acompañar este trabajo con un plan de capacitación integral para que las organizaciones se conviertan en dueñas de sus propios procesos.</p>
+</div>
+<div id="más-estaciones-r" class="section level3">
+<h3><strong>Más Estaciones R</strong></h3>
+<p>Ya estamos diseñando y planificando nuevos cursos para acompañar tu crecimiento en el mundo de la Ciencia de Datos con R.</p>
+<p>✅ Una nueva edición del curso <strong>“Introducción al Procesamiento de Datos con R”</strong>, ahora también con su versión asincrónica para que la hagas a tu ritmo.</p>
+<p>✅ Una nueva edición del curso <strong>“Introducción al desarrollo de Dashboards y Aplicaciones web con R y Shiny”</strong>.</p>
+<p>✅ Nuevos cursos como:</p>
+<ul>
+<li><strong>R Intermedio</strong></li>
+<li><strong>Git y GitHub</strong></li>
+<li><strong>Armado de reportes con R</strong></li>
+</ul>
+</div>
+<div id="una-nueva-plataforma-para-estación-r" class="section level3">
+<h3><strong>Una nueva plataforma para Estación R</strong></h3>
+<p>Estamos trabajando en el desarrollo de una nueva página web. Desde allí, podrás:</p>
+<ul>
+<li>Gestionar tus cursos sincrónicos y asincrónicos.</li>
+<li>Acceder a las novedades.</li>
+<li>Leer artículos exclusivos que continuaremos publicando.</li>
+</ul>
+</div>
+</div>
+<div id="gracias-por-acompañarnos" class="section level2">
+<h2>¡Gracias por acompañarnos!</h2>
+<p>Nada de esto sería posible sin el apoyo de la comunidad que cree en nuestro trabajo y en la importancia de fomentar una cultura de datos abierta y accesible. Estamos entusiasmados por todo lo que viene en el 2025 y esperamos seguir creciendo juntos.</p>
+<p>¡Sigamos explorando y aprendiendo con R!</p>
+</div>
+]]></content>
+        </item>
         
         <item>
             <title>¿La mejor selección Argentina de la historia?</title>

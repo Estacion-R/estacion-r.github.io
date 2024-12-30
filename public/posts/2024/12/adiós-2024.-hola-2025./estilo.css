@@ -1,0 +1,4 @@
+/*  See: https://bookdown.org/yihui/rmarkdown-cookbook/multi-column.html */
+.columns {
+  display: flex; 
+  flex-basis: auto}

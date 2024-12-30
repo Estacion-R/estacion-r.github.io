@@ -6,7 +6,17 @@
     <description>Recent content in untagged on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Thu, 14 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adiós 2024. Hola 2025.</title>
+      <link>https://estacion-r.netlify.app/posts/2024/12/adi%C3%B3s-2024.-hola-2025./</link>
+      <pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/posts/2024/12/adi%C3%B3s-2024.-hola-2025./</guid>
+      <description>Resumen 2024: Un año de crecimiento y aprendizajes en Estación R Este 2024 ha sido un año emocionante para Estación R. Hemos alcanzado hitos importantes, sumado aprendizajes y contribuido a la comunidad de datos + R con nuevas iniciativas. A medida que cerramos este capítulo, miramos hacia el 2025 con más energía que nunca.
+ Lo que logramos en 2024 Cursos y formación Dos cohortes del curso “Introducción al Procesamiento de Datos con R”.</description>
+    </item>
+    
     <item>
       <title>¡r_tips en Mastodon!</title>
       <link>https://estacion-r.netlify.app/posts/2023/09/r_tips-en-mastodon/</link>

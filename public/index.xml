@@ -6,7 +6,17 @@
     <description>Recent content on Estación 🇷</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-AR</language>
-    <lastBuildDate>Wed, 10 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://estacion-r.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adiós 2024. Hola 2025.</title>
+      <link>https://estacion-r.netlify.app/posts/2024/12/adi%C3%B3s-2024.-hola-2025./</link>
+      <pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://estacion-r.netlify.app/posts/2024/12/adi%C3%B3s-2024.-hola-2025./</guid>
+      <description>Resumen 2024: Un año de crecimiento y aprendizajes en Estación R Este 2024 ha sido un año emocionante para Estación R. Hemos alcanzado hitos importantes, sumado aprendizajes y contribuido a la comunidad de datos + R con nuevas iniciativas. A medida que cerramos este capítulo, miramos hacia el 2025 con más energía que nunca.
+ Lo que logramos en 2024 Cursos y formación Dos cohortes del curso “Introducción al Procesamiento de Datos con R”.</description>
+    </item>
+    
     <item>
       <title>¿La mejor selección Argentina de la historia?</title>
       <link>https://estacion-r.netlify.app/posts/2024/04/la-mejor-selecci%C3%B3n-argentina-de-la-historia/</link>
@@ -91,16 +101,6 @@ Si asumimos que una de las principales tareas de una librería es ofrecer una ca
       
       <guid>https://estacion-r.netlify.app/posts/2022/10/1-2...-paquete/</guid>
       <description>@import url(https://fonts.googleapis.com/css?family=Glegoo); .showMore{ font-size: 14px; display:block; cursor: pointer; } .showMore + input{ display:none; } .showMore + input + *{ display:none; } .showMore + input:checked + *{ display:block; } blockquote { margin-left: 0; font-size: 12px; background: #e5f5f9; }  Si tenés más de 30 años (y vivís o viviste en Argentina) probablemente hayas conocido los postres 1,2, LISTO! Para quienes no lo conozcan, la idea era muy simple: En apenas dos pasos, como mucho tres, podías pasar de tener un sobre en la mano a un postre en una taza (¡y rico!</description>
-    </item>
-    
-    <item>
-      <title>Todos los caminos conducen a Microcentro</title>
-      <link>https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/</link>
-      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://estacion-r.netlify.app/posts/2022/10/todos-los-caminos-conducen-a-microcentro/</guid>
-      <description>Idea Analizar la concentración de la infraestructura de la administración pública. La hipótesis por detrás de este informe exploratorio asume la presencia de una alta concentración de innmuebles en ciertas zonas, principalmente en aquella denominada “Microcentro”, hecho que genera una gran movilización de personas hacia mismos lugares con una consecuente saturación del sistema de transporte, por un lado y de servicios, por otro.
-Por otro lado, este hecho, dado el contexto actual en donde la aglomeración de personas no es aconsejable a la hora de combatir enfermedades producidas por virus como el COVID, potencia las consecuencias negativas de dicha distribución geográfica de los inmuebles estatales y refuerza la necesidad de impulsar una política pública que apunte a la desconcentración.</description>
     </item>
     
   </channel>
